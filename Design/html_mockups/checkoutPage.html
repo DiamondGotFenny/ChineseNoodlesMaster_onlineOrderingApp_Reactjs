@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Checkout Page</title>
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="height=device-height, 
+        width=device-width, initial-scale=1.0, 
+        minimum-scale=1.0, maximum-scale=1.0, 
+        user-scalable=no, target-densitydpi=device-dpi"
+    />
+    <!--css plugin-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!--css icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/CSS_Icons/themify-icons/themify-icons.css"
+    />
+    <!--css theme-->
+    <link rel="stylesheet" href="../CSS/checkoutPage.css" />
+  </head>
+  <body class="bg-light">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-md-4 order-md-2 mb-4">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your cart</span>
+            <span class="badge badge-secondary badge-pill">3</span>
+          </h4>
+          <ul class="list-group mb-3">
+            <li
+              class="product-header list-group-item d-flex justify-content-between lh-condensed"
+            >
+              <h6 class="col-8">Items</h6>
+              <span class="col-2">Qty</span>
+              <span class="col-2">Total</span>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between lh-condensed"
+            >
+              <div class="item-detail col-8 px-0">
+                <h6 class="my-0 item-name">Spicy Chicken Noodles</h6>
+                <small class="text-muted item-desr">Medium Size</small>
+              </div>
+              <span class="item-qty col-2 text-center">1</span>
+              <span class="text-muted item-cost col-2">$10.00</span>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between lh-condensed"
+            >
+              <div class="item-detail col-8 px-0">
+                <h6 class="my-0 item-name">Chong Qing Small Noodles</h6>
+                <small class="text-muted item-desr">No Soup, Medium Size</small>
+              </div>
+              <span class="item-qty col-2 text-center">1</span>
+              <span class="text-muted item-cost col-2">$15.00</span>
+            </li>
+            <li
+              class="list-group-item d-flex justify-content-between lh-condensed"
+            >
+              <div class="item-detail col-8 px-0">
+                <h6 class="my-0 item-name">Beef Noodles</h6>
+                <small class="text-muted item-desr">Medium Size</small>
+              </div>
+              <span class="item-qty col-2 text-center">1</span>
+              <span class="text-muted item-cost col-2">$20.00</span>
+            </li>
+            <li
+              id="subtotal"
+              class="list-group-item d-flex justify-content-between"
+            >
+              <span>Subtotal</span>
+              <strong class="subtotal-value">$40</strong>
+            </li>
+            <li
+              id="Delivering-fee"
+              class="list-group-item d-flex justify-content-between"
+            >
+              <span>Delivering Fee</span>
+              <strong>$5</strong>
+            </li>
+            <li
+              id="discount"
+              class="list-group-item d-flex justify-content-between bg-light"
+            >
+              <div class="text-success discount">
+                <h6 class="my-0">Discount</h6>
+                <small class="discount-percent">10%</small>
+              </div>
+              <span class="text-success discount-value">-$4</span>
+            </li>
+            <li
+              id="vat"
+              class="list-group-item d-flex justify-content-between bg-light"
+            >
+              <div class="text-warning vat">
+                <h6 class="my-0">VAT</h6>
+                <small class="vat-percent">10%</small>
+              </div>
+              <span class="text-warning vat-value">$4</span>
+            </li>
+            <li
+              id="total"
+              class="list-group-item d-flex justify-content-between"
+            >
+              <span>Total (USD)</span>
+              <strong class="total-value">$45</strong>
+            </li>
+            <li
+              id="edit-cart"
+              class="list-group-item d-flex justify-content-end"
+            >
+              <button
+                type="button"
+                class="btn btn-outline-secondary"
+                data-target="#shopping-cart-modal"
+                data-toggle="modal"
+              >
+                Edit
+              </button>
+            </li>
+          </ul>
+
+          <form class="card p-2">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Promo code"
+              />
+              <div class="input-group-append">
+                <button type="submit" class="btn btn-secondary">Redeem</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-8 order-md-1">
+          <h4 class="mb-3 billing-title">Billing Address</h4>
+          <form class="needs-validation" novalidate="">
+            <!--address option start-->
+            <label>
+              <input
+                type="radio"
+                name="shippingAddress"
+                class="card-input-element d-none"
+                id="defaultAdrs"
+                value="1"
+                checked="checked"
+              />
+              <!--default address start-->
+              <div class="card">
+                <div class="card-header bg-primary text-white">
+                  Default Address
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Receiver: <span class="receiver-name">Jonh Dow</span>
+                  </h5>
+                  <p class="card-text">
+                    A12008, Granville Building, 12-16 Granville Rd, Tsim Sha
+                    Tsui, Hong Kong
+                  </p>
+                  <p class="card-text">
+                    Phone Number:
+                    <span class="adrs-phone-num">125-24857867</span>
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#add-addrs-modal"
+                    >Edit</a
+                  >
+                </div>
+              </div>
+              <!--default address end-->
+            </label>
+
+            <label>
+              <input
+                type="radio"
+                name="shippingAddress"
+                class="card-input-element d-none"
+                id="address1"
+                value="2"
+              />
+              <!--address one start-->
+              <div class="card mt-3">
+                <div class="card-header bg-light">
+                  Office
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Receiver: <span class="receiver-name">Jonh Dow</span>
+                  </h5>
+                  <p class="card-text">
+                    Kowloon Park Drive, Tsim Sha Tsui, Hong Kong
+                  </p>
+                  <p class="card-text">
+                    Phone Number:
+                    <span class="adrs-phone-num">125-24851254</span>
+                  </p>
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    data-toggle="modal"
+                    data-target="#add-addrs-modal"
+                    >Edit</a
+                  >
+                  <button class="btn btn-info">Set as Default</button>
+                </div>
+              </div>
+              <!-- address one end-->
+            </label>
+            <!--add address start-->
+            <div class="card mt-3">
+              <a
+                href="#"
+                class="add-addrs-icon row"
+                data-toggle="modal"
+                data-target="#add-addrs-modal"
+                ><i class="fas fa-plus mx-3"></i>
+                <h2 class="mt-1 text-info">Add New Address</h2></a
+              >
+            </div>
+            <!--add address end-->
+
+            <!--address option end-->
+            <hr class="mb-4" />
+
+            <!--delivery time end-->
+            <div class="delivery-time w-50">
+              <div class="form-group">
+                <label for="exampleFormControlSelect2"
+                  ><h4>Delivery Time</h4></label
+                >
+                <select class="form-control" id="deliveryTime">
+                  <option selected>09:00-10:00</option>
+                  <option>10:00-11:00</option>
+                  <option>11:00-12:00</option>
+                  <option>12:00-13:00</option>
+                  <option>13:00-14:00</option>
+                  <option>14:00-15:00</option>
+                  <option>15:00-16:00</option>
+                  <option>16:00-17:00</option>
+                  <option>17:00-18:00</option>
+                  <option>18:00-19:00</option>
+                  <option>19:00-20:00</option>
+                  <option>20:00-21:00</option>
+                  <option>21:00-22:00</option>
+                  <option>22:00-23:00</option>
+                  <option>23:00-24:00</option>
+                </select>
+              </div>
+            </div>
+            <!--delivery time start-->
+            <hr class="mb-4" />
+            <!--payment method start-->
+            <h4 class="mb-3">Payment</h4>
+            <div class="d-flex my-3 justify-content-between">
+              <div class="custom-control custom-radio">
+                <input
+                  id="credit"
+                  name="paymentMethod"
+                  type="radio"
+                  class="custom-control-input"
+                  checked=""
+                  required=""
+                />
+                <label class="custom-control-label" for="credit"
+                  ><i
+                    class="fa fa-credit-card credit-card-label mr-1"
+                    aria-hidden="true"
+                  ></i
+                  >Credit card</label
+                >
+              </div>
+              <div class="custom-control custom-radio">
+                <input
+                  id="debit"
+                  name="paymentMethod"
+                  type="radio"
+                  class="custom-control-input"
+                  required=""
+                />
+                <label class="custom-control-label" for="debit"
+                  ><i
+                    class="fa fa-credit-card debit-card-label mr-1"
+                    aria-hidden="true"
+                  ></i
+                  >Debit card</label
+                >
+              </div>
+              <div class="custom-control custom-radio">
+                <input
+                  id="paypal"
+                  name="paymentMethod"
+                  type="radio"
+                  class="custom-control-input"
+                  required=""
+                />
+                <label class="custom-control-label" for="paypal"
+                  ><img
+                    src="../assets/pics/payments/paypal.png"
+                    alt="Paypal"
+                    class="mr-1"
+                  />Paypal</label
+                >
+              </div>
+              <div class="custom-control custom-radio">
+                <input
+                  id="WechatPay"
+                  name="paymentMethod"
+                  type="radio"
+                  class="custom-control-input"
+                  required=""
+                />
+                <label class="custom-control-label" for="WechatPay"
+                  ><img
+                    src="../assets/pics/payments/wechat-pay.jpg"
+                    alt="wechat pay"
+                  />
+                  Wechat Pay</label
+                >
+              </div>
+              <div class="custom-control custom-radio">
+                <input
+                  id="Alipay"
+                  name="paymentMethod"
+                  type="radio"
+                  class="custom-control-input"
+                  required=""
+                />
+                <label class="custom-control-label" for="Alipay"
+                  ><img
+                    src="../assets/pics/payments/alipay.png"
+                    alt="Alipay pay"
+                    class="mr-1"
+                  />Alipay</label
+                >
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cc-name">Name on card</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-name"
+                  placeholder=""
+                  required=""
+                />
+                <small class="text-muted">Full name as displayed on card</small>
+                <div class="invalid-feedback">
+                  Name on card is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">Credit card number</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-number"
+                  placeholder=""
+                  required=""
+                />
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration">Expiration</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-expiration"
+                  placeholder=""
+                  required=""
+                />
+                <div class="invalid-feedback">
+                  Expiration date required
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration">CVV</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="cc-cvv"
+                  placeholder=""
+                  required=""
+                />
+                <div class="invalid-feedback">
+                  Security code required
+                </div>
+              </div>
+            </div>
+            <!--payment method end-->
+            <hr class="mb-4" />
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">
+              Continue to checkout
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <footer class="my-5 pt-5 text-muted text-center text-small">
+        <p class="mb-1">© 2017-2020 Chinese Noodles Master</p>
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#">Privacy</a></li>
+          <li class="list-inline-item"><a href="#">Terms</a></li>
+          <li class="list-inline-item"><a href="#">Support</a></li>
+        </ul>
+      </footer>
+    </div>
+    <!--shopping cart modal start-->
+    <div
+      class="modal fade"
+      id="shopping-cart-modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="shoppingCartModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header border-bottom-0 bg-light">
+            <h5 class="modal-title" id="shoppingCartModalLabel">
+              <i class="fa fa-shopping-cart align-center"></i> Your Shopping
+              Cart
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <!--cart item start-->
+            <div class="card" style="max-width: 100%;">
+              <div class="row no-gutters">
+                <div class="col-sm-3">
+                  <img
+                    src="../assets/pics/noodlesPic/spicy-chicken-noodles.jpeg"
+                    class="card-img-top h-100"
+                    alt="spicy chicken noodles"
+                  />
+                </div>
+
+                <div class="card-body col-sm-3 pl-3 border-right">
+                  <h5 class="card-title">Spicy Chicken Noodles</h5>
+                  <p class="card-text">Medium Size</p>
+                </div>
+                <ul class="list-group mb-3 col-sm-6">
+                  <li
+                    class="cart-header list-group-item d-flex justify-content-between lh-condensed border-0 text-center"
+                  >
+                    <div class="col-4">Price</div>
+                    <div class="col-4">Cost</div>
+                    <div class="col-4">Delete</div>
+                  </li>
+                  <li
+                    class="cart-detail list-group-item d-flex justify-content-between lh-condensed border-0 text-center pt-0"
+                  >
+                    <div class="col-4">$10.00</div>
+                    <div class="col-4">$10.00</div>
+                    <div class="col-4">
+                      <a class="text-danger" title="Remove a product" href="#"
+                        ><i class="fa fa-trash"></i
+                      ></a>
+                    </div>
+                  </li>
+                  <li
+                    class="cart-number-input list-group-item d-flex justify-content-center lh-condensed border-0"
+                  >
+                    <div class="col-4 text-right align-middle pt-1">
+                      Quantity
+                    </div>
+                    <div class="col-6 letf">
+                      <input
+                        type="number"
+                        value="1"
+                        min="0"
+                        max="99"
+                        step="1"
+                      />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!--cart item end-->
+
+            <!--cart item start-->
+            <div class="card mt-2" style="max-width: 100%;">
+              <div class="row no-gutters">
+                <div class="col-sm-3">
+                  <img
+                    src="../assets/pics/noodlesPic/chong_qing_small_noodles.jpg"
+                    class="card-img-top h-100"
+                    alt="chong qing small noodles"
+                  />
+                </div>
+
+                <div class="card-body col-sm-3 pl-3 border-right">
+                  <h5 class="card-title">Chong Qing Small Noodles</h5>
+                  <p class="card-text">Medium Size, No Soup</p>
+                </div>
+                <ul class="list-group mb-3 col-sm-6">
+                  <li
+                    class="cart-header list-group-item d-flex justify-content-between lh-condensed border-0 text-center"
+                  >
+                    <div class="col-4">Price</div>
+                    <div class="col-4">Cost</div>
+                    <div class="col-4">Delete</div>
+                  </li>
+                  <li
+                    class="cart-detail list-group-item d-flex justify-content-between lh-condensed border-0 text-center pt-0"
+                  >
+                    <div class="col-4">$15.00</div>
+                    <div class="col-4">$15.00</div>
+                    <div class="col-4">
+                      <a class="text-danger" title="Remove a product" href="#"
+                        ><i class="fa fa-trash"></i
+                      ></a>
+                    </div>
+                  </li>
+                  <li
+                    class="cart-number-input list-group-item d-flex justify-content-center lh-condensed border-0"
+                  >
+                    <div class="col-4 text-right align-middle pt-1">
+                      Quantity
+                    </div>
+                    <div class="col-6 letf">
+                      <input
+                        type="number"
+                        value="1"
+                        min="0"
+                        max="99"
+                        step="1"
+                      />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!--cart item end-->
+
+            <!--cart item start-->
+            <div class="card mt-2" style="max-width: 100%;">
+              <div class="row no-gutters">
+                <div class="col-sm-3">
+                  <img
+                    src="../assets/pics/noodlesPic/beef_noodles.jpg"
+                    class="card-img-top h-100"
+                    alt="beef noodles"
+                  />
+                </div>
+
+                <div class="card-body col-sm-3 pl-3 border-right">
+                  <h5 class="card-title">Beef Noodles</h5>
+                  <p class="card-text">Medium Size</p>
+                </div>
+                <ul class="list-group mb-3 col-sm-6">
+                  <li
+                    class="cart-header list-group-item d-flex justify-content-between lh-condensed border-0 text-center"
+                  >
+                    <div class="col-4">Price</div>
+                    <div class="col-4">Cost</div>
+                    <div class="col-4">Delete</div>
+                  </li>
+                  <li
+                    class="cart-detail list-group-item d-flex justify-content-between lh-condensed border-0 text-center pt-0"
+                  >
+                    <div class="col-4">$20.00</div>
+                    <div class="col-4">$20.00</div>
+                    <div class="col-4">
+                      <a class="text-danger" title="Remove a product" href="#"
+                        ><i class="fa fa-trash"></i
+                      ></a>
+                    </div>
+                  </li>
+                  <li
+                    class="cart-number-input list-group-item d-flex justify-content-center lh-condensed border-0"
+                  >
+                    <div class="col-4 text-right align-middle pt-1">
+                      Quantity
+                    </div>
+                    <div class="col-6 letf">
+                      <input
+                        type="number"
+                        value="1"
+                        min="0"
+                        max="99"
+                        step="1"
+                      />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!--cart item end-->
+            <ul class="list-group mt-2">
+              <li
+                id="subtotal"
+                class="list-group-item d-flex justify-content-between"
+              >
+                <span>Subtotal</span>
+                <strong class="subtotal-value">$40</strong>
+              </li>
+              <li
+                id="Delivering-fee"
+                class="list-group-item d-flex justify-content-between"
+              >
+                <span>Delivering Fee</span>
+                <strong>$5</strong>
+              </li>
+              <li
+                id="discount"
+                class="list-group-item d-flex justify-content-between bg-light"
+              >
+                <div class="text-success discount">
+                  <h6 class="my-0">Discount</h6>
+                  <small class="discount-percent">10%</small>
+                </div>
+                <span class="text-success discount-value">-$4</span>
+              </li>
+              <li
+                id="vat"
+                class="list-group-item d-flex justify-content-between bg-light"
+              >
+                <div class="text-warning vat">
+                  <h6 class="my-0">VAT</h6>
+                  <small class="vat-percent">10%</small>
+                </div>
+                <span class="text-warning vat-value">$4</span>
+              </li>
+              <li
+                id="total"
+                class="list-group-item d-flex justify-content-between"
+              >
+                <span>Total (USD)</span>
+                <strong class="total-value">$45</strong>
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer border-top-0 d-flex justify-content-between">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn btn-success">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--shopping cart modal end-->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <!--input number spinner start-->
+    <script src="../assets/plugin/bootstrap-input-spinner.js"></script>
+    <script>
+      $("input[type='number']").inputSpinner();
+    </script>
+    <!--input number spinner end-->
+  </body>
+</html>

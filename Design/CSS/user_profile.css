@@ -1,0 +1,123 @@
+body {
+  background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
+}
+img {
+  max-width: 100%;
+  height: auto;
+  -webkit-backface-visibility: hidden;
+}
+.user-profile {
+  background-color: ghostwhite;
+  border-radius: 0.42rem;
+}
+.user-profile label {
+  color: #17a2b8;
+}
+#profile-tabs a {
+  color: #32363a;
+}
+.user-profile .row {
+  justify-content: center;
+  align-items: center;
+}
+
+.add-addrs-icon {
+  color: rgb(228, 110, 129);
+  font-size: 3rem;
+  margin: 0.5rem 1rem;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+.favorites-search-bar {
+  width: 80%;
+  height: 2.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid gray;
+  border-radius: 0.43rem;
+}
+
+.favorites-search-bar input,
+.favorites-search-bar button {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.favorites-search-bar input {
+  width: 90%;
+}
+
+.menu-grid-item {
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+}
+.menu-grid-item .menu-item-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-grid-item .menu-shop-name {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+.menu-grid-item .menu-shop-name:hover {
+  color: #d15454;
+}
+.rating-stars {
+  color: #d15454;
+}
+.rating-favorites {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.rating-favorites .add-to-favorite-icon {
+  color: goldenrod;
+  border: none;
+  background: transparent;
+}
+#add-review-modal img {
+  width: 100%;
+}
+#activities .review-title {
+  color: #d3b650;
+}
+
+.orders-search-container {
+  align-items: center;
+  justify-content: flex-start;
+  border: 1px solid gray;
+  background-color: white;
+}
+
+.orders-search-container input,
+.orders-search-container button {
+  outline: none;
+  border: none;
+  background: none;
+}
+
+.orders-search-container .search-input-btn {
+  color: #d15454;
+}
+
+#orders .card-header {
+  flex-wrap: wrap;
+  font-size: 0.8rem;
+}
+.card-header .order-date-value,
+.card-header .order-num-value,
+.card-header .order-vendor-value,
+.card-header .order-sum-value,
+.card-header .order-pay-value,
+.card-header .order-status-value {
+  font-size: 1rem;
+  color: #d3b650;
+}

@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Zhang's Noodles Restaurant</title>
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="height=device-height, 
+    width=device-width, initial-scale=1.0, 
+    minimum-scale=1.0, maximum-scale=1.0, 
+    user-scalable=no, target-densitydpi=device-dpi"
+    />
+    <!--css plugin-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!--css icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/CSS_Icons/themify-icons/themify-icons.css"
+    />
+    <!--css theme-->
+    <link rel="stylesheet" href="../CSS/vendorPage.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <a href="s" class="return-to-top hidden" id="backTopBtn">
+      <span class="ti-angle-up"></span
+    ></a>
+    <div class="vendor-wrapper">
+      <!--header Start-->
+      <header id="vendor-header">
+        <div class="container-fluid">
+          <!--small screen address bar start-->
+          <div class="address-bar form-group mobile-display">
+            <label for="delivering_address" class="address-bar_label"
+              >Delivering to
+            </label>
+            <div class="address-bar-input">
+              <input
+                type="text"
+                class="address-input-area"
+                placeholder="22 Jln Wajek, Singapore 588475"
+              />
+              <button class="address-input-btn">
+                <span class="ti-location-pin"></span>
+              </button>
+            </div>
+          </div>
+          <!--small screen address bar end-->
+          <div class="vendor-header-nav fixed">
+            <div class="col-md-2 vendor-header-logo">
+              <a href="#"
+                ><img
+                  src="../assets/pics/logos/logo-mobile-v2.png"
+                  alt="logo Chinese Noodles Master"
+                  width="240"
+              /></a>
+            </div>
+            <div class="address-bar form-group col-md-4">
+              <label for="delivering_address" class="address-bar_label"
+                >Delivering to
+              </label>
+              <div class="address-bar-input">
+                <input
+                  type="text"
+                  class="address-input-area"
+                  placeholder="22 Jln Wajek, Singapore 588475"
+                />
+                <button class="address-input-btn">
+                  <span class="ti-location-pin"></span>
+                </button>
+              </div>
+            </div>
+            <nav
+              id="home-navbar"
+              class="navbar navbar-expand-md col-md-4 navbar-light"
+            >
+              <ul id="nav-main" class="nav nav-main">
+                <li class="ml-1 py-0 border-right">
+                  <button type="button" class="btn btn-sm border-right" data-toggle="modal" data-target="#loginModal">
+                    EN
+                  </button>  
+                  <button type="button" class="btn btn-sm" data-toggle="modal" data-target="#loginModal">
+                    中文
+                  </button> 
+                </li>
+                <li class="mr-1 py-0">
+                  <button type="button" class="btn btn-sm mr-1 border-right" data-toggle="modal" data-target="#loginModal">
+                    Login
+                  </button>  
+                  <button type="button" class="btn btn-sm mr-1" data-toggle="modal" data-target="#registerModal">
+                    Register
+                  </button>  
+                </li>
+              </ul>
+            </nav>
+            <div class="col-md-2 ml-auto cart-container">
+              <a href="#" class="cart-logo" data-toggle="panel-cart">
+                <span class="cart-icon">
+                  <i class="ti ti-shopping-cart"></i>
+                  <span class="notification">2</span>
+                </span>
+                <span class="cart-value">$32.98</span>
+              </a>
+            </div>
+          </div>
+          <div class="vendor-info">
+            <div class="vendor-display">
+              <img
+                src="../assets/pics/vendorPage/vendor-hero-pic.jpg"
+                alt="Family Noodles Restaurant Picture"
+              />
+            </div>
+            <div class="vendor-adrs ml-1">
+              <div
+                class="vendor-adrs-first-line d-flex mt-3 justify-content-left align-items-center"
+              >
+                <h5 class="vendor-title pl-0 col-md-auto col-7">
+                  Zhang's Noodles Restaurant
+                </h5>
+                <div class="vendor-rating ml-sm-1 col-md-auto col-5 pb-1">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star-half"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </div>
+              <div
+                class="vendor-adrs-second-line mt-2 mt-md-0 d-flex justify-content-left align-items-center"
+              >
+                <strong>Address: </strong>
+                <address class="adrs-detail ml-2 mb-0">
+                  48 North Guangming Road, Guangzhou, Guangdong, China
+                </address>
+
+                <div class="vendor-map-modal-btn">
+                  <button
+                    class="addr-pin-btn ml-1 ml-sm-3"
+                    data-target="#vendorMap"
+                    data-toggle="modal"
+                  >
+                    <i class="fas fa-map-marked-alt"></i>
+                  </button>
+                </div>
+              </div>
+              <div
+                class="vendor-adrs-third-line d-flex justify-content-left align-items-center mt-2 mt-md-0"
+              >
+                <div class="business-hour">
+                  <strong>Business Hours: </strong
+                  ><span class="ml-2">08:00-24:00</span>
+                </div>
+                <div
+                  class="vendor-contact ml-auto ml-md-5 d-flex justify-content-left align-items-center"
+                >
+                  <i class="fas fa-phone phone-icon"></i
+                  ><span class="phone-num ml-2">020 84880103</span>
+                </div>
+              </div>
+              <div class="vendor-adrs-forth-line mt-2 mt-md-0 text-left">
+                <span class="red-star"><i class="fas fa-truck"></i></span>Free
+                Delivering with Minimum Order Value of
+                <span class="free-delivery-start ml-md-1 ml-0">$30</span>.
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!--header End-->
+
+      <!--Content Start-->
+      <main class="vendor-content">
+        <div class="vendor-content-container">
+          <div class="menu-contents row">
+            <!--Menu Navigation-->
+            <div class="link-nav-container">
+              <div class="link-title">Select Foods</div>
+              <a
+                class="link-nav-menu"
+                data-toggle="collapse"
+                href="#vendor-navigation"
+              >
+                <span class="ti-angle-down"></span>
+              </a>
+            </div>
+
+            <div class="vendor-nav-container nav-sticky col-md-3">
+              <nav
+                id="vendor-navigation"
+                class="stick-to-content bg-dark collapse show"
+              >
+                <ul class="nav nav-menu">
+                  <li><a href="#">All</a></li>
+                  <li><a href="#">Chicken</a></li>
+                  <li><a href="#">Beef</a></li>
+                  <li><a href="#">Vegetable</a></li>
+                  <li><a href="#">Appetizers</a></li>
+                  <li><a href="#">Soup</a></li>
+                </ul>
+                <a class="back-home-btn" href="#"
+                  ><span class="ti-arrow-circle-left"></span
+                ></a>
+              </nav>
+            </div>
+            <div class="menu-item-container col-md-9 row">
+              <div class="col-lg-3">
+                <!-- Menu Item -->
+                <div class="menu-item menu-grid-item">
+                  <img
+                    class="mb-2"
+                    src="https://via.placeholder.com/400x300.png?text=placeholder1"
+                    alt=""
+                  />
+                  <div class="shop-info mx-1 text-truncate">
+                    <h6 class="mb-0 text-truncate">Lanzhou Beef Noodles</h6>
+                    <a class="menu-shop-name" href="#"
+                      ><span class="">Zhang's Noodle Restaurant</span>
+                    </a>
+                    <div class="rating-favorites">
+                      <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                  </div>
+
+                  <div
+                    class="row justify-content-around align-items-center mt-2"
+                  >
+                    <div>
+                      <span class="text-md"
+                        ><span class="text-muted">from</span> $9.00</span
+                      >
+                    </div>
+                    <div class="text-sm-right mt-2 mt-sm-0">
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        data-target="#productModal"
+                        data-toggle="modal"
+                      >
+                        <span>Add to cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <!-- Menu Item -->
+                <div class="menu-item menu-grid-item">
+                  <img
+                    class="mb-2"
+                    src="https://via.placeholder.com/400x300.png?text=placeholder2"
+                    alt=""
+                  />
+                  <div class="shop-info mx-1 text-truncate">
+                    <h6 class="mb-0 text-truncate">Chicken Noodles</h6>
+                    <a class="menu-shop-name" href="#"
+                      ><span class="">Zhang's Noodle Restaurant</span>
+                    </a>
+                    <div class="rating-favorites">
+                      <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="fas fa-heart"></i></button>
+                    </div>
+                  </div>
+
+                  <div
+                    class="row justify-content-around align-items-center mt-2"
+                  >
+                    <div>
+                      <span class="text-md"
+                        ><span class="text-muted">from</span> $15.00</span
+                      >
+                    </div>
+                    <div class="text-sm-right mt-2 mt-sm-0">
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        data-target="#productModal"
+                        data-toggle="modal"
+                      >
+                        <span>Add to cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <!-- Menu Item -->
+                <div class="menu-item menu-grid-item">
+                  <img
+                    class="mb-2"
+                    src="https://via.placeholder.com/400x300.png?text=placeholder3"
+                    alt=""
+                  />
+                  <div class="shop-info mx-1 text-truncate">
+                    <h6 class="mb-0 text-truncate">WuHan Hot Noodles</h6>
+                    <a class="menu-shop-name" href="#"
+                      ><span class="">Zhang's Noodle Restaurant</span>
+                    </a>
+                    <div class="rating-favorites">
+                      <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                  </div>
+
+                  <div
+                    class="row justify-content-around align-items-center mt-2"
+                  >
+                    <div>
+                      <span class="text-md"
+                        ><span class="text-muted">from</span> $12.00</span
+                      >
+                    </div>
+                    <div class="text-sm-right mt-2 mt-sm-0">
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        data-target="#productModal"
+                        data-toggle="modal"
+                      >
+                        <span>Add to cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <!-- Menu Item -->
+                <div class="menu-item menu-grid-item">
+                  <img
+                    class="mb-2"
+                    src="https://via.placeholder.com/400x300.png?text=placeholder4"
+                    alt=""
+                  />
+                  <div class="shop-info mx-1 text-truncate">
+                    <h6 class="mb-0 text-truncate">Braised Peanuts</h6>
+                    <a class="menu-shop-name" href="#"
+                      ><span class="">Zhang's Noodle Restaurant</span>
+                    </a>
+                    <div class="rating-favorites">
+                      <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                  </div>
+
+                  <div
+                    class="row justify-content-around align-items-center mt-2"
+                  >
+                    <div>
+                      <span class="text-md"
+                        ><span class="text-muted">from</span> $5.00</span
+                      >
+                    </div>
+                    <div class="text-sm-right mt-2 mt-sm-0">
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        data-target="#productModal"
+                        data-toggle="modal"
+                      >
+                        <span>Add to cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <!-- Menu Item -->
+                <div class="menu-item menu-grid-item">
+                  <img
+                    class="mb-2"
+                    src="https://via.placeholder.com/400x300.png?text=placeholder5"
+                    alt=""
+                  />
+                  <div class="shop-info mx-1 text-truncate">
+                    <h6 class="mb-0 text-truncate">Lotus Rhizome Soup</h6>
+                    <a class="menu-shop-name" href="#"
+                      ><span class="">Zhang's Noodle Restaurant</span>
+                    </a>
+                    <div class="rating-favorites">
+                      <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                  </div>
+
+                  <div
+                    class="row justify-content-around align-items-center mt-2"
+                  >
+                    <div>
+                      <span class="text-md"
+                        ><span class="text-muted">from</span> $8.00</span
+                      >
+                    </div>
+                    <div class="text-sm-right mt-2 mt-sm-0">
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        data-target="#productModal"
+                        data-toggle="modal"
+                      >
+                        <span>Add to cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-3">
+                <!-- Menu Item -->
+                <div class="menu-item menu-grid-item">
+                  <img
+                    class="mb-2"
+                    src="https://via.placeholder.com/400x300.png?text=placeholder6"
+                    alt=""
+                  />
+                  <div class="shop-info mx-1 text-truncate">
+                    <h6 class="mb-0 text-truncate">
+                      Noodles with Soybean Paste
+                    </h6>
+                    <a class="menu-shop-name" href="#"
+                      ><span class="">Zhang's Noodle Restaurant</span>
+                    </a>
+                    <div class="rating-favorites">
+                      <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                  </div>
+
+                  <div
+                    class="row justify-content-around align-items-center mt-2"
+                  >
+                    <div>
+                      <span class="text-md"
+                        ><span class="text-muted">from</span> $12.50</span
+                      >
+                    </div>
+                    <div class="text-sm-right mt-2 mt-sm-0">
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        data-target="#productModal"
+                        data-toggle="modal"
+                      >
+                        <span>Add to cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3">
+                <!-- Menu Item -->
+                <div class="menu-item menu-grid-item">
+                  <img
+                    class="mb-2"
+                    src="https://via.placeholder.com/400x300.png?text=placeholder7"
+                    alt=""
+                  />
+                  <div class="shop-info mx-1 text-truncate">
+                    <h6 class="mb-0 text-truncate">
+                      Sichuan Cold Noodles
+                    </h6>
+                    <a class="menu-shop-name" href="#"
+                      ><span class="">Zhang's Noodle Restaurant</span>
+                    </a>
+                    <div class="rating-favorites">
+                      <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                  </div>
+
+                  <div
+                    class="row justify-content-around align-items-center mt-2"
+                  >
+                    <div>
+                      <span class="text-md"
+                        ><span class="text-muted">from</span> $10.50</span
+                      >
+                    </div>
+                    <div class="text-sm-right mt-2 mt-sm-0">
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        data-target="#productModal"
+                        data-toggle="modal"
+                      >
+                        <span>Add to cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3">
+                <!-- Menu Item -->
+                <div class="menu-item menu-grid-item">
+                  <img
+                    class="mb-2"
+                    src="https://via.placeholder.com/400x300.png?text=placeholder8"
+                    alt=""
+                  />
+                  <div class="shop-info mx-1 text-truncate">
+                    <h6 class="mb-0 text-truncate">
+                      Yang Chou Fried Rice
+                    </h6>
+                    <a class="menu-shop-name" href="#"
+                      ><span class="">Zhang's Noodle Restaurant</span>
+                    </a>
+                    <div class="rating-favorites">
+                      <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="far fa-heart"></i></button>
+                    </div>
+                  </div>
+
+                  <div
+                    class="row justify-content-around align-items-center mt-2"
+                  >
+                    <div>
+                      <span class="text-md"
+                        ><span class="text-muted">from</span> $10.50</span
+                      >
+                    </div>
+                    <div class="text-sm-right mt-2 mt-sm-0">
+                      <button
+                        class="btn btn-outline-secondary btn-sm"
+                        data-target="#productModal"
+                        data-toggle="modal"
+                      >
+                        <span>Add to cart</span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--recommendation start-->
+          <div class="items-recommendation mt-4">
+            <div class="row recommendation-title text-center">
+              <div class="col"><hr></div>
+              <div class="col-auto"><h4>You May Also Like</h4></div>
+              <div class="col"><hr></div>
+          </div>
+            <!--recommendation content start-->
+            <div class="recommendation-content row justify-content-around align-items-center mt-3">
+              <!-- Menu Item start-->
+            <div class="col-lg-2">
+              <div class="menu-item menu-grid-item">
+                <img
+                  class="mb-2"
+                  src="https://via.placeholder.com/400x300.png?text=placeholder1"
+                  alt=""
+                />
+                <div class="shop-info mx-1 text-truncate">
+                  <h6 class="mb-0 text-truncate">Shelled Fresh Shrimps Noodles</h6>
+                  <a class="menu-shop-name" href="#"
+                    ><span class="">Lee's Noodle Restaurant</span>
+                  </a>
+                  <div class="rating-favorites">
+                    <div class="rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="far fa-heart"></i></button>
+                  </div>
+                </div>
+
+                <div
+                  class="row justify-content-around align-items-center mt-2"
+                >
+                  <div>
+                    <span class="text-md"
+                      ><span class="text-muted">from</span> $25.00</span
+                    >
+                  </div>
+                  <div class="text-sm-right mt-2 mt-sm-0">
+                    <button
+                      class="btn btn-outline-secondary btn-sm"
+                      data-target="#productModal"
+                      data-toggle="modal"
+                    >
+                      <span>Add to cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Menu Item end-->
+            <!-- Menu Item start-->
+            <div class="col-lg-2">
+              <div class="menu-item menu-grid-item">
+                <img
+                  class="mb-2"
+                  src="https://via.placeholder.com/400x300.png?text=placeholder2"
+                  alt=""
+                />
+                <div class="shop-info mx-1 text-truncate">
+                  <h6 class="mb-0 text-truncate">Three Shelled Fresh Shrimps Noodles</h6>
+                  <a class="menu-shop-name" href="#"
+                    ><span class="">Lee's Noodle Restaurant</span>
+                  </a>
+                  <div class="rating-favorites">
+                    <div class="rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="far fa-heart"></i></button>
+                  </div>
+                </div>
+
+                <div
+                  class="row justify-content-around align-items-center mt-2"
+                >
+                  <div>
+                    <span class="text-md"
+                      ><span class="text-muted">from</span> $100.00</span
+                    >
+                  </div>
+                  <div class="text-sm-right mt-2 mt-sm-0">
+                    <button
+                      class="btn btn-outline-secondary btn-sm"
+                      data-target="#productModal"
+                      data-toggle="modal"
+                    >
+                      <span>Add to cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Menu Item end-->
+            <!-- Menu Item start-->
+            <div class="col-lg-2">
+              <div class="menu-item menu-grid-item">
+                <img
+                  class="mb-2"
+                  src="https://via.placeholder.com/400x300.png?text=placeholder3"
+                  alt=""
+                />
+                <div class="shop-info mx-1 text-truncate">
+                  <h6 class="mb-0 text-truncate">Wonton Noodles</h6>
+                  <a class="menu-shop-name" href="#"
+                    ><span class="">Ming's Family Noodle Restaurant</span>
+                  </a>
+                  <div class="rating-favorites">
+                    <div class="rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="far fa-heart"></i></button>
+                  </div>
+                </div>
+
+                <div
+                  class="row justify-content-around align-items-center mt-2"
+                >
+                  <div>
+                    <span class="text-md"
+                      ><span class="text-muted">from</span> $13.00</span
+                    >
+                  </div>
+                  <div class="text-sm-right mt-2 mt-sm-0">
+                    <button
+                      class="btn btn-outline-secondary btn-sm"
+                      data-target="#productModal"
+                      data-toggle="modal"
+                    >
+                      <span>Add to cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Menu Item end-->
+            <!-- Menu Item start-->
+            <div class="col-lg-2">
+              <div class="menu-item menu-grid-item">
+                <img
+                  class="mb-2"
+                  src="https://via.placeholder.com/400x300.png?text=placeholder4"
+                  alt=""
+                />
+                <div class="shop-info mx-1 text-truncate">
+                  <h6 class="mb-0 text-truncate">Minced Pork Handmake Noodles</h6>
+                  <a class="menu-shop-name" href="#"
+                    ><span class="">Ming's Family Noodle Restaurant</span>
+                  </a>
+                  <div class="rating-favorites">
+                    <div class="rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="far fa-heart"></i></button>
+                  </div>
+                </div>
+
+                <div
+                  class="row justify-content-around align-items-center mt-2"
+                >
+                  <div>
+                    <span class="text-md"
+                      ><span class="text-muted">from</span> $20.00</span
+                    >
+                  </div>
+                  <div class="text-sm-right mt-2 mt-sm-0">
+                    <button
+                      class="btn btn-outline-secondary btn-sm"
+                      data-target="#productModal"
+                      data-toggle="modal"
+                    >
+                      <span>Add to cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Menu Item end-->
+            <!-- Menu Item start-->
+            <div class="col-lg-2">
+              <div class="menu-item menu-grid-item">
+                <img
+                  class="mb-2"
+                  src="https://via.placeholder.com/400x300.png?text=placeholder5"
+                  alt=""
+                />
+                <div class="shop-info mx-1 text-truncate">
+                  <h6 class="mb-0 text-truncate">Scallion Oil Noodles</h6>
+                  <a class="menu-shop-name" href="#"
+                    ><span class="">Ming's Family Noodle Restaurant</span>
+                  </a>
+                  <div class="rating-favorites">
+                    <div class="rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="far fa-heart"></i></button>
+                  </div>
+                </div>
+
+                <div
+                  class="row justify-content-around align-items-center mt-2"
+                >
+                  <div>
+                    <span class="text-md"
+                      ><span class="text-muted">from</span> $8.00</span
+                    >
+                  </div>
+                  <div class="text-sm-right mt-2 mt-sm-0">
+                    <button
+                      class="btn btn-outline-secondary btn-sm"
+                      data-target="#productModal"
+                      data-toggle="modal"
+                    >
+                      <span>Add to cart</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Menu Item end-->
+            </div>
+            <!--recommendation content end-->
+          </div>
+          <!--recommendation end-->
+        </div>
+      </main>
+      <!--Content End-->
+
+      <!--Footer-->
+      <footer id="footer" class="bg-dark dark">
+        <div class="container">
+          <div class="footer-first-row row align-items-center">
+            <div class="col-lg-3 text-center">
+              <a href="index.html"
+                ><img
+                  src="../assets/pics/logos/logo_ver2_footer.png"
+                  alt="Chinese Noodles Master Footer Logo"
+                  width="145"
+                  class="mt-5 mb-5"
+              /></a>
+            </div>
+            <div class="col-lg-6 align-items-center">
+              <h5 class="text-muted text-center">Subscribe Us!</h5>
+              <!-- MailChimp Form -->
+              <form
+                action="#"
+                id="sign-up-form"
+                class="sign-up-form validate-form mb-5"
+                method="POST"
+              >
+                <div class="input-group">
+                  <input
+                    name="EMAIL"
+                    type="text"
+                    id="mce-EMAIL"
+                    class="form-control subscribe-input"
+                    placeholder="Recipient's username"
+                    aria-label="Enter your E-mail..."
+                    aria-describedby="Enter your email"
+                    required
+                  />
+                  <div class="input-group-append">
+                    <button class="btn btn-primary btn-submit" type="submit">
+                      <span>Subscribe</span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-lg-3 text-center">
+              <h5 class="text-muted mb-3">Social Media</h5>
+              <a
+                href="#"
+                class="icon icon-social icon-circle icon-sm icon-facebook dark-icon mx-2"
+                ><i class="fab fa-facebook-square"></i
+              ></a>
+              <a
+                href="#"
+                class="icon icon-social icon-circle icon-sm icon-google mx-2"
+                ><i class="fab fa-google-plus-g"></i
+              ></a>
+              <a
+                href="#"
+                class="icon icon-social icon-circle icon-sm icon-twitter mx-2"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a
+                href="#"
+                class="icon icon-social icon-circle icon-sm icon-youtube mx-2"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a
+                href="#"
+                class="icon icon-social icon-circle icon-sm icon-instagram mx-2"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Footer 2nd Row -->
+          <div class="footer-second-row row">
+            <span class="text-muted col-lg-3 mb-5 mb-lg-1"
+              >Copyright Chinese Noodles Master 2020©. Made by
+              Diamondcn923.</span
+            >
+            <nav class="footer__nav col-lg-9 col-12">
+              <ul class="float-left">
+                <li>
+                  <a href="#">About Us</a>
+                </li>
+                <li class="contact-link"><a href="#">Help Center</a></li>
+                <li>
+                  <a href="#">Terms and conditions</a>
+                </li>
+                <li>
+                  <a href="#">Privacy policy</a>
+                </li>
+                <li>
+                  <a href="#">Partner with us</a>
+                </li>
+                <li>
+                  <a href="#">How Chinese Noodles Master works</a>
+                </li>
+                <li>
+                  <a href="#">About Cashback Program</a>
+                </li>
+                <li>
+                  <a href="#">Download Chinese Noodles Master App</a>
+                </li>
+                <li>
+                  <a href="#">Jobs</a>
+                </li>
+
+                <li>
+                  <a href="#">Press</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </footer>
+      <!--Footer End-->
+    </div>
+
+    <!--Product Modal Start-->
+    <div class="modal" id="productModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <img
+              class="mb-4"
+              src="https://via.placeholder.com/1200x800.png?text=Product-Picture-Here"
+              alt=""
+            />
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body">
+            <div class="food-info-first">
+              <h6 class="food-title">Lanzhou Beef Noodles</h6>
+              <div class="food-dots">
+                <hr />
+              </div>
+              <span class="modal-product-price">$19.00</span>
+            </div>
+            <div class="food-info-second border-bottom">
+              <div class="pungency">
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+                <i class="fas fa-pepper-hot"></i>
+              </div>
+
+              <div class="rating text-left">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+                <i class="far fa-star"></i>
+              </div>
+            </div>
+
+            <div class="product-detail mt-3">
+              <h6 class="ing-title">Main Ingredients:</h6>
+              <div class="ing-details">
+                High gluten flour, chili, beef, flour, spicy oil flour, radish,
+                garlic, cilantro, broth, plus canapés.
+              </div>
+            </div>
+          </div>
+          <div class="modal-filter">
+            <ul class="list-group">
+              <li class="list-group-item">
+                <span class="filter-pungency">Pungency:</span>
+                <div class="filter-pungency-items filter-items-details">
+                  <label for="no-spicy"
+                    ><input
+                      type="radio"
+                      name="pungency"
+                      id="no-spicy"
+                      value="0"
+                      checked
+                    /><i></i>no spicy</label
+                  >
+                  <label for="mild"
+                    ><input
+                      type="radio"
+                      name="pungency"
+                      id="mild"
+                      value="1"
+                    /><i></i>mild</label
+                  >
+                  <label for="spicy"
+                    ><input
+                      type="radio"
+                      name="pungency"
+                      id="spicy"
+                      value="2"
+                    /><i></i>spicy</label
+                  >
+                  <label for="hot"
+                    ><input
+                      type="radio"
+                      name="pungency"
+                      id="hot"
+                      value="3"
+                    /><i></i>hot</label
+                  >
+                </div>
+              </li>
+              <li class="list-group-item">
+                <span class="filter-size">Size:</span>
+                <div class="filter-size-items filter-items-details">
+                  <label for="Small"
+                    ><input
+                      type="radio"
+                      name="filter-size"
+                      id="Small"
+                      value="0"
+                      checked
+                    /><i></i>Small</label
+                  >
+                  <label for="Medium"
+                    ><input
+                      type="radio"
+                      name="filter-size"
+                      id="Medium"
+                      value="1"
+                    /><i></i>Medium</label
+                  >
+                  <label for="Large"
+                    ><input
+                      type="radio"
+                      name="filter-size"
+                      id="Large"
+                      value="2"
+                    /><i></i>Large</label
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <div class="modal-qty-btn-container">
+              <input type="number" value="1" min="1" max="99" step="1" />
+            </div>
+            <button
+              type="submit"
+              class="btn btn-light order-confirm-btn"
+              data-dismiss="modal"
+            >
+              Confirm Order
+            </button>
+            <button
+              type="button"
+              class="btn btn-light close-btn"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Product Modal End-->
+
+    <!--Map Modal Start-->
+    <div class="modal fade" id="vendorMap">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <!-- Modal Header -->
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+          </div>
+
+          <!-- Modal body -->
+          <div class="modal-body vendor-map">
+            <iframe
+              width="750"
+              height="350"
+              id="gmap_canvas"
+              src="https://maps.google.com/maps?q=%E5%B9%BF%E4%B8%9C%E7%9C%81%20%E5%B9%BF%E5%B7%9E%E5%B8%82%20%E5%85%89%E6%98%8E%E5%8C%97%E8%B7%AF42%E5%8F%B7&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              frameborder="0"
+              scrolling="no"
+              marginheight="0"
+              marginwidth="0"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--Map Modal End-->
+    
+    <!--User Login Modal Start-->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModal" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header border-bottom-0">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-title text-center">
+              <h4>Login</h4>
+            </div>
+            <div class="d-flex flex-column text-center">
+              <form>
+                <div class="form-group">
+                  <input type="email" class="form-control" id="email1"placeholder="Your email address...">
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" id="password1" placeholder="Your password...">
+                </div>
+                <button type="button" class="btn btn-info btn-block rounded"><span>Login</span></button>
+              </form>
+              
+              <div class="text-center text-muted p-3">or use a social network</div>
+              <div class="d-flex justify-content-center social-buttons">
+                <button type="button" class="btn twitter-btn" data-toggle="tooltip" data-placement="top" title="Twitter">
+                  <i class="fab fa-twitter"></i>
+                </button>
+                <button type="button" class="btn facebook-btn" data-toggle="tooltip" data-placement="top" title="Facebook">
+                  <i class="fab fa-facebook"></i>
+                </button>
+                <button type="button" class="btn instagram-btn" data-toggle="tooltip" data-placement="top" title="Instagram">
+                  <i class="fab fa-instagram"></i>
+                </button>
+                <button type="button" class="btn google-btn" data-toggle="tooltip" data-placement="top" title="Google">
+                  <i class="fab fa-google"></i>
+                </button>
+              </di>
+            </div>
+          </div>
+        </div>
+          <div class="modal-footer d-flex justify-content-center">
+            <div class="signup-section p-3">Not a member yet? <a href="#a" class="text-info"> Sign Up</a>.</div>
+          </div>
+      </div>
+    </div>
+    </div>
+    <!--User Login Modal End-->
+
+    <!-- JS Plugins -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <script src="../assets/plugin/bootstrap-input-spinner.js"></script>
+    <!--cuisine nav menu control start-->
+    <script>
+      const element = document.querySelector("#vendor-navigation");
+      function myFunction(bp) {
+        if (bp.matches) {
+          // If media query matches
+          element.classList.add("show");
+        } else {
+          element.classList.remove("show");
+        }
+      }
+      const bigScreenBP = window.matchMedia("(min-width: 576px)");
+      myFunction(bigScreenBP);
+      bigScreenBP.addListener(myFunction);
+    </script>
+    <!--cuisine nav menu control end-->
+
+    <!--back to top button-->
+    <script>
+      const backTopBtn = document.getElementById("backTopBtn");
+
+      const scrollFunc = () => {
+        // Get the current scroll value
+        let y = window.scrollY;
+
+        // If the scroll value is greater than the window height,
+        //change the button class from hidden to show
+        if (y > 20) {
+          backTopBtn.className = "return-to-top show";
+        } else {
+          backTopBtn.className = "return-to-top hidden";
+        }
+      };
+
+      window.addEventListener("scroll", scrollFunc);
+
+      const scrollBackTop = () => {
+        //scroll down pixels from top
+        const distance =
+          document.documentElement.scrollTop || document.body.scrollTop;
+
+        if (distance > 0) {
+          window.requestAnimationFrame(scrollBackTop);
+          window.scrollTo(0, distance - distance / 10);
+        }
+      };
+
+      backTopBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        scrollBackTop();
+      });
+
+      function smoothJump(ele) {
+        document.querySelector(ele).scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+
+      const btn = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".top-nav");
+
+      btn.addEventListener("click", menuOnClickHandler);
+      menu.addEventListener("click", menuOnClickHandler);
+
+      function menuOnClickHandler() {
+        const bodyt = document.querySelector("body");
+        bodyt.classList.toggle("open");
+      }
+    </script>
+
+    <!--food quantity input control-->
+    <script>
+      $("input[type='number']").inputSpinner();
+    </script>
+  </body>
+</html>

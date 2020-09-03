@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>User Profile</title>
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="height=device-height, 
+        width=device-width, initial-scale=1.0, 
+        minimum-scale=1.0, maximum-scale=1.0, 
+        user-scalable=no, target-densitydpi=device-dpi"
+    />
+    <!--css plugin-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <!--css icons-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="../assets/CSS_Icons/themify-icons/themify-icons.css"
+    />
+    <!--css theme-->
+    <link rel="stylesheet" href="../CSS/user_profile.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <!--container start-->
+    <div class="container">
+      <div class="d-flex">
+        <div class="mt-4 mr-3"><a href="./landingPage.html" class="btn btn-info" data-abc="true">
+          <i class="fa fa-chevron-left mr-2"></i>Back</a
+        ></div>
+        
+        <!--user-name start-->
+        <div id="user-0001" class="user-name my-3">
+          <h1>John Dow</h1>
+        </div>
+        <!--user-name end-->
+      </div>
+      <!--content container start-->
+      <div class="content-container row">
+        <!--left content col start-->
+        <div class="left-content col-sm-3">
+        <div class="avatar-containter text-center">
+          <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar rounded-circle img-thumbnail mb-2" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          <input type="file" class="text-center center-block file-upload">
+        </div></hr><br>
+
+            <div class="card most-visited" style="max-width: 16rem;">
+              <div class="card-header">
+                Most Visited Restaurants
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-primary restaurant-name"><a href="#">See You Again Noodles</a></li>
+                <li class="list-group-item text-primary restaurant-name"><a href="#">Wu Han Hot Noodles</a></li>
+                <li class="list-group-item text-primary restaurant-name"><a href="#">Dow's Noodles House</a></li>
+                <li class="list-group-item text-primary restaurant-name"><a href="#">He Big Family Noodles House</a></li>
+              </ul>
+            </div>
+            
+            <div class="card most-ordered my-3" style="max-width: 16rem;">
+              <div class="card-header">
+                Most Frequently Ordered
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item text-primary restaurant-name"><a href="#">Luo Si Rice Noodels</a></li>
+                <li class="list-group-item text-primary restaurant-name"><a href="#">Wu Han Hot Noodles</a></li>
+                <li class="list-group-item text-primary restaurant-name"><a href="#">Wentun Noodles</a></li>
+                <li class="list-group-item text-primary restaurant-name"><a href="#">Beef Noodles</a></li>
+              </ul>
+            </div>
+
+          </div>
+          <!--left content col end-->
+          <!--right content col start-->
+        <div class="col-sm-9 right-content">
+          <ul id="profile-tabs" class="nav nav-tabs">
+            <li class="nav-item">
+              <a  id='profile-tab' class="nav-link active" href="#user_profile" data-toggle="tab" role="tab" aria-controls="profile-tab" aria-selected="true">My Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#address-mrg" data-toggle="tab" role="tab" aria-controls="Address-Management" aria-selected="false">Addresses Lists</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#myFavorite" data-toggle="tab" role="tab" aria-controls="my-favorite" aria-selected="false">My Favorite</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#orders" data-toggle="tab" role="tab" aria-controls="my orders" aria-selected="false">My Orders</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#activities" data-toggle="tab" role="tab" aria-controls="activities" aria-selected="false">Activities</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#edit_profile" data-toggle="tab" role="tab" aria-controls="editProfile" aria-selected="false">Edit Profile</a>
+            </li>
+          </ul>
+  
+              <!--tab content start-->  
+            <div class="tab-content" >
+              <!--profile tab start-->
+              <div class="user-profile tab-pane fade show active mt-3 px-3" id="user_profile" role="tabpanel" aria-labelledby="user-proflie-tab">
+                  <div class="row border-bottom pt-2">
+                    <div class="col-md-3">
+                        <label>User Name:</label>
+                    </div>
+                    <div class="col-md-9">
+                        <p>AKB48</p>
+                    </div>
+                  </div>
+  
+                <div class="row border-bottom">
+                  <div class="col-md-3">
+                      <label>First Name:</label>
+                  </div>
+                  <div class="col-md-9 pt-2">
+                      <p>John</p>
+                  </div>
+              </div>
+                
+                
+              <div class="row border-bottom">
+                <div class="col-md-3">
+                    <label>Last Name:</label>
+                </div>
+                <div class="col-md-9 pt-2">
+                    <p>Dow</p>
+                </div>
+            </div>
+            <div class="row border-bottom">
+              <div class="col-md-3">
+                  <label>Phone Number:</label>
+              </div>
+              <div class="col-md-9 pt-2">
+                  <p>1872-4582560</p>
+              </div>
+          </div>
+          <div class="row border-bottom">
+            <div class="col-md-3">
+                <label>Email:</label>
+            </div>
+            <div class="col-md-9 pt-2">
+                <p>JohnDow545047@gmail.com</p>
+            </div>
+          </div>
+          <div class="row border-bottom">
+            <div class="col-md-3">
+                <label>Address:</label>
+            </div>
+            <div class="col-md-9 pt-2">
+                <p>A12008, Granville Building, 12-16 Granville Rd, Tsim Sha Tsui, Hong Kong</p>
+            </div>
+          </div>
+              </div>
+               <!--profile tab end-->
+
+               <!--Address tab start-->
+          <div  class="tab-pane mt-3 px-3" id="address-mrg" role="tabpanel" aria-labelledby="address-tab">
+            <!--default address start-->
+            <div class="card">
+              <div class="card-header bg-primary text-white">
+                Default Address
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Receiver: <span class="receiver-name">Jonh Dow</span></h5>
+                <p class="card-text">A12008, Granville Building, 12-16 Granville Rd, Tsim Sha Tsui, Hong Kong</p>
+                <p class="card-text">Phone Number: <span class="adrs-phone-num">125-24857867</span></p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add-addrs-modal">Edit</a>
+              </div>
+            </div>
+             <!--default address end-->
+               <!--address one start-->
+            <div class="card mt-3">
+              <div class="card-header bg-light">
+                 Office
+              </div>
+              <div class="card-body">
+                <h5 class="card-title">Receiver: <span class="receiver-name">Jonh Dow</span></h5>
+                <p class="card-text">Kowloon Park Drive, Tsim Sha Tsui, Hong Kong</p>
+                <p class="card-text">Phone Number: <span class="adrs-phone-num">125-24851254</span></p>
+                <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#add-addrs-modal">Edit</a>
+                <button class="btn btn-info">Set as Default</button>
+              </div>
+            </div>
+             <!-- address one end-->
+
+              <!--add address start-->
+            <div class="card mt-3">
+              <a href="#" class="add-addrs-icon row" data-toggle="modal" data-target="#add-addrs-modal"><i class="fas fa-plus mx-3"></i><h2 class="mt-1 text-info">Add New Address</h2></a>
+            </div>
+             <!--add address end-->
+          </div>
+               <!--Address tab end-->
+
+            <!--Favorite tab start-->
+            <div class="tab-pane mt-3 px-3" id="myFavorite" role="tabpanel" aria-labelledby="myFavorite-tab">
+              <!--search bar start-->
+              <div class="favorites-search-bar mx-auto">
+                <button class="search-input-btn">
+                  <i class="fas fa-search"></i>
+                </button>
+                <input type="text" class="search-input-area" placeholder="Search">
+              </div>
+              <!--search bar end-->
+
+              <!--favorites container start-->
+              <div class="favorite-items-container mt-3 row">
+                <div class="col-lg-3">
+                  <!-- Menu Item -->
+                  <div class="menu-item menu-grid-item text-truncate">
+                    <img
+                      class="mb-2"
+                      src="https://via.placeholder.com/400x300.png?text=placeholder1"
+                      alt=""
+                    />
+                    <h6 class="mb-0">Lanzhou Beef Noodles</h6>
+                    <a class="menu-shop-name" href="#"
+                      >Family Taste Noodle Restaurant</a
+                    >
+                    <div class="rating-favorites">
+                      <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="fas fa-heart"></i></button>
+                    </div>
+                  
+                    <div
+                      class="row justify-content-around align-items-center flex-nowrap mt-3"
+                    >
+                      <div class="col-auto pr-1">
+                        <span class="text-md price"
+                          >$9.00</span
+                        >
+                      </div>
+                      <div class="text-sm-right mt-2 mt-sm-0 col-auto pl-1">
+                        <button
+                          class="btn btn-outline-secondary btn-sm"
+                          data-target="#productModal"
+                          data-toggle="modal"
+                        >
+                          <span>Add to cart</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <!-- Menu Item -->
+                  <div class="menu-item menu-grid-item">
+                    <img
+                      class="mb-2"
+                      src="https://via.placeholder.com/400x300.png?text=placeholder2"
+                      alt=""
+                    />
+                    <h6 class="menu-item-title mb-0">
+                      Chongqing Noodles with sirloin
+                    </h6>
+                    <a class="menu-shop-name" href="#">Ming's Noodle House</a>
+                    <div class="rating-favorites">
+                      <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div
+                      class="row justify-content-around align-items-center flex-nowrap mt-3"
+                    >
+                      <div class="col-auto pr-1">
+                        <span class="text-md price"
+                          >$15.00</span
+                        >
+                      </div>
+                      <div class="text-sm-right mt-2 mt-sm-0 col-auto pl-1">
+                        <button
+                          class="btn btn-outline-secondary btn-sm"
+                          data-target="#productModal"
+                          data-toggle="modal"
+                        >
+                          <span>Add to cart</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <!-- Menu Item -->
+                  <div class="menu-item menu-grid-item">
+                    <img
+                      class="mb-2"
+                      src="https://via.placeholder.com/400x300.png?text=placeholder3"
+                      alt=""
+                    />
+                    <h6 class="menu-item-title mb-0">Hot Dry Noodles</h6>
+                    <a class="menu-shop-name" href="#">Wuhan Noodle House</a>
+                    <div class="rating-favorites">
+                      <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div
+                      class="row justify-content-around align-items-center flex-nowrap mt-3"
+                    >
+                      <div class="col-auto pr-1">
+                        <span class="text-md price"
+                          >$5.20</span
+                        >
+                      </div>
+                      <div class="text-sm-right mt-2 mt-sm-0 col-auto pl-1">
+                        <button
+                          class="btn btn-outline-secondary btn-sm"
+                          data-target="#productModal"
+                          data-toggle="modal"
+                        >
+                          <span>Add to cart</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <!-- Menu Item -->
+                  <div class="menu-item menu-grid-item">
+                    <img
+                      class="mb-2"
+                      src="https://via.placeholder.com/400x300.png?text=placeholder4"
+                      alt=""
+                    />
+                    <h6 class="menu-item-title mb-0">Chaoshan Dry Noodles</h6>
+                    <a class="menu-shop-name" href="#">Dong's Home Restaurant</a>
+                    <div class="rating-favorites">
+                      <div class="rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half"></i>
+                        <i class="far fa-star"></i>
+                      </div>
+                      <button class="add-to-favorite-icon" data-toggle="tooltip" data-placement="bottom" title="Add to Favorite"><i class="fas fa-heart"></i></button>
+                    </div>
+                    <div
+                      class="row justify-content-around align-items-center flex-nowrap mt-3"
+                    >
+                      <div class="col-auto pr-1">
+                        <span class="text-md price"
+                          >$8.50</span
+                        >
+                      </div>
+                      <div class="text-sm-right mt-2 mt-sm-0 col-auto pl-1">
+                        <button
+                          class="btn btn-outline-secondary btn-sm"
+                          data-target="#productModal"
+                          data-toggle="modal"
+                        >
+                          <span>Add to cart</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <!-- Menu Item -->
+                  <div class="menu-item menu-grid-item">
+                    <img
+                      class="mb-4"
+                      src="https://via.placeholder.com/400x300.png?text=placeholder5"
+                      alt=""
+                    />
+                    <h6 class="menu-item-title mb-0">
+                      Stewed Noodles with Mutton
+                    </h6>
+                    <a class="menu-shop-name" href="#">Laochen's Restaurant</a>
+                    <div class="rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div
+                      class="row justify-content-around align-items-center mt-4"
+                    >
+                      <div>
+                        <span class="text-md mr-4"
+                          ><span class="text-muted">from</span> $12.50</span
+                        >
+                      </div>
+                      <div class="text-sm-right mt-2 mt-sm-0">
+                        <button
+                          class="btn btn-outline-secondary btn-sm"
+                          data-target="#productModal"
+                          data-toggle="modal"
+                        >
+                          <span>Add to cart</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <!-- Menu Item -->
+                  <div class="menu-item menu-grid-item">
+                    <img
+                      class="mb-4"
+                      src="https://via.placeholder.com/400x300.png?text=placeholder6"
+                      alt=""
+                    />
+                    <h6 class="menu-item-title mb-0">
+                      Noodles with Soybean Paste
+                    </h6>
+                    <a class="menu-shop-name" href="#">Meet You Restaurant</a>
+                    <div class="rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div
+                      class="row justify-content-around align-items-center mt-4"
+                    >
+                      <div>
+                        <span class="text-md mr-4"
+                          ><span class="text-muted">from</span> $10.50</span
+                        >
+                      </div>
+                      <div class="text-sm-right mt-2 mt-sm-0">
+                        <button
+                          class="btn btn-outline-secondary btn-sm"
+                          data-target="#productModal"
+                          data-toggle="modal"
+                        >
+                          <span>Add to cart</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col-lg-3">
+                  <!-- Menu Item -->
+                  <div class="menu-item menu-grid-item">
+                    <img
+                      class="mb-4"
+                      src="https://via.placeholder.com/400x300.png?text=placeholder7"
+                      alt=""
+                    />
+                    <h6 class="menu-item-title mb-0">Wonton Noodles</h6>
+                    <a class="menu-shop-name" href="#">Yue Restaurant</a>
+                    <div class="rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div
+                      class="row justify-content-around align-items-center mt-4"
+                    >
+                      <div>
+                        <span class="text-md mr-4"
+                          ><span class="text-muted">from</span> $15.50</span
+                        >
+                      </div>
+                      <div class="text-sm-right mt-2 mt-sm-0">
+                        <button
+                          class="btn btn-outline-secondary btn-sm"
+                          data-target="#productModal"
+                          data-toggle="modal"
+                        >
+                          <span>Add to cart</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col-lg-3">
+                  <!-- Menu Item -->
+                  <div class="menu-item menu-grid-item">
+                    <img
+                      class="mb-4"
+                      src="https://via.placeholder.com/400x300.png?text=placeholder8"
+                      alt=""
+                    />
+                    <h6 class="menu-item-title mb-0">Sichuan Cold Noodles</h6>
+                    <a class="menu-shop-name" href="#"
+                      >Sichuan Noodle Restaurant</a
+                    >
+                    <div class="rating-stars">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half"></i>
+                      <i class="far fa-star"></i>
+                    </div>
+                    <div
+                      class="row justify-content-around align-items-center mt-4"
+                    >
+                      <div>
+                        <span class="text-md mr-4"
+                          ><span class="text-muted">from</span> $12.50</span
+                        >
+                      </div>
+                      <div class="text-sm-right mt-2 mt-sm-0">
+                        <button
+                          class="btn btn-outline-secondary btn-sm"
+                          data-target="#productModal"
+                          data-toggle="modal"
+                        >
+                          <span>Add to cart</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--favorites container end-->
+            </div>
+            <!--Favorite tab end-->
+
+            <!--My Orders List start-->
+              <div class="tab-pane my-3 px-3" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                <header>
+                  <h4>My Orders</h4>
+                </header>
+                
+                  <form action="#" class="order-filters">
+                    <div class="form-row">
+                      <div class="form-group col-md-4">
+                        <select id="filterRecentOrders" class="form-control">
+                          <option selected>Orders in Rencent Week</option>
+                          <option>Orders in Rencent Month</option>
+                          <option>Orders in Last 6 Months</option>
+                          <option>Orders in Last 12 Months</option>
+                          <option>All</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-4">
+                        <select id="filterStatus" class="form-control">
+                          <option selected>Waiting for Payment</option>
+                          <option>Ready for pickup</option>
+                          <option>On the way</option>
+                          <option>Completed</option>
+                        </select>
+                      </div>
+                      <div class="col-md-4 d-flex orders-search-container form-control">
+                        <button class="search-input-btn">
+                          <i class="fas fa-search"></i>
+                        </button>
+                        <input
+                          type="text"
+                          class="orders-search"
+                          placeholder="Search in Your Orders"
+                        />
+                      </div>
+                    </div>
+                  </form>
+                
+                  <!--order card start-->
+                  <div class="card mt-3">
+                    <div class="card-header bg-light d-flex ">
+                      <div class="order-date col-md-4 mb-2">Order Date:<br> <span class="order-date-value">24/Mar/2020</span></div>
+                      <div class="order-num col-md-4 mb-2">Order Number:<br> <span class="order-num-value">ADW185788551</span></div>
+                      <div class="order-vendor col-md-4 mb-2">Vendor: <br><span class="order-vendor-value">See You Again Noodles</span></div>
+                    </div>
+                    <div class="card-header bg-light d-flex ">
+                      <div class="order-sum col-md-4 mb-2">Order Sum: <br><span class="order-sum-value">$45</span></div>
+                      <div class="order-pay col-md-4 mb-2">Payment Method:<br> <span class="order-pay-value">Master Card</span></div>
+                      <div class="order-status col-md-4 mb-2">Status: <br><span class="order-status-value">Picked by Courier</span></div>
+                    </div>
+                    <div class="card-body row">
+
+                      <ul class="col-8 mb-3">
+                        <li
+                          class="product-header  d-flex justify-content-between lh-condensed mb-2"
+                        >
+                          <h6 class="col-8">Items</h6>
+                          <span class="col-2 text-center">Qty</span>
+                          <span class="col-2">Total</span>
+                        </li>
+                        <li
+                          class=" d-flex justify-content-between lh-condensed mb-2"
+                        >
+                          <div class="item-detail col-8 px-0">
+                            <p class="my-0 item-name">Spicy Chicken Noodles</p>
+                          </div>
+                          <span class="item-qty col-2 text-center">1</span>
+                          <span class="text-muted item-cost col-2">$10.00</span>
+                        </li>
+                        <li
+                          class=" d-flex justify-content-between lh-condensed mb-2"
+                        >
+                          <div class="item-detail col-8 px-0">
+                            <p class="my-0 item-name">Chong Qing Small Noodles</p>
+                          </div>
+                          <span class="item-qty col-2 text-center">1</span>
+                          <span class="text-muted item-cost col-2">$15.00</span>
+                        </li>
+                        <li
+                          class=" d-flex justify-content-between lh-condensed"
+                        >
+                          <div class="item-detail col-8 px-0">
+                            <p class="my-0 item-name">Beef Noodles</p>
+                          </div>
+                          <span class="item-qty col-2 text-center">1</span>
+                          <span class="text-muted item-cost col-2">$20.00</span>
+                        </li>
+                      </ul>
+                      <div class="col-4 order-shipTo border-left">
+                        Ship to: <br>
+                        <div class="order-adrs">
+                          <h5 class="card-title">
+                            Receiver: <span class="receiver-name">Jonh Dow</span>
+                          </h5>
+                          <p class="card-text">
+                            A12008, Granville Building, 12-16 Granville Rd, Tsim Sha
+                            Tsui, Hong Kong
+                          </p>
+                          <p class="card-text">
+                            Phone Number:
+                            <span class="adrs-phone-num">125-24857867</span>
+                          </p>
+                          <a
+                            href="./orderDetails.html"
+                            class="btn btn-primary"
+                            >Order Details</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--order card end-->
+
+                  <!--order card start-->
+                  <div class="card mt-3">
+                    <div class="card-header bg-light d-flex ">
+                      <div class="order-date col-md-4 mb-2">Order Date:<br> <span class="order-date-value">24/Mar/2020</span></div>
+                      <div class="order-num col-md-4 mb-2">Order Number:<br> <span class="order-num-value">ADW185788551</span></div>
+                      <div class="order-vendor col-md-4 mb-2">Vendor: <br><span class="order-vendor-value">See You Again Noodles</span></div>
+                    </div>
+                    <div class="card-header bg-light d-flex ">
+                      <div class="order-sum col-md-4 mb-2">Order Sum: <br><span class="order-sum-value">$45</span></div>
+                      <div class="order-pay col-md-4 mb-2">Payment Method:<br> <span class="order-pay-value">Master Card</span></div>
+                      <div class="order-status col-md-4 mb-2">Status: <br><span class="order-status-value">Picked by Courier</span></div>
+                    </div>
+                    <div class="card-body row">
+
+                      <ul class="col-8 mb-3">
+                        <li
+                          class="product-header  d-flex justify-content-between lh-condensed mb-2"
+                        >
+                          <h6 class="col-8">Items</h6>
+                          <span class="col-2 text-center">Qty</span>
+                          <span class="col-2">Total</span>
+                        </li>
+                        <li
+                          class=" d-flex justify-content-between lh-condensed mb-2"
+                        >
+                          <div class="item-detail col-8 px-0">
+                            <p class="my-0 item-name">Spicy Chicken Noodles</p>
+                          </div>
+                          <span class="item-qty col-2 text-center">1</span>
+                          <span class="text-muted item-cost col-2">$10.00</span>
+                        </li>
+                        <li
+                          class=" d-flex justify-content-between lh-condensed mb-2"
+                        >
+                          <div class="item-detail col-8 px-0">
+                            <p class="my-0 item-name">Chong Qing Small Noodles</p>
+                          </div>
+                          <span class="item-qty col-2 text-center">1</span>
+                          <span class="text-muted item-cost col-2">$15.00</span>
+                        </li>
+                        <li
+                          class=" d-flex justify-content-between lh-condensed"
+                        >
+                          <div class="item-detail col-8 px-0">
+                            <p class="my-0 item-name">Beef Noodles</p>
+                          </div>
+                          <span class="item-qty col-2 text-center">1</span>
+                          <span class="text-muted item-cost col-2">$20.00</span>
+                        </li>
+                      </ul>
+                      <div class="col-4 order-shipTo border-left">
+                        Ship to: <br>
+                        <div class="order-adrs">
+                          <h5 class="card-title">
+                            Receiver: <span class="receiver-name">Jonh Dow</span>
+                          </h5>
+                          <p class="card-text">
+                            A12008, Granville Building, 12-16 Granville Rd, Tsim Sha
+                            Tsui, Hong Kong
+                          </p>
+                          <p class="card-text">
+                            Phone Number:
+                            <span class="adrs-phone-num">125-24857867</span>
+                          </p>
+                          <a
+                            href="./orderDetails.html"
+                            class="btn btn-primary"
+                            >Order Details</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--order card end-->
+
+                  <!--order card start-->
+                  <div class="card mt-3">
+                    <div class="card-header bg-light d-flex ">
+                      <div class="order-date col-md-4 mb-2">Order Date:<br> <span class="order-date-value">24/Mar/2020</span></div>
+                      <div class="order-num col-md-4 mb-2">Order Number:<br> <span class="order-num-value">ADW185788551</span></div>
+                      <div class="order-vendor col-md-4 mb-2">Vendor: <br><span class="order-vendor-value">See You Again Noodles</span></div>
+                    </div>
+                    <div class="card-header bg-light d-flex ">
+                      <div class="order-sum col-md-4 mb-2">Order Sum: <br><span class="order-sum-value">$45</span></div>
+                      <div class="order-pay col-md-4 mb-2">Payment Method:<br> <span class="order-pay-value">Master Card</span></div>
+                      <div class="order-status col-md-4 mb-2">Status: <br><span class="order-status-value">Picked by Courier</span></div>
+                    </div>
+                    <div class="card-body row">
+
+                      <ul class="col-8 mb-3">
+                        <li
+                          class="product-header  d-flex justify-content-between lh-condensed mb-2"
+                        >
+                          <h6 class="col-8">Items</h6>
+                          <span class="col-2 text-center">Qty</span>
+                          <span class="col-2">Total</span>
+                        </li>
+                        <li
+                          class=" d-flex justify-content-between lh-condensed mb-2"
+                        >
+                          <div class="item-detail col-8 px-0">
+                            <p class="my-0 item-name">Spicy Chicken Noodles</p>
+                          </div>
+                          <span class="item-qty col-2 text-center">1</span>
+                          <span class="text-muted item-cost col-2">$10.00</span>
+                        </li>
+                        <li
+                          class=" d-flex justify-content-between lh-condensed mb-2"
+                        >
+                          <div class="item-detail col-8 px-0">
+                            <p class="my-0 item-name">Chong Qing Small Noodles</p>
+                          </div>
+                          <span class="item-qty col-2 text-center">1</span>
+                          <span class="text-muted item-cost col-2">$15.00</span>
+                        </li>
+                        <li
+                          class=" d-flex justify-content-between lh-condensed"
+                        >
+                          <div class="item-detail col-8 px-0">
+                            <p class="my-0 item-name">Beef Noodles</p>
+                          </div>
+                          <span class="item-qty col-2 text-center">1</span>
+                          <span class="text-muted item-cost col-2">$20.00</span>
+                        </li>
+                      </ul>
+                      <div class="col-4 order-shipTo border-left">
+                        Ship to: <br>
+                        <div class="order-adrs">
+                          <h5 class="card-title">
+                            Receiver: <span class="receiver-name">Jonh Dow</span>
+                          </h5>
+                          <p class="card-text">
+                            A12008, Granville Building, 12-16 Granville Rd, Tsim Sha
+                            Tsui, Hong Kong
+                          </p>
+                          <p class="card-text">
+                            Phone Number:
+                            <span class="adrs-phone-num">125-24857867</span>
+                          </p>
+                          <a
+                            href="./orderDetails.html"
+                            class="btn btn-primary"
+                            >Order Details</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!--order card end-->
+              </div>
+            <!--My Orders List end-->
+
+            <!--Acitivites tab start-->
+          <div  class="tab-pane mt-3 px-3" id="activities" role="tabpanel" aria-labelledby="activities-tab">
+           
+               <!--activity one start-->
+            <div class="card mt-3">
+              <div class="card-header bg-light">
+                21/Mar/2020
+              </div>
+              <div class="card-body">
+                <p class="card-text"> You ordered <a href="#" class="order-name text-primary">Si Chuan Noodles</a> from <a href="#" class="vendor-name text-info">See You Again Restaurant</a>.</p>
+                <a href="#" class="card-text order-detail"  data-target="#order-detail-modal"
+                data-toggle="modal">Order Number:SKD747851745124</a>
+                <div class="review mt-2">
+                  <h5 class="card-text review-title">Your Review:</h5>
+                  <div class="rating-stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half"></i>
+                    <i class="far fa-star"></i>
+                  </div>
+                  <p class="card-text review-text">Happy. 4th time here. I live in Whampoa, so I came here to eat after work today. I am really craving for beef ramen. This is the best beef noodles I've ever had. One red, two white. You can choose the thickness of the noodles. The noodles are available in a variety of thicknesses, but my favorite is the gross, which is super flavorful and the noodles are al dente. The shredded seaweed is my favorite, and the cucumber is a bit on the bland side.</p>
+                </div>
+              </div>
+            </div>
+             <!-- activity one end-->
+
+             <!--activity two start-->
+            <div class="card mt-3">
+              <div class="card-header bg-light">
+                21/Mar/2020
+              </div>
+              <div class="card-body">
+                <p class="card-text"> You ordered <a href="#" class="order-name text-primary">Si Chuan Noodles</a> from <a href="#" class="vendor-name text-info">See You Again Restaurant</a>.</p>
+                <a href="#" class="card-text order-detail"  data-target="#order-detail-modal"
+                data-toggle="modal" >Order Number:SKD747851745124</a>
+                <div class="review mt-2">
+                  <a href="#" class="card-text write-review"  data-target="#add-review-modal"
+                  data-toggle="modal">Hasn't Write A Review Yet? Write It Now!</a>
+              </div>
+            </div>
+            </div>
+             <!-- activity two end-->
+          </div>
+               <!--Acitivites tab end-->
+
+                <!--Edit tab start-->
+              <div class="tab-pane mt-3 px-3" id="edit_profile" role="tabpanel" aria-labelledby="edit-proflie-tab">
+                    <form class="form" action="##" method="post" id="editProfileForm">
+                      <div class="form-group">
+                        <div class="col-xs-6">
+                           <label for="user_name"><h4>Username</h4></label>
+                            <input type="text" class="form-control" name="user_name" id="user_name" placeholder="enter username" title="enter your username if any.">
+                        </div>
+                    </div>
+                        <div class="form-group">
+                            
+                            <div class="col-xs-6">
+                                <label for="first_name"><h4>First name</h4></label>
+                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            
+                            <div class="col-xs-6">
+                              <label for="last_name"><h4>Last name</h4></label>
+                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            
+                            <div class="col-xs-6">
+                                <label for="phone"><h4>Phone</h4></label>
+                                <input type="tel" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
+                            </div>
+                        </div>
+            
+                        <div class="form-group">
+                            
+                            <div class="col-xs-6">
+                                <label for="email"><h4>Email</h4></label>
+                                <input type="email" class="form-control" name="email" id="email" placeholder="your@email.com" title="enter your email.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            
+                            <div class="col-xs-6">
+                                <label for="password"><h4>Password</h4></label>
+                                <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            
+                            <div class="col-xs-6">
+                              <label for="password2"><h4>Verify</h4></label>
+                                <input type="password" class="form-control" name="password2" id="password2" placeholder="repeat your password" title="enter your password2.">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                             <div class="col-xs-12">
+                                  <br>
+                                  <button class="btn btn-lg btn-primary" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
+                                   <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                              </div>
+                        </div>
+                  </form>
+                
+                <hr>
+                
+               </div>
+               <!--Edit tab end-->
+              </div>
+                 <!--tab content end--> 
+            </div>
+            <!--right content col end-->
+          </div>
+          <!--content container end-->
+      </div>
+    <!--container end-->
+
+    <!--add new address modal start-->
+    <div class="modal fade" id="add-addrs-modal" tabindex="-1" role="dialog" aria-labelledby="addAddressModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-light">
+            <h5 class="modal-title" id="add-addrs-Modal-Label">Add New Address</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+
+              <div class="form-group"> <!-- Full Name -->
+                <label for="full_name_id" class="control-label">Receiver Name</label>
+                <input type="text" class="form-control" id="full_name_id" name="full_name" placeholder="John Deer">
+              </div>	
+            
+              <div class="form-group"> <!-- phone -->
+                <label for="phone_id" class="control-label">Phone</label>
+                <input type="tel" class="form-control" id="phone_id" name="phoneNum" placeholder="125-24851257">
+              </div>
+
+              <div class="form-group"> <!-- Street 1 -->
+                <label for="street1_id" class="control-label">Street Address 1</label>
+                <input type="text" class="form-control" id="street1_id" name="street1" placeholder="Street address, P.O. box, company name, c/o">
+              </div>					
+                          
+              <div class="form-group"> <!-- Street 2 -->
+                <label for="street2_id" class="control-label">Street Address 2</label>
+                <input type="text" class="form-control" id="street2_id" name="street2" placeholder="Apartment, suite, unit, building, floor, etc.">
+              </div>	
+            
+              <div class="form-group"> <!-- City-->
+                <label for="city_id" class="control-label">City</label>
+                <input type="text" class="form-control" id="city_id" name="city" placeholder="Smallville">
+              </div>									
+              
+              <div class="form-group"> <!-- Zip Code-->
+                <label for="zip_id" class="control-label">Zip Code</label>
+                <input type="text" class="form-control" id="zip_id" name="zip" placeholder="#####">
+              </div>		
+              
+              <div class="form-group"> <!-- Submit Button -->
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+              </div>     
+              
+            </form>		
+          </div>
+        
+        </div>
+      </div>
+    </div>
+    <!--add new address modal end-->
+    <!--add new review modal start-->
+    <div class="modal fade" id="add-review-modal" tabindex="-1" role="dialog" aria-labelledby="addReviewModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-light">
+            <h5 class="modal-title text-primary"  id="add-addrs-Modal-Label">Write Your Review</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body p-0">
+            <img
+                      class="mb-2"
+                      src="https://via.placeholder.com/400x300.png?text=placeholder1"
+                      alt=""
+                    />
+            <div class="p-3">
+              <h4 class="food-name">Chongqing Small Noodles</h4>
+            <small class="vendor-name text-info"><a href="#">See You Again Restaurant</a></small>
+            <div class="rating-stars py-2">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half"></i>
+              <i class="far fa-star"></i>
+            </div>
+            <form>
+              <div class="form-group"> <!-- Review Text -->
+                <label for="modal-review-text" class="control-label">Review: </label>
+                <textarea class="form-control" id="modal-review-text" rows="3" cols="50" name='review_text' placeholder="Write Your Review Here...."></textarea>
+              </div>	
+            
+              <div class="form-group"> <!-- Submit Button -->
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Confirm</button>
+              </div>     
+              
+            </form>	
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--add new review modal end-->
+    <!--receipt modal start-->
+    <div
+        class="modal fade"
+        id="order-detail-modal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="orderDetailModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <div>
+                <h5 class="modal-title" id="orderDetailModalLabel">
+                  Order Number: <span class="orde-number"></span>SJKD-241515487
+                </h5>
+                <div class="order-date">
+                  Order Date:<span class="date">21/03/2020</span>
+                </div>
+              </div>
+
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="deal-info row mb-4">
+                <div class="vendor-info col-sm-6">
+                  <h5 class="mb-2">Vendor:</h5>
+                  <div>
+                    <strong class="vendor-name text-primary"
+                      >See You Again Restaurant</strong
+                    >
+                  </div>
+                  <div class="vendor-adrs-1-line">Chao Yang Street 8</div>
+                  <div class="vendor-adrs-2-line">Tianhe, Guangzhou</div>
+                  <div class="vendor-adrs-email-line">
+                    Email: info@SeeUagain.com.cn
+                  </div>
+                  <div class="vendor-adrs-phone-line">
+                    Phone: +86 020 633 3833
+                  </div>
+                </div>
+                <div class="customer-info col-sm-6">
+                  <h5 class="my-2">Customer:</h5>
+                  <div>
+                    <strong class="customer-name text-info">John Dow</strong>
+                  </div>
+                  <div class="customer-adrs-1-line">
+                    43-190 Mar Tang Road, Panyu
+                  </div>
+                  <div class="customer-adrs-2-line">Guangzhou</div>
+                  <div class="customer-email-1-line">
+                    Email: JohnDow4762@Gmail.com
+                  </div>
+                  <div class="customer-phone-1-line">
+                    Phone: +86 123 4565 7890
+                  </div>
+                </div>
+              </div>
+              <div class="table-responsive-sm">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th class="center">#</th>
+                      <th>Item</th>
+                      <th>Description</th>
+
+                      <th class="right">Unit Cost</th>
+                      <th class="center">Qty</th>
+                      <th class="right">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="product-num left">1</td>
+                      <td class="product-name left strong">
+                        Spicy Chicken Noodles
+                      </td>
+                      <td class="product-description left">Medium Size</td>
+                      <td class="unit-price right">$10.00</td>
+                      <td class="order-qty center text-center">1</td>
+                      <td class="units-total right">$10.00</td>
+                    </tr>
+                    <tr>
+                      <td class="product-num left">2</td>
+                      <td class="product-name left strong">
+                        Chong Qing Small Noodles
+                      </td>
+                      <td class="product-description left">
+                        Medium Size, No Soup
+                      </td>
+                      <td class="unit-price right">$15.00</td>
+                      <td class="order-qty center text-center">1</td>
+                      <td class="units-total right">$15.00</td>
+                    </tr>
+                    <tr>
+                      <td class="product-num left">3</td>
+                      <td class="product-name left strong">
+                        Beef Noodles
+                      </td>
+                      <td class="product-description left">Medium Size</td>
+                      <td class="unit-price right">$20.00</td>
+                      <td class="order-qty center text-center">1</td>
+                      <td class="units-total right">$20.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="order-sum row">
+                <div class="payment-method col-lg-4 col-sm-5">
+                  <strong class="text-primary">Payment Method:</strong>
+                  <div>
+                    <span class="method-type">WeChat: </span
+                    ><span>JohnDow42542</span>
+                  </div>
+                  <div class="mt-3">
+                    <strong class="text-primary">Invoice Number:</strong>
+                    <div class="invoice-num">DIWJSD-278926585</div>
+                  </div>
+                </div>
+                <div class="order-sum-Detail col-lg-4 col-sm-5 ml-auto">
+                  <table class="table table-clear">
+                    <tbody>
+                      <tr>
+                        <td class="left">
+                          <strong>Subtotal</strong>
+                        </td>
+                        <td class="order-subtotal right">$45.00</td>
+                      </tr>
+                      <tr>
+                        <td class="left">
+                          <strong>Discount</strong>
+                        </td>
+                        <td class="order-discount right">10%</td>
+                      </tr>
+                      <tr>
+                        <td class="left">
+                          <strong>Delivering Fee</strong>
+                        </td>
+                        <td class="order-discount right">$5</td>
+                      </tr>
+                      <tr>
+                        <td class="left">
+                          <strong>VAT</strong>
+                        </td>
+                        <td class="VAT right">10%</td>
+                      </tr>
+                      <tr>
+                        <td class="left">
+                          <strong>Total</strong>
+                        </td>
+                        <td class="right">
+                          <strong class="total-sum">$50.00</strong>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!--receipt modal end-->
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  </body>
+</html>

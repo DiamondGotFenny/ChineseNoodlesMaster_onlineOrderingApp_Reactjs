@@ -1,0 +1,100 @@
+.credit-card-label {
+  color: goldenrod;
+}
+.debit-card-label {
+  color: #d15454;
+}
+.custom-control-label img {
+  max-width: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+.modal-content {
+}
+.card-horizontal {
+  flex-direction: row;
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+}
+.card-horizontal img {
+  max-width: 18rem;
+}
+.billing-title {
+  color: goldenrod;
+  text-transform: uppercase;
+}
+
+/***address option start***/
+label {
+  width: 100%;
+  height: auto;
+  font-size: 1rem;
+}
+
+.card-input-element + .card {
+  color: var(--primary);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: 2px solid transparent;
+  border-radius: 4px;
+}
+
+.card-input-element + .card:hover {
+  cursor: pointer;
+}
+
+.card-input-element:checked + .card {
+  border: 2px solid goldenrod;
+  -webkit-transition: border 0.3s;
+  -o-transition: border 0.3s;
+  transition: border 0.3s;
+  position: relative;
+}
+
+.card-input-element:checked + .card .card-header::after {
+  content: "✓";
+  color: goldenrod;
+  font-size: 24px;
+  -webkit-animation-name: fadeInCheckbox;
+  animation-name: fadeInCheckbox;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  position: absolute;
+  right: 20px;
+  top: 5px;
+}
+
+@-webkit-keyframes fadeInCheckbox {
+  from {
+    opacity: 0;
+    -webkit-transform: rotateZ(-20deg);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: rotateZ(0deg);
+  }
+}
+
+@keyframes fadeInCheckbox {
+  from {
+    opacity: 0;
+    transform: rotateZ(-20deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateZ(0deg);
+  }
+}
+
+.add-addrs-icon {
+  color: rgb(228, 110, 129);
+  font-size: 3rem;
+  margin: 0.5rem 1rem;
+}
+a:link,
+a:visited {
+  text-decoration: none;
+}
+/***address option end***/

@@ -1,0 +1,101 @@
+@import '~bootstrap/scss/bootstrap';
+@import '../src/global/variables';
+@import '../src/containers/HeroBanner/HeroBanner.scss';
+@import '../src/containers/Header/Header.scss';
+@import '../src/asset/icons/themify-icons/themify-icons';
+@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Raleway:100,200,400,500");
+a{
+    color: inherit;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+  }
+  a:hover,
+  a:focus {
+    text-decoration: none;
+    color: $primary-red;
+  }
+  textarea:focus,
+  input:focus,
+  a:focus,
+  a:visited,
+  *:focus {
+    outline: none;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    -webkit-backface-visibility: hidden;
+  }
+
+  body {
+    position: relative;
+    color: $body-color;
+    font-family: $font-family;
+    font-weight: $font-weight;
+    line-height: $line-height;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+  }
+
+  /*************back to top start********/
+.return-to-top {
+  transition: all 0.25s ease-in-out;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  display: inline-flex;
+  z-index: 99;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3em 3em 0;
+  border-radius: 50%;
+  padding: 0.25em;
+  width: 5em;
+  height: 5em;
+  background-color: $returnToTop-bg-color;
+}
+.return-to-top .ti-angle-up {
+  font-size: 2rem;
+}
+.return-to-top.show {
+  visibility: visible;
+  opacity: 0.5;
+}
+.return-to-top.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.return-to-top:hover {
+  opacity: 1;
+}
+/*************back to top end********/
+  
+  #landingPage-body-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #landingPage-body-wrapper::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $body-wrapper-bg-color;
+    content: " ";
+    z-index: 899;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    visibility: hidden;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }

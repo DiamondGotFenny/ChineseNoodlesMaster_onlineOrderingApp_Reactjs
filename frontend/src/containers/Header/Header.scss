@@ -1,0 +1,93 @@
+
+#header {
+    position: absolute;
+    width: 100%;
+    background-color: transparent;
+    z-index: 900;
+    color: white;
+    display: block;
+
+    .nav-main > li {
+      position: relative;
+  }
+  .nav-main > li:not(:last-child) {
+    margin-right: 1.5rem;
+}
+
+    .module {
+        line-height: 45px;
+        display: inline-block;
+      }
+    .module-logo {
+        position: absolute;
+        top: 0;
+        left: 9rem;
+        text-align: center;
+        padding: 3rem 3rem;
+      }
+    
+      .module.right {
+        float: right;
+      }
+      .module-logo.light {
+        background-color: #fff;
+      }
+      .module:not(.module-logo) {
+        padding-top: 27.5px;
+        padding-bottom: 27.5px;
+      }
+      .module-logo img {
+        max-width: 150px;
+      }
+      .module-cart{
+        .cart-icon {
+            position: relative;
+            i {
+                font-size: 1.7rem;
+                display: inline-block;
+                color: #bbc4c6;
+              }
+            .notification {
+                position: absolute;
+                top: -0.8rem;
+                right: 0;
+                background-color: #4aa36b;
+                color: #fff;
+                font-weight: 600;
+                font-size: 0.7rem;
+                display: inline-block;
+                -webkit-border-radius: 30px;
+                -moz-border-radius: 30px;
+                -ms-border-radius: 30px;
+                -o-border-radius: 30px;
+                border-radius: 30px;
+                padding: 0.15rem 0.3rem 0.2rem 0.35rem;
+                line-height: 1;
+              } 
+          }
+          .cart-value {
+            font-size: 1.4rem;
+            font-family: "Oswald", sans-serif;
+            border-left: 1px solid #e0e0e0;
+            margin-left: 0.5rem;
+            padding-left: 0.75rem;
+            -webkit-transition: all 0.25s ease-out;
+            -moz-transition: all 0.25s ease-out;
+            -o-transition: all 0.25s ease-out;
+            transition: all 0.25s ease-out;
+          }
+          .cart-value {
+            border-color: rgba(255, 255, 255, 0.15);
+          }
+          &:hover,&focus{
+            .cart-value{
+                filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+                opacity: 0.6;
+            }
+          }
+      }
+    
+  }
+#header.absolute {
+    position: absolute;
+  }

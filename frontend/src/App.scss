@@ -1,6 +1,6 @@
 @import '~bootstrap/scss/bootstrap';
+@import "~react-responsive-carousel/lib/styles/carousel.min.css";
 @import '../src/global/variables';
-@import '../src/containers/HeroBanner/HeroBanner.scss';
 @import '../src/containers/Header/Header.scss';
 @import '../src/asset/icons/themify-icons/themify-icons';
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Raleway:100,200,400,500");
@@ -40,6 +40,15 @@ a{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin: 0;
+  }
+
+  @media only screen and (min-width: 576px) {
+    html {
+      font-size: 16px;
+    }
+    body {
+      margin: 0 15px 15px;
+    }
   }
 
   /*************back to top start********/

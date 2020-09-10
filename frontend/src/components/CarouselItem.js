@@ -4,7 +4,7 @@ const CarouselItem=(props)=>{
     const {imgLink,itemInfo,infoLine1,infoLine2,itemLink,btnInfo}=props.item;
 
     return(
-        <div>
+        <>
             <img  class="d-block img-responsive fixed-img-height" src={imgLink} alt={itemInfo} />
              <div class="carousel-caption caption-content dark px-2">
                 <h1 class="text-muted">{infoLine1}</h1>
@@ -19,7 +19,7 @@ const CarouselItem=(props)=>{
                     </a>
                 </div>
              </div>
-         </div>
+         </>
     )
 }
 export default CarouselItem;

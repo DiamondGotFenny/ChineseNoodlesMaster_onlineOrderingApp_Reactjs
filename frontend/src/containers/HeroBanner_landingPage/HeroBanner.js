@@ -1,9 +1,10 @@
 import  React  from 'react';
 import backgroundImage from "../../asset/img/landingPage/luosifen8_landingpage.jpg"
+import  Container  from 'react-bootstrap/Container';
 
 const HeroBanner=()=>{
     return(
-        <section className="section section-main bg-dark dark">
+  <section className="section section-main bg-dark dark">
     <div
       className="bg-image bg-fixed"
       style={{backgroundImage:`url(${backgroundImage})`}}
@@ -14,10 +15,9 @@ const HeroBanner=()=>{
         style={{display:'none'}}
       />
     </div>
-    <div className="container v-center">
-      <div className="row">
-        <div className="col-md-7 order-md-3 offset-md-3">
-          <h1 className="display-2">
+    <Container fluid className="v-center">
+      <div className='d-flex flex-column w-50 mx-auto align-items-center'>
+      <h1 className="display-2">
             <strong>All Cuisines Noodles</strong> in China
           </h1>
           <h4 className="text-muted mb-5">
@@ -41,12 +41,12 @@ const HeroBanner=()=>{
             aria-describedby="Search for your favorite noodle"
           /><br />
 
-          <a href="./viewMoreMenu.html" class="btn btn-outline-primary btn-lg mb-3 mb-lg-0"
+          <a href="./viewMoreMenu.html" className="btn btn-outline-primary btn-lg mb-3 mb-lg-0"
             ><span>Order now</span></a
           >
-        </div>
       </div>
-    </div>
+    </Container>
+
   </section>
     )
 }

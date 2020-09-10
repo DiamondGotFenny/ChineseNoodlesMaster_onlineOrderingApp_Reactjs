@@ -28,6 +28,11 @@ const Menu=()=>{
             <div className="menu-category-content mx-auto mt-3">
                { produtList.map(item=><Productlanding item={item}/>)}
             </div>
+            <div className="text-center my-3">
+            <a href="./viewMoreMenu.html" className="btn btn-outline-primary btn-sm"
+              ><span>View More</span></a
+            >
+          </div>
         </section>
     )
 }

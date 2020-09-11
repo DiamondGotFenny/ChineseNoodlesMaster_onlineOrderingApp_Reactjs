@@ -1,5 +1,5 @@
 import  React  from 'react';
-import backgroundImage from "../../asset/img/landingPage/luosifen8_landingpage.jpg"
+import backgroundImage from "asset/img/landingPage/luosifen8_landingpage.jpg"
 import  Container  from 'react-bootstrap/Container';
 
 const HeroBanner=()=>{

@@ -1,19 +1,21 @@
 import  React  from 'react';
-import HeroBanner from '../containers/HeroBanner_landingPage/HeroBanner';
-import Promotion from '../containers/Promotion_landingPage/Promotion';
-import Menu from './../containers/Menu_landingPage/Menu';
-import VendorsDisplay from '../containers/VendorsDisplay_landingPage/VendorsDisplay';
-
-
+import HeroBanner from 'containers/LandingPage/HeroBanner/HeroBanner';
+import Promotion from 'containers/LandingPage/Promotion/Promotion';
+import Menu from 'containers/LandingPage/Menu/Menu';
+import VendorsDisplay from 'containers/LandingPage/VendorsDisplay/VendorsDisplay';
+import AboutUs from 'containers/LandingPage/AboutUs/AboutUs';
+import JoinUs from 'containers/LandingPage/JoinUs';
 
 const LandingPage=()=>{
     return (
-    <main>
-     <HeroBanner/>
-     <Promotion/>
-     <Menu/>
-     <VendorsDisplay/>
-    </main>
+        <main>
+            <HeroBanner/>
+            <Promotion/>
+            <Menu/>
+            <VendorsDisplay/>
+            <AboutUs/>
+            <JoinUs/>
+        </main>
     )
 }
 export default LandingPage;

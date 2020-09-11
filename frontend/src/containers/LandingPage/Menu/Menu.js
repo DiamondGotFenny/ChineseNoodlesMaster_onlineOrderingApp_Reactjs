@@ -1,12 +1,12 @@
 import  React  from 'react';
-import Cuisinestagslanding from '../../components/CuisinesTags_Landing';
-import CuisinesTagsCollapsed from './../../components/CuisinesTagsCollapsed';
+import Cuisinestagslanding from 'components/CuisinesTags_Landing';
+import CuisinesTagsCollapsed from 'components/CuisinesTagsCollapsed';
 import Accordion  from 'react-bootstrap/Accordion';
 import Card  from 'react-bootstrap/Card';
 import Button  from 'react-bootstrap/Button';
-import { cuisinesTags,cuisinesTagscollapsed } from './../../asset/temJsonFiles/cuisinesTags';
-import { produtList } from './../../asset/temJsonFiles/productsList';
-import Productlanding from '../../components/Product_Landing';
+import { cuisinesTags,cuisinesTagscollapsed } from 'asset/temJsonFiles/cuisinesTags';
+import { produtList } from 'asset/temJsonFiles/productsList';
+import Productlanding from 'components/Product_Landing';
 
 const Menu=()=>{
     return (

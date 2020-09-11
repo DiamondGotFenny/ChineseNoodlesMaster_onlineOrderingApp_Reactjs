@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.scss';
-import LandingPage from './pages/LandingPage';
-import Header from './containers/Header/Header';
+import LandingPage from 'pages/LandingPage';
+import Header from 'containers/Header/Header';
+import Footer from 'containers/Footer/Footer';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <div id="landingPage-body-wrapper">
         <Header/>
         <LandingPage/>
+        <Footer/>
       </div>
     </div>
   );

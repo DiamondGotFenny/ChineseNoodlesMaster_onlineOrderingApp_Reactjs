@@ -1,0 +1,97 @@
+h1.display-2 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+.dark {
+  color: #fff;
+}
+.bg-dark {
+  background-color: #282b2e;
+}
+.bg-image,
+.bg-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: bottom right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+.bg-fixed {
+  background-attachment: fixed;
+}
+
+.bg-image + * {
+  position: relative;
+}
+.hero-container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.v-center {
+  top: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  transition: all 0.3s ease-out;
+}
+
+.fixed-img-height {
+  height: 80vh;
+}
+/************ For Small devices(landscape phones) and up***************/
+@media only screen and (min-width: 576px) {
+  .hero-container{
+    width: 60%;
+  }
+}
+/************ For Large devices(destops) and up***************/
+@media only screen and (min-width: 992px) {
+  .section-main {
+    height: calc(100vh - 30px);
+  }
+  .hero-container{
+    width: 50%;
+  }
+  .v-center {
+    top: 50%;
+    transform: translate3d(10%, -50%, 0);
+    transition: all 0.3s ease-out;
+  }
+  h1.display-2 {
+    font-size: 3.5rem;
+  }
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 200;
+  }
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 100;
+  }
+}
+
+/************ For Extra large devices(PC) and up***************/
+@media only screen and (min-width: 1200px){
+
+}

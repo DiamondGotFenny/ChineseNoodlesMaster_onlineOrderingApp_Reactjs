@@ -35,7 +35,7 @@ const VendorsDisplay=(props)=>{
                     responsive={responsive}
                     infinite={true}
                     autoPlay={props.deviceType !== "mobile" ? true : false}
-                    autoPlaySpeed={3000}
+                    autoPlaySpeed={300000}
                     keyBoardControl={true}
                     customTransition="all .5"
                     transitionDuration={500}

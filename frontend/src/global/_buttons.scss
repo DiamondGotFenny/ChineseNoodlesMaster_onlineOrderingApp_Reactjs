@@ -1,0 +1,79 @@
+@import 'global/variables';
+@import 'global/mixin';
+::selection {
+  background: $primary-red;
+  color: whitesmoke;
+}
+.red-outline-btnlg{
+  @include red_outline_button;
+    padding: 1.5rem 3rem 1.75rem;
+    font-size: 1.2rem;
+    width: 14rem; height: auto;
+    min-width: 150px;
+    font-weight: 400;
+}
+
+.red-outline-btnlg::before,.red-outline-btnmd::before{
+  @include red_outline_button_before;
+}
+
+.red-outline-btnlg:hover,
+.red-outline-btnlg:focus,
+.red-outline-btnlg:active,
+.red-outline-btnlg:focus:active {
+  @include red_outline_button_hover;
+}
+.red-outline-btnlg:hover:before,
+.red-outline-btnlg:focus:before,
+.red-outline-btnlg:active:before,
+.red-outline-btnlg:focus:active:before {
+   @include red_outline_button_before_hover;
+}
+
+
+.red-outline-btnmd{
+  @include red_outline_button;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.9rem;
+    width: 9rem; height: auto;
+    font-weight: 400;
+}
+
+.red-outline-btnmd:hover,
+.red-outline-btnmd:focus,
+.red-outline-btnmd:active,
+.red-outline-btnmd:focus:active {
+  @include red_outline_button_hover;
+}
+
+.red-outline-btnmd:hover:before,
+.red-outline-btnmd:focus:before,
+.red-outline-btnmd:active:before,
+.red-outline-btnmd:focus:active:before {
+   @include red_outline_button_before_hover;
+}
+
+.red-outline-viewMore{
+  @include red_outline_button;
+  border: none;
+  padding: 0.75rem 1.2rem;
+  font-size: 0.9rem;
+  width: 12rem; height: auto;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+.red-outline-viewMore:hover,
+.red-outline-viewMore:focus,
+.red-outline-viewMore:active,
+.red-outline-viewMore:focus:active
+.red-outline-viewMore::before{
+  color: $primary-red;
+}
+
+
+
+
+.btn-red-fill::before{
+  background-color: $primary-red;
+  border-radius: 0.8rem;
+}

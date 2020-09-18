@@ -7,7 +7,7 @@ import { promoItems } from 'asset/temJsonFiles/promotionItmes';
 const Promotion=()=>{
     return (
       <section className="section bg-light promotion">
-        <Carousel >
+        <Carousel interval={null}>
          {promoItems.map(item=><Carousel.Item><CarouselItem item={item}/></Carousel.Item> )}
         </Carousel>
       </section>

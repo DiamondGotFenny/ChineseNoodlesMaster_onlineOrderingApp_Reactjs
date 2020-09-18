@@ -4,7 +4,7 @@ import Promotion from 'containers/LandingPage/Promotion/Promotion';
 import Menu from 'containers/LandingPage/Menu/Menu';
 import VendorsDisplay from 'containers/LandingPage/VendorsDisplay/VendorsDisplay';
 import AboutUs from 'containers/LandingPage/AboutUs/AboutUs';
-import JoinUs from 'containers/LandingPage/JoinUs';
+import JoinUs from 'containers/LandingPage/JoinUs/JoinUs';
 
 const LandingPage=()=>{
     return (

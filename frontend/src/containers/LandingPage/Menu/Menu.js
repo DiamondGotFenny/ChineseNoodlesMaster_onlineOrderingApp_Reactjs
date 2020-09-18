@@ -29,7 +29,7 @@ const Menu=()=>{
                { produtList.map(item=><Productlanding item={item}/>)}
             </div>
             <div className="text-center my-3">
-            <a href="./viewMoreMenu.html" className="btn btn-outline-primary btn-sm"
+            <a href="./viewMoreMenu.html" className="btn red-outline-viewMore mt-4"
               ><span>View More</span></a
             >
           </div>

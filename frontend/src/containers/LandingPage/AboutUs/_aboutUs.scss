@@ -1,0 +1,87 @@
+.section-bg-edge {
+    overflow: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+
+    .image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding-left: 0;
+        padding-right: 0;
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=25);
+        opacity: 0.25;
+      }
+
+      .image.right {
+        text-align: right;
+        right: 0;
+      }
+      .image.right .bg-image {
+        background-position: center left;
+      }
+      .image.left {
+        text-align: left;
+        left: 0;
+      }
+      .image.left .bg-image {
+        background-position: center right;
+      }
+      .image.bottom .bg-image {
+        background-position-y: top !important;
+      }
+      .container > div[class*="col-"] {
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+      }
+  }
+
+  .section-bg-edge.section-sm .container > div[class*="col-"] {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+  .section-bg-edge.section-lg {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  
+  .section-bg-edge.section-lg .container > div[class*="col-"] {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  
+  .about-bg {
+    background-size: contain;
+    background-position: left bottom;
+    opacity: 0.8;
+  }
+
+  .feature {
+    margin-bottom: 30px;
+    display: block;
+  }
+  
+  .feature.feature-1 .feature-content {
+    padding-left: 65px;
+    padding-top: 1.5rem;
+  }
+  .icon {
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    width: 52px;
+    vertical-align: middle;
+}
+  .feature.feature-1 .icon {
+    float: left;
+  }
+
+  .icon.icon-primary {
+    color: #d15454;
+  }
+  
+  
+

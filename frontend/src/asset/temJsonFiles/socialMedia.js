@@ -1,28 +1,28 @@
-
+import {faFacebookSquare,faGooglePlusG,faTwitter,faYoutube,faInstagram} from '@fortawesome/free-brands-svg-icons'
 export const socialMedia=[
     {
         iconContainer:"icon-facebook",
-        icon:"fab fa-facebook-square",
+        icon:faFacebookSquare,
         Link:"#"
     },
     {
         iconContainer:"icon-google",
-        icon:"fab fa-google-plus-g",
+        icon:faGooglePlusG,
         Link:"#"
     },
     {
         iconContainer:"icon-twitter",
-        icon:"fab fa-twitter",
+        icon:faTwitter,
         Link:"#"
     },
     {
         iconContainer:"icon-youtube",
-        icon:"fab fa-youtube",
+        icon:faYoutube,
         Link:"#"
     },
     {
         iconContainer:"icon-instagram",
-        icon:"fab fa-instagram",
+        icon:faInstagram,
         Link:"#"
     }
 

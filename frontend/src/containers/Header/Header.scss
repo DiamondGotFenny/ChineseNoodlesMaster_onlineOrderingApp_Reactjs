@@ -1,5 +1,312 @@
+@import 'global/variables';
 
 #header {
+  display: none;
+}
+
+#header-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  z-index: 900;
+  display: block;
+}
+
+#header-mobile.light {
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+#header-mobile.dark {
+  background-color: #282b2e;
+}
+
+#header-mobile .module {
+  line-height: 60px;
+}
+
+#header-mobile .module-logo {
+  width: calc(100% - 90px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+#header-mobile .module-logo img {
+  height: calc(60px - 30px);
+}
+
+#header-mobile .module-nav-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 45px;
+  text-align: center;
+}
+
+#header-mobile .module-cart {
+  position: absolute;
+  top: 0;
+  right: 10px;
+}
+
+#header-mobile .module-cart i {
+  position: relative;
+  top: 4px;
+  font-size: 1.7rem;
+  display: inline-block;
+  color: #bbc4c6;
+}
+
+#header-mobile .module-cart .notification {
+  position: absolute;
+  top: 0.8rem;
+  right: 0;
+  background-color: #4aa36b;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.7rem;
+  display: inline-block;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+  border-radius: 30px;
+  padding: 0.15rem 0.3rem 0.2rem 0.35rem;
+  line-height: 1;
+}
+
+#nav-toggle {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 17px;
+}
+
+#nav-toggle span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background: #383c40;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+  left: 0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#nav-toggle span:nth-child(1) {
+  top: 3px;
+}
+
+#nav-toggle span:nth-child(2),
+#nav-toggle span:nth-child(3) {
+  top: 11px;
+}
+
+#nav-toggle span:nth-child(4) {
+  top: 19px;
+}
+
+#nav-toggle.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-toggle.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-toggle.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-toggle.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+.dark #nav-toggle span {
+  background: #fff;
+}
+
+#panel-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  width: 100%;
+  z-index: 970;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  display: block;
+  visibility: hidden;
+  -webkit-transform: translateX(-100%);
+  -moz-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  -o-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -moz-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  -o-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  overflow: auto;
+}
+
+#panel-mobile.show {
+  visibility: visible;
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+  transform: translateX(0);
+}
+
+#panel-mobile .module-logo {
+  text-align: center;
+  padding: 4rem 2rem;
+  display: block;
+}
+
+#panel-mobile .module-navigation {
+  padding: 1rem 1.5rem;
+}
+
+#panel-mobile .module-social {
+  padding: 1rem;
+  text-align: center;
+}
+
+#panel-mobile .close {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.nav-main-mobile {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+}
+
+.nav-main-mobile li {
+  position: relative;
+}
+
+.nav-main-mobile li.has-dropdown:after {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: "themify";
+  content: "\e62a";
+  margin-left: 0.5rem;
+  font-size: 0.75em;
+  display: inline-block;
+  vertical-align: middle;
+  color: #a4a7a9;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+}
+
+.nav-main-mobile > li {
+  position: relative;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.nav-main-mobile > li > a {
+  padding: 0.75rem 0;
+  display: block;
+}
+
+.nav-main-mobile > li .dropdown-container {
+  display: none;
+}
+
+.nav-main-mobile > li .dropdown-container .dropdown-image {
+  display: none;
+}
+
+.nav-main-mobile ul {
+  list-style: none;
+  margin: 0 0.5rem 1rem;
+  padding: 0 1rem;
+  font-size: 0.9rem;
+}
+
+.nav-main-mobile ul > li.has-dropdown:after {
+  top: 0.35rem;
+  right: 0;
+}
+
+.nav-main-mobile ul > li > a {
+  padding: 0.25rem 0;
+  display: block;
+}
+
+.nav-main-mobile ul ul {
+  padding: 0;
+  display: none;
+}
+
+/************ For Small devices(landscape phones) and up***************/
+@media only screen and (min-width: 576px) {
+  #header-mobile .module-nav-toggle{
+    left:0.8rem
+  }
+  #header-mobile .module-cart{
+    right: 0.8rem;
+  }
+}
+
+  /************ For Large devices(destops) and up***************/
+@media only screen and (min-width: 992px) {
+  #header-mobile{
+    display: none;
+  }
+  #header {
     position: absolute;
     width: 100%;
     background-color: transparent;
@@ -7,12 +314,16 @@
     color: white;
     display: block;
 
-    .nav-main > li {
+    #nav-main > li {
+      font-family: $font-family2;
+      text-transform: uppercase;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
       position: relative;
   }
-  .nav-main > li:not(:last-child) {
+    #nav-main > li:not(:last-child) {
     margin-right: 1.5rem;
-}
+  }
 
     .module {
         line-height: 45px;
@@ -40,6 +351,13 @@
         max-width: 150px;
       }
       .module-cart{
+        transform: translateY(-4px);
+        &:hover,&focus{
+          .cart-value{
+              filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+              opacity: 0.6;
+          }
+        }
         .cart-icon {
             position: relative;
             i {
@@ -49,8 +367,8 @@
               }
             .notification {
                 position: absolute;
-                top: -0.8rem;
-                right: 0;
+                top: 0m;
+                right: -0.1rem;
                 background-color: #4aa36b;
                 color: #fff;
                 font-weight: 600;
@@ -75,15 +393,7 @@
             -moz-transition: all 0.25s ease-out;
             -o-transition: all 0.25s ease-out;
             transition: all 0.25s ease-out;
-          }
-          .cart-value {
             border-color: rgba(255, 255, 255, 0.15);
-          }
-          &:hover,&focus{
-            .cart-value{
-                filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
-                opacity: 0.6;
-            }
           }
       }
     
@@ -91,3 +401,4 @@
 #header.absolute {
     position: absolute;
   }
+}

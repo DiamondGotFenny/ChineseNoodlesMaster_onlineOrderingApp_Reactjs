@@ -1,12 +1,14 @@
 import  React  from 'react';
+import Ratings from 'components/ratingStars';
+import MyFavorite from './myFavorite';
 
 const Productlanding=(props)=>{
-   const {productImg,productTitle,productDescr,vendorName,price}=props.item;
+   const {productImg,productTitle,productDescr,vendorName,price,rating}=props.item;
     return (
         <div className="menu-item mt-3 mx-auto">
         <div className="row align-items-center justify-content-around">
           <div
-            className="col-lg-4 product-thumbnail text-md-right text-center"
+            className="col-lg-4 product-thumbnail"
           >
             <img
               className="img img-fluid"
@@ -29,21 +31,8 @@ const Productlanding=(props)=>{
                 <p><a href="./vendorPage.html">{vendorName}</a></p>
               </div>
               <div className="rating-favorites mx-auto text-center">
-                <div className="rating-stars">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star-half"></i>
-                  <i className="far fa-star"></i>
-                </div>
-                <button
-                  className="add-to-favorite-icon"
-                  data-toggle="tooltip"
-                  data-placement="bottom"
-                  title="Add to Favorite"
-                >
-                  <i className="fas fa-heart"></i>
-                </button>
+               <Ratings rating={rating}/>
+               <MyFavorite/>
               </div>
             </div>
           </div>
@@ -52,7 +41,7 @@ const Productlanding=(props)=>{
                 <h4 className="price font-weight-bold">{`$${price}`}</h4>
             </div>
             <button
-              className="btn btn-outline-primary btn-sm"
+              className="btn red-outline-btnmd btn-red-fill"
               data-target="#productModal"
               data-toggle="modal"
             >

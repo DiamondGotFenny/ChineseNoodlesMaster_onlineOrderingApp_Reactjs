@@ -1,0 +1,70 @@
+@mixin red_outline_button {
+    -webkit-border-radius: 0.8rem;
+    -moz-border-radius: 0.8rem;
+    -ms-border-radius: 0.8rem;
+    -o-border-radius: 0.8rem;
+    border-radius: 0.8rem;
+    position: relative;
+    display: inline-block;
+    background-color: transparent;
+    border-width: 2px;
+    cursor: pointer;
+
+    border-color: $primary-red;
+    color: inherit;
+
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    transition: all 0.25s ease-out;
+
+    line-height: 1.5;
+    span {         
+        position: relative;
+        z-index: 2;
+      }
+}
+@mixin red_outline_button_before{
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    bottom: -2px;
+    right: -2px;
+    -webkit-transform-origin: center bottom;
+    -moz-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    -o-transform-origin: center bottom;
+    transform-origin: center bottom;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    content: " ";
+    visibility: hidden;
+    -webkit-transform: scaleY(0);
+    -moz-transform: scaleY(0);
+    -ms-transform: scaleY(0);
+    -o-transform: scaleY(0);
+    transform: scaleY(0);
+}
+
+@mixin red_outline_button_hover {
+    color: $white-text;
+  outline: none;
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+  transform: translateY(-2px);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+} 
+@mixin red_outline_button_before_hover{
+    visibility: visible;
+    -webkit-transform: scaleY(1);
+    -moz-transform: scaleY(1);
+    -ms-transform: scaleY(1);
+    -o-transform: scaleY(1);
+    transform: scaleY(1);
+}

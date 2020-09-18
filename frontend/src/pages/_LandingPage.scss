@@ -1,0 +1,39 @@
+@import 'containers/LandingPage/HeroBanner/_HeroBanner.scss';
+@import 'containers/LandingPage/Promotion/_promotion.scss';
+@import 'containers/LandingPage/Menu/_menu.scss';
+@import 'containers/LandingPage/VendorsDisplay/_vendorsDisplay.scss';
+@import 'containers/LandingPage/AboutUs/_aboutUs.scss';
+@import 'containers/LandingPage/JoinUs/_joinUs.scss';
+
+#content {
+    position: relative;
+    overflow: hidden;
+    margin-top: 60px;
+  }
+  
+  section,
+  .section {
+    position: relative;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  .section-main {
+    height: auto;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+  }
+
+
+  @media only screen and (min-width: 992px){
+    #content {
+        margin-top: 0px;
+      }
+      .section-main {
+        height: calc(100vh - 30px);
+      }
+      .container {
+        max-width: 960px;
+      }
+  }

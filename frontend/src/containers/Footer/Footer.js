@@ -1,4 +1,5 @@
 import  React  from 'react';
+import footLogo from 'asset/img/logos/logo_ver2_footer.png'
 import { socialMedia } from 'asset/temJsonFiles/socialMedia';
 import SocialMedia from 'components/SocialMedia';
 import { footerNav } from 'asset/temJsonFiles/footerNav';
@@ -6,15 +7,16 @@ import FooterNav from 'components/FooterNav';
 import Container  from 'react-bootstrap/Container';
 import  Row  from 'react-bootstrap/Row';
 import  Col  from 'react-bootstrap/Col';
+
 const Footer=()=>{
     return (
-        <footer id="footer" className="bg-dark dark">
-          <Container fluid>
+        <footer id="footer" className="dark">
+          <Container className="footerContent">
             <Row className="footer-first-row align-items-center">
               <Col lg={3} className="text-center">
               <a href="./landingPage.html"
                 ><img
-                  src="../assets/pics/logos/logo_ver2_footer.png"
+                  src={`${footLogo}`}
                   alt="Chinese Noodles Master Footer Logo"
                   width="145"
                   className="mt-5 mb-5"
@@ -53,9 +55,9 @@ const Footer=()=>{
               </Col>
             </Row>
           </Container>
-          <Row className="footer-second-row">
+          <Row className="footer-second-row mx-auto">
           <span className="text-muted col-lg-3 mb-5 mb-lg-1"
-              >Copyright Chinese Noodles Master 2020©. Made by
+              >Copyright Chinese Noodles Master 2020©. Design and Made by
               Diamondcn923.</span
             >
             <nav className="footer__nav col-lg-9 col-12">

@@ -24,8 +24,7 @@ const JoinUs=()=>{
                   You <strong>Prepare</strong> the noodles, We Handle the rest!
                 </h1>
                 <h3 className="mb-3">
-                  List your restaurant on
-                  <strong>Chinese Noodles Master</strong> Now!
+                  List your restaurant on <strong>Chinese Noodles Master</strong> Now!
                 </h3>
                 <h4 className="text-muted">
                   Thousands of new customers are hungry to taste your amazing
@@ -39,9 +38,8 @@ const JoinUs=()=>{
                 <h4 className="text-muted">
                   Sound great? Let's start our partnership now!
                 </h4>
-                <a href="./contactUs.html" className="btn btn-outline-primary btn-lg"
-                  ><span className="mx-4">Join Us</span></a
-                >
+                <button href="./contactUs.html" className="btn red-outline-btnmd btn-red-fill"
+                  ><span >Join Us</span></button>
                   </Col>
               </Row>
           </Container>

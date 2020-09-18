@@ -10,7 +10,7 @@ function App() {
       <a href="s" class="return-to-top hidden" id="backTopBtn">
         <span class="ti-angle-up"></span>
       </a>
-      <div id="landingPage-body-wrapper">
+      <div id="body-wrapper">
         <Header/>
         <LandingPage/>
         <Footer/>

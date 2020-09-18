@@ -1,0 +1,110 @@
+@import 'global/variables';
+.bg-light {
+    background-color:$bg-light!important;
+}
+.fixed-img-height {
+    height: 80vh;
+  }
+  .promotion img {
+    max-width: none;
+  }
+.promotion .carousel-control-prev-icon,
+.promotion .carousel-control-next-icon {
+  height: 6.25rem;
+  width: 6.25rem;
+  background-size: 100%, 100%;
+  background-color: rgb(40, 43, 46);
+  background-image: none;
+}
+
+.promotion .carousel-control-next-icon:after {
+  content: ">";
+  font-size: 3.43rem;
+}
+
+.promotion .carousel-control-prev-icon:after {
+  content: "<";
+  font-size: 3.43rem;
+}
+
+.promotion .carousel-control-next,
+.promotion .carousel-control-prev {
+  position: absolute;
+  top: 55%;
+  bottom: 3%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  opacity: 1;
+  transition: opacity 0.15s ease 0s;
+}
+.promotion .carousel-control-next {
+  right: 30.5%;
+}
+.promotion .carousel-control-prev {
+  left: 30.5%;
+}
+
+.dark .text-muted {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.caption-content {
+  background-color: #282b2e;
+  z-index: 5;
+  width: 80%;
+  left: 10%;
+  bottom: 30%;
+}
+
+.carousel-bg-image {
+  height: 100%;
+}
+
+.promotion .red-outline-btnlg{
+    padding: 1rem 2rem;
+}
+/************ For Small devices(landscape phones) and up***************/
+@media only screen and (min-width: 576px) {
+    .promotion {
+        .carousel-control-prev {
+            left: 33%;
+          }
+        .carousel-control-next {
+            right: 33.5%;
+          }
+        .red-outline-btnlg{
+            padding: 1rem 2rem;
+        }
+    }
+ 
+}
+
+/************ For Large devices(destops) and up***************/
+@media only screen and (min-width: 992px) {
+    .promotion {
+        .caption-content{
+            width: 30%;
+            left: 60%;
+            bottom: 15%;
+        }
+        .carousel-control-prev {
+            left: 78.4%;
+          }
+        .carousel-control-next {
+            right: 10%;
+          }
+        .carousel-control-next,.carousel-control-prev{
+            top: 85%;
+            width: 5.8%;
+        }
+      }
+}
+
+/************ For Extra large devices(PC) and up***************/
+@media only screen and (min-width: 1200px) {
+
+}

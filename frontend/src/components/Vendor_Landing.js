@@ -15,7 +15,7 @@ const VendorLanding=(props)=>{
                     {vendorDescr}
                 </p>
             </div>
-            <div class="mx-auto text-center"><a  href={vendorLink} class="btn btn-primary"><span>Learn More</span></a></div>  
+            <div class="mx-auto text-center"><a  href={vendorLink} class="btn red-outline-btnmd btn-red-fill"><span>Learn More</span></a></div>  
         </div>
     )
 }

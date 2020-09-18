@@ -1,4 +1,5 @@
 import  React  from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const SocialMedia=(props)=>{
     const {iconContainer,icon,Link}=props.item;
@@ -6,7 +7,7 @@ const SocialMedia=(props)=>{
         <a
         href={Link}
         className={`icon icon-social icon-circle icon-sm dark-icon mx-2 ${iconContainer}`}>
-            <i className={icon}></i>
+            <FontAwesomeIcon icon={icon}/>
         </a>
     )
 }

@@ -1,0 +1,238 @@
+@import 'global/variables';
+#footer {
+    padding-bottom: 2rem;
+    background-color: #282b2e ;
+    .footer-first-row {
+        padding-top: 5.5rem;
+        padding-bottom: 2rem;
+      }
+      .footer-second-row {
+        max-width: 960px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        font-size: 0.9em;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        margin-left: auto;
+      }
+  }
+
+  .subscribe-input {
+    height: 3.47rem;
+  }
+
+  .footer__nav {
+    text-align: center;
+    padding-right: 10%;
+    float: right;
+    width: 50%;
+    li {
+        display: inline-block;
+        margin: 3px 8px;
+      }
+  }
+
+
+  /********icons******/
+.icon {
+    position: relative;
+    display: inline-block;
+    font-size: 40px;
+    width: 52px;
+    vertical-align: middle;
+  }
+  .icon.icon-sm {
+    font-size: 18px;
+    width: 30px;
+  }
+  
+  .icon.icon-lg {
+    font-size: 76px;
+    width: 88px;
+  }
+  
+  .icon.icon-xl {
+    font-size: 120px;
+    width: 130px;
+  }
+  
+  .icon.icon-default {
+    color: #bbc4c6;
+  }
+  
+  .icon.icon-facebook {
+    color: #bbc4c6;
+  }
+  
+  .icon.icon-facebook:hover,
+  .icon.icon-facebook:focus {
+    color: #213553;
+  }
+  
+  .icon.icon-twitter {
+    color: #bbc4c6;
+  }
+  
+  .icon.icon-twitter:hover,
+  .icon.icon-twitter:focus {
+    color: #3aa8db;
+  }
+  
+  .icon.icon-google {
+    color: #bbc4c6;
+  }
+  
+  .icon.icon-google:hover,
+  .icon.icon-google:focus {
+    color: #d04f3e;
+  }
+  
+  .icon.icon-instagram {
+    color: #bbc4c6;
+  }
+  
+  .icon.icon-instagram:hover,
+  .icon.icon-instagram:focus {
+    color: #4f86ac;
+  }
+  .icon.icon-youtube {
+    color: #bbc4c6;
+  }
+  
+  .icon.icon-youtube:hover,
+  .icon.icon-youtube:focus {
+    color: #ed4533;
+  }
+  
+  .icon.icon-circle {
+    height: 52px;
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    text-align: center;
+  }
+  
+  .icon.icon-circle > * {
+    position: relative;
+    z-index: 2;
+    line-height: 48px;
+  }
+  
+  .icon.icon-circle.icon-xs {
+    height: 26px;
+    font-size: 11px;
+  }
+  
+  .icon.icon-circle.icon-xs > * {
+    line-height: 26px;
+  }
+  
+  .icon.icon-circle.icon-sm {
+    height: 30px;
+    font-size: 12px;
+  }
+  
+  .icon.icon-circle.icon-sm > * {
+    line-height: 30px;
+  }
+  
+  .icon.icon-circle.icon-lg {
+    height: 88px;
+    font-size: 36px;
+  }
+  
+  .icon.icon-circle.icon-lg > * {
+    line-height: 88px;
+  }
+  
+  .icon.icon-circle.icon-facebook {
+    color: #fff;
+    background-color: $footer-icon-bgBlack;
+  }
+  
+  .icon.icon-circle.icon-facebook:hover,
+  .icon.icon-circle.icon-facebook:focus {
+    color: #fff;
+    background-color: #213553;
+  }
+  
+  .icon.icon-circle.icon-twitter {
+    color: #fff;
+    background-color: $footer-icon-bgBlack;
+  }
+  
+  .icon.icon-circle.icon-twitter:hover,
+  .icon.icon-circle.icon-twitter:focus {
+    color: #fff;
+    background-color: #3aa8db;
+  }
+  
+  .icon.icon-circle.icon-google {
+    color: #fff;
+    background-color: $footer-icon-bgBlack;
+  }
+  
+  .icon.icon-circle.icon-google:hover,
+  .icon.icon-circle.icon-google:focus {
+    color: #fff;
+    background-color: #d04f3e;
+  }
+  .icon.icon-circle.icon-instagram {
+    color: #fff;
+    background-color: $footer-icon-bgBlack;
+  }
+  
+  .icon.icon-circle.icon-instagram:hover,
+  .icon.icon-circle.icon-instagram:focus {
+    color: #fff;
+    background-color: #4f86ac;
+  }
+  .icon.icon-circle.icon-youtube {
+    color: #fff;
+    background-color: $footer-icon-bgBlack;
+  }
+  
+  .icon.icon-circle.icon-youtube:hover,
+  .icon.icon-circle.icon-youtube:focus {
+    color: #fff;
+    background-color: #ed4533;
+  }
+  
+  .icon.icon-circle.icon-hover:hover:before,
+  .icon.icon-circle.icon-hover:focus:before {
+    -webkit-transform: scale(1.1, 1.1);
+    -moz-transform: scale(1.1, 1.1);
+    -ms-transform: scale(1.1, 1.1);
+    -o-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+  }
+  .svg-inline--fa {
+    height: 2rem;
+  }
+  .icon.icon-primary {
+    color: #d15454;
+  }
+  /**************icon ends*******************/
+
+  /************ For Small devices(landscape phones) and up***************/
+@media only screen and (min-width: 576px) {
+
+}
+
+/************ For Large devices(destops) and up***************/
+@media only screen and (min-width: 992px) {
+    .footer__nav {
+        text-align: right;
+        padding-right: 0;
+        float: right;
+      }
+}
+
+/************ For Extra large devices(PC) and up***************/
+@media only screen and (min-width: 1200px) {
+
+}

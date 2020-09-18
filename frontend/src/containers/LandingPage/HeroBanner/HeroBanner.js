@@ -15,8 +15,8 @@ const HeroBanner=()=>{
         style={{display:'none'}}
       />
     </div>
-    <Container fluid className="v-center">
-      <div className='d-flex flex-column w-50 mx-auto align-items-center'>
+    <Container fluid className="v-center hero-container">
+      <div className='d-flex flex-column mx-auto justify-content-center'>
       <h1 className="display-2">
             <strong>All Cuisines Noodles</strong> in China
           </h1>
@@ -41,8 +41,8 @@ const HeroBanner=()=>{
             aria-describedby="Search for your favorite noodle"
           /><br />
 
-          <a href="./viewMoreMenu.html" className="btn btn-outline-primary btn-lg mb-3 mb-lg-0"
-            ><span>Order now</span></a
+          <button type="submit" className="btn red-outline-btnlg btn-red-fill"
+            ><span>Order now</span></button
           >
       </div>
     </Container>

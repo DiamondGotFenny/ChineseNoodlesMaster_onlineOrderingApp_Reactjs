@@ -1,8 +1,18 @@
 @import '~bootstrap/scss/bootstrap';
-@import '../src/global/variables';
-@import '../src/containers/Header/Header.scss';
-@import '../src/asset/icons/themify-icons/themify-icons';
+@import 'global/variables';
+@import 'containers/Header/Header.scss';
+@import 'pages/LandingPage';
+@import 'containers/Footer/footer';
+@import 'asset/icons/themify-icons/themify-icons';
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Raleway:100,200,400,500");
+@import 'global/buttons';
+html {
+  font-size: 15px;
+}
+
+ul{
+  list-style-type: none;
+}
 a{
     color: inherit;
     -webkit-transition: all 0.2s ease-in-out;
@@ -22,13 +32,45 @@ a{
   *:focus {
     outline: none;
   }
-  
+
+  h1,
+  .h1,
+  h2,
+  .h2,
+  h3,
+  .h3,
+  h4,
+  .h4,
+  h5,
+  .h5,
+  h6,
+  .h6 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-weight: 200;
+  }
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 100;
+  }
+  .display-2 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+  .display-1,
+  .display-2,
+  .display-3,
+  .display-4 {
+    font-weight: 100;
+  }
   img {
     max-width: 100%;
     height: auto;
     -webkit-backface-visibility: hidden;
   }
-
+  .dark{
+    color: $white-text;
+  }
   body {
     position: relative;
     color: $body-color;
@@ -41,6 +83,31 @@ a{
     margin: 0;
   }
 
+  #body-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #body-wrapper::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(40, 40, 40, 0.5);
+    content: " ";
+    z-index: 899;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    -o-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    visibility: hidden;
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity: 0;
+  }
+  
+
+  /************ For Small devices(landscape phones) and up***************/
   @media only screen and (min-width: 576px) {
     html {
       font-size: 16px;
@@ -49,6 +116,23 @@ a{
       margin: 0 15px 15px;
     }
   }
+
+/************ For Large devices(destops) and up***************/
+@media only screen and (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/************ For Extra large devices(PC) and up***************/
+@media only screen and (min-width: 1200px) { 
+	body {
+    margin: 0 30px 30px;
+  }
+  .container {
+    max-width: 1140px;
+  }
+}
 
   /*************back to top start********/
 .return-to-top {
@@ -85,25 +169,3 @@ a{
 }
 /*************back to top end********/
   
-  #landingPage-body-wrapper {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  #landingPage-body-wrapper::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: $body-wrapper-bg-color;
-    content: " ";
-    z-index: 899;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    -o-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
-    visibility: hidden;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-    opacity: 0;
-  }

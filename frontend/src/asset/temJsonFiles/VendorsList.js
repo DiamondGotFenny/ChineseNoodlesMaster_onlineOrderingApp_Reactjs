@@ -30,7 +30,7 @@ export const vendorsList=[
     {
         imgLink:riverSnailsRiceNoodleImg,
         vendorName:"Zhou's River Snails Rice Noodle Shop",
-        vendorDescr:"Rice vermicelli, pickled asparagus, fungus, peanuts, fried,bean curd, cauliflower, fresh green vegetables",
+        vendorDescr:" A long-established knife-shaved noodle restaurant that has been in business for many years, with freshly-sliced knife-shaved noodles, dry mixed noodles and handmade cold noodles as its signature, with a strong flavor and loved by everyone.",
         vendorLink:'#'
     },
     {

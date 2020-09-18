@@ -1,0 +1,29 @@
+section.section-lg,
+.section.section-lg {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.bg-partner {
+    background-size: cover;
+    background-position: left bottom;
+    opacity: 1;}
+
+/************ For Small devices(landscape phones) and up***************/
+@media only screen and (min-width: 576px) {
+    .bg-partner {
+        background-position: right bottom;
+        opacity: 0.5;}
+  
+}
+
+/************ For Large devices(destops) and up***************/
+@media only screen and (min-width: 992px) {
+    
+}
+
+/************ For Extra large devices(PC) and up***************/
+@media only screen and (min-width: 1200px) {
+    .bg-partner {
+        opacity: 1;}
+}

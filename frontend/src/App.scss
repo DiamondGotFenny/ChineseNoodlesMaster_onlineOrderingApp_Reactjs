@@ -136,6 +136,7 @@ a{
 
   /*************back to top start********/
 .return-to-top {
+  visibility:hidden;
   transition: all 0.25s ease-in-out;
   position: fixed;
   bottom: 0;
@@ -155,17 +156,13 @@ a{
 .return-to-top .ti-angle-up {
   font-size: 2rem;
 }
-.return-to-top.show {
+.return-to-top-show {
   visibility: visible;
-  opacity: 0.5;
-}
-.return-to-top.hidden {
-  visibility: hidden;
-  opacity: 0;
+  opacity:0.5;
 }
 
-.return-to-top:hover {
+.return-to-top-show:hover {
   opacity: 1;
+  color: $primary-red;
 }
 /*************back to top end********/
-  

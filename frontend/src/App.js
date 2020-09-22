@@ -3,18 +3,26 @@ import './App.scss';
 import LandingPage from 'pages/LandingPage';
 import Header from 'containers/Header/Header';
 import Footer from 'containers/Footer/Footer';
+import BackToTop from 'components/backToTopBtn';
+import { Router,Switch,Route,Link } from 'react-router-dom';
+import CuisinePage from 'pages/CuisinePage';
+import history from 'services/history';
+
 
 function App() {
   return (
     <div className="App">
-      <a href="s" class="return-to-top hidden" id="backTopBtn">
-        <span class="ti-angle-up"></span>
-      </a>
-      <div id="body-wrapper">
-        <Header/>
-        <LandingPage/>
-        <Footer/>
-      </div>
+      <BackToTop/>
+      <Router history={history}>
+        <div id="body-wrapper">
+          <Header/>
+          <Switch>
+            <Route path='/' exact component={LandingPage} />
+            <Route path='/cuisines'  component={CuisinePage} />
+          </Switch>
+          <Footer/>
+        </div>
+      </Router>
     </div>
   );
 }

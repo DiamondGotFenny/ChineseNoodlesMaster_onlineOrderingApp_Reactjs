@@ -7,6 +7,7 @@ import Button  from 'react-bootstrap/Button';
 import { cuisinesTags,cuisinesTagscollapsed } from 'asset/temJsonFiles/cuisinesTags';
 import { produtList } from 'asset/temJsonFiles/productsList';
 import Productlanding from 'components/Product_Landing';
+import { Link } from 'react-router-dom';
 
 const Menu=()=>{
     return (
@@ -29,8 +30,8 @@ const Menu=()=>{
                { produtList.map(item=><Productlanding item={item}/>)}
             </div>
             <div className="text-center my-3">
-            <a href="./viewMoreMenu.html" className="btn red-outline-viewMore mt-4"
-              ><span>View More</span></a
+            <Link to="/cuisines" className="btn red-outline-viewMore mt-4"
+              ><span>View More</span></Link
             >
           </div>
         </section>

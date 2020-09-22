@@ -1,0 +1,53 @@
+
+{
+    "produtList": [
+        {
+            "productImg":"http://localhost:3001/assets/images/img/productsPic/beef_noodles.jpg",
+            "productTitle":"Beef Noodles",
+            "productDescr":"Beef broth, beef, chili oil, cilantro, garlic, pickled carrots, spicy",
+            "vendorName":"Lanzhou Beef Noodles",
+            "price":20,
+            "rating":3
+        },
+        {
+            "productImg":"http://localhost:3001/assets/images/img/productsPic/spicy-chicken-noodles.jpeg",
+            "productTitle":"Spicy Chicken Noodles",
+            "productDescr":"chicken meat, green pepper, potatoes, carrots, onions,spicy, beer",
+            "vendorName":"Henan Stewed Noodles",
+            "price":15,
+            "rating":3
+        },
+        {
+            "productImg":"http://localhost:3001/assets/images/img/productsPic/chong_qing_small_noodles.jpg",
+            "productTitle":"Chongqing Street Noodles",
+            "productDescr":"Chicken extract, soy sauce, chili oil, pepper noodles,small noodles, meat, vegetables, peas, peanuts, fried eggs",
+            "vendorName":"See You Again Noodles",
+            "price":10,
+            "rating":3.5
+        },
+        {
+            "productImg":"http://localhost:3001/assets/images/img/productsPic/you_po_noodles.jpeg",
+            "productTitle":"You Pour Noodles",
+            "productDescr":"Noodles, greens, chopped green onions, pepper, chili,noodles, peanuts, spicy",
+            "vendorName":"Shanxi Family Noodles",
+            "price":12,
+            "rating":4
+        },
+        {
+            "productImg":"http://localhost:3001/assets/images/img/productsPic/luosi_noodles.jpg",
+            "productTitle":"Liuzhou River Snails Rice Noodle",
+            "productDescr":"Rice vermicelli, pickled asparagus, fungus, peanuts, fried,bean curd, cauliflower, fresh green vegetables",
+            "vendorName":"Happy Snails Noodles",
+            "price":18,
+            "rating":4
+        },
+        {
+            "productImg":"http://localhost:3001/assets/images/img/productsPic/three_shrimp_noodles.jpg",
+            "productTitle":"Three Shrimp Noodles",
+            "productDescr":"Noodles, shrimp noodles, shrimp brains, shrimp roe",
+            "vendorName":"Su House Noodles",
+            "price":99,
+            "rating":4.5
+        }
+    ]
+}

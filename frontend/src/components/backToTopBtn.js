@@ -1,0 +1,16 @@
+import  React  from 'react';
+import ScrollUpButton from "react-scroll-up-button";
+
+const BackToTop=()=>{
+    return (
+        <div>
+        <ScrollUpButton 
+         ContainerClassName="return-to-top"
+         TransitionClassName="return-to-top-show"
+          ShowAtPosition={100} >
+              <span class="ti-angle-up"></span>
+        </ScrollUpButton>
+      </div>
+    )
+}
+export default BackToTop;

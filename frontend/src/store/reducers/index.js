@@ -1,6 +1,8 @@
 import { combineReducers } from "redux"
+import { productListReducer } from "./productsReducer";
+
 
 const reducers=combineReducers(
-    {testNum:()=>0}
+    {products:productListReducer}
 )
 export default reducers;

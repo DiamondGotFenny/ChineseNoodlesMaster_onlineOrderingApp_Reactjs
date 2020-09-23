@@ -8,7 +8,7 @@ const BackToTop=()=>{
          ContainerClassName="return-to-top"
          TransitionClassName="return-to-top-show"
           ShowAtPosition={100} >
-              <span class="ti-angle-up"></span>
+              <span className="ti-angle-up"></span>
         </ScrollUpButton>
       </div>
     )

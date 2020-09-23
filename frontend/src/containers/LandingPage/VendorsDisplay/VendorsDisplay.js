@@ -1,9 +1,9 @@
-import  React  from 'react';
+import  React, { useState,useEffect }  from 'react';
 import  Container  from 'react-bootstrap/Container';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { vendorsList } from 'asset/temJsonFiles/VendorsList';
 import VendorLanding from 'components/Vendor_Landing';
+import httpService from 'services/httpService';
 
 const responsive = {
     desktop: {
@@ -24,6 +24,15 @@ const responsive = {
   };
 
 const VendorsDisplay=(props)=>{
+  const [vendorsList,setVendorsList]=useState([]);
+  //I fetch products list data here because I think the other 
+    //components don't need to know this pieces of data.
+    //and the length of this data will be limited in future.
+  async function fetchVendorsList() {
+    const {data}=await httpService.get("/vendorList");
+    setVendorsList(data);
+  }
+  useEffect(()=>{fetchVendorsList()},[])
     return (
         <section class="section cover pull-up-10">
             <Container fluid>
@@ -45,7 +54,7 @@ const VendorsDisplay=(props)=>{
                     dotListClass="custom-dot-list-style"
                     itemClass="carousel-item-padding-40-px"
                     >
-                   {vendorsList.map(item=><div><VendorLanding item={item} /></div>)}   
+                   {vendorsList.map(item=><div key={item.id}><VendorLanding item={item} /></div>)}   
                 </Carousel>;
             </Container>
         </section>

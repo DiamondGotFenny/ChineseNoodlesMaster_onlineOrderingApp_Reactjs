@@ -8,14 +8,14 @@ import JoinUs from 'containers/LandingPage/JoinUs/JoinUs';
 
 const LandingPage=()=>{
     return (
-        <main>
+        <>
             <HeroBanner/>
             <Promotion/>
             <Menu/>
             <VendorsDisplay/>
             <AboutUs/>
             <JoinUs/>
-        </main>
+        </>
     )
 }
 export default LandingPage;

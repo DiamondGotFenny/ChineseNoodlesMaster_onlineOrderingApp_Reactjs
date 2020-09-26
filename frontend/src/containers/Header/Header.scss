@@ -293,6 +293,7 @@
 
 /************ For Small devices(landscape phones) and up***************/
 @media only screen and (min-width: 576px) {
+
   #header-mobile .module-nav-toggle{
     left:0.8rem
   }
@@ -311,7 +312,6 @@
     width: 100%;
     background-color: transparent;
     z-index: 900;
-    color: white;
     display: block;
 
     #nav-main > li {

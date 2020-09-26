@@ -5,8 +5,8 @@ import Header from 'containers/Header/Header';
 import Footer from 'containers/Footer/Footer';
 import BackToTop from 'components/backToTopBtn';
 import { Router,Switch,Route,Link } from 'react-router-dom';
-import CuisinePage from 'pages/CuisinePage';
 import history from 'services/history';
+import ProductsDisplay from './pages/ProductsDisplay';
 
 
 function App() {
@@ -17,8 +17,10 @@ function App() {
         <div id="body-wrapper">
           <Header/>
           <Switch>
-            <Route path='/' exact component={LandingPage} />
-            <Route path='/cuisines'  component={CuisinePage} />
+            <main>
+              <Route path='/' exact component={LandingPage} />
+              <Route path='/cuisines'  component={ProductsDisplay} />
+            </main>
           </Switch>
           <Footer/>
         </div>

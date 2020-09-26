@@ -33,6 +33,9 @@ h1.display-2 {
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
+  button{
+    margin-bottom: 1rem;
+  }
 }
 .v-center {
   top: 0;
@@ -51,6 +54,7 @@ h1.display-2 {
 @media only screen and (min-width: 576px) {
   .hero-container{
     width: 60%;
+   
   }
 }
 /************ For Large devices(destops) and up***************/
@@ -60,6 +64,9 @@ h1.display-2 {
   }
   .hero-container{
     width: 50%;
+    button{
+      margin-bottom: 0;
+    }
   }
   .v-center {
     top: 50%;

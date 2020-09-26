@@ -2,6 +2,7 @@
 @import 'global/variables';
 @import 'containers/Header/Header.scss';
 @import 'pages/LandingPage';
+@import 'pages/ProductsDisplay';
 @import 'containers/Footer/footer';
 @import 'asset/icons/themify-icons/themify-icons';
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Raleway:100,200,400,500");
@@ -71,9 +72,12 @@ a{
   .dark{
     color: $white-text;
   }
+  .light{
+    color: $body-color-black;
+  }
   body {
     position: relative;
-    color: $body-color;
+    color: $body-color-black;
     font-family: $font-family;
     font-weight: $font-weight;
     line-height: $line-height;
@@ -105,7 +109,7 @@ a{
     filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
     opacity: 0;
   }
-  
+
 
   /************ For Small devices(landscape phones) and up***************/
   @media only screen and (min-width: 576px) {
@@ -153,8 +157,8 @@ a{
   height: 5em;
   background-color: $returnToTop-bg-color;
 }
-.return-to-top .ti-angle-up {
-  font-size: 2rem;
+.return-to-top .up-icon {
+  font-size: 4rem;
 }
 .return-to-top-show {
   visibility: visible;

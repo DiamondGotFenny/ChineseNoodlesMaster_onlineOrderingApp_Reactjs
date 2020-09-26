@@ -1,22 +1,29 @@
-import  React  from 'react';
+import  React, { useEffect, useState }  from 'react';
 import navBarLogo from 'asset/img/logos/logo_ver2.png';
 import Container  from 'react-bootstrap/Container';
 import Navbar  from 'react-bootstrap/Navbar';
 import Nav  from 'react-bootstrap/Nav';
+import { Link, useLocation } from 'react-router-dom';
 
-const HeaderLg=()=>{
+const HeaderLg=(props)=>{
+    const currentPathname=useLocation().pathname;
+    function setHeaderColor() {
+      return `absolute ${currentPathname==='/'?'dark':'light'}`
+    }
+    const [headerColor,setHeaderClolorHandler]=useState("");
+    useEffect(()=>{setHeaderClolorHandler(setHeaderColor())},[currentPathname])
     return (
-        <header id="header" className="absolute">
+        <header id="header" className={headerColor} >
         <Container fluid>
             <Navbar id="home-navbar">
                 <Navbar.Brand href="#home">
                   <div className="module module-logo light">
-                    <a href="./landingPage.html"
+                    <Link to="/"
                       ><img
                         src={`${navBarLogo}`}
                         alt="logo Chinese Noodles Master"
                         width="359"
-                    /></a>
+                    /></Link>
                   </div>
                 </Navbar.Brand>
                 <Nav className="ml-auto">

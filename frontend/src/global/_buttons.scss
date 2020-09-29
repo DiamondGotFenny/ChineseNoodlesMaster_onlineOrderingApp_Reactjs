@@ -13,7 +13,7 @@
     font-weight: 400;
 }
 
-.red-outline-btnlg::before,.red-outline-btnmd::before{
+.red-outline-btnlg::before,.red-outline-btnmd::before,.red-outline-btnsm::before{
   @include red_outline_button_before;
 }
 
@@ -52,6 +52,30 @@
 .red-outline-btnmd:focus:active:before {
    @include red_outline_button_before_hover;
 }
+
+
+
+.red-outline-btnsm{
+  @include red_outline_button;
+  padding: .3rem .6rem;
+  font-size: .875rem;
+    font-weight: 400;
+}
+
+.red-outline-btnsm:hover,
+.red-outline-btnsm:focus,
+.red-outline-btnsm:active,
+.red-outline-btnsm:focus:active {
+  @include red_outline_button_hover;
+}
+
+.red-outline-btnsm:hover:before,
+.red-outline-btnsm:focus:before,
+.red-outline-btnsm:active:before,
+.red-outline-btnsm:focus:active:before {
+   @include red_outline_button_before_hover;
+}
+
 
 .red-outline-viewMore{
   @include red_outline_button;

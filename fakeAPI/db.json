@@ -8,7 +8,8 @@
             "productDescr":"Beef broth, beef, chili oil, cilantro, garlic, pickled carrots, spicy",
             "vendorName":"Lanzhou Beef Noodles",
             "price":20,
-            "rating":3
+            "rating":3,
+            "tags":["Gansu","beef","spicy","soup"]
         },
         {
             "id":"P002",
@@ -17,7 +18,8 @@
             "productDescr":"chicken meat, green pepper, potatoes, carrots, onions,spicy, beer",
             "vendorName":"Henan Stewed Noodles",
             "price":15,
-            "rating":3
+            "rating":3,
+            "tags":["Henan","chicken","spicy","no soup"]
         },
         {
             "id":"P003",
@@ -26,7 +28,8 @@
             "productDescr":"Chicken extract, soy sauce, chili oil, pepper noodles,small noodles, meat, vegetables, peas, peanuts, fried eggs",
             "vendorName":"See You Again Noodles",
             "price":10,
-            "rating":3.5
+            "rating":3.5,
+            "tags":["Chongqing","pork","spicy","soup"]
         },
         {
             "id":"P004",
@@ -35,7 +38,8 @@
             "productDescr":"Noodles, greens, chopped green onions, pepper, chili,noodles, peanuts, spicy",
             "vendorName":"Shanxi Family Noodles",
             "price":12,
-            "rating":4
+            "rating":4,
+            "tags":["shanxi","spicy","no soup"]
         },
         {
             "id":"P005",
@@ -44,7 +48,8 @@
             "productDescr":"Rice vermicelli, pickled asparagus, fungus, peanuts, fried,bean curd, cauliflower, fresh green vegetables",
             "vendorName":"Happy Snails Noodles",
             "price":18,
-            "rating":4
+            "rating":4,
+            "tags":["guangxi","hot","soup","pork"]
         },
         {
             "id":"P006",
@@ -53,7 +58,8 @@
             "productDescr":"Noodles, shrimp noodles, shrimp brains, shrimp roe",
             "vendorName":"Su House Noodles",
             "price":99,
-            "rating":4.5
+            "rating":4.5,
+            "tags":["shanghai","soup","shrimp"]
         }
     ],
     "vendorList":[
@@ -121,13 +127,6 @@
             "name":"Guang Dong Cuisine",
             "mainTitle":"Taste The LingNan Distinctive Cuisine Noodles",
             "secondaryTitle":"Fresh and delicious, with lots of flavors."
-        },
-        "NYCity":{
-            "id":"Tvds04821",
-            "img":"http://localhost:3001/assets/images/NYCity55674.jpg",
-            "name":"wefasdfasdfsf",
-            "mainTitle":"dfaesdasefasfd",
-            "secondaryTitle":"faesfesfsdfaeweasdf."
         }
     }
    

@@ -1,0 +1,99 @@
+
+.nav-sticky {
+  position: sticky;
+  top: 10px;
+  width: 100%;
+  align-self: flex-start;
+}
+
+.link-nav-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+  .sidebar-nav-container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-bottom: 1rem;
+  }
+  .stick-to-content{
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    padding: 1.5rem 2.5rem;
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    color: whitesmoke;
+    flex-wrap: wrap;
+    background-color: #282b2e
+  }
+ 
+
+  .back-home-btn {
+    color: whitesmoke;
+    margin-top: 1rem;
+    position: relative;
+    bottom: -1rem;
+    left: -3rem;
+  }
+
+  .contents{
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+.accordion{
+  height: 100%;
+}
+  .product-grid {
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    img{
+      object-fit: cover;
+      max-height:12rem;
+      width: 100%;
+      height: 12rem;
+      border-radius: 0.8rem;
+    }
+    .product-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: #212529;
+      font-weight: 500;
+    }
+    .vendor-name {
+      font-size: 0.8rem;
+      color: #6c757d;
+      &:hover {
+        color: #d15454;
+      }
+    }
+  }
+  .rating-favorites{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+/************ For Small devices(landscape phones) and up***************/
+@media only screen and (min-width: 576px) {
+  
+  .link-nav-container{
+    display: none;
+  }
+}
+
+/************ For Large devices(destops) and up***************/
+@media only screen and (min-width: 992px) {
+
+}
+
+/************ For Extra large devices(PC) and up***************/
+@media only screen and (min-width: 1200px) {
+
+}

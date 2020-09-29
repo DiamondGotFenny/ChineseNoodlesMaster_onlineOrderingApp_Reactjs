@@ -1,12 +1,12 @@
+import { faChevronCircleLeft} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import  React  from 'react';
-import  Col from 'react-bootstrap/Col';
 import Nav  from 'react-bootstrap/Nav';
-
 
 function ContentSidebar(props) {
     return(
-        <Col className="sidebar-nav-container nav-sticky" md={3}>
-         <Nav id="sidebar-nav" className="stick-to-content bg-dark collapse show" 
+          <div className="dark" >
+         <Nav id="sidebar-nav" className="stick-to-content collapse show" 
           >
           <Nav.Item>
             <Nav.Link eventKey='Si Chuan'>
@@ -38,8 +38,13 @@ function ContentSidebar(props) {
               Hu Bei
             </Nav.Link>
           </Nav.Item>
+          <Nav.Item>
+            <Nav.Link eventKey='backToHome' className='back-home-btn'>
+              <FontAwesomeIcon icon={faChevronCircleLeft} size="4x"/>
+            </Nav.Link>
+          </Nav.Item>
         </Nav>
-      </Col>
+      </div>
     )
 }
 

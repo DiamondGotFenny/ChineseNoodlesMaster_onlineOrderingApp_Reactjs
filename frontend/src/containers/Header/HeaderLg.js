@@ -1,19 +1,13 @@
-import  React, { useEffect, useState }  from 'react';
+import  React from 'react';
 import navBarLogo from 'asset/img/logos/logo_ver2.png';
 import Container  from 'react-bootstrap/Container';
 import Navbar  from 'react-bootstrap/Navbar';
 import Nav  from 'react-bootstrap/Nav';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const HeaderLg=(props)=>{
-    const currentPathname=useLocation().pathname;
-    function setHeaderColor() {
-      return `absolute ${currentPathname==='/'?'dark':'light'}`
-    }
-    const [headerColor,setHeaderClolorHandler]=useState("");
-    useEffect(()=>{setHeaderClolorHandler(setHeaderColor())},[currentPathname])
     return (
-        <header id="header" className={headerColor} >
+        <header id="header" className={props.headerColor} >
         <Container fluid>
             <Navbar id="home-navbar">
                 <Navbar.Brand href="#home">

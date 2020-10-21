@@ -334,9 +334,53 @@
         top: 0;
         left: 9rem;
         text-align: center;
-        padding: 3rem 3rem;
+        padding: 1rem;
       }
-    
+    .module-logo-small {
+        position: absolute;
+        top: 0;
+        left: 0rem;
+        text-align: center;
+        padding: 3rem 1rem;
+        img {
+          max-width: 150px;
+        }
+      }
+      .address-bar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        position: absolute;
+        left: 10rem;
+        width: 30%;
+        .address-bar_label {
+          margin: 1rem 0.5rem;
+        };
+        .address-bar-input {
+          width: 68%;
+          margin: 1rem 0;
+          border: 1px solid grey;
+
+          .address-input-area {
+            width: 83%;
+          }
+          .address-input-btn {
+            width: 15%;
+            .ti-location-pin {
+              color: #d04f3e;
+              float: right;
+            }
+          }
+        };
+        .address-bar-input input,
+        .address-bar-input button {
+          border: none;
+          background-color: transparent;
+        };
+        
+      }
       .module.right {
         float: right;
       }
@@ -348,7 +392,7 @@
         padding-bottom: 27.5px;
       }
       .module-logo img {
-        max-width: 150px;
+        max-width: 180px;
       }
       .module-cart{
         transform: translateY(-4px);
@@ -400,5 +444,14 @@
   }
 #header.absolute {
     position: absolute;
+  }
+}
+
+/************ For Extra large devices(PC) and up***************/
+@media only screen and (min-width: 1200px) {
+ #header .address-bar{
+    left: 20rem;
+    width: 40%;
+    transform: translateY(-0.4rem);
   }
 }

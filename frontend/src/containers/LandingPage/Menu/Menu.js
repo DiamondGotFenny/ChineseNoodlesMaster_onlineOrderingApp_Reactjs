@@ -1,4 +1,4 @@
-import  React, { useEffect, useState }  from 'react';
+import  React  from 'react';
 import Cuisinestagslanding from 'components/CuisinesTags_Landing';
 import CuisinesTagsCollapsed from 'components/CuisinesTagsCollapsed';
 import Accordion  from 'react-bootstrap/Accordion';
@@ -7,19 +7,12 @@ import Button  from 'react-bootstrap/Button';
 import { cuisinesTags,cuisinesTagscollapsed } from 'asset/temJsonFiles/cuisinesTags';
 import Productlanding from 'components/Product_Landing';
 import { Link } from 'react-router-dom';
-import httpService from 'services/httpService';
-
+import useGetResource from 'utilis/customHooks/useGetResource';
 
 const Menu=()=>{
-    const [productsList,setProductsList]=useState([]);
-    //I fetch products list data here because I think the other 
-    //components don't need to know this pieces of data.
-    //and the length of this data will be limited in future.
-    async function fetchProductList() {
-        const {data}=await httpService.get('/produtList');
-        setProductsList(data)
-    }
-    useEffect(()=>{ fetchProductList() },[]);
+    const endpoint='/produtList?_limit=6';
+    const productsList=useGetResource(endpoint);
+
     return (
         <section className="section bg-light">
             <h1 className="mb-6 text-center">Discover Our Noodles</h1>

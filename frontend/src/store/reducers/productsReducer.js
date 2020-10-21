@@ -1,5 +1,8 @@
 
-import { FETCH_PRODUCTLIST_FAIL, FETCH_PRODUCTLIST_LOADING, FETCH_PRODUCTLIST_SUCCESS } from './../../constants/actionTypes';
+import { FETCH_PRODUCTLIST_FAIL, 
+  FETCH_PRODUCTLIST_LOADING, 
+  FETCH_PRODUCTLIST_SUCCESS } from './../../constants/actionTypes';
+  
 function productListReducer(state = { products: [] }, action) {
     switch (action.type) {
       case FETCH_PRODUCTLIST_LOADING:

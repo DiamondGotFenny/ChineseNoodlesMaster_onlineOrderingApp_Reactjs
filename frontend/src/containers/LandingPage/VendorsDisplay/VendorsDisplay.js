@@ -1,9 +1,9 @@
-import  React, { useState,useEffect }  from 'react';
+import  React from 'react';
 import  Container  from 'react-bootstrap/Container';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import VendorLanding from 'components/Vendor_Landing';
-import httpService from 'services/httpService';
+import useGetResource from 'utilis/customHooks/useGetResource';
 
 const responsive = {
     desktop: {
@@ -24,15 +24,9 @@ const responsive = {
   };
 
 const VendorsDisplay=(props)=>{
-  const [vendorsList,setVendorsList]=useState([]);
-  //I fetch products list data here because I think the other 
-    //components don't need to know this pieces of data.
-    //and the length of this data will be limited in future.
-  async function fetchVendorsList() {
-    const {data}=await httpService.get("/vendorList");
-    setVendorsList(data);
-  }
-  useEffect(()=>{fetchVendorsList()},[])
+  const endpoint="/vendorList?_limit=8";
+  const vendorsList=useGetResource(endpoint)
+
     return (
         <section class="section cover pull-up-10">
             <Container fluid>

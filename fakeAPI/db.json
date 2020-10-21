@@ -6,7 +6,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/beef_noodles.jpg",
             "productTitle":"Beef Noodles",
             "productDescr":"Beef broth, beef, chili oil, cilantro, garlic, pickled carrots, spicy",
-            "vendorName":"Lanzhou Beef Noodles",
+            "vendorInfo":{"vendorName":"Lanzhou Beef Noodles","vendor_id":"V002"},
             "price":20,
             "rating":3,
             "tags":["Gansu","beef","spicy","soup"]
@@ -16,7 +16,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/spicy-chicken-noodles.jpeg",
             "productTitle":"Spicy Chicken Noodles",
             "productDescr":"chicken meat, green pepper, potatoes, carrots, onions,spicy, beer",
-            "vendorName":"Henan Stewed Noodles",
+            "vendorInfo":{"vendorName":"Henan Stewed Noodles","vendor_id":"V009"},
             "price":15,
             "rating":3,
             "tags":["Henan","chicken","spicy","no soup"]
@@ -26,7 +26,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/chong_qing_small_noodles.jpg",
             "productTitle":"Chongqing Street Noodles",
             "productDescr":"Chicken extract, soy sauce, chili oil, pepper noodles,small noodles, meat, vegetables, peas, peanuts, fried eggs",
-            "vendorName":"See You Again Noodles",
+            "vendorInfo":{"vendorName":"See You Again Noodles","vendor_id":"V010"},
             "price":10,
             "rating":3.5,
             "tags":["Chongqing","pork","spicy","soup"]
@@ -36,7 +36,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/you_po_noodles.jpeg",
             "productTitle":"You Pour Noodles",
             "productDescr":"Noodles, greens, chopped green onions, pepper, chili,noodles, peanuts, spicy",
-            "vendorName":"Shanxi Family Noodles",
+            "vendorInfo":{"vendorName":"Old Shanxi Daoxiao Noodles Shop","vendor_id":"V003"},
             "price":12,
             "rating":4,
             "tags":["shanxi","spicy","no soup"]
@@ -46,7 +46,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/luosi_noodles.jpg",
             "productTitle":"Liuzhou River Snails Rice Noodle",
             "productDescr":"Rice vermicelli, pickled asparagus, fungus, peanuts, fried,bean curd, cauliflower, fresh green vegetables",
-            "vendorName":"Happy Snails Noodles",
+            "vendorInfo":{"vendorName":"Zhou's River Snails Rice Noodle Shop","vendor_id":"V004"},
             "price":18,
             "rating":4,
             "tags":["guangxi","hot","soup","pork"]
@@ -56,7 +56,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/three_shrimp_noodles.jpg",
             "productTitle":"Three Shrimp Noodles",
             "productDescr":"Noodles, shrimp noodles, shrimp brains, shrimp roe",
-            "vendorName":"Su House Noodles",
+            "vendorInfo":{"vendorName":"Old Shanghai Noodle Shop","vendor_id":"V006"},
             "price":99,
             "rating":4.5,
             "tags":["shanghai","soup","shrimp"]
@@ -66,7 +66,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/daoxiaomian_small.jpg",
             "productTitle":"Sliced Noodles",
             "productDescr":"pork foreleg,Pixian bean paste,sweet sauce,onions,ginger,carrots",
-            "vendorName":"Old Shanxi Daoxiao Noodles Shop",
+            "vendorInfo":{"vendorName":"Old Shanxi Daoxiao Noodles Shop","vendor_id":"V003"},
             "price":12.5,
             "rating":4.0,
             "tags":["shanxi","soup","spicy","pork"]
@@ -76,7 +76,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/liangbanmian_small.jpg",
             "productTitle":"Cold Noodles",
             "productDescr":"Ginger garlic oil,sesame oil,chili oil, cucumber, bean sprouts, red pepper, ground peanuts.",
-            "vendorName":"Chongqing Hu's Noodle Shop",
+            "vendorInfo":{"vendorName":"Chongqing Hu's Noodle Shop","vendor_id":"V005"},
             "price":8,
             "rating":4.0,
             "tags":["Sichuan","no soup","spicy"]
@@ -86,7 +86,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/liminmian_xiajiangmian.jpg",
             "productTitle":"Shrimp Paste Noodles",
             "productDescr":"Fresh shrimp, salsa, garlic, oyster sauce, and pepper.",
-            "vendorName":"Old Shanghai Noodle Shop",
+            "vendorInfo":{"vendorName":"Old Shanxi Daoxiao Noodles Shop","vendor_id":"V003"},
             "price":24.5,
             "rating":4.0,
             "tags":["Shanghai","soup","Shrimp"]
@@ -96,7 +96,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/nanjing_laolumian.jpeg",
             "productTitle":"Noodles with Gravy",
             "productDescr":"Pork, eggs, young cabbage, mushrooms, dried fungus, carrots, green onions, cilantro, fennel.",
-            "vendorName":"Old Shanghai Noodle Shop",
+            "vendorInfo":{"vendorName":"Old Shanxi Daoxiao Noodles Shop","vendor_id":"V003"},
             "price":16.5,
             "rating":3.5,
             "tags":["Nanjing","soup","pork"]
@@ -106,7 +106,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/niurousaozimian.jpg",
             "productTitle":"Minced Beef Qishan Noodles",
             "productDescr":"Ground beef,carrots,tofu,beans,cauliflower,eggs,fungus.",
-            "vendorName":"Old Shanxi Daoxiao Noodles Shop",
+            "vendorInfo":{"vendorName":"Old Shanxi Daoxiao Noodles Shop","vendor_id":"V003"},
             "price":12.5,
             "rating":4,
             "tags":["Shanxi","soup","beef","spicy"]
@@ -116,7 +116,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/wangeryangroumian.jpg",
             "productTitle":"Mutton Noodles",
             "productDescr":"Lamb,scallions,coriander,red onions,dried chillies.",
-            "vendorName":"Wang's Lamb Noodle Shop",
+            "vendorInfo":{"vendorName":"Wang's Lamb Noodle Shop","vendor_id":"V008"},
             "price":22.5,
             "rating":4.5,
             "tags":["Shanxi","soup","Lamb","spicy"]
@@ -126,7 +126,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/yunnan_ganbanmian_small.jpg",
             "productTitle":"Dried Noodles",
             "productDescr":"Pork sauce, cilantro, pickled peppers, pickled radishes, straw mushrooms, celery, bean paste.",
-            "vendorName":"Wu Choi Kee Noodle Shop",
+            "vendorInfo":{"vendorName":"Wu Choi Kee Noodle Shop","vendor_id":"V007"},
             "price":18.5,
             "rating":3.5,
             "tags":["Yunnan","no soup","Pork","hot"]
@@ -136,7 +136,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/yunnan_xiaoguomixian_small.jpg",
             "productTitle":"Over-the-bridge Rice Noodles",
             "productDescr":"Pork sauce, Pea tips, leeks, coriander, shredded green onions, sprouts, ginger, magnolia chips, wild mushrooms.",
-            "vendorName":"Wu Choi Kee Noodle Shop",
+            "vendorInfo":{"vendorName":"Wu Choi Kee Noodle Shop","vendor_id":"V007"},
             "price":20,
             "rating":3.5,
             "tags":["Yunnan","soup","Pork"]
@@ -146,7 +146,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/zhuShengmian_Guangdong.jpg",
             "productTitle":"Zhusheng Noodles",
             "productDescr":"Cantonese slim noodles mixed with salted duck egg, Soy sauce, salt, green onions.",
-            "vendorName":"Kin Kee Noodle Shop",
+            "vendorInfo":{"vendorName":"Kin Kee Noodle Shop","vendor_id":"V001"},
             "price":20,
             "rating":3.5,
             "tags":["Guangdong","soup"]
@@ -156,7 +156,7 @@
             "productImg":"http://localhost:3001/assets/images/img/productsPic/ganchaoniuhe_guangdong.jpg",
             "productTitle":"Stir-Fried Rice Noodles with Beef",
             "productDescr":"Rice noodles, shredded beef, leeks, green onions, mung bean sprouts.",
-            "vendorName":"Kin Kee Noodle Shop",
+            "vendorInfo":{"vendorName":"Kin Kee Noodle Shop","vendor_id":"V001"},
             "price":16,
             "rating":4,
             "tags":["Guangdong","no soup","beef"]
@@ -303,6 +303,42 @@
                 "coordinate":"113.277374,23.176146"
             },
             "contact":"020-81933507",
+            "businessHour":"08:00-22:00",
+            "available":true,
+            "menu":[]
+        },
+        {
+            "imgLink":"http://localhost:3001/assets/images/img/vendor_pics/henan_huimianguan.jpg",
+            "vendorName":"Henan Stewed Noodles Shop",
+            "id":"V009",
+            "vendorDescr":"This Henan Stewed Noodles Shop, which has been open for 8 years, is full of people even though it's not a dinner time. This small shop in an old residential community. It decorated simple, homemade, fame depends on word of mouth.",
+            "vendorLink":"#",
+            "address": {
+                "provice":"Guangdong",
+                "city":"Guangzhou",
+                "district":"haizhu",
+                "street":"No.19, Huancheng High Street",
+                "coordinate":"113.322691,23.064706"
+            },
+            "contact":"020-81937788",
+            "businessHour":"08:00-22:00",
+            "available":true,
+            "menu":[]
+        },
+        {
+            "imgLink":"http://localhost:3001/assets/images/img/vendor_pics/seeyouAgain_noodleshop.jpg",
+            "vendorName":"See You Again Noodles",
+            "id":"V010",
+            "vendorDescr":"This cozy noodle shop exists because of love. The girl loves noodles, so the boy studied noodles with painstaking care, in order to see his love again. And finally, this small shop is \"See You Again\". It's a small shop with a variety of flavors, including food, love and stories.",
+            "vendorLink":"#",
+            "address": {
+                "provice":"Guangdong",
+                "city":"Guangzhou",
+                "district":"Panyu",
+                "street":"No.211, Zhongling North Street",
+                "coordinate":"113.39366,23.060715"
+            },
+            "contact":"020-36520782",
             "businessHour":"08:00-22:00",
             "available":true,
             "menu":[]

@@ -75,6 +75,9 @@ a{
   .light{
     color: $body-color-black;
   }
+  .hide{
+    display: none !important; 
+  }
   body {
     position: relative;
     color: $body-color-black;

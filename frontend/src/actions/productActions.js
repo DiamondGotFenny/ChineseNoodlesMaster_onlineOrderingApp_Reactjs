@@ -15,6 +15,3 @@ export const fetchProductList=()=>async dispatch=>{
     }
 }
 
-export const testfunc=()=>{
-    console.log('text')
-}

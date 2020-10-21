@@ -3,7 +3,7 @@ import Ratings from 'components/ratingStars';
 import MyFavorite from './myFavorite';
 
 const Productlanding=(props)=>{
-   const {productImg,productTitle,productDescr,vendorName,price,rating}=props.item;
+   const {productImg,productTitle,productDescr,vendorInfo,price,rating}=props.item;
     return (
         <div className="menu-item mt-3 mx-auto">
         <div className="row align-items-center justify-content-around">
@@ -28,7 +28,7 @@ const Productlanding=(props)=>{
               </p>
               <div className="restaurant-title">
                 <span>Restaurant:</span>
-                <p><a href="./vendorPage.html">{vendorName}</a></p>
+                <p><a href="./vendorPage.html">{vendorInfo.vendorName}</a></p>
               </div>
               <div className="rating-favorites mx-auto text-center">
                <Ratings rating={rating}/>

@@ -33,7 +33,7 @@ const Menu=()=>{
                { productsList.map(item=><Productlanding key={item.id} item={item}/>)}
             </div>
             <div className="text-center my-3">
-            <Link to="/cuisines" className="btn red-outline-viewMore mt-4"
+            <Link to="/products" className="btn red-outline-viewMore mt-4"
               ><span>View More</span></Link
             >
           </div>

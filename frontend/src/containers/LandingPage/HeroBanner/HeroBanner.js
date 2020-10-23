@@ -6,6 +6,7 @@ import  Button  from 'react-bootstrap/Button';
 import { useDispatch } from 'react-redux';
 import { handleSearch } from 'actions/searchInputAction';
 import { handleInputAdrs } from 'actions/inputAddressAction';
+import  history  from 'services/history';
 
 const HeroBanner=()=>{
     const [adrs,setAdrs]=useState("");
@@ -15,6 +16,7 @@ const HeroBanner=()=>{
       e.preventDefault();
       dispatch(handleInputAdrs(adrs));
       dispatch(handleSearch(search));
+      history.push(`/products?search=${search}&address=${adrs}`)
     }
 
     return(

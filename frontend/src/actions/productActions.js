@@ -7,7 +7,7 @@ import { FETCH_PRODUCTLIST_LOADING,
 export const fetchProductList=()=>async dispatch=>{
     try {
         dispatch({type:FETCH_PRODUCTLIST_LOADING});
-        const {data}=await httpService.get('/produtList');
+        const {data}=await httpService.get('/produtList?search=beef');
         console.log(data);
         dispatch({type:FETCH_PRODUCTLIST_SUCCESS,payload:data})
     } catch (error) {

@@ -9,8 +9,6 @@ import history from 'services/history';
 import ProductsDisplay from './pages/ProductsDisplay';
 import UserProfile from './containers/UserProfile/UserProfile';
 
-
-
 function App() {
   //we don't want some of routes show header and footer. 
   const hideHeaderFooterpaths=['/userProfile','/login']
@@ -23,7 +21,7 @@ function App() {
           <Switch>
             <main>
               <Route path='/' exact component={LandingPage} />
-              <Route path='/cuisines'  component={ProductsDisplay} />
+              <Route path='/products'  component={ProductsDisplay} />
               <Route path='/userProfile' component={UserProfile}/>
             </main>
           </Switch>

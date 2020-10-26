@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux';
 import { handleSearch } from 'actions/searchInputAction';
 import { handleInputAdrs } from 'actions/inputAddressAction';
 import  history  from 'services/history';
+import {getUserLocation} from 'services/useGeoLocation';
 
 const HeroBanner=()=>{
     const [adrs,setAdrs]=useState("");
@@ -17,6 +18,11 @@ const HeroBanner=()=>{
       dispatch(handleInputAdrs(adrs));
       dispatch(handleSearch(search));
       history.push(`/products?search=${search}&address=${adrs}`)
+    }
+    
+    const getCurrentPosistion=async()=>{
+      const city= await getUserLocation();
+      setAdrs(city)
     }
 
     return(
@@ -49,7 +55,7 @@ const HeroBanner=()=>{
               aria-describedby="Your Address"
               onChange={e=>setAdrs(e.target.value)} />
               <InputGroup.Append>
-                <Button className="pin-icon"><span class="ti-location-pin"></span></Button>
+                <Button className="pin-icon" onClick={getCurrentPosistion}><span class="ti-location-pin"></span></Button>
               </InputGroup.Append>
           </InputGroup>
 

@@ -8,13 +8,11 @@ import queryString from 'query-string';
 
 function ProductsList(props) {
     const query=queryString.parse(useLocation().search)
-    console.log(query);
     const search_value=query.search
     //we can get the user's location via ip as default value in the future;
     //if the user didn't input anything in the search bar.
     const endpoint=`/produtList?q=${search_value}`;
     const productsList=useGetResource(endpoint);
-    console.log(productsList);
     return (
         <Row>
             {productsList.map(item=><Col key={item.id} lg={3}><Product_Display item={item}/></Col>)}

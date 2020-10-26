@@ -16,7 +16,7 @@ import axios from 'axios';
   const pos = await new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject);
   });
-  Geocode.setApiKey("AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo");
+  Geocode.setApiKey(yourGoogleKey);
   if (pos.coords.latitude&&pos.coords.longitude) {
     Geocode.fromLatLng(pos.coords.latitude, pos.coords.longitude).then(
       response => {

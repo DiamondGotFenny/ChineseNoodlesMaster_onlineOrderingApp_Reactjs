@@ -8,10 +8,12 @@ import { Router,Switch,Route,Link } from 'react-router-dom';
 import history from 'services/history';
 import ProductsDisplay from './pages/ProductsDisplay';
 import UserProfile from './containers/UserProfile/UserProfile';
+import Register from './pages/RegisterPage';
+import Login from './pages/LoginPage';
 
 function App() {
   //we don't want some of routes show header and footer. 
-  const hideHeaderFooterpaths=['/userProfile','/login']
+  const hideHeaderFooterpaths=['/userProfile','/login','/register']
   return (
     <div className="App">
       <BackToTop/>
@@ -23,6 +25,8 @@ function App() {
               <Route path='/' exact component={LandingPage} />
               <Route path='/products'  component={ProductsDisplay} />
               <Route path='/userProfile' component={UserProfile}/>
+              <Route path='/register' component={Register}/>
+              <Route path='/login' component={Login}/>
             </main>
           </Switch>
           <FooterContainer hideFooter={hideHeaderFooterpaths}/>

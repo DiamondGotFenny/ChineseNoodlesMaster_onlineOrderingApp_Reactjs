@@ -39,8 +39,8 @@ const HeaderLg=(props)=>{
                       ><a className="mr-3 ml-1" href="#">中文</a>
                     </li>
                     <li className="mr-3">
-                      <a className="mr-1 pr-2 border-right" href="./loginForm.html">Login</a>
-                      <a className="mr-3 ml-1" href="./registrationForm.html">Register</a>
+                      <Link to={'/login'} className="mr-1 pr-2 border-right">Login</Link>
+                      <Link to={'/register'} className="mr-3 ml-1">Register</Link>
                     </li>
                   </ul>
                   <a

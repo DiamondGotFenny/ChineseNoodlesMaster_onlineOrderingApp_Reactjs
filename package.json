@@ -1,0 +1,25 @@
+{
+  "name": "chinese_noodles_master_onlineorderingapp_reactjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "cd fakeAPI&&npm run start",
+    "app": "cd frontend&&npm run start",
+    "start": "concurrently \"cd fakeAPI && npm run start\" \"cd frontend && npm run start\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiamondGotFenny/ChineseNoodlesMaster_onlineOrderingApp_Reactjs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiamondGotFenny/ChineseNoodlesMaster_onlineOrderingApp_Reactjs/issues"
+  },
+  "homepage": "https://github.com/DiamondGotFenny/ChineseNoodlesMaster_onlineOrderingApp_Reactjs#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}

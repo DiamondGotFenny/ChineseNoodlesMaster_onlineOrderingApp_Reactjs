@@ -1,8 +1,24 @@
-import { SET_USER_FAIL,SET_USER_SUCCESS, SET_USER_REQUEST} from 'constants/actionTypes';
+import { SET_USER_FAIL,SET_USER_SUCCESS, SET_USER_REQUEST,
+    SET_AUTH_REQUEST,SET_AUTH_SUCCESS,SET_AUTH_FAIL, SET_AUTH_LOTOUT
+} from 'constants/actionTypes';
 const initState={
-    name:"",token:"",isSignin:false
+    loading:false,authInfo:{token:"",isSignin:false}
 }
-export const setUserReducer=(state=initState,action)=>{
+export const setAuthReducer=(state=initState,action)=>{
+    switch (action.type) {
+        case SET_AUTH_REQUEST:
+            return {loading:true};
+        case SET_AUTH_SUCCESS:
+            return {loading:false,authInfo:action.payload};
+        case SET_AUTH_FAIL:
+            return {loading:false,authInfo:action.payload};
+        case SET_AUTH_LOTOUT:
+            return {loading:false,authInfo:{token:"",isSignin:false}};
+        default:
+            return state;
+    }
+}
+export const setUserReducer=(state=null,action)=>{
     switch (action.type) {
         case SET_USER_REQUEST:
             return {loading:true};
@@ -14,4 +30,5 @@ export const setUserReducer=(state=initState,action)=>{
             return state;
     }
 }
+
 

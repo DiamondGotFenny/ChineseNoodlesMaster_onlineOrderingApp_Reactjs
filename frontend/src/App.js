@@ -4,7 +4,7 @@ import LandingPage from 'pages/LandingPage';
 import Header from 'containers/Header/Header';
 import FooterContainer from './containers/Footer/FooterContainer';
 import BackToTop from 'components/backToTopBtn';
-import { Router,Switch,Route,Link } from 'react-router-dom';
+import { Router,Switch,Route,Link, Redirect } from 'react-router-dom';
 import history from 'services/history';
 import ProductsDisplay from './pages/ProductsDisplay';
 import UserProfile from './containers/UserProfile/UserProfile';

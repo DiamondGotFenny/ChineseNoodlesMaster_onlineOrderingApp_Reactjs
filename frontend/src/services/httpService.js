@@ -6,5 +6,6 @@ const instanceAuthenPost=axios.create({baseURL:"http://localhost:3002"})
 export default {
     get:instanceAxios.get,
     post:instanceAxios.post,
-    postAuth:instanceAuthenPost.post
+    postAuth:instanceAuthenPost.post,
+    getAuth:instanceAuthenPost.get
 }

@@ -1,39 +1,44 @@
 import React,{useState,useEffect} from 'react';
-
 import {  useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { userRegisterAction } from 'actions/userAction';
 import  history  from 'services/history';
 import InputAuthenContainer from 'components/InputAuthenContainer';
+import { validateInputs } from 'services/formValidation';
+
 
 const Register=(props)=>{
     
     const link=useLocation().pathname;
-    const userInfo=useSelector(state=>state.userInfo)
-    const [checkTerms,setCheckTerms]=useState(false)
     const dispatch=useDispatch();
+    const authInfo=useSelector(state=>state.authInfo)
+    const [check,setCheck]=useState(false)
     const [inputVals,setInputVals]=useState(
         {name:"",email:"",tel:"",password:"",password_confirm:""}
     );
-    const handleInputOnchange=(e)=>{
+    const [errors,setErrors]=useState(
+      {name:"",email:"",tel:"",password:"",password_confirm:""}
+    );
+
+    const handleInputOnchange= (e)=>{
         //replace the value of relative input according to its name attri
         setInputVals({...inputVals,[e.target.name]:e.target.value});
+        const errorMsg=validateInputs(e.target.name,e.target.value);
+        setErrors({...errors,[e.target.name]:errorMsg})
     }
     const handleSubmit=(e,inputVals)=>{
         e.preventDefault();
-        console.log(inputVals)
         dispatch(userRegisterAction(inputVals));
     }
 
     const handleCheckBox=()=>{
-        setCheckTerms(!checkTerms)
+        setCheck(!check)
     }
 
     useEffect(()=>{
-        console.log(userInfo.userInfo);
-        let isSignin=false;
-        userInfo.userInfo?isSignin=userInfo.userInfo.isSignin:isSignin=false;
-        if (isSignin) {
+        console.log(authInfo.authInfo);
+       
+        if (authInfo?.authInfo?.isSignin) {
             history.push("/")
         }
 
@@ -41,15 +46,16 @@ const Register=(props)=>{
             //
           };
       
-    },[userInfo])
+    },[authInfo])
 
     return (
       <InputAuthenContainer 
-        inputVals={inputVals} 
+        inputVals={inputVals}
+        errors={errors} 
         onSubmit={handleSubmit} 
         link={link} 
         handleInputOnchange={handleInputOnchange}
-        checkTerms={checkTerms}
+        check={check}
         handleCheckBox={handleCheckBox}
       />
     )

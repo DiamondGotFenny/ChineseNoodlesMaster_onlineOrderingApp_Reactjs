@@ -320,6 +320,11 @@
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
       position: relative;
+      .user-icon{
+        position: absolute;
+        left: -1rem;
+        bottom:0.3rem;
+      }
   }
     #nav-main > li:not(:last-child) {
     margin-right: 1.5rem;

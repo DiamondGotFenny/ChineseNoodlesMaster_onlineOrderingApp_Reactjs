@@ -27,6 +27,9 @@ const AboutUs=()=>{
                 <Row className="d-flex flex-row-reverse">
                     <Col lg={8}>
                     <p className="lead text-muted mb-2">
+                    We pack your noodles in fine ceramic dinnerware not plastic! 
+                    </p>
+                    <p className="lead text-muted mb-2">
                     Browse 1,000+ menus to find the noodle cuisines you like
                     </p>
                     <p className="lead text-muted mb-2">

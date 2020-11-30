@@ -3,9 +3,9 @@ import Ratings from 'components/ratingStars';
 import MyFavorite from './myFavorite';
 
 const Productlanding=(props)=>{
-   const {productImg,productTitle,productDescr,vendorInfo,price,rating}=props.item;
+   const {productImg,productTitle,productDescr,vendorInfo,price,rating,id}=props.item;
     return (
-        <div className="menu-item mt-3 mx-auto">
+        <div className="menu-item mt-3 mx-auto" id={id}>
         <div className="row align-items-center justify-content-around">
           <div
             className="col-lg-4 product-thumbnail"
@@ -32,7 +32,7 @@ const Productlanding=(props)=>{
               </div>
               <div className="rating-favorites mx-auto text-center">
                <Ratings rating={rating}/>
-               <MyFavorite/>
+               <MyFavorite id={id}/>
               </div>
             </div>
           </div>

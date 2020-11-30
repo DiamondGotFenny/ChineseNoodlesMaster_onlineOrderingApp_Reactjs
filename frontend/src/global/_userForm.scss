@@ -1,0 +1,75 @@
+.user-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+    span {
+        padding: 7px;
+        font-size: 12px;
+        position: relative;
+        z-index: 2;
+        font-size: 1rem;
+      }
+    &:after{
+        content: "";
+        position: absolute;
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+        top: 55%;
+        left: 0;
+        z-index: 1;
+    }
+  }
+
+  .btn-facebook {
+    background-color: #405d9d;
+    color: #fff;
+  }
+  .btn-twitter {
+    background-color: #42aeec;
+    color: #fff;
+  }
+  .btn-google {
+    background-color: rgb(252, 128, 149);
+    color: #fff;
+  }
+  .btn-instagram {
+    background-color: #4f86ac;
+    color: #fff;
+  }
+.user-form{
+    .back-icon{
+        font-size: 1rem;
+    }
+    .btn-OAlogin{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .btn-OAlogin-icon{
+            margin-right: 0.6rem;
+        }
+    }
+    h5{
+        font-weight: 500;
+        line-height: 1.2;
+    }
+    .form-control{
+        height: auto;
+    }
+    .input-group {
+        margin-bottom: 1rem;
+    }
+    .form-check a,.login-footer-2 a{
+        color: #42aeec;
+        text-decoration: underline;
+    }
+
+}
+   

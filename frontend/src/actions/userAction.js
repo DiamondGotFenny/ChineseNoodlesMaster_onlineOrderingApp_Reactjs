@@ -1,5 +1,6 @@
 import {SET_USER_FAIL,SET_USER_REQUEST,SET_USER_SUCCESS,
-        SET_AUTH_REQUEST,SET_AUTH_SUCCESS,SET_AUTH_FAIL, SET_AUTH_LOTOUT
+        SET_AUTH_REQUEST,SET_AUTH_SUCCESS,SET_AUTH_FAIL, SET_AUTH_LOTOUT,
+        UPDATE_USER_REQUEST,UPDATE_USER_SUCCESS,UPDATE_USER_FAIL
 } from 'constants/actionTypes';
 import  httpService  from 'services/httpService';
 import jwt_decode from "jwt-decode";
@@ -14,9 +15,10 @@ export const userRegisterAction=(data)=>async dispatch=>{
         const config = {
             headers: { Authorization: `Bearer ${jwtToken}` }
         };
-        
+        //we temporarily add extra user info here now, we should create those properties to database later in server 
+       const data_tem={...data,favorite_foods_list:[],favorite_vendors_list:[],address:[]};
         const bodyParameters = {
-            [data.email]: data
+            [data.email]: data_tem
         };
         //we temporarily post to user detail info to the server here
         await httpService.postAuth(endpoint_profiles,bodyParameters,config);
@@ -58,7 +60,6 @@ export const userLogoutAction = () => (dispatch) => {
   }
 
 export const getUserInfoAction=(authInfo)=>async dispatch=>{
-    console.log(authInfo);
     const token=authInfo?.authInfo?.token;
     dispatch({type:SET_USER_REQUEST,payload:authInfo});
     if (token) {
@@ -73,6 +74,28 @@ export const getUserInfoAction=(authInfo)=>async dispatch=>{
         } catch (error) {
             console.error(error);
             dispatch({type:SET_USER_FAIL,payload:error.message})
+        }
+    }
+}
+
+export const updateUserInfoAction=(authInfo,data)=>async dispatch=>{
+    const token=authInfo?.authInfo?.token;
+    dispatch({type:UPDATE_USER_REQUEST,payload:data});
+    if (token) {
+        const email=jwt_decode(token).email;
+        const endpoint_getUser=`/userProfiles?email=${email}` ;
+        const config={
+            headers: {Authorization:`Bearer ${token}`}
+        }
+        const bodyParameters = {
+            [data.email]: data
+        };
+        try {
+         const {data}= await httpService.postAuth(endpoint_getUser,bodyParameters,config);
+            dispatch({type:UPDATE_USER_SUCCESS,payload:data[email]})
+        } catch (error) {
+            console.error(error);
+            dispatch({type:UPDATE_USER_FAIL,payload:error.message})
         }
     }
 }

@@ -10,6 +10,9 @@ import ProductsDisplay from './pages/ProductsDisplay';
 import UserProfile from './containers/UserProfile/UserProfile';
 import Register from './pages/RegisterPage';
 import Login from './pages/LoginPage';
+import TermsandConditions from 'pages/TermsandCondition';
+
+
 
 function App() {
   //we don't want some of routes show header and footer. 
@@ -27,6 +30,7 @@ function App() {
               <Route path='/userProfile' component={UserProfile}/>
               <Route path='/register' component={Register}/>
               <Route path='/login' component={Login}/>
+              <Route path='/terms' component={TermsandConditions} />
             </main>
           </Switch>
           <FooterContainer hideFooter={hideHeaderFooterpaths}/>

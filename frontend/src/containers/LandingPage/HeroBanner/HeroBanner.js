@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux';
 import { handleSearch } from 'actions/searchInputAction';
 import { handleInputAdrs } from 'actions/inputAddressAction';
 import  history  from 'services/history';
-import {getUserLocation} from 'services/useGeoLocation';
+//import {getUserLocation} from 'services/useGeoLocation';
 
 const HeroBanner=()=>{
     const [adrs,setAdrs]=useState("");
@@ -15,16 +15,22 @@ const HeroBanner=()=>{
     const dispatch=useDispatch();
     const handelSubmit=(e,adrs,search)=>{
       e.preventDefault();
+      /* we put the address based on user ip here, that city should come from the menu component*/
       dispatch(handleInputAdrs(adrs));
       dispatch(handleSearch(search));
       history.push(`/products?search=${search}&address=${adrs}`)
     }
     
+    /* we temporary put the address based on user ip here, should use google map service to get a more accurate address to the state.*/
     const getCurrentPosistion=async()=>{
-      const city= await getUserLocation();
-      setAdrs(city)
+       /*const city= await getUserLocation();
+         /*we put guangzhou as city query parameter for display purpose only, 
+        because the limit of data, you should replace it in real project.  */
+        const city="guangzhou";
+        setAdrs(city)
+      dispatch(handleInputAdrs(city))
     }
-
+    
     return(
   <section className="section section-main bg-dark dark">
     <div

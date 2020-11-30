@@ -6,6 +6,8 @@ import InputAuthen from 'components/InputAuthen';
 import RegistFooter from './RegistFormFooter';
 import LoginFormFooter from './LoginFormFooter';
 import { btnInfo, registFormDetails, loginFormDetails } from 'services/inputsFormRenderInfo';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
 
 const InputAuthenContainer=(props)=>{
@@ -40,9 +42,9 @@ const InputAuthenContainer=(props)=>{
     const {onSubmit,inputVals,errors,link,handleInputOnchange,handleCheckBox,check}=props;
     const renderInfo=renderControl(link,check,errors,handleCheckBox);
     return (
-        <Container>
-            <Card className="bg-light mt-3 px-3 col-11 col-md-6 row">
-                <Link to={"/"}>Back</Link>
+        <Container className="user-form-container">
+            <Card className="bg-light mt-3 px-3 col-11 col-md-6 row user-form">
+                <Link to={"/"} className='back-icon' ><FontAwesomeIcon icon={faChevronCircleLeft} size='lg' /></Link>
                 <Card.Body className="mx-auto col-11" style={{maxWidth: "600px"}}>
                     <p>
                         {btnInfo.map(item=><LoginBtn key={item.btn_type} btnInfo={item}/>)}

@@ -16,7 +16,7 @@ const RegistFooter=(props)=>{
                         <div className="form-check">
                             <FormLabel className="form-check-label">
                                 <FormCheckInput type="checkbox" checked={check} onChange={handleCheckBox} className="form-check-input"/>
-                                I Read and Accept <Link to={"/"}>Terms and Conditions</Link>
+                                I Read and Accept <Link to={'/terms'}>Terms and Conditions</Link>
                             </FormLabel>
                         </div>
                     </Col>

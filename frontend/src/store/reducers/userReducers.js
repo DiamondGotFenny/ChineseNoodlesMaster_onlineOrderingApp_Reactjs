@@ -1,10 +1,14 @@
 import { SET_USER_FAIL,SET_USER_SUCCESS, SET_USER_REQUEST,
-    SET_AUTH_REQUEST,SET_AUTH_SUCCESS,SET_AUTH_FAIL, SET_AUTH_LOTOUT
+    SET_AUTH_REQUEST,SET_AUTH_SUCCESS,SET_AUTH_FAIL, SET_AUTH_LOTOUT,
+    UPDATE_USER_REQUEST,UPDATE_USER_SUCCESS,UPDATE_USER_FAIL
 } from 'constants/actionTypes';
-const initState={
+const initAuthState={
     loading:false,authInfo:{token:"",isSignin:false}
 }
-export const setAuthReducer=(state=initState,action)=>{
+const initUserState={
+    status:"loading",userInfo:null
+}
+export const setAuthReducer=(state=initAuthState,action)=>{
     switch (action.type) {
         case SET_AUTH_REQUEST:
             return {loading:true};
@@ -18,14 +22,20 @@ export const setAuthReducer=(state=initState,action)=>{
             return state;
     }
 }
-export const setUserReducer=(state=null,action)=>{
+export const setUserReducer=(state=initUserState,action)=>{
     switch (action.type) {
         case SET_USER_REQUEST:
-            return {loading:true};
+            return {status:"loading",userInfo:null};
         case SET_USER_SUCCESS:
-            return {loading:false,userInfo:action.payload};
+            return {status:"sucess",userInfo:action.payload};
         case SET_USER_FAIL:
-            return {loading:false,userInfo:action.payload}
+            return {status:"error",userInfo:action.payload};
+        case UPDATE_USER_REQUEST:
+            return {status:"loading",userInfo:null};
+        case UPDATE_USER_SUCCESS:
+            return {status:"sucess",userInfo:action.payload};
+        case UPDATE_USER_FAIL:
+            return {status:"error",userInfo:action.payload};   
         default:
             return state;
     }

@@ -19,7 +19,7 @@ const LoginFormFooter=(props)=>{
             <Button type="submit" className="btn btn-primary btn-block">
                 Login
             </Button>
-            <div className="mt-4">
+            <div className="mt-4 login-footer-2">
                  <div className="d-flex justify-content-center links">
                     Don't have an account? <Link to={'/register'} className="ml-2">Sign Up</Link>
                 </div>

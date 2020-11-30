@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { getUserInfoAction, userLogoutAction } from 'actions/userAction';
-import { Button } from 'react-bootstrap';
 import history from 'services/history';
 
 const HeaderLg=(props)=>{
@@ -38,7 +37,7 @@ const HeaderLg=(props)=>{
       return (
         <li className="mr-3">
             <Link to={'/userProfile'} className="mr-1 pr-2 border-right">
-               <FontAwesomeIcon icon={faUser}/>{user.name}
+               <FontAwesomeIcon icon={faUser} className="user-icon"/>{user.name}
             </Link>
             <Link type="button" onClick={handleLogout} className="mr-3 ml-1">Logout</Link>
         </li>

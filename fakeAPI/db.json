@@ -7,7 +7,8 @@
       "productDescr": "Beef broth, beef, chili oil, cilantro, garlic, pickled carrots, spicy",
       "vendorInfo": {
         "vendorName": "Lanzhou Beef Noodles",
-        "vendor_id": "V002"
+        "vendor_id": "V002",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 20,
       "rating": 3,
@@ -25,7 +26,8 @@
       "productDescr": "chicken meat, green pepper, potatoes, carrots, onions,spicy, beer",
       "vendorInfo": {
         "vendorName": "Henan Stewed Noodles",
-        "vendor_id": "V009"
+        "vendor_id": "V009",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 15,
       "rating": 3,
@@ -43,7 +45,8 @@
       "productDescr": "Chicken extract, soy sauce, chili oil, pepper noodles,small noodles, meat, vegetables, peas, peanuts, fried eggs",
       "vendorInfo": {
         "vendorName": "See You Again Noodles",
-        "vendor_id": "V010"
+        "vendor_id": "V010",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 10,
       "rating": 3.5,
@@ -61,7 +64,8 @@
       "productDescr": "Noodles, greens, chopped green onions, pepper, chili,noodles, peanuts, spicy",
       "vendorInfo": {
         "vendorName": "Old Shanxi Daoxiao Noodles Shop",
-        "vendor_id": "V003"
+        "vendor_id": "V003",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 12,
       "rating": 4,
@@ -78,7 +82,8 @@
       "productDescr": "Rice vermicelli, pickled asparagus, fungus, peanuts, fried,bean curd, cauliflower, fresh green vegetables",
       "vendorInfo": {
         "vendorName": "Zhou's River Snails Rice Noodle Shop",
-        "vendor_id": "V004"
+        "vendor_id": "V004",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 18,
       "rating": 4,
@@ -96,7 +101,8 @@
       "productDescr": "Noodles, shrimp noodles, shrimp brains, shrimp roe",
       "vendorInfo": {
         "vendorName": "Old Shanghai Noodle Shop",
-        "vendor_id": "V006"
+        "vendor_id": "V006",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 99,
       "rating": 4.5,
@@ -113,7 +119,8 @@
       "productDescr": "pork foreleg,Pixian bean paste,sweet sauce,onions,ginger,carrots",
       "vendorInfo": {
         "vendorName": "Old Shanxi Daoxiao Noodles Shop",
-        "vendor_id": "V003"
+        "vendor_id": "V003",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 12.5,
       "rating": 4,
@@ -131,7 +138,8 @@
       "productDescr": "Ginger garlic oil,sesame oil,chili oil, cucumber, bean sprouts, red pepper, ground peanuts.",
       "vendorInfo": {
         "vendorName": "Chongqing Hu's Noodle Shop",
-        "vendor_id": "V005"
+        "vendor_id": "V005",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 8,
       "rating": 4,
@@ -148,7 +156,8 @@
       "productDescr": "Fresh shrimp, salsa, garlic, oyster sauce, and pepper.",
       "vendorInfo": {
         "vendorName": "Old Shanxi Daoxiao Noodles Shop",
-        "vendor_id": "V003"
+        "vendor_id": "V003",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 24.5,
       "rating": 4,
@@ -165,7 +174,8 @@
       "productDescr": "Pork, eggs, young cabbage, mushrooms, dried fungus, carrots, green onions, cilantro, fennel.",
       "vendorInfo": {
         "vendorName": "Old Shanxi Daoxiao Noodles Shop",
-        "vendor_id": "V003"
+        "vendor_id": "V003",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 16.5,
       "rating": 3.5,
@@ -182,7 +192,8 @@
       "productDescr": "Ground beef,carrots,tofu,beans,cauliflower,eggs,fungus.",
       "vendorInfo": {
         "vendorName": "Old Shanxi Daoxiao Noodles Shop",
-        "vendor_id": "V003"
+        "vendor_id": "V003",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 12.5,
       "rating": 4,
@@ -200,7 +211,8 @@
       "productDescr": "Lamb,scallions,coriander,red onions,dried chillies.",
       "vendorInfo": {
         "vendorName": "Wang's Lamb Noodle Shop",
-        "vendor_id": "V008"
+        "vendor_id": "V008",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 22.5,
       "rating": 4.5,
@@ -218,7 +230,8 @@
       "productDescr": "Pork sauce, cilantro, pickled peppers, pickled radishes, straw mushrooms, celery, bean paste.",
       "vendorInfo": {
         "vendorName": "Wu Choi Kee Noodle Shop",
-        "vendor_id": "V007"
+        "vendor_id": "V007",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 18.5,
       "rating": 3.5,
@@ -236,14 +249,16 @@
       "productDescr": "Pork sauce, Pea tips, leeks, coriander, shredded green onions, sprouts, ginger, magnolia chips, wild mushrooms.",
       "vendorInfo": {
         "vendorName": "Wu Choi Kee Noodle Shop",
-        "vendor_id": "V007"
+        "vendor_id": "V007",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 20,
       "rating": 3.5,
       "tags": [
         "Yunnan",
         "soup",
-        "Pork"
+        "Pork",
+        "rice noodles"
       ]
     },
     {
@@ -253,7 +268,8 @@
       "productDescr": "Cantonese slim noodles mixed with salted duck egg, Soy sauce, salt, green onions.",
       "vendorInfo": {
         "vendorName": "Kin Kee Noodle Shop",
-        "vendor_id": "V001"
+        "vendor_id": "V001",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 20,
       "rating": 3.5,
@@ -269,7 +285,8 @@
       "productDescr": "Rice noodles, shredded beef, leeks, green onions, mung bean sprouts.",
       "vendorInfo": {
         "vendorName": "Kin Kee Noodle Shop",
-        "vendor_id": "V001"
+        "vendor_id": "V001",
+        "vendor_adrs":"Guangzhou"
       },
       "price": 16,
       "rating": 4,

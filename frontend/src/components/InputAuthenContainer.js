@@ -1,4 +1,4 @@
-import React from 'react';
+import React ,{useState,useEffect} from 'react';
 import { Card, Container, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import LoginBtn from 'components/LoginBtnOAthu';
@@ -9,17 +9,56 @@ import { btnInfo, registFormDetails, loginFormDetails } from 'services/inputsFor
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { userRegisterAction,userLoginAction } from 'actions/userAction';
+import  history  from 'services/history';
+import { validateInputs } from 'services/formValidation';
+
 
 const InputAuthenContainer=(props)=>{
+    const {link,inputItems}=props;
+    const dispatch=useDispatch();
+    const authInfo=useSelector(state=>state.authInfo)
+    const [check,setCheck]=useState(false)
+    const [inputVals,setInputVals]=useState(inputItems);
+    const [errors,setErrors]=useState(inputItems);
 
-    const renderControl=(link,check,errors,handleCheckBox)=>{
+    const handleInputOnchange= (e)=>{
+        //replace the value of relative input according to its name attri
+        setInputVals({...inputVals,[e.target.name]:e.target.value});
+        const errorMsg=validateInputs(e.target.name,e.target.value);
+        setErrors({...errors,[e.target.name]:errorMsg})
+    }
+
+
+    const handleCheckBox=()=>{
+        setCheck(check=>!check)
+    }
+
+    useEffect(()=>{
+       
+        if (authInfo.status==="sucess") {
+            history.push("/")
+        }
+
+        return () => {
+            //
+          };
+      
+    },[authInfo.status])
+
+    const renderControl=(link,check,errors,handleCheckBox,inputVals)=>{
        const  registerForm={
             renderInputs: registFormDetails,
             renderMiddleTxt:"Get started with your free account",
             renderFooter: <RegistFooter 
                             check={check} 
                             handleCheckBox={handleCheckBox} 
-                            errors={errors}/>
+                            errors={errors}/>,
+            handleSubmit:   function (e,inputVals) {
+                e.preventDefault();
+                dispatch(userRegisterAction(inputVals));
+            }
         };
        const loginForm={
             renderInputs: loginFormDetails,
@@ -27,7 +66,11 @@ const InputAuthenContainer=(props)=>{
             renderFooter: <LoginFormFooter 
                             check={check} 
                             handleCheckBox={handleCheckBox} 
-                            />
+                            />,
+            handleSubmit:   function (e,inputVals,check) {
+                e.preventDefault();
+                dispatch(userLoginAction(inputVals,check));
+             }                 
         }
         switch (link) {
             case "/login":
@@ -39,8 +82,8 @@ const InputAuthenContainer=(props)=>{
         }
     }
     
-    const {onSubmit,inputVals,errors,link,handleInputOnchange,handleCheckBox,check}=props;
-    const renderInfo=renderControl(link,check,errors,handleCheckBox);
+    
+    const renderInfo=renderControl(link,check,errors,handleCheckBox,inputVals);
     return (
         <Container className="user-form-container">
             <Card className="bg-light mt-3 px-3 col-11 col-md-6 row user-form">
@@ -53,7 +96,7 @@ const InputAuthenContainer=(props)=>{
                         <span className="bg-light">OR</span>
                     </p>
                     <h5 className="text-center mb-3">{renderInfo.renderMiddleTxt}</h5>
-                    <Form onSubmit={(e)=>onSubmit(e,inputVals,check)}>
+                    <Form onSubmit={(e)=>renderInfo.handleSubmit(e,inputVals,check)}>
                         <Form.Group >
                             {renderInfo.renderInputs.map(data=><InputAuthen 
                                 key={data.id}

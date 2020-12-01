@@ -15,29 +15,29 @@ const HeaderLg=(props)=>{
   const authInfo=useSelector(state=>state.authInfo);
   const userInfo=useSelector(state=>state.userInfo);
   const dispatch=useDispatch();
-  const isSignin=authInfo?.authInfo?.isSignin;
+  
   
   useEffect(()=>{
     const userToken=localStorage.getItem("userToken");
     if (userToken) {
-      authInfo.authInfo.token=userToken;
-      authInfo.authInfo.isSignin=true;
+      authInfo.data.token=userToken;
+      authInfo.data.isSignin=true;
+      authInfo.status="sucess";
     }
     
     dispatch(getUserInfoAction(authInfo));
-  },[isSignin]);
+  },[authInfo.status]);
  
   const handleLogout=()=>{
     dispatch(userLogoutAction());
     history.push("/")
   }
   const renderUser=(isSignin,userInfo)=>{
-    const user=userInfo?.userInfo
-    if (isSignin&&user) {
+    if (isSignin==="sucess"&&userInfo.status==="sucess") {
       return (
         <li className="mr-3">
             <Link to={'/userProfile'} className="mr-1 pr-2 border-right">
-               <FontAwesomeIcon icon={faUser} className="user-icon"/>{user.name}
+               <FontAwesomeIcon icon={faUser} className="user-icon"/>{userInfo.data.name}
             </Link>
             <Link type="button" onClick={handleLogout} className="mr-3 ml-1">Logout</Link>
         </li>
@@ -81,7 +81,7 @@ const HeaderLg=(props)=>{
                       <a className="mr-1 ml-3 pr-2 border-right" href="#">EN</a
                       ><a className="mr-3 ml-1" href="#">中文</a>
                     </li>
-                    {renderUser(isSignin,userInfo)}
+                    {renderUser(authInfo.status,userInfo)}
                   </ul>
                   <a
                 href="#"

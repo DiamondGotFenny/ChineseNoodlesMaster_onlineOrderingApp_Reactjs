@@ -3,21 +3,21 @@ import { SET_USER_FAIL,SET_USER_SUCCESS, SET_USER_REQUEST,
     UPDATE_USER_REQUEST,UPDATE_USER_SUCCESS,UPDATE_USER_FAIL
 } from 'constants/actionTypes';
 const initAuthState={
-    loading:false,authInfo:{token:"",isSignin:false}
+    status:"loading",data:{token:"",isSignin:false}
 }
 const initUserState={
-    status:"loading",userInfo:null
+    status:"loading",data:null
 }
 export const setAuthReducer=(state=initAuthState,action)=>{
     switch (action.type) {
         case SET_AUTH_REQUEST:
-            return {loading:true};
+            return state;
         case SET_AUTH_SUCCESS:
-            return {loading:false,authInfo:action.payload};
+            return {status:"sucess",data:action.payload};
         case SET_AUTH_FAIL:
-            return {loading:false,authInfo:action.payload};
+            return {status:"error",data:action.payload};
         case SET_AUTH_LOTOUT:
-            return {loading:false,authInfo:{token:"",isSignin:false}};
+            return {status:"logout",data:{token:"",isSignin:false}};
         default:
             return state;
     }
@@ -25,17 +25,14 @@ export const setAuthReducer=(state=initAuthState,action)=>{
 export const setUserReducer=(state=initUserState,action)=>{
     switch (action.type) {
         case SET_USER_REQUEST:
-            return {status:"loading",userInfo:null};
-        case SET_USER_SUCCESS:
-            return {status:"sucess",userInfo:action.payload};
-        case SET_USER_FAIL:
-            return {status:"error",userInfo:action.payload};
         case UPDATE_USER_REQUEST:
-            return {status:"loading",userInfo:null};
+            return {status:"loading",data:null};
+        case SET_USER_SUCCESS:
         case UPDATE_USER_SUCCESS:
-            return {status:"sucess",userInfo:action.payload};
+            return {status:"sucess",data:action.payload};
+        case SET_USER_FAIL:
         case UPDATE_USER_FAIL:
-            return {status:"error",userInfo:action.payload};   
+            return {status:"error",data:action.payload};
         default:
             return state;
     }

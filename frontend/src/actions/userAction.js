@@ -42,7 +42,6 @@ export const userLoginAction=(data,check)=>async dispatch=>{
                 localStorage.setItem('userToken',jwtToken)
                 //use js-cookie lib here if you want to use cookies
                 //Cookie.set('userToken', JSON.stringify(jwtToken));
-                console.log('remember me done');
             }
             
             dispatch({type:SET_AUTH_SUCCESS,payload:{token:jwtToken,isSignin:true}});
@@ -60,7 +59,7 @@ export const userLogoutAction = () => (dispatch) => {
   }
 
 export const getUserInfoAction=(authInfo)=>async dispatch=>{
-    const token=authInfo?.authInfo?.token;
+    const token=authInfo.data.token;
     dispatch({type:SET_USER_REQUEST,payload:authInfo});
     if (token) {
         const email=jwt_decode(token).email;
@@ -79,7 +78,7 @@ export const getUserInfoAction=(authInfo)=>async dispatch=>{
 }
 
 export const updateUserInfoAction=(authInfo,data)=>async dispatch=>{
-    const token=authInfo?.authInfo?.token;
+    const token=authInfo.data.token;
     dispatch({type:UPDATE_USER_REQUEST,payload:data});
     if (token) {
         const email=jwt_decode(token).email;

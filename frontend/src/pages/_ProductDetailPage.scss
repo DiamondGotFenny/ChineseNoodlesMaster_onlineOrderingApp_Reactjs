@@ -1,0 +1,144 @@
+@import 'global/_variables.scss';
+@import 'global/_mixin.scss';
+.product-detail-container{
+  @include page_container;
+}
+
+.detail-img{
+    display: flex;
+    padding-right: 0;
+  }
+  .detail-img img{
+    height: 650px;
+    object-fit: cover;
+  }
+  .product-tags{
+    display: flex;
+    margin-left: 0;
+    list-style-type:none;
+    padding-inline-start:0;
+    flex-wrap: wrap;
+  }
+  .product-tags li{
+    margin: 0.5rem;
+  }
+  .price-warn{
+    font-size: smaller;
+  }
+  .footer-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    button{
+      width: 30%;
+      span{
+        display: flex;
+        align-items: center;
+      }
+    }
+    .order-confirm-btn{
+      padding-top: .93rem;
+      padding-bottom: .93rem;
+    }
+    
+  }
+  .qty-btn-container{
+      /* Chrome, Safari, Edge, Opera */
+      input[type=number]::-webkit-outer-spin-button,
+      input[type=number]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+        }
+    .qty-btn-text{
+      margin-right: 1rem;
+    }
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    input[type=number] {
+      -moz-appearance: textfield;
+      text-align: center;
+    }
+    .input-group{
+      width: 30%;
+      .form-control,.qty-btn-plus,.qty-btn-minus{
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  .review-container{
+      h2{
+          margin: 1rem;
+      }
+  }
+  .reviews{
+    list-style: none;
+    
+    li{
+        max-width: 80%;
+        padding: 1rem;
+        border-bottom: 1px solid gray;
+        margin: auto;
+      }
+  }
+ 
+  
+  .review-block-name{
+      font-size:12px;
+      margin:10px 0;
+  }
+  .review-block-date{
+      font-size:12px;
+  }
+  .review-block-rate{
+      font-size:13px;
+      margin-bottom:0.6rem;
+  }
+  .review-block-title{
+      font-size:15px;
+      font-weight:700;
+      margin-bottom:0.4rem;
+  }
+  .review-block-description{
+      font-size:13px;
+  }
+  
+  .more-reviews{
+    display: block;
+    text-align: right;
+    margin-right: 10rem;
+    margin-bottom: 1rem;
+  }
+  .write-comment-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+   .add-to-favorite-icon {
+    color: goldenrod;
+    border: none;
+    background: transparent;
+    margin:1rem;
+    float: right;
+  }
+  .add-to-favorite-icon:hover,
+  .add-to-favorite-icon:focus,
+  .add-to-favorite-icon:active{
+    background-color: transparent;
+    border-color: goldenrod;
+  }
+ 
+  
+.add-to-favorite-icon:focus:active{
+    background-color: transparent;
+    border-color: goldenrod;
+  }
+  .add-to-favorite-icon::selection{
+    border-color: goldenrod;
+  }

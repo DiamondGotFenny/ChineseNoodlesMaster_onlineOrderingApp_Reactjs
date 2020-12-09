@@ -16,7 +16,7 @@ const Menu=()=>{
     //by default, we fetch the produts based on visitor's address which we get from ip
     const [adrs,setAdrs]=useState("");
     const endpoint=`/produtList?_limit=6&q=${adrs}`;
-    const productsList=useGetResource(endpoint);
+    const {isLoading,hasError,data:productsList}=useGetResource(endpoint);
     const dispatch=useDispatch();
     const getCurrentPosistion=async()=>{
         /*const city= await getUserLocation();

@@ -3,7 +3,7 @@ import Ratings from 'components/ratingStars';
 import MyFavorite from './myFavorite';
 
 function Product_Display(props) {
-  const {productImg,productTitle,productDescr,vendorName,price,rating}=props.item;
+  const {productImg,productTitle,productIngredients,vendorName,price,rating}=props.item;
     return (
                <div className="product product-grid text-truncate">
                     <img

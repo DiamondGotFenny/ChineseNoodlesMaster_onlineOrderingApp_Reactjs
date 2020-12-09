@@ -25,7 +25,7 @@ const responsive = {
 
 const VendorsDisplay=(props)=>{
   const endpoint="/vendorList?_limit=8";
-  const vendorsList=useGetResource(endpoint)
+  const {isLoading,hasError,data:vendorsList} =useGetResource(endpoint)
 
     return (
         <section class="section cover pull-up-10">

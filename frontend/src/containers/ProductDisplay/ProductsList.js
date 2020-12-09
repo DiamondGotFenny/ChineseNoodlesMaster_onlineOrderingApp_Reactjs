@@ -21,7 +21,7 @@ function ProductsList(props) {
     //we can get the user's location via ip as default value and may set items paginate in future;
     //if the user didn't input anything in the search bar.
     const endpoint=`/produtList?q=${search_parmas}`;
-    const productsList=useGetResource(endpoint);
+    const {isLoading,hasError,data:productsList}=useGetResource(endpoint);
     const dispatch=useDispatch()
     const getCurrentPosistion=async()=>{
             /*const city= await getUserLocation();

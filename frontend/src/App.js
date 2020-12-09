@@ -11,6 +11,7 @@ import UserProfile from './containers/UserProfile/UserProfile';
 import Register from './pages/RegisterPage';
 import Login from './pages/LoginPage';
 import TermsandConditions from 'pages/TermsandCondition';
+import ProductDetailPage from 'pages/ProductDetailPage';
 
 
 
@@ -27,6 +28,7 @@ function App() {
             <main>
               <Route path='/' exact component={LandingPage} />
               <Route path='/products'  component={ProductsDisplay} />
+              <Route path='/product/:id'  component={ProductDetailPage} />
               <Route path='/userProfile' component={UserProfile}/>
               <Route path='/register' component={Register}/>
               <Route path='/login' component={Login}/>

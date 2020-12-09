@@ -24,6 +24,7 @@
         z-index: 2;
       }
 }
+
 @mixin red_outline_button_before{
     position: absolute;
     top: -2px;
@@ -68,6 +69,32 @@
     -o-transform: scaleY(1);
     transform: scaleY(1);
 }
+@mixin  page_container {
+  width: 100%;
+  height: auto;
+  padding: 1rem 0;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+  top: 6rem;
+  margin-bottom: 5rem;
+}
 
+@mixin gold_outline_button {
+  @include red_outline_button;
+  border-color:$primary-gold;
+  
+}
+@mixin gold_outline_button_before{
+  @include red_outline_button_before;
+}
+
+@mixin gold_outline_button_hover {
+  @include red_outline_button_hover;
+} 
+
+@mixin gold_outline_button_before_hover{
+  @include red_outline_button_before_hover
+}
 
 

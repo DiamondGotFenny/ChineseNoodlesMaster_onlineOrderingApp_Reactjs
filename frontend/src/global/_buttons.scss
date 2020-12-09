@@ -95,9 +95,41 @@
 }
 
 
-
-
 .btn-red-fill::before{
   background-color: $primary-red;
   border-radius: 0.8rem;
+}
+
+.gold-outline-btnmd{
+  @include gold_outline_button;
+    padding: 0.75rem 1.2rem;
+    font-size: 0.9rem;
+    width: 9rem; height: auto;
+    font-weight: 400;
+}
+
+.gold-outline-btnmd:hover,
+.gold-outline-btnmd:focus,
+.gold-outline-btnmd:active,
+.gold-outline-btnmd:focus:active {
+  @include gold_outline_button_hover;
+  background-color: $primary-gold;
+  border-color: $primary-gold;
+}
+
+.gold-outline-btnmd:hover:before,
+.gold-outline-btnmd:focus:before,
+.gold-outline-btnmd:active:before,
+.gold-outline-btnmd:focus:active:before {
+   @include gold_outline_button_before_hover;
+   
+}
+
+.btn-gold-fill::before{
+  background-color: $primary-gold;
+  border-radius: 0.8rem;
+}
+
+.gold-outline-btnmd::before{
+  @include gold_outline_button_before;
 }

@@ -9,7 +9,7 @@ export const produtList=[
     {
         productImg:beefNoodleImg,
         productTitle:'Beef Noodles',
-        productDescr:'Beef broth, beef, chili oil, cilantro, garlic, pickled carrots, spicy',
+        productIngredients:'Beef broth, beef, chili oil, cilantro, garlic, pickled carrots, spicy',
         vendorName:'Lanzhou Beef Noodles',
         price:20,
         rating:3
@@ -17,7 +17,7 @@ export const produtList=[
     {
         productImg:spicyChickenNoodlesImg,
         productTitle:'Spicy Chicken Noodles',
-        productDescr:'chicken meat, green pepper, potatoes, carrots, onions,spicy, beer',
+        productIngredients:'chicken meat, green pepper, potatoes, carrots, onions,spicy, beer',
         vendorName:'Henan Stewed Noodles',
         price:15,
         rating:3
@@ -25,7 +25,7 @@ export const produtList=[
     {
         productImg:chongqingStreetNoodlesImg,
         productTitle:'Chongqing Street Noodles',
-        productDescr:'Chicken extract, soy sauce, chili oil, pepper noodles,small noodles, meat, vegetables, peas, peanuts, fried eggs',
+        productIngredients:'Chicken extract, soy sauce, chili oil, pepper noodles,small noodles, meat, vegetables, peas, peanuts, fried eggs',
         vendorName:'See You Again Noodles',
         price:10,
         rating:3.5
@@ -33,7 +33,7 @@ export const produtList=[
     {
         productImg:youPoNoodlesImg,
         productTitle:'You Pour Noodles',
-        productDescr:'Noodles, greens, chopped green onions, pepper, chili,noodles, peanuts, spicy',
+        productIngredients:'Noodles, greens, chopped green onions, pepper, chili,noodles, peanuts, spicy',
         vendorName:'Shanxi Family Noodles',
         price:12,
         rating:4
@@ -41,7 +41,7 @@ export const produtList=[
     {
         productImg:luosiImg,
         productTitle:'Liuzhou River Snails Rice Noodle',
-        productDescr:'Rice vermicelli, pickled asparagus, fungus, peanuts, fried,bean curd, cauliflower, fresh green vegetables',
+        productIngredients:'Rice vermicelli, pickled asparagus, fungus, peanuts, fried,bean curd, cauliflower, fresh green vegetables',
         vendorName:'Happy Snails Noodles',
         price:18,
         rating:4
@@ -49,7 +49,7 @@ export const produtList=[
     {
         productImg:threeshrimpiImg,
         productTitle:'Three Shrimp Noodles',
-        productDescr:'Noodles, shrimp noodles, shrimp brains, shrimp roe',
+        productIngredients:'Noodles, shrimp noodles, shrimp brains, shrimp roe',
         vendorName:'Su House Noodles',
         price:99,
         rating:4.5

@@ -1,14 +1,8 @@
 @import 'global/_variables.scss';
+@import 'global/_mixin.scss';
 @import 'containers/ProductDisplay/contents.scss';
 .productDisplay-container{
-  width: 100%;
-  height: auto;
-  padding: 1rem 0;
-  margin-right: auto;
-  margin-left: auto;
-  position: relative;
-  top: 6rem;
-  margin-bottom: 5rem;
+ @include page_container;
 }
 
 .page-highlight {

@@ -20,10 +20,9 @@ const useGetResource=(initialQuery)=>{
                     
                     setIsLoading(true);
                     const respone=await httpService.get(query);
-                    console.log(respone,"respone");
                     handleFetchRespone(respone)
                 } catch (error) {
-                    console.error(error.response,"log error");
+                    console.error(error.response);
                     setIsLoading(false)
                     setHasError(true)
                     

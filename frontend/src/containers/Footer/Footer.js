@@ -7,6 +7,7 @@ import FooterNav from 'components/FooterNav';
 import Container  from 'react-bootstrap/Container';
 import  Row  from 'react-bootstrap/Row';
 import  Col  from 'react-bootstrap/Col';
+import { Link } from 'react-router-dom';
 
 const Footer=()=>{
     return (
@@ -14,13 +15,13 @@ const Footer=()=>{
           <Container className="footerContent">
             <Row className="footer-first-row align-items-center">
               <Col lg={3} className="text-center">
-              <a href="./landingPage.html"
+              <Link to="/"
                 ><img
                   src={`${footLogo}`}
                   alt="Chinese Noodles Master Footer Logo"
                   width="145"
                   className="mt-5 mb-5"
-              /></a>
+              /></Link>
               </Col>
               <Col lg={6} className="align-items-center">
               <h5 className="text-muted text-center">Subscribe Us!</h5>
@@ -51,7 +52,7 @@ const Footer=()=>{
               </Col>
               <Col lg={3} className="text-center">
               <h5 className="text-muted mb-3">Social Media</h5>
-              {socialMedia.map(item=><SocialMedia item={item}/>)}
+              {socialMedia.map(item=>< SocialMedia key={item.iconContainer} item={item}/>)}
               </Col>
             </Row>
           </Container>
@@ -62,7 +63,7 @@ const Footer=()=>{
             >
             <nav className="footer__nav col-lg-9 col-12">
               <ul className="float-left">
-                {footerNav.map(item=><FooterNav item={item}/>)}
+                {footerNav.map(item=><FooterNav key={item.text} item={item}/>)}
               </ul>
             </nav>
           </Row>

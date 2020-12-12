@@ -142,3 +142,14 @@
   .add-to-favorite-icon::selection{
     border-color: goldenrod;
   }
+
+  .login-required-text{
+    margin: 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    a{
+      color: rgb(83, 83, 247);
+      text-decoration: underline;
+      &:hover{color: $primary-red;}
+    }
+  }

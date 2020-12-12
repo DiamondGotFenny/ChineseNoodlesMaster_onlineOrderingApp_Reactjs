@@ -1,12 +1,11 @@
-import  React, { useEffect, useState }  from 'react';
-import { Card, Container, Row, Button, Form, InputGroup, ToggleButton, ButtonGroup, FormControl } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
-import useGetResource from 'utilis/customHooks/useGetResource';
+import  React, {  useState }  from 'react';
+import { Card, Container, Row, Button, Form, InputGroup, FormControl } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import MyFavorite from 'components/myFavorite';
 import Ratings from 'components/ratingStars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import Review from 'components/Review';
+import ReviewsContainer from './ReviewsContainer';
 
 const ProductDetailContainer = ({product}) => {
     const pungencyInfo=["no spicy","mild","spicy","hot"];
@@ -64,7 +63,7 @@ const ProductDetailContainer = ({product}) => {
                             <div className="review-wrap mb-3">
                             <span>Rating:</span>
                             <span className="rating-stars text-danger">
-                                <Ratings rating={rating}/>
+                                <Ratings rating={rating} interactive={false}/>
                             </span>
                             <a href="#reviews" className="review-counts">
                                 {reviews.length>0?<span className="reviews-num">{reviews.length}</span>:<span className="reviews-num">0</span>}
@@ -89,7 +88,7 @@ const ProductDetailContainer = ({product}) => {
                                 </dd>
                             </dl> 
                             <hr/>
-                            <Form onSubmit={handleSubmit}>
+                        <Form onSubmit={handleSubmit}>
                             <Form.Group controlId="pungency" onChange={handlePungencyChange}>
                             {pungencyInfo.map(item=>{return <Form.Check key={item} type="radio" inline label={item} id={item}  name="pungency" value={item} readOnly checked={pungency===item}/>})}
                             </Form.Group>
@@ -113,7 +112,6 @@ const ProductDetailContainer = ({product}) => {
                                         </InputGroup.Append>
                                     </InputGroup> 
                             </div>
-                                
                                 <hr/>
                                 <div className="footer-container">
                                     <Button
@@ -128,7 +126,10 @@ const ProductDetailContainer = ({product}) => {
                                         className="btn red-outline-btnmd btn-red-fill"
                                         data-dismiss="modal"
                                     >
-                                    <span><FontAwesomeIcon className="mr-2" icon={faShoppingCart}/> Add to cart</span>  
+                                    <span>
+                                        <FontAwesomeIcon className="mr-2" icon={faShoppingCart}/> 
+                                        Add to cart
+                                    </span>  
                                     </Button>
                                 </div>
                         </Form>
@@ -136,25 +137,7 @@ const ProductDetailContainer = ({product}) => {
                 </aside>
             </Row>
         </Card>
-        <div className="review-container">
-            <h2>Reviews:</h2>
-            <ul className="reviews" id="reviews">
-                {reviews?.map((item)=><Review item={item}/>)}
-            </ul>
-            
-            <a href="/" className="more-reviews text-right">More Reviews</a>
-            <hr/>
-            <div className="write-comment-container">
-                <label for="comment">Write Your Reviews</label>
-                <div className="review-block-rate text-danger">
-                    <Ratings rating={4}/>
-                </div>
-                <textarea className="form-control animated" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5"></textarea>
-                <button type="submit" className="btn btn-success btn-lg">
-                Submit
-                </button>
-            </div>
-        </div>
+        {<ReviewsContainer reviews={reviews}/>}
     </Container>
     );
 }

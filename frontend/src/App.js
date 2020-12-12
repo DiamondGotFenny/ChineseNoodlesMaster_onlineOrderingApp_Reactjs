@@ -24,8 +24,8 @@ function App() {
       <Router history={history}>
         <div id="body-wrapper">
           <Header hideHeader={hideHeaderFooterpaths}/>
+          <main>
           <Switch>
-            <main>
               <Route path='/' exact component={LandingPage} />
               <Route path='/products'  component={ProductsDisplay} />
               <Route path='/product/:id'  component={ProductDetailPage} />
@@ -33,8 +33,8 @@ function App() {
               <Route path='/register' component={Register}/>
               <Route path='/login' component={Login}/>
               <Route path='/terms' component={TermsandConditions} />
-            </main>
           </Switch>
+          </main>
           <FooterContainer hideFooter={hideHeaderFooterpaths}/>
         </div>
       </Router>

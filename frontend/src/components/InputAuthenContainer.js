@@ -19,6 +19,7 @@ const InputAuthenContainer=(props)=>{
     const {link,inputItems}=props;
     const dispatch=useDispatch();
     const authInfo=useSelector(state=>state.authInfo)
+    const userInfo=useSelector(state=>state.userInfo);
     const [check,setCheck]=useState(false)
     const [inputVals,setInputVals]=useState(inputItems);
     const [errors,setErrors]=useState(inputItems);
@@ -37,7 +38,7 @@ const InputAuthenContainer=(props)=>{
 
     useEffect(()=>{
        
-        if (authInfo.status==="sucess") {
+        if (authInfo.status==="sucess"&&userInfo.status!=="error") {
             history.push("/")
         }
 

@@ -54,23 +54,22 @@ const HeaderLg=(props)=>{
         <header id="header" className={headerColor} >
         <Container fluid>
             <Navbar id="home-navbar">
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/">
                   <div className={`${logoStyles}`}>
-                    <Link to="/"
-                      ><img
+                    <img
                         src={`${headerLogo}`}
                         alt="logo Chinese Noodles Master"
                         width="359"
-                    /></Link>
+                    />
                   </div>
                 </Navbar.Brand>
                 
                 <Form.Group className={`${adrsBarDisplay}`}>
-                  <Form.Label for="delivering_address" class="address-bar_label">Delivering to</Form.Label>
-                    <div class="address-bar-input">
-                      <input type="text" class="address-input-area" placeholder="22 Jln Wajek, Singapore 588475"/>
-                      <button class="address-input-btn">
-                        <span class="ti-location-pin"></span>
+                  <Form.Label htmlFor="delivering_address" className="address-bar_label">Delivering to</Form.Label>
+                    <div className="address-bar-input">
+                      <input type="text" className="address-input-area" placeholder="22 Jln Wajek, Singapore 588475"/>
+                      <button className="address-input-btn">
+                        <span className="ti-location-pin"></span>
                       </button>
                     </div>
                 </Form.Group>

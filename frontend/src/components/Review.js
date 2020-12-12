@@ -14,7 +14,7 @@ const Review=(props)=>{
             <div className="col-sm-9">
                 <div className="review-block-title">{item.comment_title}</div>
                 <div className="review-block-rate text-danger">
-                    <Ratings rating={item.rating}/>
+                    <Ratings rating={item.rating} interactive={false}/>
                 </div>
                 <div className="review-block-description">{item.comment}</div>
             </div>

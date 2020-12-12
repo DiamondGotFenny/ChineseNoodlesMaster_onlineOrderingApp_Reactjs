@@ -16,7 +16,7 @@ function Product_Display(props) {
                       >{vendorName}</a
                     >
                     <div className="rating-favorites mx-auto text-center">
-                        <Ratings rating={rating}/>
+                        <Ratings rating={rating} interactive={false}/>
                         <MyFavorite/>
                     </div>
                   

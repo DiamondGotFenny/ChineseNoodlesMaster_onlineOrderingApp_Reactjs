@@ -28,9 +28,9 @@ const VendorsDisplay=(props)=>{
   const {isLoading,hasError,data:vendorsList} =useGetResource(endpoint)
 
     return (
-        <section class="section cover pull-up-10">
+        <section className="section cover pull-up-10">
             <Container fluid>
-                <h1 class="m-5 text-center">Featured Restaurants</h1>
+                <h1 className="m-5 text-center">Featured Restaurants</h1>
                 <Carousel
                     swipeable={false}
                     draggable={false}

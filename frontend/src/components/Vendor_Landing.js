@@ -6,16 +6,16 @@ const VendorLanding=(props)=>{
         <div className="carousel-item-vendors">
           <img
             src={imgLink}
-            class="img-responsive d-block card-img-top"
+            className="img-responsive d-block card-img-top"
             alt="img1"
            />
-            <div class="card-body">
-                <h4 class="card-title text-truncate">{vendorName}</h4>
-                <p class="card-text block-with-text">
+            <div className="card-body">
+                <h4 className="card-title text-truncate">{vendorName}</h4>
+                <p className="card-text block-with-text">
                     {vendorDescr}
                 </p>
             </div>
-            <div class="mx-auto text-center"><a  href={vendorLink} class="btn red-outline-btnmd btn-red-fill"><span>Learn More</span></a></div>  
+            <div className="mx-auto text-center"><a  href={vendorLink} className="btn red-outline-btnmd btn-red-fill"><span>Learn More</span></a></div>  
         </div>
     )
 }

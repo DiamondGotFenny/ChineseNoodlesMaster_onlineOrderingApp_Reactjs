@@ -4,27 +4,27 @@ import { Link } from 'react-router-dom';
 import Ratings from 'components/ratingStars';
 import { useSelector, useDispatch } from 'react-redux';
 import update from 'immutability-helper';
-import { updateProductDetail } from 'actions/productActions';
+import { updateReviews } from 'actions/productActions';
 
-const WriteReview = () => {
+const WriteReview = (props) => {
+    const {reviewsObj}=props;
     const authInfo=useSelector(state=>state.authInfo)
     const userInfo=useSelector(state=>state.userInfo);
-    const productDetail=useSelector(state=>state.productDetail)
     const dispatch=useDispatch();
     const [reviewTitle,setreviewTitle]=useState("");
     const [comment,setcomment]=useState("");
     const [rating,setrating]=useState(0);
     const handleCommentOnchange=(e)=>{
         setcomment(e.target.value);
-        console.log(comment);
+       
     }
     const handleOnRate=(e)=>{
         setrating(rating=>e.rating)
-        console.log(rating);
+        
     }
     const handleReviewTitle=(e)=>{
         setreviewTitle(e.target.value);
-        console.log(reviewTitle);
+       
     }
     const getNowTime=()=>{
          const timeStr = (new Date()).toISOString().slice(0, 19).replace(/-/g, "/").replace("T", " ");
@@ -40,27 +40,30 @@ const WriteReview = () => {
         setreviewTitle("");
         setcomment("");
     }
+    const createNewReview=()=>{
+        const newReviewObj={
+            user:userInfo.data.name,
+            user_id:userInfo.data.id,
+            id:generateReviewId(),//this id is for test use, should genterate the id in server
+            rating:rating,
+            date:getNowTime(),
+            comment_title:reviewTitle,
+            comment:comment
+          }
+        return update(reviewsObj,{
+            reviews:{$unshift:[newReviewObj]}
+        })
+    }
     const handleSubmit=(e)=>{
         e.preventDefault();
-        const newReviewObj={
-          user:userInfo.data.name,
-          user_id:userInfo.data.id,
-          id:generateReviewId(),//this id is for test use, should genterate the id in server
-          rating:rating,
-          date:getNowTime(),
-          comment_title:reviewTitle,
-          comment:comment
-        }
-        console.log(productDetail);
-        const newProductDetail=update(productDetail.product,{
-            reviews:{$unshift:[newReviewObj]}
-        });
-        console.log(newProductDetail);
-        dispatch(updateProductDetail(newProductDetail));
+        const updateReviewObj=createNewReview();
+        console.log(updateReviewObj);
+        dispatch(updateReviews(updateReviewObj));
         resetStates()
         e.target.reset();
     }
     
+
     if (userInfo.status==="sucess") {
         return (
             <Form className="write-comment-container" onSubmit={handleSubmit}>

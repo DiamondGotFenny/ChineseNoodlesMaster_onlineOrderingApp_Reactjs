@@ -39,7 +39,7 @@ const HeaderLg=(props)=>{
             <Link to={'/userProfile'} className="mr-1 pr-2 border-right">
                <FontAwesomeIcon icon={faUser} className="user-icon"/>{userInfo.data.name}
             </Link>
-            <Link type="button" onClick={handleLogout} className="mr-3 ml-1">Logout</Link>
+            <Link type="button" onClick={handleLogout} className="mr-3 ml-1" to={"/"}>Logout</Link>
         </li>
       )
     }

@@ -1,13 +1,13 @@
 import  React, {  useState }  from 'react';
-import { Card, Container, Row, Button, Form, InputGroup, FormControl } from 'react-bootstrap';
+import { Card, Row, Button, Form, InputGroup, FormControl } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import MyFavorite from 'components/myFavorite';
 import Ratings from 'components/ratingStars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import ReviewsContainer from './ReviewsContainer';
 
-const ProductDetailContainer = ({product}) => {
+
+const ProductDetailContainer = ({product,reviewsNum}) => {
     const pungencyInfo=["no spicy","mild","spicy","hot"];
     const sizeInfo=["small","medium","large"];
     const [pungency,setpungency]=useState("no spicy");
@@ -39,11 +39,11 @@ const ProductDetailContainer = ({product}) => {
         const formData = new FormData(e.target);
        const formDataObj = Object.fromEntries(formData.entries())
        const DataObj={...formDataObj,quantity:quantity}
-        console.log(DataObj,'DataObj')
+       console.log(DataObj);
     }
-    const {productImg,id:_id,productTitle,price,rating,tags,vendorInfo,reviews,ProductDescr}=product;
+    const {productImg,id:_id,productTitle,price,rating,tags,vendorInfo,ProductDescr}=product;
     return (  
-        <Container className="product-detail-container">
+        <>
             <Card>
                 <Row>
                     <aside className="col-sm-5 detail-img">
@@ -66,8 +66,8 @@ const ProductDetailContainer = ({product}) => {
                                 <Ratings rating={rating} interactive={false}/>
                             </span>
                             <a href="#reviews" className="review-counts">
-                                {reviews.length>0?<span className="reviews-num">{reviews.length}</span>:<span className="reviews-num">0</span>}
-                            reviews</a>
+                                {reviewsNum>0?<span className="reviews-num">{reviewsNum}</span>:<span className="reviews-num">0</span>}
+                              reviews</a>
                             </div>
                             <div className="restaurant-title mb-3">
                                 <span>Restaurant:</span>
@@ -82,7 +82,7 @@ const ProductDetailContainer = ({product}) => {
                                 <dd>
                                     <ul className="product-tags">
                                     {tags.map((item)=>{
-                                        return <li key={item}><Link to={"/"} className="btn btn-outline-info" role="button">{item}</Link></li>
+                                        return <li key={item}><Link to={`/products?search=${item}`} className="btn btn-outline-info" role="button">{item}</Link></li>
                                     })}
                                     </ul>
                                 </dd>
@@ -137,8 +137,7 @@ const ProductDetailContainer = ({product}) => {
                 </aside>
             </Row>
         </Card>
-        {<ReviewsContainer reviews={reviews}/>}
-    </Container>
+    </>
     );
 }
  

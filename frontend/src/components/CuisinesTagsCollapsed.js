@@ -7,7 +7,7 @@ const CuisinesTagsCollapsed=(props)=>{
             <ul
               className="landing-page-menu landing-page-menu-collapsed list-inline text-center mx-2"
             >
-                {tags.map(tag=><li key={tag} class="list-inline-item"><button>{tag}</button></li>)};
+                {tags.map(tag=><li key={tag} className="list-inline-item"><button>{tag}</button></li>)};
             </ul>
         </div> 
     )

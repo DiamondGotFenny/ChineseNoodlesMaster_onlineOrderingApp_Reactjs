@@ -43,7 +43,7 @@ const AboutUs=()=>{
                     <p className="lead text-muted mb-2">
                     Pay fast & secure online or on delivery
                     </p>
-                    {info.map(item=> <UsFeature featureInfo={item}/> )}
+                    {info.map(item=> <UsFeature key={item.title} featureInfo={item}/> )}
                     </Col>
                 </Row>
             </Container>

@@ -5,16 +5,16 @@ const CarouselItem=(props)=>{
 
     return(
         <>
-            <img  class="d-block img-responsive fixed-img-height" src={imgLink} alt={itemInfo} />
-             <div class="carousel-caption caption-content dark px-2">
-                <h2 class="text-muted">{infoLine1}</h2>
+            <img  className="d-block img-responsive fixed-img-height" src={imgLink} alt={itemInfo} />
+             <div className="carousel-caption caption-content dark px-2">
+                <h2 className="text-muted">{infoLine1}</h2>
                 <h5>{infoLine2}</h5>
-                <div class="btn-group">
+                <div className="btn-group">
                     <button
                         href={itemLink}
                         data-target="#productModal"
                         data-toggle="modal"
-                        class="btn red-outline-btnlg btn-red-fill">
+                        className="btn red-outline-btnlg btn-red-fill">
                         <span>{btnInfo}</span>
                     </button>
                 </div>

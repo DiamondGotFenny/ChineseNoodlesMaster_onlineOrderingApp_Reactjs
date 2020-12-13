@@ -8,7 +8,7 @@ const Promotion=()=>{
     return (
       <section className="section bg-light promotion">
         <Carousel interval={null}>
-         {promoItems.map(item=><Carousel.Item><CarouselItem item={item}/></Carousel.Item> )}
+         {promoItems.map(item=><Carousel.Item key={item.itemInfo}><CarouselItem item={item}/></Carousel.Item> )}
         </Carousel>
       </section>
     )

@@ -61,7 +61,7 @@ const HeroBanner=()=>{
               aria-describedby="Your Address"
               onChange={e=>setAdrs(e.target.value)} />
               <InputGroup.Append>
-                <Button className="pin-icon" onClick={getCurrentPosistion}><span class="ti-location-pin"></span></Button>
+                <Button className="pin-icon" onClick={getCurrentPosistion}><span className="ti-location-pin"></span></Button>
               </InputGroup.Append>
           </InputGroup>
 

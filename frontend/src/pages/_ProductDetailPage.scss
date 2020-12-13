@@ -3,7 +3,10 @@
 .product-detail-container{
   @include page_container;
 }
-
+.reviews-num{
+  color: $primary-gold;
+  margin-right: 0.2rem;
+}
 .detail-img{
     display: flex;
     padding-right: 0;
@@ -25,6 +28,15 @@
   .price-warn{
     font-size: smaller;
   }
+  .accordion{
+    .card,.card-header {
+      background-color: transparent;
+    }
+    .card-header {
+      margin: auto;
+      font-size: 1.2rem;
+    }
+  } 
   .footer-container{
     display: flex;
     align-items: center;
@@ -106,10 +118,7 @@
   }
   
   .more-reviews{
-    display: block;
-    text-align: right;
-    margin-right: 10rem;
-    margin-bottom: 1rem;
+    font-size: 1.2rem;
   }
   .write-comment-container{
     display: flex;

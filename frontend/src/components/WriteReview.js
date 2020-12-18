@@ -11,20 +11,16 @@ const WriteReview = (props) => {
     const authInfo=useSelector(state=>state.authInfo)
     const userInfo=useSelector(state=>state.userInfo);
     const dispatch=useDispatch();
-    const [reviewTitle,setreviewTitle]=useState("");
-    const [comment,setcomment]=useState("");
-    const [rating,setrating]=useState(0);
+    const initialReview={reviewTitle:"",rating:0,comment:""}
+    const [newReview,setNewReview]=useState(initialReview);
     const handleCommentOnchange=(e)=>{
-        setcomment(e.target.value);
-       
+        setNewReview({...newReview,comment:e.target.value})
     }
     const handleOnRate=(e)=>{
-        setrating(rating=>e.rating)
-        
+        setNewReview({...newReview,rating:e.rating})
     }
     const handleReviewTitle=(e)=>{
-        setreviewTitle(e.target.value);
-       
+       setNewReview({...newReview,reviewTitle:e.target.value})
     }
     const getNowTime=()=>{
          const timeStr = (new Date()).toISOString().slice(0, 19).replace(/-/g, "/").replace("T", " ");
@@ -36,19 +32,17 @@ const WriteReview = (props) => {
         return newId;
     }
     const resetStates=()=>{
-        setrating(0);
-        setreviewTitle("");
-        setcomment("");
+        setNewReview(initialReview)
     }
     const createNewReview=()=>{
         const newReviewObj={
             user:userInfo.data.name,
             user_id:userInfo.data.id,
             id:generateReviewId(),//this id is for test use, should genterate the id in server
-            rating:rating,
+            rating:newReview.rating,
             date:getNowTime(),
-            comment_title:reviewTitle,
-            comment:comment
+            comment_title:newReview.reviewTitle,
+            comment:newReview.comment
           }
         return update(reviewsObj,{
             reviews:{$unshift:[newReviewObj]}
@@ -70,10 +64,10 @@ const WriteReview = (props) => {
                 <Form.Group >
                     <Form.Label >Write Your Reviews</Form.Label>
                     <div className="review-block-rate text-danger">
-                        <Ratings rating={rating} interactive={true} onRate={handleOnRate}/>
+                        <Ratings rating={newReview.rating} interactive={true} onRate={handleOnRate}/>
                     </div>
-                    <Form.Control type="input" className="form-control animated w-50 mb-3" id="review-title" name="comment" value={reviewTitle} onChange={handleReviewTitle} placeholder="Review Title"/>
-                    <Form.Control as="textarea" className="form-control animated mb-3" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5" value={comment} onChange={handleCommentOnchange}/>
+                    <Form.Control type="input" className="form-control animated w-50 mb-3" id="review-title" name="comment" value={newReview.reviewTitle} onChange={handleReviewTitle} placeholder="Review Title"/>
+                    <Form.Control as="textarea" className="form-control animated mb-3" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5" value={newReview.comment} onChange={handleCommentOnchange}/>
                     <Button type="submit" className="btn btn-primary btn-lg">
                         Submit
                     </Button>

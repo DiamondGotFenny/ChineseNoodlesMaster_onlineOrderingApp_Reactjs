@@ -19,6 +19,9 @@ const MyFavorite=(props)=>{
     }
     const handleFavritSelected=()=>{
         if (authInfo.data.isSignin&&user.status==="sucess") {
+          /*another option is that we can send the product id to the server for checking if this product
+           is liked or not, as the favorite list may be very long. but since we just store the food id to the list, the size of list would not be big, download the whole favorite list would not be a problem.
+          */
           const list=[...user.data.favorite_foods_list]
             if (isFav) {
                 const list_updated=list.filter(ele=>ele!==id);

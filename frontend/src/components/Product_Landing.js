@@ -2,6 +2,7 @@ import  React  from 'react';
 import Ratings from 'components/ratingStars';
 import MyFavorite from './myFavorite';
 import { Link } from 'react-router-dom';
+import AddCartBtn from './AddCartBtn';
 
 const Productlanding=(props)=>{
    const {productImg,productTitle,productIngredients,vendorInfo,price,rating,id}=props.item;
@@ -41,13 +42,7 @@ const Productlanding=(props)=>{
             <div className="price-container">
                 <h4 className="price font-weight-bold">{`$${price}`}</h4>
             </div>
-            <button
-              className="btn red-outline-btnmd btn-red-fill"
-              data-target="#productModal"
-              data-toggle="modal"
-            >
-              <span>Add to cart</span>
-            </button>
+           <AddCartBtn product={props.item}/>
           </div>
         </div>
       </div>

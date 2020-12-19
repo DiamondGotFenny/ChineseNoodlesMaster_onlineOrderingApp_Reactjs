@@ -313,7 +313,9 @@
     background-color: transparent;
     z-index: 900;
     display: block;
-
+    #nav-main button{
+      
+    }
     #nav-main > li {
       font-family: $font-family2;
       text-transform: uppercase;
@@ -401,6 +403,8 @@
       }
       .module-cart{
         transform: translateY(-4px);
+        background-color: transparent;
+        border: none;
         &:hover,&focus{
           .cart-value{
               filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);

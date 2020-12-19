@@ -9,13 +9,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { getUserInfoAction, userLogoutAction } from 'actions/userAction';
 import history from 'services/history';
+import ShoppingCartContainer from './ShoppingCartContainer';
 
 const HeaderLg=(props)=>{
   const {headerColor,headerLogo,logoStyles,adrsBarDisplay}=props;
   const authInfo=useSelector(state=>state.authInfo);
   const userInfo=useSelector(state=>state.userInfo);
   const dispatch=useDispatch();
-  
   
   useEffect(()=>{
     const userToken=localStorage.getItem("userToken");
@@ -54,7 +54,7 @@ const HeaderLg=(props)=>{
         <header id="header" className={headerColor} >
         <Container fluid>
             <Navbar id="home-navbar">
-                <Navbar.Brand href="/">
+                <Link className="navbar-brand" to="/">
                   <div className={`${logoStyles}`}>
                     <img
                         src={`${headerLogo}`}
@@ -62,7 +62,7 @@ const HeaderLg=(props)=>{
                         width="359"
                     />
                   </div>
-                </Navbar.Brand>
+                </Link>
                 
                 <Form.Group className={`${adrsBarDisplay}`}>
                   <Form.Label htmlFor="delivering_address" className="address-bar_label">Delivering to</Form.Label>
@@ -82,18 +82,7 @@ const HeaderLg=(props)=>{
                     </li>
                     {renderUser(authInfo.status,userInfo)}
                   </ul>
-                  <a
-                href="#"
-                className="module module-cart right align-middle"
-                data-toggle="modal"
-                data-target="#shopping-cart-modal"
-              >
-                <span className="cart-icon">
-                  <i className="ti ti-shopping-cart"></i>
-                  <span className="notification">3</span>
-                </span>
-                <span className="cart-value">$45.00</span>
-              </a>
+                  <ShoppingCartContainer/>
                 </Nav>
               </Navbar>
           </Container>

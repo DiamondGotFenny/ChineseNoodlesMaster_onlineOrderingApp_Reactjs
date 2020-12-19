@@ -3,6 +3,7 @@ import { productDetailReducer, productListReducer, productReviewsReducer } from 
 import { searchReduce } from './searchReducer';
 import { addressReducer } from './inputAdrsReducer';
 import {  setAuthReducer, setUserReducer } from './userReducers';
+import { shoppingCartReducer } from './orderReducer';
 
 
 const reducers=combineReducers(
@@ -10,10 +11,11 @@ const reducers=combineReducers(
         products:productListReducer,
         productDetail:productDetailReducer,
         productReviews:productReviewsReducer,
+        shoppingCart:shoppingCartReducer,
         address_input:addressReducer,
         searchKeyword:searchReduce,
         authInfo:setAuthReducer,
-        userInfo:setUserReducer
+        userInfo:setUserReducer,
     }
 )
 export default reducers;

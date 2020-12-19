@@ -1,45 +1,49 @@
 import  React, {  useState }  from 'react';
-import { Card, Row, Button, Form, InputGroup, FormControl } from 'react-bootstrap';
+import { Card, Row, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import MyFavorite from 'components/myFavorite';
 import Ratings from 'components/ratingStars';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-
-
+import ProductQuantityCounter from 'components/ProductQuantityCounter';
+import PreferenceFormGroup from 'components/PreferenceFormGroup';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateShoppingCart } from 'actions/orderAction';
+import  history  from 'services/history';
 const ProductDetailContainer = ({product,reviewsNum}) => {
-    const pungencyInfo=["no spicy","mild","spicy","hot"];
-    const sizeInfo=["small","medium","large"];
-    const [pungency,setpungency]=useState("no spicy");
-    const [size,setpsize]=useState("medium");
+    /*in real project, the preference info should be part of product data, as the preference items may various in different product.*/ 
+    const prefereceItems=[
+        {
+            name:"pungency",
+            itemsList:["no spicy","mild","spicy","hot"]},
+        {
+            name:"size",
+            itemsList:["small","medium","large"]}
+    ]
+    const intialVals={pungency:"no spicy",size:"medium"}
+    const [inputVals,setInputVals]=useState(intialVals);
     const [quantity,setquantity]=useState(1)
-    const handlePungencyChange=(e)=>{
-        e.persist();
-        setpungency(pungency=>e.target.value)
+    const shoppingCart=useSelector(state=>state.shoppingCart.shoppingCart);
+    const inCart=shoppingCart.some(ele=>ele.product.id===product.id);
+  const dispatch=useDispatch();
+    const handleInputVals=(e)=>{
+        setInputVals({...inputVals,[e.target.name]:e.target.value});
     }
-    const handleSizeChange=(e)=>{
-        e.persist();
-        setpsize(size=>e.target.value)
-    }
-    const handleQuantityPlus=(e)=>{
-        if (quantity>99||quantity<0)  return;
-        setquantity(quantity=>quantity+1)
-    }
-    const handleQuantityMinus=(e)=>{
-        if (quantity>99||quantity<=0)  return;
-        setquantity(quantity=>quantity-1)
-    }
-    const handleInputQty=(e)=>{
-        const num=e.target.value;
-        if (num>99||num<=0)  return;
-        setquantity(num)
+   
+    const handleQtyOnChange=(val)=>{
+       setquantity(quantity=>val)
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
-        const formData = new FormData(e.target);
-       const formDataObj = Object.fromEntries(formData.entries())
-       const DataObj={...formDataObj,quantity:quantity}
-       console.log(DataObj);
+        if (!inCart) {
+          const formData = new FormData(e.target);
+          const formDataObj = Object.fromEntries(formData.entries())
+          const DataObj={preferences:{...formDataObj},quantity:quantity,product:{...product}}
+          const newCart=[...shoppingCart];
+          newCart.push(DataObj)
+          dispatch(updateShoppingCart(newCart));
+          history.push("/")
+        }
     }
     const {productImg,id:_id,productTitle,price,rating,tags,vendorInfo,ProductDescr}=product;
     return (  
@@ -89,33 +93,15 @@ const ProductDetailContainer = ({product,reviewsNum}) => {
                             </dl> 
                             <hr/>
                         <Form onSubmit={handleSubmit}>
-                            <Form.Group controlId="pungency" onChange={handlePungencyChange}>
-                            {pungencyInfo.map(item=>{return <Form.Check key={item} type="radio" inline label={item} id={item}  name="pungency" value={item} readOnly checked={pungency===item}/>})}
-                            </Form.Group>
-                            <Form.Group  controlId="size" onChange={handleSizeChange}>
-                            {sizeInfo.map(item=>{return <Form.Check key={item} type="radio" inline label={item} id={item}  name="size" value={item} readOnly checked={size===item}/>})}
-                            </Form.Group>
+                            {prefereceItems.map(item=><PreferenceFormGroup key={item.name} preferenceObj={item} formGroupState={inputVals[item.name]} handleOnchange={handleInputVals}/>)}
                                 <hr/>
                             <div className="qty-btn-container">
                             <span className="qty-btn-text">Quantity: </span>
-                                <InputGroup >
-                                    <InputGroup.Prepend >
-                                        <Button className="qty-btn-plus" variant="outline-secondary" onClick={handleQuantityPlus}>
-                                            +
-                                        </Button>
-                                        </InputGroup.Prepend>
-                                        <FormControl type="number" value={quantity} min="1" max="99" step="1" onChange={handleInputQty} />
-                                        <InputGroup.Append>
-                                            <Button variant="outline-secondary" className="qty-btn-minus" onClick={handleQuantityMinus}>
-                                                -
-                                            </Button>
-                                        </InputGroup.Append>
-                                    </InputGroup> 
+                                <ProductQuantityCounter quantity={quantity} TrackQtyChange={handleQtyOnChange} />    
                             </div>
                                 <hr/>
                                 <div className="footer-container">
                                     <Button
-                                        type="submit"
                                         className="btn gold-outline-btnmd btn-gold-fill order-confirm-btn"
                                         data-dismiss="modal"
                                     >
@@ -125,10 +111,12 @@ const ProductDetailContainer = ({product,reviewsNum}) => {
                                         type="button"
                                         className="btn red-outline-btnmd btn-red-fill"
                                         data-dismiss="modal"
+                                        type="submit"
+                                        disabled={inCart}
                                     >
                                     <span>
                                         <FontAwesomeIcon className="mr-2" icon={faShoppingCart}/> 
-                                        Add to cart
+                                        {inCart?"Already In Cart":"Add To Cart"}
                                     </span>  
                                     </Button>
                                 </div>

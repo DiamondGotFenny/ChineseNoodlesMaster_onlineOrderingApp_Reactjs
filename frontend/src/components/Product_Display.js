@@ -1,6 +1,7 @@
 import  React  from 'react';
 import Ratings from 'components/ratingStars';
 import MyFavorite from './myFavorite';
+import AddCartBtn from './AddCartBtn';
 
 function Product_Display(props) {
   const {productImg,productTitle,productIngredients,vendorName,price,rating}=props.item;
@@ -29,13 +30,7 @@ function Product_Display(props) {
                         >
                       </div>
                       <div className="text-sm-right mt-2 mt-sm-0 col-auto pl-1">
-                        <button
-                          className="btn red-outline-btnsm btn-red-fill"
-                          data-target="#productModal"
-                          data-toggle="modal"
-                        >
-                          <span>Add to cart</span>
-                        </button>
+                        <AddCartBtn/>
                       </div>
                     </div>
                   </div>

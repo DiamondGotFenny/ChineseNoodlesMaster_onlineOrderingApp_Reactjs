@@ -1,23 +1,19 @@
 import httpService from "services/httpService";
-import { FETCH_SHOPPINGCART_REQUET,FETCH_SHOPPINGCART_SUCCESS,FETCH_SHOPPINGCART_FAIL,
-    UPDATE_SHOPPINGCART_REQUET,UPDATE_SHOPPINGCART_SUCCESS,UPDATE_SHOPPINGCART_FAIL
+import { ADD_TO_CART,REMOVE_FROM_CART,ITEM_QUANTITY_UPDATE,CLEAR_CART
  } from 'constants/actionTypes';
 
- 
- export const getShoppingCart=(data)=>dispatch=>{
-    try {
-        dispatch({type:FETCH_SHOPPINGCART_REQUET,payload:[]});
-        dispatch({type:FETCH_SHOPPINGCART_SUCCESS,payload:data})
-    } catch (error) {
-        dispatch({type:FETCH_SHOPPINGCART_FAIL,payload:error.message})
-    }
+ export const addItemToCart=(data)=>dispatch=>{
+     dispatch({type:ADD_TO_CART,payload:data})
  }
 
- export const updateShoppingCart=(data)=>dispatch=>{
-     try {
-        dispatch({type:UPDATE_SHOPPINGCART_REQUET,payload:[]});
-        dispatch({type:UPDATE_SHOPPINGCART_SUCCESS,payload:data})
-     } catch (error) {
-        dispatch({type:UPDATE_SHOPPINGCART_FAIL,payload:error.message})
-     }
+ export const removeFromCart=(id)=>dispatch=>{
+    dispatch({type:REMOVE_FROM_CART,payload:id})
+ }
+
+ export const itemQuntityUpdate=(quantity,id)=>dispatch=>{
+    dispatch({type:ITEM_QUANTITY_UPDATE,payload:{quantity,id}})
+ }
+
+ export const clearShoppingCart=()=>dispatch=>{
+    dispatch({type:CLEAR_CART,payload:[]});
  }

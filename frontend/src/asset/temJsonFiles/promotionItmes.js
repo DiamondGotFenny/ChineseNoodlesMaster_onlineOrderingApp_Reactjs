@@ -8,15 +8,17 @@ export const promoItems=[
       itemInfo:"First slide-Lan Zhou La mian",
       infoLine1:"New Product!Only $8.98!",
       infoLine2:"Lan Zhou Beef Noodles",
-      itemLink:"#",
+      itemLink:"/product/P001",
+      product_id:"P001",
       btnInfo:"Add to cart"
     },
     {
       imgLink:secondPromoImg,
       itemInfo:"Second slide-Wuhan Regan Noodles",
-      infoLine1:"Get 40% off coupon",
+      infoLine1:"Top Hot Dry Noodle! Get 40% off coupon",
       infoLine2:"and use it with your next order!",
-      itemLink:"#",
+      itemLink:"/product/P017",
+      product_id:"P017",
       btnInfo:"Get it now!"
     },
     {
@@ -24,7 +26,8 @@ export const promoItems=[
       itemInfo:"Third slide-Winter Melon Cup Dao Xiao Noodles",
       infoLine1:"Winter Melon Dao Xiao Noodles",
       infoLine2:"Order it online even now!",
-      itemLink:"#",
+      itemLink:"/product/P007",
+      product_id:"P007",
       btnInfo:"Order now!"
     }
   ];

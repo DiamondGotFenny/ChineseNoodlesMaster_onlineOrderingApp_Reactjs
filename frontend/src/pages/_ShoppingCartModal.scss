@@ -2,14 +2,30 @@
   .h4{
     margin-bottom: 1rem;
   }
-  .badge {
-    position: relative;
-    bottom: 1rem;
-    right: 0.8rem;
-    background-color: #bc4c4c;
+  
+  .cart-icon {
+    color: rgb(170, 170, 170);
   }
-  .modal-header {
-    color: #bc4c4c;
+  .cart-detail {
+    .remove-btn{
+      background-color: transparent;
+      border: none;
+    }
+  }
+  .clear-cart{
+    background-color: transparent;
+    border: none;
+    color: $primary-red;
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+    .clear-text{
+      margin-top: 5px;
+    }
+    margin-left: auto;
+    &:hover{
+      transform: scale(1.2) translateX(-5px);
+    }
   }
    .cart-number-input {
      .qty-title{
@@ -39,7 +55,13 @@
   .order-info{
     padding-left: 0;
   }
-  
+  .modal-footer{
+    display: flex;
+    .checkout-btn{
+      width: auto;
+      margin-right: 1rem;
+    }
+  }
 } 
 
 

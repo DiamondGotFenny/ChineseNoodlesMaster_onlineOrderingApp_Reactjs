@@ -1,0 +1,52 @@
+#confirm-order{
+    .modal-header{
+        img{
+            width: 100%;
+            height: auto;
+        }
+        padding: 0;
+        .close{
+            transform: translateX(-2rem);
+        }
+    }
+    .food-info-first {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex: 1 1 auto;
+        .food-title {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin-bottom: 0;
+        }
+    }
+    .product-detail .ing-title {
+        margin-bottom: 0;
+    }
+    .form-group{
+        display: flex;
+        justify-content: space-between;
+        margin: 0.8rem 1.6rem;
+    }
+    .item-name{
+        text-transform: capitalize;
+    }
+    .footer-container{
+        display: flex;
+        
+        .order-confirm-btn{
+            width: 45% ;
+            margin-right: 1rem;
+            padding: 0.75rem 1.2rem;
+        }
+        .close-footer{
+            width: 40% 
+        }
+        .order-confirm-btn,.close-footer{
+            span{
+                justify-content: center;
+            }
+        }
+    }
+}

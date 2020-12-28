@@ -6,6 +6,8 @@ import ProductDetailContainer from 'containers/ProductDetailPage/ProductDetailCo
 import { getProductDetail,getProductReviews } from 'actions/productActions';
 import { useDispatch } from 'react-redux';
 import ReviewsContainer from 'containers/ProductDetailPage/ReviewsContainer';
+import Product_Recommendations from 'containers/ProductDetailPage/Product_Recommendations';
+import  history  from 'services/history';
 
 const ProductDetailPage=()=>{
     const {id}=useParams();
@@ -24,7 +26,7 @@ const ProductDetailPage=()=>{
     display more reviews when the user clicks more reviews button.but due to limited function of json server, we now have to get all reviews. 
     */
     const reviews_processed=reviews_data.find(review=>review.id);
-   
+
      useEffect(()=>{
         if (product_process) {
             dispatch(getProductDetail(product_process));
@@ -34,6 +36,7 @@ const ProductDetailPage=()=>{
             dispatch(getProductReviews(reviews_processed));
             setreviewsObj(reviews_processed)
         }
+       
      },[product_process,reviews_processed])
     
      const renderProductInfo=(isLoading,hasError,product_process)=>{
@@ -52,6 +55,7 @@ const ProductDetailPage=()=>{
         <Container className="product-detail-container">
             {renderProductInfo(isLoading,hasError,product_process)}
             <ReviewsContainer />
+            <Product_Recommendations/>
         </Container>
         
      )

@@ -2,20 +2,19 @@ import  React  from 'react';
 import Ratings from 'components/ratingStars';
 import MyFavorite from './myFavorite';
 import AddCartBtn from './AddCartBtn';
+import { Link } from 'react-router-dom';
 
 function Product_Display(props) {
-  const {productImg,productTitle,productIngredients,vendorName,price,rating}=props.item;
+  const {productImg,productTitle,vendorInfo,price,rating,id}=props.item;
     return (
                <div className="product product-grid text-truncate">
-                    <img
+                 <Link to={`/product/${id}`}> <img
                       className="mb-2"
                       src={productImg}
                       alt={productTitle}
-                    />
+                    /></Link>
                     <h6 className="mb-0 product-name">{productTitle}</h6>
-                    <a className="vendor-name" href="#"
-                      >{vendorName}</a
-                    >
+                    <Link className="vendor-name" to={`/vendors/${vendorInfo.vendor_id}`}>{vendorInfo.vendorName}</Link>
                     <div className="rating-favorites mx-auto text-center">
                         <Ratings rating={rating} interactive={false}/>
                         <MyFavorite/>
@@ -26,11 +25,11 @@ function Product_Display(props) {
                     >
                       <div className="col-auto pr-1">
                         <span className="text-md price"
-                          >${price}</span
+                          >${price.toFixed(2)}</span
                         >
                       </div>
                       <div className="text-sm-right mt-2 mt-sm-0 col-auto pl-1">
-                        <AddCartBtn/>
+                        <AddCartBtn  product={props.item}/>
                       </div>
                     </div>
                   </div>

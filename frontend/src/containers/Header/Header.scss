@@ -2,8 +2,15 @@
 
 #header {
   display: none;
+  
 }
+#header.light{
+  .module-cart .cart-value{
+    color:#282b2e ;
+    border-left: 1px solid #acacac;
+  }
 
+}
 #header-mobile {
   position: fixed;
   top: 0;
@@ -19,6 +26,7 @@
   -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  
 }
 
 #header-mobile.dark {
@@ -313,9 +321,6 @@
     background-color: transparent;
     z-index: 900;
     display: block;
-    #nav-main button{
-      
-    }
     #nav-main > li {
       font-family: $font-family2;
       text-transform: uppercase;
@@ -411,30 +416,12 @@
               opacity: 0.6;
           }
         }
-        .cart-icon {
-            position: relative;
-            i {
-                font-size: 1.7rem;
-                display: inline-block;
-                color: #bbc4c6;
-              }
-            .notification {
-                position: absolute;
-                top: 0m;
-                right: -0.1rem;
-                background-color: #4aa36b;
-                color: #fff;
-                font-weight: 600;
-                font-size: 0.7rem;
-                display: inline-block;
-                -webkit-border-radius: 30px;
-                -moz-border-radius: 30px;
-                -ms-border-radius: 30px;
-                -o-border-radius: 30px;
-                border-radius: 30px;
-                padding: 0.15rem 0.3rem 0.2rem 0.35rem;
-                line-height: 1;
-              } 
+        .header-cart-icon {
+            font-size: 1.5rem;
+            color: #bbc4c6;
+            .badge{
+              top:-0.7rem;
+            }
           }
           .cart-value {
             font-size: 1.4rem;

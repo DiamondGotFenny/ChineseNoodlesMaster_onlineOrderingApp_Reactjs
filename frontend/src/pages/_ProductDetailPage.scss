@@ -2,6 +2,14 @@
 @import 'global/_mixin.scss';
 .product-detail-container{
   @include page_container;
+  .title{
+    font-weight: bold;
+  }
+  .recommendation-title {
+    color: #ddae71;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
 }
 .reviews-num{
   color: $primary-gold;
@@ -27,6 +35,9 @@
   }
   .price-warn{
     font-size: smaller;
+  }
+  .restaurant-title {
+    display: flex;
   }
   .accordion{
     .card,.card-header {

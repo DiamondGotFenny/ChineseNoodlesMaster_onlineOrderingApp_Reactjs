@@ -8,6 +8,8 @@
 @import 'containers/Footer/footer';
 @import 'pages/ShoppingCartModal';
 @import 'pages/AddCartBtn';
+@import 'pages/OrderConfirmModal';
+@import 'global/shoppingCartIcon';
 @import 'asset/icons/themify-icons/themify-icons';
 @import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Raleway:100,200,400,500");
 @import 'global/buttons';
@@ -175,3 +177,40 @@ a{
   color: $primary-red;
 }
 /*************back to top end********/
+
+/*************side shopping cart start********/
+.side-shopping-cart {
+  visibility:hidden;
+  transition: all 0.25s ease-in-out;
+  position: fixed;
+  top: 3rem;
+  right: 2.5rem;
+  display: inline-flex;
+  z-index: 99;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  margin: 0 3em 3em 0;
+  border-radius: 50%;
+  padding: 0.25em;
+  width: 5em;
+  height: 5em;
+  background-color: $returnToTop-bg-color;
+    .shopping-cart-icon{
+      transform: translateX(0.5rem);
+      font-size: 1.4rem;
+    }
+  
+}
+
+.side-shopping-cart-show {
+  visibility: visible;
+  opacity:0.5;
+}
+
+.side-shopping-cart:hover {
+  opacity: 1;
+  color: $primary-red;
+}
+/*************side shopping cart end********/
+

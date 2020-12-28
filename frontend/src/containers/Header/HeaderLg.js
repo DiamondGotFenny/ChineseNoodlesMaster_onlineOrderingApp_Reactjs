@@ -1,4 +1,4 @@
-import  React, {useEffect}from 'react';
+import  React, {useEffect,useState}from 'react';
 import Container  from 'react-bootstrap/Container';
 import Navbar  from 'react-bootstrap/Navbar';
 import Nav  from 'react-bootstrap/Nav';
@@ -10,23 +10,41 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { getUserInfoAction, userLogoutAction } from 'actions/userAction';
 import history from 'services/history';
 import ShoppingCartContainer from './ShoppingCartContainer';
+import navBarLogo from 'asset/img/logos/logo_ver2.png';
+import navbarLogoM from 'asset/img/logos/logo-mobile-v2.png'
 
 const HeaderLg=(props)=>{
-  const {headerColor,headerLogo,logoStyles,adrsBarDisplay}=props;
+  const {currentPathname}=props;
   const authInfo=useSelector(state=>state.authInfo);
   const userInfo=useSelector(state=>state.userInfo);
   const dispatch=useDispatch();
   
+   /*the header style need to be varied according to different page, especially the text color.
+  you may want to alter the text color to dark color if the background image is change to lighter color
+  */
+ const [isLanding,setisLanding]=useState(true);
+
   useEffect(()=>{
-    const userToken=localStorage.getItem("userToken");
-    if (userToken) {
-      authInfo.data.token=userToken;
-      authInfo.data.isSignin=true;
-      authInfo.status="sucess";
+    const controlUserLogin=(authInfo)=>{
+      const userToken=localStorage.getItem("userToken");
+      if (userToken) {
+        authInfo.data.token=userToken;
+        authInfo.data.isSignin=true;
+        authInfo.status="sucess";
+      }
+      dispatch(getUserInfoAction(authInfo));
     }
+    const checkLanding=(currentPathname)=>{
+      if (currentPathname==='/') {
+        setisLanding(true)
+      } else {
+        setisLanding(false)
+      }
+    }
+    controlUserLogin(authInfo)
+    checkLanding(currentPathname)
     
-    dispatch(getUserInfoAction(authInfo));
-  },[authInfo.status]);
+  },[authInfo.status,currentPathname]);
  
   const handleLogout=()=>{
     dispatch(userLogoutAction());
@@ -51,20 +69,20 @@ const HeaderLg=(props)=>{
     )
   }
     return (
-        <header id="header" className={headerColor} >
+        <header id="header" className={isLanding?'dark':'light'} >
         <Container fluid>
             <Navbar id="home-navbar">
                 <Link className="navbar-brand" to="/">
-                  <div className={`${logoStyles}`}>
+                  <div className={isLanding?"module module-logo light":"module module-logo-small"}>
                     <img
-                        src={`${headerLogo}`}
+                        src={isLanding?navBarLogo:navbarLogoM}
                         alt="logo Chinese Noodles Master"
                         width="359"
                     />
                   </div>
                 </Link>
                 
-                <Form.Group className={`${adrsBarDisplay}`}>
+                <Form.Group className={isLanding?"address-bar hide":"address-bar"}>
                   <Form.Label htmlFor="delivering_address" className="address-bar_label">Delivering to</Form.Label>
                     <div className="address-bar-input">
                       <input type="text" className="address-input-area" placeholder="22 Jln Wajek, Singapore 588475"/>

@@ -1,16 +1,12 @@
 import  React ,{useState} from 'react';
 import  Modal  from 'react-bootstrap/Modal';
 import  Button  from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Badge, Card, Col, Row, Image, Form } from 'react-bootstrap';
-import sampleImg from "asset/img/productsPic/beef_noodles.jpg"
+import { Image, Form } from 'react-bootstrap';
 import  Ratings  from 'components/ratingStars';
 import PreferenceFormGroup from './PreferenceFormGroup';
 import ProductQuantityCounter from './ProductQuantityCounter';
-import { useSelector, useDispatch } from 'react-redux';
-import { updateShoppingCart } from 'actions/orderAction';
+import {  useDispatch } from 'react-redux';
+import { addItemToCart } from './../actions/orderAction';
 const OrderConfirmModal = (props) => {
    /*in real project, the preference info should be part of product data, as the preference items may various in different product.*/ 
   const prefereceItems=[
@@ -29,7 +25,6 @@ const [quantity,setquantity]=useState(1)
 upper component. the error caused by which the bootstrap modal at below is using {...props} 
 */
 const inCart=shoppingcart.some(ele=>ele.product.id===product.id);
-console.log(inCart);
 const dispatch=useDispatch();
 const handleInputVals=(e)=>{
     setInputVals({...inputVals,[e.target.name]:e.target.value});
@@ -44,41 +39,36 @@ const handleSubmit=(e)=>{
       const formData = new FormData(e.target);
       const formDataObj = Object.fromEntries(formData.entries())
       const DataObj={preferences:{...formDataObj},quantity:quantity,product:{...product}}
-      const newCart=[...shoppingcart];
-      newCart.push(DataObj)
-      dispatch(updateShoppingCart(newCart));
+      dispatch(addItemToCart(DataObj))
       onHide();
     }
 }
     return ( 
         <Modal
       {...props}
-      size="lg"
+      dialogClassName="modal-50w"
       aria-labelledby="confirm-order"
       id="confirm-order"
     >
         <Modal.Header closeButton>
-            <Modal.Title >
-                <Image src={sampleImg} className="mb-4" alt=""/>
-            </Modal.Title>
+          <Image src={product.productImg} className="mb-4" alt={product.productTitle}/>
         </Modal.Header>
         <Modal.Body>
             <div className="food-info-first mb-2">
-              <h5 className="food-title">Lanzhou Beef Noodles</h5>
-              <span className="modal-product-price">$19.00</span>
+              <h5 className="food-title">{product.productTitle}</h5>
+              <span className="modal-product-price">${(product.price).toFixed(2)}</span>
             </div>
-            <Ratings rating={3} interactive={false}/>
+            <Ratings rating={product.rating} interactive={false}/>
             <div className="product-detail mt-3">
               <h6 className="ing-title">Main Ingredients:</h6>
               <div className="ing-details">
-                High gluten flour, chili, beef, flour, spicy oil flour, radish,
-                garlic, cilantro, broth, plus canapés.
+                {product.productIngredients}
               </div>
             </div>
             <hr/>
             <Form onSubmit={handleSubmit}>
-                {prefereceItems.map(item=>< PreferenceFormGroup key={item.name} preferenceObj={item} formGroupState={inputVals[item.name]} handleOnchange={handleInputVals}/>)}
-                <hr/>
+                {prefereceItems.map(item=><div key={item.name}><span className="item-name">{item.name}:</span><PreferenceFormGroup  preferenceObj={item} formGroupState={inputVals[item.name]} handleOnchange={handleInputVals}/><hr/></div>)}
+                
                   <div className="qty-btn-container">
                       <span className="qty-btn-text">Quantity: </span>
                           <ProductQuantityCounter quantity={quantity} TrackQtyChange={handleQtyOnChange} />    
@@ -95,7 +85,7 @@ const handleSubmit=(e)=>{
                           </Button>
                           <Button
                             type="button"
-                            className="btn red-outline-btnmd btn-red-fill"
+                            className="btn red-outline-btnmd btn-red-fill close-footer"
                             data-dismiss="modal"
                             onClick={onHide}
                             >

@@ -8,8 +8,8 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import ProductQuantityCounter from 'components/ProductQuantityCounter';
 import PreferenceFormGroup from 'components/PreferenceFormGroup';
 import { useSelector, useDispatch } from 'react-redux';
-import { updateShoppingCart } from 'actions/orderAction';
 import  history  from 'services/history';
+import { addItemToCart } from './../../actions/orderAction';
 const ProductDetailContainer = ({product,reviewsNum}) => {
     /*in real project, the preference info should be part of product data, as the preference items may various in different product.*/ 
     const prefereceItems=[
@@ -36,13 +36,11 @@ const ProductDetailContainer = ({product,reviewsNum}) => {
     const handleSubmit=(e)=>{
         e.preventDefault();
         if (!inCart) {
-          const formData = new FormData(e.target);
-          const formDataObj = Object.fromEntries(formData.entries())
-          const DataObj={preferences:{...formDataObj},quantity:quantity,product:{...product}}
-          const newCart=[...shoppingCart];
-          newCart.push(DataObj)
-          dispatch(updateShoppingCart(newCart));
-          history.push("/")
+            const formData = new FormData(e.target);
+            const formDataObj = Object.fromEntries(formData.entries())
+            const DataObj={preferences:{...formDataObj},quantity:quantity,product:{...product}}
+            dispatch(addItemToCart(DataObj))
+             history.push("/")
         }
     }
     const {productImg,id:_id,productTitle,price,rating,tags,vendorInfo,ProductDescr}=product;
@@ -60,7 +58,7 @@ const ProductDetailContainer = ({product,reviewsNum}) => {
                             <p className="price-detail-wrap"> 
                                 <span className="price h3 text-warning"> 
                                     <span className="price-currency">US $</span>
-                                    <span className="price-num">{price}</span>
+                                    <span className="price-num">{price.toFixed(2)}</span>
                                 </span> 
                                 <span>/order</span> 
                             </p> 
@@ -74,8 +72,8 @@ const ProductDetailContainer = ({product,reviewsNum}) => {
                               reviews</a>
                             </div>
                             <div className="restaurant-title mb-3">
-                                <span>Restaurant:</span>
-                                <span><Link to={`/${vendorInfo.vendor_id}`}>{vendorInfo.vendorName}</Link></span>
+                                <span>Restaurant: </span>
+                                <h4 className="vendorName ml-2"><Link to={`/vendors/${vendorInfo.vendor_id}`}>{vendorInfo.vendorName}</Link></h4>
                             </div>
                             <dl className="item-property">
                                 <dt>Description</dt>

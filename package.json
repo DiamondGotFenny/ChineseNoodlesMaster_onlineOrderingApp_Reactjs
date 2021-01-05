@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/DiamondGotFenny/ChineseNoodlesMaster_onlineOrderingApp_Reactjs#readme",
   "dependencies": {
-    "concurrently": "^5.3.0"
+    "concurrently": "^5.3.0",
+    "search-object": "^1.2.0"
   }
 }

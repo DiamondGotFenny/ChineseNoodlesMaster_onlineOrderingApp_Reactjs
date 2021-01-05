@@ -3,8 +3,7 @@ import { useSelector } from 'react-redux';
 
 const useGetOrderTotal=()=>{
     const shoppingCart=useSelector(state=>state.shoppingCart);
-    const [total,settotal]=useState(0)
-    console.log(shoppingCart);
+    const [total,settotal]=useState(0);
     useEffect(()=>{
       
         return () => {

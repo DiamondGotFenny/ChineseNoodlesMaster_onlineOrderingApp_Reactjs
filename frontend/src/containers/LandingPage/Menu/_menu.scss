@@ -36,9 +36,17 @@
   margin-bottom: 0.5rem;
   font-weight: bolder;
 }
-.restaurant-title span {
-  font-size: 1.2rem;
+.restaurant-title{
+  display: flex;
+  align-items: center;
+  span {
+    margin-right: 0.5rem;
+  }
+  .restaurant-title-vendorName{
+    font-size: 1.2rem;
+  }
 }
+
 .menu-list-item:not(:last-child) {
   border-bottom: 1px solid #e0e0e0;
 }

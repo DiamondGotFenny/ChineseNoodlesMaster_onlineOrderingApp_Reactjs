@@ -13,11 +13,11 @@ function PageHighlight() {
     const item={...highlightItem["GuangDong"]};
 
     return (
-        <section class="page-highlight" style={{backgroundImage:`url(${item.img})`}}>
-            <h1 class="main-title">
+        <section className="page-highlight" style={{backgroundImage:`url(${item.img})`}}>
+            <h1 className="main-title">
             {item.mainTitle}
             </h1>
-            <p class="secondary-title">
+            <p className="secondary-title">
             {item.secondaryTitle}
             </p>
         </section>

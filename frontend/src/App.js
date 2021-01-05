@@ -14,6 +14,7 @@ import TermsandConditions from 'pages/TermsandCondition';
 import ProductDetailPage from 'pages/ProductDetailPage';
 import SideShoppingCart from 'components/SideShoppingCart';
 import ScrollToTop from 'utilis/ScrollToTop';
+import VendorPage from './pages/VendorPage';
 
 function App() {
   //we don't want some of routes show header and footer. 
@@ -22,20 +23,19 @@ function App() {
     <div className="App">
       <SideShoppingCart/>
       <BackToTop/>
-      
       <Router history={history}>
+        <ScrollToTop/> 
         <div id="body-wrapper">
           <Header hideHeaderPages={hideHeaderFooterpaths}/>
           <main>
           <Switch>
               <Route path='/' exact component={LandingPage} />
-              <ScrollToTop>
-                <Route path='/product/:id'  component={ProductDetailPage} />
-                <Route path='/products'  component={ProductsDisplay} />
-              </ScrollToTop>
-              <Route path='/userProfile' component={UserProfile}/>
+              <Route path='/product/:id'  component={ProductDetailPage} />
+              <Route path='/vendors/:id' component={VendorPage}/>
+              <Route path='/products'  component={ProductsDisplay} />
               <Route path='/register' component={Register}/>
               <Route path='/login' component={Login}/>
+              <Route path='/userProfile' component={UserProfile}/>
               <Route path='/terms' component={TermsandConditions} />
           </Switch>
           </main>

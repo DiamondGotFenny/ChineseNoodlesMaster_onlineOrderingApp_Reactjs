@@ -1,7 +1,8 @@
 import  React  from 'react';
+import { Link } from 'react-router-dom';
 
 const VendorLanding=(props)=>{
-        const {imgLink,vendorName,vendorDescr,vendorLink}=props.item;
+        const {imgLink,vendorName,vendorDescr,id}=props.item;
     return (
         <div className="carousel-item-vendors">
           <img
@@ -15,7 +16,7 @@ const VendorLanding=(props)=>{
                     {vendorDescr}
                 </p>
             </div>
-            <div className="mx-auto text-center"><a  href={vendorLink} className="btn red-outline-btnmd btn-red-fill"><span>Learn More</span></a></div>  
+            <div className="mx-auto text-center"><Link to={`/vendors/${id}`} className="btn red-outline-btnmd btn-red-fill"><span>Learn More</span></Link></div>  
         </div>
     )
 }

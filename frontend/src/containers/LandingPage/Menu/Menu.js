@@ -35,7 +35,7 @@ const Menu=()=>{
     }
     return (
         <section className="section bg-light">
-            <h1 className="mb-6 text-center">Discover Our Noodles</h1>
+            <h1 className="mb-6 text-center">Discover Your Noodles</h1>
             <Cuisinestagslanding cuisinesTags={cuisinesTags}/>
             <Accordion>
                 <Card>

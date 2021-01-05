@@ -7,7 +7,7 @@ function FilterCollapsedItems(props) {
         <li className="list-group-item">
             <span className="filter-price">Price:</span>
                 <div className="filter-price-items filter-items-details">
-                    <label for="under-10"
+                    <label htmlFor="under-10"
                       ><input
                         type="radio"
                         name="price"
@@ -17,7 +17,7 @@ function FilterCollapsedItems(props) {
                       /><i></i>under $10</label
                     >
 
-                    <label for="10-20"
+                    <label htmlFor="10-20"
                       ><input
                         type="radio"
                         name="price"
@@ -26,7 +26,7 @@ function FilterCollapsedItems(props) {
                       /><i></i>$10-$20</label
                     >
 
-                    <label for="21-30"
+                    <label htmlFor="21-30"
                       ><input
                         type="radio"
                         name="price"
@@ -35,7 +35,7 @@ function FilterCollapsedItems(props) {
                       /><i></i>$21-$30</label
                     >
 
-                    <label for="above-30"
+                    <label htmlFor="above-30"
                       ><input
                         type="radio"
                         name="price"
@@ -48,7 +48,7 @@ function FilterCollapsedItems(props) {
             <li className="list-group-item">
                   <span className="filter-soup">Soup:</span>
                   <div className="filter-soup-items filter-items-details">
-                      <label for="with-soup"
+                      <label htmlFor="with-soup"
                         ><input
                           type="radio"
                           name="soup"
@@ -58,7 +58,7 @@ function FilterCollapsedItems(props) {
                         /><i></i>with soup</label
                       >
                     
-                    <label for="no-soup"
+                    <label htmlFor="no-soup"
                         ><input
                           type="radio"
                           name="soup"
@@ -71,7 +71,7 @@ function FilterCollapsedItems(props) {
             <li className="list-group-item">
                   <span className="filter-pungency">Pungency:</span>
                   <div className="filter-pungency-items filter-items-details">
-                    <label for="no-spicy"
+                    <label htmlFor="no-spicy"
                       ><input
                         type="radio"
                         name="pungency"
@@ -80,7 +80,7 @@ function FilterCollapsedItems(props) {
                         defaultChecked
                       /><i></i>no spicy</label
                     >
-                    <label for="mild"
+                    <label htmlFor="mild"
                       ><input
                         type="radio"
                         name="pungency"
@@ -88,7 +88,7 @@ function FilterCollapsedItems(props) {
                         value="1"
                       /><i></i>mild</label
                     >
-                    <label for="spicy"
+                    <label htmlFor="spicy"
                       ><input
                         type="radio"
                         name="pungency"
@@ -96,7 +96,7 @@ function FilterCollapsedItems(props) {
                         value="2"
                       /><i></i>spicy</label
                     >
-                    <label for="hot"
+                    <label htmlFor="hot"
                       ><input
                         type="radio"
                         name="pungency"
@@ -110,7 +110,7 @@ function FilterCollapsedItems(props) {
                   <span className="filter-meat">Meat:</span>
                   <div className="filter-meat-items filter-items-details">
                    
-                    <label for="vegentarian"
+                    <label htmlFor="vegentarian"
                         ><input
                           type="radio"
                           name="meat"
@@ -120,7 +120,7 @@ function FilterCollapsedItems(props) {
                         /><i></i>vegentarian</label
                       >
                     
-                    <label for="pork"
+                    <label htmlFor="pork"
                         ><input
                           type="radio"
                           name="meat"
@@ -130,7 +130,7 @@ function FilterCollapsedItems(props) {
                         /><i></i>pork</label
                       >
                     
-                    <label for="beef"
+                    <label htmlFor="beef"
                     ><input
                       type="radio"
                       name="meat"
@@ -140,7 +140,7 @@ function FilterCollapsedItems(props) {
                     /><i></i>beef</label
                   >
                     
-                    <label for="chicken"
+                    <label htmlFor="chicken"
                     ><input
                       type="radio"
                       name="meat"
@@ -150,7 +150,7 @@ function FilterCollapsedItems(props) {
                     /><i></i>chicken</label
                   >
                     
-                    <label for="others"
+                    <label htmlFor="others"
                     ><input
                       type="radio"
                       name="meat"

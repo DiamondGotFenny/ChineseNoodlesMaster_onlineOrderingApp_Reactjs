@@ -11,7 +11,7 @@ function ContentFilter(props) {
         <section className="content-filter-container">
            <Accordion >
             <div className="filter-input">
-            <button class="search-input-btn">
+            <button className="search-input-btn">
               <FontAwesomeIcon className="search-icon" icon={faSearch}/>
               </button>
               <input
@@ -27,24 +27,24 @@ function ContentFilter(props) {
                  <FilterCollapsedItems/>
                 </Accordion.Collapse>
             </Accordion>
-            <ul class="filter-offers-info-container">
-            <li><input class="filter-offers" type="radio" name="filter-offers" id="offers-0" />
-                <label class="for-filter-offers" for="offers-0">
+            <ul className="filter-offers-info-container">
+            <li><input className="filter-offers" type="radio" name="filter-offers" id="offers-0" />
+                <label className="for-filter-offers" htmlFor="offers-0">
                 <span >All</span>
                 </label></li>
-              <li><input class="filter-offers" type="radio" name="filter-offers" id="offers-1" />
-                <label class="for-filter-offers" for="offers-1">
+              <li><input className="filter-offers" type="radio" name="filter-offers" id="offers-1" />
+                <label className="for-filter-offers" htmlFor="offers-1">
                 <span >special offers</span>
                 </label></li>
-                <li><input class="filter-offers" type="radio" name="filter-offers" id="offers-2"/>
-                <label class="for-filter-offers" for="offers-2">
+                <li><input className="filter-offers" type="radio" name="filter-offers" id="offers-2"/>
+                <label className="for-filter-offers" htmlFor="offers-2">
                 <span >discounts</span>
                 </label></li>
-              <li><input class="filter-offers" type="radio" name="filter-offers" id="offers-3"/>
-                <label class="for-filter-offers" for="offers-3">
+              <li><input className="filter-offers" type="radio" name="filter-offers" id="offers-3"/>
+                <label className="for-filter-offers" htmlFor="offers-3">
                 <span >new products</span> </label></li>
-              <li><input class="filter-offers" type="radio" name="filter-offers" id="offers-4"/>
-                <label class="for-filter-offers" for="offers-4">
+              <li><input className="filter-offers" type="radio" name="filter-offers" id="offers-4"/>
+                <label className="for-filter-offers" htmlFor="offers-4">
                 <span >recommendation</span> </label></li>
             </ul>
         </section>

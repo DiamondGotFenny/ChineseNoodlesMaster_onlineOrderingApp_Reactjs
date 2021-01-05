@@ -36,6 +36,6 @@ const useGetResource=(initialQuery)=>{
             unmounted = true;
           };
     },[query])
-        return {isLoading,hasError,data:newResource} ;
+        return {isLoading,hasError,data:newResource,setquery} ;
 }
 export default useGetResource;

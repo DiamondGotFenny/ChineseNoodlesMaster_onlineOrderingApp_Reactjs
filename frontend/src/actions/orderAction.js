@@ -1,4 +1,3 @@
-import httpService from "services/httpService";
 import { ADD_TO_CART,REMOVE_FROM_CART,ITEM_QUANTITY_UPDATE,CLEAR_CART
  } from 'constants/actionTypes';
 

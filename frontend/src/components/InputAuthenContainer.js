@@ -8,7 +8,6 @@ import LoginFormFooter from './LoginFormFooter';
 import { btnInfo, registFormDetails, loginFormDetails } from 'services/inputsFormRenderInfo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { userRegisterAction,userLoginAction } from 'actions/userAction';
 import  history  from 'services/history';

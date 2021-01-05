@@ -1,5 +1,5 @@
 import  React, { useEffect, useState }  from 'react';
-import { Container,  Spinner } from 'react-bootstrap';
+import { Container,    Spinner} from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import useGetResource from 'utilis/customHooks/useGetResource';
 import ProductDetailContainer from 'containers/ProductDetailPage/ProductDetailContainer';
@@ -7,7 +7,8 @@ import { getProductDetail,getProductReviews } from 'actions/productActions';
 import { useDispatch } from 'react-redux';
 import ReviewsContainer from 'containers/ProductDetailPage/ReviewsContainer';
 import Product_Recommendations from 'containers/ProductDetailPage/Product_Recommendations';
-import  history  from 'services/history';
+import BackToHomeBtn from 'components/BackToHomeBtn';
+
 
 const ProductDetailPage=()=>{
     const {id}=useParams();
@@ -16,8 +17,8 @@ const ProductDetailPage=()=>{
     const product_endpoint=`/produtList?id=${id}`;
     const reviews_endpoint=`/ProductReviews?id=${id}`;
     const dispatch=useDispatch();
-    const {isLoading,hasError,data: product_data}=useGetResource(product_endpoint);
-    const {isLoading: review_isLoading,hasError: review_hasError,data: reviews_data}=useGetResource(reviews_endpoint);
+    const {isLoading,hasError,data: product_data,setquery}=useGetResource(product_endpoint);
+    const {isLoading: review_isLoading,hasError: review_hasError,data: reviews_data,setquery:setReviewQuery}=useGetResource(reviews_endpoint);
     //this find() filter is used because the fake Api server always return an array,
     //can be removed if the data server return an object instead of array
     const product_process=product_data.find(product=>product.id===id);
@@ -28,6 +29,10 @@ const ProductDetailPage=()=>{
     const reviews_processed=reviews_data.find(review=>review.id);
 
      useEffect(()=>{
+         /*since the useGetResource() has the query as state, and has a setquery function, we need to reset the query state when the params is changed.
+         */
+        setquery(`/produtList?id=${id}`);
+        setReviewQuery(`/ProductReviews?id=${id}`)
         if (product_process) {
             dispatch(getProductDetail(product_process));
             setproduct(product_process);
@@ -36,8 +41,7 @@ const ProductDetailPage=()=>{
             dispatch(getProductReviews(reviews_processed));
             setreviewsObj(reviews_processed)
         }
-       
-     },[product_process,reviews_processed])
+     },[product_process,reviews_processed,id])
     
      const renderProductInfo=(isLoading,hasError,product_process)=>{
         if(isLoading) return (<Spinner animation="border" />)
@@ -53,6 +57,7 @@ const ProductDetailPage=()=>{
      
       return (
         <Container className="product-detail-container">
+            <BackToHomeBtn />
             {renderProductInfo(isLoading,hasError,product_process)}
             <ReviewsContainer />
             <Product_Recommendations/>

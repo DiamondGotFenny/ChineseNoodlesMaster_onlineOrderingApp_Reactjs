@@ -5,7 +5,6 @@ const intialState={ status: "loading", shoppingCart: []}
 
 export function shoppingCartReducer(state=intialState,action) {
   const newCart=[...state.shoppingCart];
-  console.log(newCart);
     switch (action.type) {
       case  ADD_TO_CART:
         newCart.push(action.payload);

@@ -30,7 +30,7 @@ const Productlanding=(props)=>{
               </p>
               <div className="restaurant-title">
                 <span>Restaurant:</span>
-                <p><Link to={"/"}>{vendorInfo.vendorName}</Link></p>
+                <Link to={`/vendors/${vendorInfo.vendor_id}`} className='restaurant-title-vendorName'>{vendorInfo.vendorName}</Link>
               </div>
               <div className="rating-favorites mx-auto text-center">
                <Ratings rating={rating} interactive={false}/>

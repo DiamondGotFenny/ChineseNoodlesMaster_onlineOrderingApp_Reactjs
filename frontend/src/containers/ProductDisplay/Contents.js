@@ -15,8 +15,8 @@ function Contents(props) {
         <Row className="contents">
           <Col md={3}>
             <Accordion defaultActiveKey="0">
-                <div class="link-nav-container">
-                  <div class="link-title">Select Cuisine</div>
+                <div className="link-nav-container">
+                  <div className="link-title">Select Cuisine</div>
                   <Accordion.Toggle as={Button} variant="link" eventKey="0" className="link-nav-menu">
                     <FontAwesomeIcon icon={faChevronDown}/>
                   </Accordion.Toggle>

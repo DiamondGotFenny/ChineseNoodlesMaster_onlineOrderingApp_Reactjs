@@ -25,7 +25,6 @@ const ShoppingCartModal = (props) => {
     const total=calculateOrderTotal(subTotal,discountVal,vatVal,deliveringFeeVal);
     const vatPercentage=((extraOrderItems.vat/1) * 100).toFixed(2);
     const discountPercentage=((extraOrderItems.discount/1) * 100).toFixed(2);
-    console.log(vatPercentage);
     const dispatch=useDispatch();
     const handleClearCart=()=>{
         dispatch(clearShoppingCart())

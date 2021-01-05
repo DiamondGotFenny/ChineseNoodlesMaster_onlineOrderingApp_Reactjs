@@ -1,0 +1,10 @@
+@import 'global/_variables.scss';
+@import 'global/_mixin.scss';
+
+.vendor-detail-container{
+    @include page_container;
+    .back-icon{
+        font-size: 2rem;
+        color: $primary-red;
+      }
+}

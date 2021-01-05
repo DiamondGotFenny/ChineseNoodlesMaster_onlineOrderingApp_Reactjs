@@ -5,7 +5,7 @@ import RecommendationsCarousel from 'components/RecommendationsCarousel';
 
 const Product_Recommendations = (props) => {
     /*
-    in real project, the recomend data should com from a different endpoint.
+    in real project, the recomend data should come from a different endpoint.
     */
     const endpoint=`/produtList?_limit=6&q=beef`;
     const {isLoading,hasError,data:productsList}=useGetResource(endpoint);

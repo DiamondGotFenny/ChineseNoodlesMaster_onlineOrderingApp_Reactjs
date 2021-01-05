@@ -51,7 +51,6 @@ const WriteReview = (props) => {
     const handleSubmit=(e)=>{
         e.preventDefault();
         const updateReviewObj=createNewReview();
-        console.log(updateReviewObj);
         dispatch(updateReviews(updateReviewObj));
         resetStates()
         e.target.reset();

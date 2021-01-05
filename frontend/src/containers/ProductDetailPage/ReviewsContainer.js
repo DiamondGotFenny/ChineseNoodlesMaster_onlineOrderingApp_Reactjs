@@ -49,7 +49,7 @@ const ReviewsContainer = () => {
         <div className="review-container">
             <h2>Reviews:</h2>
             <ul className="reviews" id="reviews">
-            {renderReviews(reviews)}
+                {renderReviews(reviews)}
             </ul>
             <hr/>
             {renderWriteReview(productReviews)}

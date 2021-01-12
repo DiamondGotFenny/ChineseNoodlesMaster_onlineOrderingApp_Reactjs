@@ -1,18 +1,11 @@
-import  React, {  useEffect, useState }  from 'react';
+import  React from 'react';
 import Review from 'components/Review';
 import WriteReview from 'components/WriteReview';
-import { useSelector } from 'react-redux';
 import  Button  from 'react-bootstrap/Button';
 import { Accordion, Card} from 'react-bootstrap';
 
-const ReviewsContainer = () => {
-    const productReviews=useSelector(state=>state.productReviews);
-    const [reviews,setreviews]=useState([]);
-    useEffect(()=>{
-        if (productReviews.status==="sucess") {
-            setreviews(productReviews.reviewsObj.reviews);
-        }
-    },[productReviews.status]) 
+const ReviewsContainer = (props) => {
+    const {reviewsState}=props;
     const renderReviews=(reviews)=>{
         if (reviews.length<=0) {
             return <h4>There is no reviews for this dish now.</h4>
@@ -39,9 +32,9 @@ const ReviewsContainer = () => {
         </>
         )
     }
-    const renderWriteReview=(productReviews)=>{
-        if (productReviews.reviewsObj) {
-            return <WriteReview reviewsObj={productReviews.reviewsObj}/>
+    const renderWriteReview=(reviewsState)=>{
+        if (reviewsState.reviewsObj) {
+            return <WriteReview reviewsObj={reviewsState.reviewsObj} type={reviewsState.type}/>
         }
         return <h4>Loading</h4>
     }
@@ -49,10 +42,10 @@ const ReviewsContainer = () => {
         <div className="review-container">
             <h2>Reviews:</h2>
             <ul className="reviews" id="reviews">
-                {renderReviews(reviews)}
+                {renderReviews(reviewsState.reviewsObj.reviews)}
             </ul>
             <hr/>
-            {renderWriteReview(productReviews)}
+            {renderWriteReview(reviewsState)}
         </div> 
     );
 }

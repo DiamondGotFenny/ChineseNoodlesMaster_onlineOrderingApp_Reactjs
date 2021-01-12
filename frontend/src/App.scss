@@ -118,7 +118,12 @@ a{
     opacity: 0;
   }
 
-
+.fetch-error{
+  font-size: 2rem;
+  text-align: center;
+  color: orangered;
+  margin: 1rem auto;
+}
   /************ For Small devices(landscape phones) and up***************/
   @media only screen and (min-width: 576px) {
     html {

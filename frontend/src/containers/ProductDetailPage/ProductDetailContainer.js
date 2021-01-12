@@ -1,16 +1,11 @@
-import  React, {  useState }  from 'react';
-import { Card, Row, Button, Form } from 'react-bootstrap';
+import  React from 'react';
+import { Card, Row} from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import MyFavorite from 'components/myFavorite';
 import Ratings from 'components/ratingStars';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import ProductQuantityCounter from 'components/ProductQuantityCounter';
-import PreferenceFormGroup from 'components/PreferenceFormGroup';
-import { useSelector, useDispatch } from 'react-redux';
-import  history  from 'services/history';
-import { addItemToCart } from './../../actions/orderAction';
-const ProductDetailContainer = ({product,reviewsNum}) => {
+import { useSelector } from 'react-redux';
+import OrderPreferences from 'components/OrderPreferences';
+const ProductDetailContainer = ({product,reviewsNum=0}) => {
     /*in real project, the preference info should be part of product data, as the preference items may various in different product.*/ 
     const prefereceItems=[
         {
@@ -20,29 +15,13 @@ const ProductDetailContainer = ({product,reviewsNum}) => {
             name:"size",
             itemsList:["small","medium","large"]}
     ]
-    const intialVals={pungency:"no spicy",size:"medium"}
-    const [inputVals,setInputVals]=useState(intialVals);
-    const [quantity,setquantity]=useState(1)
-    const shoppingCart=useSelector(state=>state.shoppingCart.shoppingCart);
-    const inCart=shoppingCart.some(ele=>ele.product.id===product.id);
-  const dispatch=useDispatch();
-    const handleInputVals=(e)=>{
-        setInputVals({...inputVals,[e.target.name]:e.target.value});
-    }
-   
-    const handleQtyOnChange=(val)=>{
-       setquantity(quantity=>val)
-    }
-    const handleSubmit=(e)=>{
-        e.preventDefault();
-        if (!inCart) {
-            const formData = new FormData(e.target);
-            const formDataObj = Object.fromEntries(formData.entries())
-            const DataObj={preferences:{...formDataObj},quantity:quantity,product:{...product}}
-            dispatch(addItemToCart(DataObj))
-             history.push("/")
+    const productReviews=useSelector(state=>state.productReviews);
+    const getReviewNum=(productReviews)=>{
+        if (productReviews.status==="success") {
+            return productReviews.reviewsObj.reviews.length;
         }
     }
+    
     const {productImg,id:_id,productTitle,price,rating,tags,vendorInfo,ProductDescr}=product;
     return (  
         <>
@@ -68,7 +47,7 @@ const ProductDetailContainer = ({product,reviewsNum}) => {
                                 <Ratings rating={rating} interactive={false}/>
                             </span>
                             <a href="#reviews" className="review-counts">
-                                {reviewsNum>0?<span className="reviews-num">{reviewsNum}</span>:<span className="reviews-num">0</span>}
+                                {reviewsNum>0?<span className="reviews-num">{getReviewNum(productReviews)}</span>:<span className="reviews-num">0</span>}
                               reviews</a>
                             </div>
                             <div className="restaurant-title mb-3">
@@ -90,35 +69,7 @@ const ProductDetailContainer = ({product,reviewsNum}) => {
                                 </dd>
                             </dl> 
                             <hr/>
-                        <Form onSubmit={handleSubmit}>
-                            {prefereceItems.map(item=><PreferenceFormGroup key={item.name} preferenceObj={item} formGroupState={inputVals[item.name]} handleOnchange={handleInputVals}/>)}
-                                <hr/>
-                            <div className="qty-btn-container">
-                            <span className="qty-btn-text">Quantity: </span>
-                                <ProductQuantityCounter quantity={quantity} TrackQtyChange={handleQtyOnChange} />    
-                            </div>
-                                <hr/>
-                                <div className="footer-container">
-                                    <Button
-                                        className="btn gold-outline-btnmd btn-gold-fill order-confirm-btn"
-                                        data-dismiss="modal"
-                                    >
-                                    <span>Confirm Order</span> 
-                                    </Button>
-                                    <Button
-                                        type="button"
-                                        className="btn red-outline-btnmd btn-red-fill"
-                                        data-dismiss="modal"
-                                        type="submit"
-                                        disabled={inCart}
-                                    >
-                                    <span>
-                                        <FontAwesomeIcon className="mr-2" icon={faShoppingCart}/> 
-                                        {inCart?"Already In Cart":"Add To Cart"}
-                                    </span>  
-                                    </Button>
-                                </div>
-                        </Form>
+                        <OrderPreferences prefereceItems={prefereceItems} product={product}/>
                     </article>
                 </aside>
             </Row>

@@ -7,4 +7,67 @@
         font-size: 2rem;
         color: $primary-red;
       }
+    .vendor-adrs-first-line {
+        h5 {
+          margin-bottom: 0;
+          font-weight: 500;
+        }
+      }
+    .vendor-map-modal-btn button {
+        color: #d15454;
+        border: none;
+        background-color: transparent;
+        font-size: 1.5rem;
+      }
+    .vendor-map-modal-btn {
+        position: relative;
+      }
+    .vendor-map {
+        width: 100%;
+        height: 25rem;
+      }
+    .vendor-map iframe {
+        max-width: 100%;
+        height: 100%;
+      }
+    .vendor-contact .fa-phone {
+        color: #d15454;
+      }
+    .vendor-adrs-forth-line .red-star {
+        position: relative;
+        top: 0.4rem;
+        font-size: 1.5rem;
+        color: #d15454;
+        margin-right: 0.5rem;
+      }
+    .stick-to-content{
+      padding: 0;
+    }
+    #vendor-navigation .nav {
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1rem;
+       
+        .btn-link{
+          font-family: "Oswald", sans-serif;
+          text-transform: uppercase;
+          color: whitesmoke;
+          &:hover,&::selection{
+            color: $primary-gold;
+            text-decoration: none;
+            outline: none;
+          }
+          &:visited,&:active,&:focus{
+            outline: none;
+            text-decoration: none;
+          }
+        }
+      }
+      .back-icon {
+        width: 20%;
+        font-size: 2rem;
+        color: whitesmoke;
+        margin: 1rem;
+    }
 }

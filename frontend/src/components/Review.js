@@ -1,9 +1,17 @@
 import  React  from 'react';
 import { Link } from 'react-router-dom';
 import Ratings from 'components/ratingStars';
+import EditReviewBtn from './EditReviewBtn';
+import { useSelector } from 'react-redux';
 
 const Review=(props)=>{
     const {item}=props
+    const userInfo=useSelector(state=>state.userInfo)
+    const renderEditBtn=()=>{
+        if (item.user_id===userInfo.data?.id) {
+            return <EditReviewBtn />
+        }
+    }
     return(
         <li className="row review-block">
             <div className="col-sm-3">
@@ -18,7 +26,8 @@ const Review=(props)=>{
                 </div>
                 <div className="review-block-description">{item.comment}</div>
             </div>
-         </li>                    
+                {renderEditBtn()}
+         </li>                        
     )
 }
 

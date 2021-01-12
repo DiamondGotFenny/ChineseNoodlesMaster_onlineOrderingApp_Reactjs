@@ -5,9 +5,10 @@ import Ratings from 'components/ratingStars';
 import { useSelector, useDispatch } from 'react-redux';
 import update from 'immutability-helper';
 import { updateReviews } from 'actions/productActions';
+import { updateVendorReviews } from 'actions/vendorAction';
 
 const WriteReview = (props) => {
-    const {reviewsObj}=props;
+    const {reviewsObj,type}=props;
     const authInfo=useSelector(state=>state.authInfo)
     const userInfo=useSelector(state=>state.userInfo);
     const dispatch=useDispatch();
@@ -49,10 +50,16 @@ const WriteReview = (props) => {
         })
     }
     const handleSubmit=(e)=>{
+        if (!type) return;
         e.preventDefault();
         const updateReviewObj=createNewReview();
-        dispatch(updateReviews(updateReviewObj));
-        resetStates()
+        if (type==="productReviews" ) {
+            dispatch(updateReviews(updateReviewObj));
+        }
+        else {
+            dispatch(updateVendorReviews(updateReviewObj));
+        }
+        resetStates();
         e.target.reset();
     }
     

@@ -6,7 +6,7 @@ const Cuisinestagslanding=(props)=>{
 
     return(
         <ul className="landing-page-menu list-inline text-center mx-2">
-            {tags.map(tag=><CuisineTagDisplay cuisinesTag={tag}/>)} 
+            {tags.map(tag=><CuisineTagDisplay key={tag} cuisinesTag={tag}/>)} 
         </ul>
     )
 }

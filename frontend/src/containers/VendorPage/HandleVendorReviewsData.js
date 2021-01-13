@@ -1,13 +1,13 @@
 import  React  from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useEffect } from 'react';
-import ReviewsContainer from 'containers/ProductDetailPage/ReviewsContainer';
-import { getVendorReviews } from 'actions/vendorAction';
+import ReviewsContainer from 'components/ReviewsContainer';
+import { getVendorReviews } from 'actions/reviewsAction';
 import { useDispatch, useSelector } from 'react-redux';
 
 const HandleVendorReviewsData = (props) => {
     const {id}=props
-    const vendorReviews=useSelector(state=>state.vendorReviews);
+    const reviewsList=useSelector(state=>state.reviewsList);
     const reviews_endpoint=`/VendorReviews?id=${id}`;
     const dispatch=useDispatch();
     useEffect(()=>{
@@ -17,18 +17,18 @@ const HandleVendorReviewsData = (props) => {
             dispatch(getVendorReviews(reviews_endpoint));
     //we monitor the review changes here to reload the component when endpoint changes.    
     },[id])
-        const renderVendorReviews=( vendorReviews)=>{
-            if(vendorReviews.status==="loading") return (<Spinner animation="border" className="fetch-error"/>)
-            if (vendorReviews.status==="error") return (<h4 className="fetch-error">Can not get the revews from server,please reload or contact us</h4>)
+        const renderVendorReviews=( reviewsList)=>{
+            if(reviewsList.status==="loading") return (<Spinner animation="border" className="fetch-error"/>)
+            if (reviewsList.status==="error") return (<h4 className="fetch-error">Can not get the revews from server,please reload or contact us</h4>)
         
-        if (vendorReviews.status==="success"&&vendorReviews.reviewsObj?.hasOwnProperty('reviews')) {
-            return <ReviewsContainer reviewsState={vendorReviews}  />
+        if (reviewsList.status==="success"&&reviewsList.reviewsObj?.hasOwnProperty('reviews')) {
+            return <ReviewsContainer reviewsState={reviewsList}  />
         } 
         return <div className="fetch-error">Opps, something wrong! Please reload or contact us.</div>
         }
     return ( 
         <>
-        {renderVendorReviews(vendorReviews)}
+        {renderVendorReviews(reviewsList)}
         </>
      );
 }

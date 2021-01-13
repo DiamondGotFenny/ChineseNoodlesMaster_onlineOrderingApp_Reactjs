@@ -1,18 +1,16 @@
 import  React, {  useState }  from 'react';
-import {  Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import Ratings from 'components/ratingStars';
 import { useSelector, useDispatch } from 'react-redux';
 import update from 'immutability-helper';
-import { updateReviews } from 'actions/productActions';
-import { updateVendorReviews } from 'actions/vendorAction';
+import { updateReviews,updateVendorReviews } from 'actions/reviewsAction';
+import ReviewFormGroup from './ReviewFormGroup';
 
 const WriteReview = (props) => {
     const {reviewsObj,type}=props;
-    const authInfo=useSelector(state=>state.authInfo)
+    const authInfo=useSelector(state=>state.authInfo);
     const userInfo=useSelector(state=>state.userInfo);
     const dispatch=useDispatch();
-    const initialReview={reviewTitle:"",rating:0,comment:""}
+    const initialReview={reviewTitle:"",rating:0,comment:""};
     const [newReview,setNewReview]=useState(initialReview);
     const handleCommentOnchange=(e)=>{
         setNewReview({...newReview,comment:e.target.value})
@@ -36,6 +34,9 @@ const WriteReview = (props) => {
         setNewReview(initialReview)
     }
     const createNewReview=()=>{
+        /*
+        it is possible to update the reviews list in action via restAPI in real project, so that we don't have to upload the whole reviews list. but the fake json server is not able to this. 
+        */
         const newReviewObj={
             user:userInfo.data.name,
             user_id:userInfo.data.id,
@@ -50,14 +51,14 @@ const WriteReview = (props) => {
         })
     }
     const handleSubmit=(e)=>{
-        if (!type) return;
         e.preventDefault();
-        const updateReviewObj=createNewReview();
+        if (!type) return;
+        const newReviewObj=createNewReview();
         if (type==="productReviews" ) {
-            dispatch(updateReviews(updateReviewObj));
+            dispatch(updateReviews(newReviewObj));
         }
         else {
-            dispatch(updateVendorReviews(updateReviewObj));
+            dispatch(updateVendorReviews(newReviewObj));
         }
         resetStates();
         e.target.reset();
@@ -66,19 +67,13 @@ const WriteReview = (props) => {
 
     if (userInfo.status==="sucess") {
         return (
-            <Form className="write-comment-container" onSubmit={handleSubmit}>
-                <Form.Group >
-                    <Form.Label >Write Your Reviews</Form.Label>
-                    <div className="review-block-rate text-danger">
-                        <Ratings rating={newReview.rating} interactive={true} onRate={handleOnRate}/>
-                    </div>
-                    <Form.Control type="input" className="form-control animated w-50 mb-3" id="review-title" name="comment" value={newReview.reviewTitle} onChange={handleReviewTitle} placeholder="Review Title"/>
-                    <Form.Control as="textarea" className="form-control animated mb-3" cols="50" id="new-review" name="comment" placeholder="Enter your review here..." rows="5" value={newReview.comment} onChange={handleCommentOnchange}/>
-                    <Button type="submit" className="btn btn-primary btn-lg">
-                        Submit
-                    </Button>
-                </Form.Group>
-             </Form>
+             <ReviewFormGroup 
+             handleSubmit={handleSubmit} 
+             handleOnRate={handleOnRate} 
+             handleReviewTitle={handleReviewTitle}
+             handleCommentOnchange={handleCommentOnchange}
+             review={newReview}
+             />
         )
     }
     

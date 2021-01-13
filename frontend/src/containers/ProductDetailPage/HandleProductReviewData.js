@@ -1,12 +1,12 @@
 import  React, { useEffect }  from 'react';
 import { Spinner} from 'react-bootstrap';
-import { getProductReviews } from 'actions/productActions';
 import { useDispatch, useSelector } from 'react-redux';
-import ReviewsContainer from 'containers/ProductDetailPage/ReviewsContainer';
+import ReviewsContainer from 'components/ReviewsContainer';
+import { getProductReviews } from 'actions/reviewsAction';
 
 const HandleProductReviewData = (props) => {
     const {id}=props;
-    const productReviews=useSelector(state=>state.productReviews);
+    const reviewsList=useSelector(state=>state.reviewsList);
     const reviews_endpoint=`/ProductReviews?id=${id}`;
     const dispatch=useDispatch();
     useEffect(()=>{
@@ -16,18 +16,18 @@ const HandleProductReviewData = (props) => {
             dispatch(getProductReviews(reviews_endpoint));
     //we monitor the review changes here to reload the component when endpoint changes.  
     },[id])
-        const renderProductReviews=( productReviews)=>{
-            if(productReviews.status==="loading") return (<Spinner animation="border" className="fetch-error" />)
-            if (productReviews.status==="error") return (<h4 className="fetch-error">Can not get the revews from server,please reload or contact us</h4>)
+        const renderProductReviews=( reviewsList)=>{
+            if(reviewsList.status==="loading") return (<Spinner animation="border" className="fetch-error" />)
+            if (reviewsList.status==="error") return (<h4 className="fetch-error">Can not get the revews from server,please reload or contact us</h4>)
         
-        if (productReviews.status==="success"&&productReviews.reviewsObj?.hasOwnProperty('reviews')) {
-            return <ReviewsContainer reviewsState={productReviews}  />
+        if (reviewsList.status==="success"&&reviewsList.reviewsObj?.hasOwnProperty('reviews')) {
+            return <ReviewsContainer reviewsState={reviewsList}  />
         } 
         return <div className="fetch-error">Opps, something wrong!Please reload or contact us.</div>
         }
     return ( 
         <>
-             {renderProductReviews(productReviews)}
+             {renderProductReviews(reviewsList)}
         </>
      );
 }

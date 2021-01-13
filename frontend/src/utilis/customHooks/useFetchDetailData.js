@@ -1,8 +1,8 @@
 import  { useEffect, useState }  from 'react';
 import useGetResource from 'utilis/customHooks/useGetResource';
-import { getProductDetail,getProductReviews } from 'actions/productActions';
+import { getProductDetail } from 'actions/productActions';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { getProductReviews } from 'actions/reviewsAction';
 const useFetchDetailData = (id,endpoint) => {
     const [ouputData,setoutputData]=useState({});
     console.log(ouputData,'ouputData');

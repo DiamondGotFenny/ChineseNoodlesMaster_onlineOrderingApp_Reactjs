@@ -5,6 +5,7 @@ import  Product_Display  from 'components/Product_Display';
 import HandleVendorDetailData from 'containers/VendorPage/HandleVendorDetailData';
 import HandleVendorReviewsData from 'containers/VendorPage/HandleVendorReviewsData';
 import { useParams } from 'react-router-dom';
+import RenderVendorFilter from 'components/RendorVendorFilter';
 
 const VendorPage = () => {
   const {id}=useParams();
@@ -28,7 +29,7 @@ const VendorPage = () => {
             <Row className="menu-contents">
             <div className="link-nav-container">
               <div className="link-title">Select Foods</div>
-              <renderVendorFilter  preferencesFilter={preferencesFilter} renderFilters={renderFilters} setfilter={setfilter}/>
+              <RenderVendorFilter  preferencesFilter={preferencesFilter} renderFilters={renderFilters} setfilter={setfilter}/>
             </div>
               <aside className="vendor-nav-container nav-sticky col-md-3">
                 <Nav id="vendor-navigation" className="stick-to-content bg-dark collapse show">

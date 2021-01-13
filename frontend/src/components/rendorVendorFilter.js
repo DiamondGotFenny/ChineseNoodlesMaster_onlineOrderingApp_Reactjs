@@ -2,7 +2,7 @@ import  React from 'react';
 import { Button, Accordion, Card } from 'react-bootstrap';
 
 
-const renderVendorFilter = (props) => {
+const RenderVendorFilter = (props) => {
     const {preferencesFilter,renderFilters,setfilter}=props;
   
     return ( 
@@ -23,4 +23,4 @@ const renderVendorFilter = (props) => {
      );
 }
  
-export default renderVendorFilter;
+export default RenderVendorFilter;

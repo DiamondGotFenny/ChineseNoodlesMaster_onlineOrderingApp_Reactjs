@@ -7,9 +7,9 @@ import { useSelector } from 'react-redux';
 const Review=(props)=>{
     const {item}=props
     const userInfo=useSelector(state=>state.userInfo)
-    const renderEditBtn=()=>{
+    const renderEditBtn=(item,userInfo)=>{
         if (item.user_id===userInfo.data?.id) {
-            return <EditReviewBtn />
+            return <EditReviewBtn item={item} />
         }
     }
     return(
@@ -26,7 +26,7 @@ const Review=(props)=>{
                 </div>
                 <div className="review-block-description">{item.comment}</div>
             </div>
-                {renderEditBtn()}
+                {renderEditBtn(item,userInfo)}
          </li>                        
     )
 }

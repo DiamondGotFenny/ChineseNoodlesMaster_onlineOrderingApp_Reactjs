@@ -15,7 +15,7 @@ const ProductDetailContainer = ({product,reviewsNum=0}) => {
             name:"size",
             itemsList:["small","medium","large"]}
     ]
-    const productReviews=useSelector(state=>state.productReviews);
+    const reviewsList=useSelector(state=>state.reviewsList);
     const getReviewNum=(productReviews)=>{
         if (productReviews.status==="success") {
             return productReviews.reviewsObj.reviews.length;
@@ -47,7 +47,7 @@ const ProductDetailContainer = ({product,reviewsNum=0}) => {
                                 <Ratings rating={rating} interactive={false}/>
                             </span>
                             <a href="#reviews" className="review-counts">
-                                {reviewsNum>0?<span className="reviews-num">{getReviewNum(productReviews)}</span>:<span className="reviews-num">0</span>}
+                                {reviewsNum>0?<span className="reviews-num">{getReviewNum(reviewsList)}</span>:<span className="reviews-num">0</span>}
                               reviews</a>
                             </div>
                             <div className="restaurant-title mb-3">

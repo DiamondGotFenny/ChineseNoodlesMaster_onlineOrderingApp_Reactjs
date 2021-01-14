@@ -7,6 +7,7 @@ import PreferenceFormGroup from 'components/PreferenceFormGroup';
 import { useSelector, useDispatch } from 'react-redux';
 import  history  from 'services/history';
 import { addItemToCart } from 'actions/orderAction';
+import { v4 as uuidv4 } from 'uuid';
 
 const OrderPreferences = (props) => {
      const {prefereceItems,product}=props
@@ -14,7 +15,6 @@ const OrderPreferences = (props) => {
     const [inputVals,setInputVals]=useState(intialVals);
     const [quantity,setquantity]=useState(1)
     const shoppingCart=useSelector(state=>state.shoppingCart.shoppingCart);
-    const inCart=shoppingCart.some(ele=>ele.product.id===product.id);
   const dispatch=useDispatch();
     const handleInputVals=(e)=>{
         setInputVals({...inputVals,[e.target.name]:e.target.value});
@@ -25,13 +25,12 @@ const OrderPreferences = (props) => {
     }
     const handleSubmit=(e)=>{
         e.preventDefault();
-        if (!inCart) {
             const formData = new FormData(e.target);
-            const formDataObj = Object.fromEntries(formData.entries())
-            const DataObj={preferences:{...formDataObj},quantity:quantity,product:{...product}}
+            const formDataObj = Object.fromEntries(formData.entries());
+            const uuid=uuidv4();
+            const DataObj={preferences:{...formDataObj},quantity:quantity,product:{...product},uuid:uuid}
             dispatch(addItemToCart(DataObj))
-             history.push("/")
-        }
+             history.goBack();
     }
     return ( 
         <>
@@ -54,10 +53,10 @@ const OrderPreferences = (props) => {
                 className="btn red-outline-btnmd btn-red-fill"
                 data-dismiss="modal"
                  type="submit"
-                 disabled={inCart}>
+                 >
                     <span>
                         <FontAwesomeIcon className="mr-2" icon={faShoppingCart}/> 
-                        {inCart?"Already In Cart":"Add To Cart"}
+                        Add To Cart
                     </span>  
                 </Button>
             </div>

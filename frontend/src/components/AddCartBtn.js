@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from 'react-redux';
 const AddCartBtn = (props) => {
     const {product}=props
     const shoppingCart=useSelector(state=>state.shoppingCart.shoppingCart);
-    const inCart=shoppingCart.some(ele=>ele.product.id===product.id);
     const [modalShow, setModalShow] = useState(false);
     const handleOnClick=()=>{
         setModalShow(true)
@@ -24,7 +23,7 @@ const AddCartBtn = (props) => {
         onClick={handleOnClick}
       >
         <span>Add to cart</span>
-        <Badge pill variant="info" className={inCart?"":"hide"} >{renderItemNum(shoppingCart,product)}</Badge>
+        <Badge pill variant="info" >{renderItemNum(shoppingCart,product)}</Badge>
       </button>
       <OrderConfirmModal  
         show={modalShow}

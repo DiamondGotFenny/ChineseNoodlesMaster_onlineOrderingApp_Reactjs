@@ -5,12 +5,12 @@ import { ADD_TO_CART,REMOVE_FROM_CART,ITEM_QUANTITY_UPDATE,CLEAR_CART
      dispatch({type:ADD_TO_CART,payload:data})
  }
 
- export const removeFromCart=(id)=>dispatch=>{
-    dispatch({type:REMOVE_FROM_CART,payload:id})
+ export const removeFromCart=(uuid)=>dispatch=>{
+    dispatch({type:REMOVE_FROM_CART,payload:uuid})
  }
 
- export const itemQuntityUpdate=(quantity,id)=>dispatch=>{
-    dispatch({type:ITEM_QUANTITY_UPDATE,payload:{quantity,id}})
+ export const itemQuntityUpdate=(quantity,uuid)=>dispatch=>{
+    dispatch({type:ITEM_QUANTITY_UPDATE,payload:{quantity,uuid}})
  }
 
  export const clearShoppingCart=()=>dispatch=>{

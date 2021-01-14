@@ -1,6 +1,6 @@
 import React ,{useState,useEffect} from 'react';
 import { Card, Container, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useLocation,useHistory } from 'react-router-dom';
 import LoginBtn from 'components/LoginBtnOAthu';
 import InputAuthen from 'components/InputAuthen';
 import RegistFooter from './RegistFormFooter';
@@ -10,13 +10,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { userRegisterAction,userLoginAction } from 'actions/userAction';
-import  history  from 'services/history';
 import { validateInputs } from 'services/formValidation';
 
 
 const InputAuthenContainer=(props)=>{
     const {link,inputItems}=props;
     const dispatch=useDispatch();
+    const history=useHistory();
     const authInfo=useSelector(state=>state.authInfo)
     const userInfo=useSelector(state=>state.userInfo);
     const [check,setCheck]=useState(false)
@@ -38,7 +38,7 @@ const InputAuthenContainer=(props)=>{
     useEffect(()=>{
        
         if (authInfo.status==="sucess"&&userInfo.status!=="error") {
-            history.push("/")
+            history.goBack()
         }
 
         return () => {

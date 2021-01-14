@@ -10,10 +10,10 @@ export function shoppingCartReducer(state=intialState,action) {
         newCart.push(action.payload);
         return {...state,status:"updated",shoppingCart:newCart};
       case  REMOVE_FROM_CART:
-        const newShoppingCart=newCart.filter(item=>item.product.id!==action.payload)
+        const newShoppingCart=newCart.filter(item=>item.uuid!==action.payload)
         return {...state,status:"updated",shoppingCart:newShoppingCart};
       case ITEM_QUANTITY_UPDATE:
-        const newCartUpdated=newCart.map(item=>item.product.id===action.payload.id?{...item,quantity:action.payload.quantity}:item);
+        const newCartUpdated=newCart.map(item=>item.uuid===action.payload.uuid?{...item,quantity:action.payload.quantity}:item);
         return {...state,status:"updated",shoppingCart:newCartUpdated};
       case CLEAR_CART:
         return {...state,status:"updated",shoppingCart:[]};

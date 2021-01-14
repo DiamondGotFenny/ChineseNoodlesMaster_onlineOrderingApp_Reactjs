@@ -7,6 +7,7 @@ import PreferenceFormGroup from './PreferenceFormGroup';
 import ProductQuantityCounter from './ProductQuantityCounter';
 import {  useDispatch } from 'react-redux';
 import { addItemToCart } from './../actions/orderAction';
+import { v4 as uuidv4 } from 'uuid';
 const OrderConfirmModal = (props) => {
    /*in real project, the preference info should be part of product data, as the preference items may various in different product.*/ 
   const prefereceItems=[
@@ -21,10 +22,7 @@ const {product, shoppingcart,onHide}=props;
 const intialVals={pungency:"no spicy",size:"medium"}
 const [inputVals,setInputVals]=useState(intialVals);
 const [quantity,setquantity]=useState(1)
-/*we check the inCart value again here because it will throw warning if we use the inCart value from 
-upper component. the error caused by which the bootstrap modal at below is using {...props} 
-*/
-const inCart=shoppingcart.some(ele=>ele.product.id===product.id);
+
 const dispatch=useDispatch();
 const handleInputVals=(e)=>{
     setInputVals({...inputVals,[e.target.name]:e.target.value});
@@ -35,13 +33,15 @@ const handleQtyOnChange=(val)=>{
 }
 const handleSubmit=(e)=>{
     e.preventDefault();
-    if (!inCart) {
       const formData = new FormData(e.target);
-      const formDataObj = Object.fromEntries(formData.entries())
-      const DataObj={preferences:{...formDataObj},quantity:quantity,product:{...product}}
+      const formDataObj = Object.fromEntries(formData.entries());
+      /*we add uuid when we adding item to cart, we need uuid here because we allow use add repeated product. the order may have same type of noodle but with different size and taste. 
+      */
+      const uuid=uuidv4();
+      const DataObj={preferences:{...formDataObj},quantity:quantity,product:{...product},uuid:uuid}
       dispatch(addItemToCart(DataObj))
       onHide();
-    }
+    
 }
     return ( 
         <Modal
@@ -79,9 +79,8 @@ const handleSubmit=(e)=>{
                             type="submit"
                             className="btn gold-outline-btnmd btn-gold-fill order-confirm-btn"
                             data-dismiss="modal"
-                            disabled={inCart}
                               >
-                                  <span>{inCart?"Already In Cart":"Add To Cart"}</span> 
+                                  <span>Add To Cart</span> 
                           </Button>
                           <Button
                             type="button"

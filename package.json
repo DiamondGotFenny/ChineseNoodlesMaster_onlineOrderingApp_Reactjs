@@ -20,6 +20,7 @@
   "dependencies": {
     "concurrently": "^5.3.0",
     "npm-upgrade": "^2.0.4",
-    "search-object": "^1.2.0"
+    "search-object": "^1.2.0",
+    "uuid": "^8.3.2"
   }
 }

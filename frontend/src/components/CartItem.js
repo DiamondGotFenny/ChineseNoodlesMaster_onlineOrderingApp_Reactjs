@@ -1,7 +1,5 @@
 import  React, {useState} from 'react';
-import {  Card, Col, Row,Button,InputGroup,FormControl } from 'react-bootstrap';
-import sampleImg from "asset/img/productsPic/beef_noodles.jpg"
-import { Link } from 'react-router-dom';
+import {  Card, Col, Row} from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faTrash } from '@fortawesome/free-solid-svg-icons';
 import ProductQuantityCounter from './ProductQuantityCounter';
@@ -10,17 +8,17 @@ import { removeFromCart, itemQuntityUpdate } from './../actions/orderAction';
 
 const CartItem = (props) => {
     const {product_info}=props;
-    const {product,quantity,preferences}=product_info;
+    const {product,quantity,preferences,uuid}=product_info;
     const cost=(product.price*quantity).toFixed(2);
     const preferencesVals=Object.values(preferences)
     const [quantityInput,setquantityInput]=useState(quantity);
     const dispatch=useDispatch()
-    const handleQtyOnChange=(val,id)=>{
+    const handleQtyOnChange=(val,uuid)=>{
        setquantityInput(quantity=>val)
-       dispatch(itemQuntityUpdate(val,id))
+       dispatch(itemQuntityUpdate(val,uuid))
     }
-    const handleRemove=(id)=>{
-        dispatch(removeFromCart(id))
+    const handleRemove=(uuid)=>{
+        dispatch(removeFromCart(uuid))
     }
     return (  
         <Card  style={{maxWidth: "100%"}}>
@@ -50,7 +48,7 @@ const CartItem = (props) => {
                             <div className="col-4">${cost}</div>
                             <div className="col-4">
                             <button className="text-danger remove-btn" title="Remove a product" 
-                            onClick={()=>handleRemove(product.id)}> 
+                            onClick={()=>handleRemove(uuid)}> 
                             <FontAwesomeIcon icon={faTrash} /></button>
                             </div>
                         </li>
@@ -61,7 +59,7 @@ const CartItem = (props) => {
                                 Quantity: 
                             </div>
                             <div className="update-product align-middle">
-                                <ProductQuantityCounter val={quantity} quantity={quantityInput} TrackQtyChange={(val)=>handleQtyOnChange(val,product.id)} />    
+                                <ProductQuantityCounter val={quantity} quantity={quantityInput} TrackQtyChange={(val)=>handleQtyOnChange(val,uuid)} />    
                             </div>
                         </li>
                      </ul>

@@ -12,6 +12,7 @@ import ShoppingCartIcon from './ShoppingCartIcon';
 
 const ShoppingCartModal = (props) => {
     const shoppingCart=useSelector(state=>state.shoppingCart.shoppingCart);
+    console.log(shoppingCart,'shoppingCart');
     //in real project, those extra order items should be imported from server
     const extraOrderItems={
         vat:0.05,
@@ -34,7 +35,7 @@ const ShoppingCartModal = (props) => {
            return (<h4 className="text-center">Your Shopping Cart is Empty</h4>)
         }
         return (
-            shoppingCart.map(ele=><CartItem key={ele.product.id} product_info={ele}/>)
+            shoppingCart.map(ele=><CartItem key={ele.uuid} product_info={ele}/>)
         )
     }
     const renderClearAll=(shoppingCart)=>{

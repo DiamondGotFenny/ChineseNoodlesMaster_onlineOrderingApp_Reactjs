@@ -1,7 +1,7 @@
 import  React, { useEffect, useState }  from 'react';
 import { Row, Spinner, Col } from 'react-bootstrap';
 import useGetResource from 'utilis/customHooks/useGetResource';
-import Product_Display from 'components/Product_Display';
+import ProductDisplay from 'components/ProductDisplay';
 import  Carousel  from 'react-multi-carousel';
 import "react-multi-carousel/lib/styles.css";
 
@@ -41,7 +41,7 @@ const RecommendationsCarousel = ({productsList,deviceType}) => {
         dotListClass="custom-dot-list-style"
         itemClass="carousel-item-padding-40-px mx-2"
         >
-       { productsList.map(item=><div key={item.id} lg={3}><Product_Display item={item}/></div>)}   
+       { productsList.map(item=><div key={item.id} lg={3}><ProductDisplay item={item}/></div>)}   
         </Carousel>
      );
 }

@@ -14,7 +14,6 @@ const OrderPreferences = (props) => {
     const intialVals={pungency:"no spicy",size:"medium"}
     const [inputVals,setInputVals]=useState(intialVals);
     const [quantity,setquantity]=useState(1)
-    const shoppingCart=useSelector(state=>state.shoppingCart.shoppingCart);
   const dispatch=useDispatch();
     const handleInputVals=(e)=>{
         setInputVals({...inputVals,[e.target.name]:e.target.value});

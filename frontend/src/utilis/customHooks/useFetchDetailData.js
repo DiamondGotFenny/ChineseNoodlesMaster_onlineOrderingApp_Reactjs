@@ -5,7 +5,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getProductReviews } from 'actions/reviewsAction';
 const useFetchDetailData = (id,endpoint) => {
     const [ouputData,setoutputData]=useState({});
-    console.log(ouputData,'ouputData');
     const dispatch=useDispatch();
     const {isLoading,hasError,data,setquery}=useGetResource(endpoint);
     //this find() filter is used because the fake Api server always return an array,

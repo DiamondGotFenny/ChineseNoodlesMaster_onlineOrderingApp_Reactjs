@@ -6,6 +6,8 @@ import AddCartBtn from './AddCartBtn';
 
 const Productlanding=(props)=>{
    const {productImg,productTitle,productIngredients,vendorInfo,price,rating,id}=props.item;
+   //use for distingush the id type when it is added to the favorite list
+   const type="product";
     return (
         <div className="menu-item mt-3 mx-auto" id={id}>
         <div className="row align-items-center justify-content-around">
@@ -34,7 +36,7 @@ const Productlanding=(props)=>{
               </div>
               <div className="rating-favorites mx-auto text-center">
                <Ratings rating={rating} interactive={false}/>
-               <MyFavorite id={id}/>
+               <MyFavorite id={id} type={type}/>
               </div>
             </div>
           </div>

@@ -11,7 +11,7 @@ import  httpService  from 'services/httpService';
        const filterProductlist= FilterProductList(productlist,filter)
     return filterProductlist;
  }
-function FilterProductList(Productlist=[],filter="") {
+ function FilterProductList(Productlist=[],filter="") {
     if (filter==="all") {
         filter=""
     }

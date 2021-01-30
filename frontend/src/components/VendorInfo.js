@@ -2,9 +2,12 @@ import  React  from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faMapMarkedAlt, faPhone, faTruck } from '@fortawesome/free-solid-svg-icons';
 import  Ratings  from 'components/ratingStars';
+import MyFavorite from './myFavorite';
 
 const VendorInfo = (props) => {
    const  {vendor_process}=props;
+   //use for distingush the id type when it is added to the favorite list
+   const type="vendor";
     return ( 
         <div className="vendor-info mb-3">
             <div className="vendor-display">
@@ -19,8 +22,9 @@ const VendorInfo = (props) => {
                         <h5 className="vendor-title pl-0 col-md-auto col-7">
                         {vendor_process.vendorName}
                         </h5>
-                        <div className="vendor-rating ml-sm-1 col-md-auto col-5">
+                        <div className="vendor-rating ml-sm-1 col-md-auto col-5 d-flex align-items-center">
                             <Ratings rating={4} interactive={false}/>
+                            <MyFavorite id={vendor_process.id} type={type}/>
                         </div>
                     </div>
                     <div

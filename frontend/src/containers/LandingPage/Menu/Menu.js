@@ -1,37 +1,39 @@
-import  React, { useEffect, useState }  from 'react';
-import Cuisinestagslanding from 'components/CuisinesTags_Landing';
+import  React, { useEffect }  from 'react';
+import Cuisinestagslanding from 'components/CuisinesTagsLanding';
 import CuisinesTagsCollapsed from 'components/CuisinesTagsCollapsed';
 import Accordion  from 'react-bootstrap/Accordion';
 import Card  from 'react-bootstrap/Card';
 import Button  from 'react-bootstrap/Button';
 import { cuisinesTags,cuisinesTagscollapsed } from 'asset/temJsonFiles/cuisinesTags';
-import Productlanding from 'components/Product_Landing';
+import Productlanding from 'components/ProductLanding';
 import { Link } from 'react-router-dom';
-import useGetResource from 'utilis/customHooks/useGetResource';
-//import {getUserLocation} from 'services/useGeoLocation';
-import { useDispatch } from 'react-redux';
+import  Spinner  from 'react-bootstrap/Spinner';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductList } from 'actions/productActions';
 
 const Menu=()=>{
-    //by default, we fetch the produts based on visitor's address which we get from ip
-    const [adrs,setAdrs]=useState("");
-    const endpoint=`/produtList?_limit=6&q=${adrs}`;
-    const {isLoading,hasError,data:productsList}=useGetResource(endpoint);
+    const address=useSelector(state=>state.address_input)
+    const productsList=useSelector(state=>state.productsList)
     const dispatch=useDispatch();
-    const getCurrentPosistion=async()=>{
-        /*const city= await getUserLocation();
-         /*we put guangzhou as city query parameter for display purpose only, 
-        because the limit of data, you should replace it in real project.  */
-          const city="guangzhou";
-          setAdrs(city)
-      }
     useEffect(()=>{
-        getCurrentPosistion();
-        dispatch(fetchProductList(productsList))
-    },[adrs,productsList])
+        if (address) {
+        const endpoint=`/produtList?_limit=6&q=${address}`;
+        dispatch(fetchProductList(endpoint));
+        }
+        
+    },[address])
 
     const renderProductlist=(productsList)=>{
-       return productsList.length===0?(<h4 className="text-center">Sorry, we currently aren't serving your city, but we will soon be operating.</h4>) :productsList.map(item=><Productlanding key={item.id} item={item}/>)
+        if (productsList.status==="loading") {
+            return <div><Spinner/></div>
+        }
+        if (productsList.status==="error") {
+            return <div className="fetch-error">Sorry, something wrong. Please reload or contact us.</div>
+        }
+        if (productsList.status==='success') {
+            return productsList.products.length===0?(<h4 className="text-center">Sorry, we currently aren't serving your city, but we will soon be operating.</h4>) :productsList.products.map(item=><Productlanding key={item.id} item={item}/>)
+        }
+     
     }
     return (
         <section className="section bg-light">

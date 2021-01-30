@@ -11,9 +11,13 @@ const AddCartBtn = (props) => {
         setModalShow(true)
     }
     const renderItemNum=(shoppingCart,product)=>{
-      const item=shoppingCart.find(ele=>ele.product.id===product.id)
-      if (item) {
-        return item.quantity
+      const items=shoppingCart.filter(ele=>ele.product.id===product.id)
+      if (items) {
+        const quantity=items.reduce(((acc,cur)=>acc+cur.quantity),0)
+        if (quantity<=0) {
+          return;
+        }
+        return quantity;
       }
     }
     return ( 

@@ -16,6 +16,8 @@ const ProductDetailContainer = ({product,reviewsNum=0}) => {
             itemsList:["small","medium","large"]}
     ]
     const reviewsList=useSelector(state=>state.reviewsList);
+    //use for distingush the id type when it is added to the favorite list
+    const type="product";  
     const getReviewNum=(productReviews)=>{
         if (productReviews.status==="success") {
             return productReviews.reviewsObj.reviews.length;
@@ -31,7 +33,7 @@ const ProductDetailContainer = ({product,reviewsNum=0}) => {
                         <img className="img-fluid" src={productImg}/>
                     </aside>
                     <aside className="col-sm-7">
-                        <MyFavorite id={_id}/>
+                        <MyFavorite id={_id} type={type}/>
                         <article className="card-body p-3">
                             <h3 className="title mb-3">{productTitle}</h3>
                             <p className="price-detail-wrap"> 
@@ -63,7 +65,7 @@ const ProductDetailContainer = ({product,reviewsNum=0}) => {
                                 <dd>
                                     <ul className="product-tags">
                                     {tags.map((item)=>{
-                                        return <li key={item}><Link to={`/products?search=${item}`} className="btn btn-outline-info" role="button">{item}</Link></li>
+                                        return <li key={item}><Link to={`/products?q=${item}`} className="btn btn-outline-info" role="button">{item}</Link></li>
                                     })}
                                     </ul>
                                 </dd>

@@ -18,7 +18,7 @@ const HeroBanner=()=>{
       /* we put the address based on user ip here, that city should come from the menu component*/
       dispatch(handleInputAdrs(adrs));
       dispatch(handleSearch(search));
-      history.push(`/products?search=${search}&address=${adrs}`)
+      history.push(`/products?q=${search}&address=${adrs}`)
     }
     
     /* we temporary put the address based on user ip here, should use google map service to get a more accurate address to the state.*/

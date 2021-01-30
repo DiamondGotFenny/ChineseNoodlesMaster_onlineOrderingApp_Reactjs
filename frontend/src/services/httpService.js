@@ -8,5 +8,6 @@ export default {
     post:instanceAxios.post,
     put:instanceAxios.put,
     postAuth:instanceAuthenPost.post,
+    putAuth:instanceAuthenPost.put,
     getAuth:instanceAuthenPost.get
 }

@@ -18,7 +18,7 @@ const OrderConfirmModal = (props) => {
         name:"size",
         itemsList:["small","medium","large"]}
 ];
-const {product, shoppingcart,onHide}=props;
+const {product,onHide}=props;
 const intialVals={pungency:"no spicy",size:"medium"}
 const [inputVals,setInputVals]=useState(intialVals);
 const [quantity,setquantity]=useState(1)

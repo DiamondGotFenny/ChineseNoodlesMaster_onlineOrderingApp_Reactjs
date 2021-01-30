@@ -1,6 +1,6 @@
 import React ,{useState,useEffect} from 'react';
 import { Card, Container, Form } from 'react-bootstrap';
-import { Link, useLocation,useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import LoginBtn from 'components/LoginBtnOAthu';
 import InputAuthen from 'components/InputAuthen';
 import RegistFooter from './RegistFormFooter';
@@ -11,6 +11,7 @@ import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { userRegisterAction,userLoginAction } from 'actions/userAction';
 import { validateInputs } from 'services/formValidation';
+import GoogleOAuth from 'services/GoogleOAuth';
 
 
 const InputAuthenContainer=(props)=>{
@@ -91,6 +92,7 @@ const InputAuthenContainer=(props)=>{
                 <Card.Body className="mx-auto col-11" style={{maxWidth: "600px"}}>
                     <p>
                         {btnInfo.map(item=><LoginBtn key={item.btn_type} btnInfo={item}/>)}
+                        <GoogleOAuth/>
                     </p>
                     <p className="divider-text">
                         <span className="bg-light">OR</span>

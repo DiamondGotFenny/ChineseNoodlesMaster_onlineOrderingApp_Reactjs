@@ -13,6 +13,14 @@
           font-weight: 500;
         }
       }
+    .vendor-rating{
+      .add-to-favorite-icon{
+        margin: 0.5rem;
+       .svg-inline--fa{
+        transform: translateY(5px)
+       }
+      }
+    }
     .vendor-map-modal-btn button {
         color: #d15454;
         border: none;

@@ -7,14 +7,19 @@ import { updateUserInfoAction } from './../actions/userAction';
 import RequestLogin from './RequestLogin';
 
 const MyFavorite=(props)=>{
-    const id=props.id;
+    const {id,type}=props
     const user=useSelector(state=>state.userInfo);
     const authInfo=useSelector(state=>state.authInfo);
     const [isFav,setisFav]=useState(false);
     const [showModal, setShowModal] = useState(false);
     const dispatch=useDispatch();
-    const updateUserInfo=(user,authInfo,updatedList)=>{
-      const userInfo_updated={...user.data,favorite_foods_list:updatedList};
+    const updateUserInfo=(user,authInfo,updatedList,type)=>{
+      let userInfo_updated={...user.data}
+      if (type==="product") {
+         userInfo_updated={...user.data,favorite_foods_list:updatedList};
+      }else if(type==="vendor"){
+        userInfo_updated={...user.data,favorite_vendors_list:updatedList};
+      }
       dispatch(updateUserInfoAction(authInfo, userInfo_updated))
     }
     const handleFavritSelected=()=>{
@@ -22,17 +27,19 @@ const MyFavorite=(props)=>{
           /*another option is that we can send the product id to the server for checking if this product
            is liked or not, as the favorite list may be very long. but since we just store the food id to the list, the size of list would not be big, download the whole favorite list would not be a problem.
           */
-          const list=[...user.data.favorite_foods_list]
+         let list=[]
+         if (type==="product") {
+           list=[...user.data.favorite_foods_list]
+         }else if (type==="vendor") {
+          list=[...user.data.favorite_vendors_list]
+         }
             if (isFav) {
                 const list_updated=list.filter(ele=>ele!==id);
-                
-                updateUserInfo(user,authInfo,list_updated);
-                
+                updateUserInfo(user,authInfo,list_updated,type);
             }else{
              const list_updated=[...list];
              list_updated.push(id);
-             
-             updateUserInfo(user,authInfo,list_updated);
+             updateUserInfo(user,authInfo,list_updated,type);
             }
            setisFav(isFav=>!isFav);
        }else{
@@ -41,10 +48,15 @@ const MyFavorite=(props)=>{
         
        
     }
-    const initSetFav=(user,id)=> {
+    const initSetFav=(user,id,type)=> {
         if (authInfo.data.isSignin&&user.status==="sucess") {
-            const isLike=user.data.favorite_foods_list.includes(id)
-            return isLike;
+            if (type==="product"){
+             return user.data.favorite_foods_list.includes(id)
+            }else if(type==="vendor"){
+              return user.data.favorite_vendors_list.includes(id)
+            }
+            
+            //return isLike;
           }
          return false;
     }
@@ -53,7 +65,7 @@ const MyFavorite=(props)=>{
       return isFav? faHeart:farHeart;
     }
     useEffect(()=>{
-       setisFav(initSetFav(user,id))
+       setisFav(initSetFav(user,id,type))
     },[authInfo.data.isSignin,user.status])
     const handleClose = () => setShowModal(false);
     const handleShow = () => setShowModal(true);

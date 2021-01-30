@@ -1,12 +1,19 @@
 import { 
-  FETCH_PRODUCTLIST_SUCCESS,FETCH_PRODUCTDETAIL_SUCCESS} from 'constants/actionTypes';
+  FETCH_PRODUCTLIST_LOADING, FETCH_PRODUCTLIST_SUCCESS,FETCH_PRODUCTLIST_FAIL,
+  FETCH_PRODUCTDETAIL_SUCCESS} from 'constants/actionTypes';
   
   const initialProductListState={status:"loading",products:[]}
 function productListReducer(state = initialProductListState, action) {
-    if (action.type===FETCH_PRODUCTLIST_SUCCESS) {
-      return { status: "sucess", products: action.payload };
-    }
-     return state;
+  switch (action.type) {
+    case FETCH_PRODUCTLIST_LOADING:
+      return {status: "loading",products:action.payload}
+    case FETCH_PRODUCTLIST_SUCCESS:
+    return {...state, status: "success", products: action.payload };
+    case FETCH_PRODUCTLIST_FAIL:
+      return { status: "error", error: action.payload }; 
+    default:
+      return state;
+   }
   }
 function productDetailReducer(state={status:'loading',product:{}},action) {
   if (action.type===FETCH_PRODUCTDETAIL_SUCCESS) {

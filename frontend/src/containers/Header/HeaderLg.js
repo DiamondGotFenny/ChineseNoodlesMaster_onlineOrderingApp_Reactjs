@@ -12,18 +12,20 @@ import history from 'services/history';
 import ShoppingCartContainer from './ShoppingCartContainer';
 import navBarLogo from 'asset/img/logos/logo_ver2.png';
 import navbarLogoM from 'asset/img/logos/logo-mobile-v2.png'
+import { signOut_OAuth } from 'actions/GoogleOAuthAction';
+import useGoogleAuth2 from 'utilis/customHooks/useGoogleAuth2';
 
 const HeaderLg=(props)=>{
   const {currentPathname}=props;
   const authInfo=useSelector(state=>state.authInfo);
   const userInfo=useSelector(state=>state.userInfo);
+  const auth=useGoogleAuth2();
   const dispatch=useDispatch();
   
    /*the header style need to be varied according to different page, especially the text color.
   you may want to alter the text color to dark color if the background image is change to lighter color
   */
  const [isLanding,setisLanding]=useState(true);
-
   useEffect(()=>{
     const controlUserLogin=(authInfo)=>{
       const userToken=localStorage.getItem("userToken");
@@ -31,8 +33,9 @@ const HeaderLg=(props)=>{
         authInfo.data.token=userToken;
         authInfo.data.isSignin=true;
         authInfo.status="sucess";
+        dispatch(getUserInfoAction(authInfo));
       }
-      dispatch(getUserInfoAction(authInfo));
+        
     }
     const checkLanding=(currentPathname)=>{
       if (currentPathname==='/') {
@@ -47,7 +50,13 @@ const HeaderLg=(props)=>{
   },[authInfo.status,currentPathname]);
  
   const handleLogout=()=>{
-    dispatch(userLogoutAction());
+    if (authInfo.type==="OAuth") {
+      
+      auth.signOut();
+      dispatch(signOut_OAuth());
+    }else{
+      dispatch(userLogoutAction());
+    }
     history.push("/")
   }
   const renderUser=(isSignin,userInfo)=>{

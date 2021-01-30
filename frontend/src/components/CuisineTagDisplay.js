@@ -10,7 +10,7 @@ const CuisineTagDisplay = (props) => {
       }
     const adrs=useSelector(state=>state.address_input);
     return ( 
-        <li key={tag} className="list-inline-item"><Link to={`/products?search=${removeTagSpace(tag)}&address=${adrs}`}>{tag}</Link></li>
+        <li key={tag} className="list-inline-item"><Link to={`/products?q=${removeTagSpace(tag)}&address=${adrs}`}>{tag}</Link></li>
      );
 }
  

@@ -2,10 +2,7 @@
 @import 'global/_mixin.scss';
 .product-detail-container{
   @include page_container;
-  .back-icon{
-    font-size: 2rem;
-    color: $primary-red;
-  }
+  
   .title{
     font-weight: bold;
   }
@@ -13,6 +10,7 @@
     color: #ddae71;
     text-transform: uppercase;
     font-weight: bolder;
+  
   }
 }
 .reviews-num{
@@ -42,6 +40,9 @@
   }
   .restaurant-title {
     display: flex;
+    h4{
+      margin-bottom: 0;
+    }
   }
   .accordion{
     .card,.card-header {

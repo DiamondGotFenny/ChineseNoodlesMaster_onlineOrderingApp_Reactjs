@@ -9,7 +9,7 @@ import {
  export const getProductReviews=(reviews_endpoint)=>async dispatch=>{
     if (!reviews_endpoint) return;
     try {
-        dispatch({type:FETCH_PRODUCTREVIEWS_LOADING,payload:{}});
+        dispatch({type:FETCH_PRODUCTREVIEWS_LOADING,payload:null});
         const {data}=await httpService.get(reviews_endpoint);
          /*this find() filter is used because the fake Api server always return an array,
 can be removed if the data server return an object instead of array
@@ -33,7 +33,7 @@ export const updateReviews=(data_reviews,authInfo)=> async dispatch=>{
 const endpoint_putProduct=`/ProductReviews/${data_reviews.id}`
 try {
     const bodyParameters = data_reviews;
-    dispatch({type:UPDATE_PRODUCTREVIEWS_LOADING,payload:{}});
+    dispatch({type:UPDATE_PRODUCTREVIEWS_LOADING,payload:null});
     const {data}=await httpService.put(endpoint_putProduct,bodyParameters);
     dispatch({type:UPDATE_PRODUCTREVIEWS_SUCCESS,payload:data})
 } catch (error) {
@@ -44,7 +44,7 @@ try {
 export const getVendorReviews=(reviews_endpoint)=>async dispatch=>{
     if (!reviews_endpoint) return;
     try {
-        dispatch({type:FETCH_VENDORREVIEWS_LOADING,payload:{}});
+        dispatch({type:FETCH_VENDORREVIEWS_LOADING,payload:null});
         const {data}=await httpService.get(reviews_endpoint);
          /*this find() filter is used because the fake Api server always return an array,
 can be removed if the data server return an object instead of array
@@ -67,7 +67,7 @@ export const updateVendorReviews=(data_reviews,authInfo)=> async dispatch=>{
     const endpoint_putProduct=`/VendorReviews/${data_reviews.id}`
     try {
         const bodyParameters = data_reviews;
-        dispatch({type:UPDATE_VENDORREVIEWS_LOADING,payload:{}});
+        dispatch({type:UPDATE_VENDORREVIEWS_LOADING,payload:null});
         const {data}=await httpService.put(endpoint_putProduct,bodyParameters);
         dispatch({type:UPDATE_VENDORREVIEWS_SUCCESS,payload:data})
     } catch (error) {

@@ -1,11 +1,6 @@
-import  React, {  useState }  from 'react';
-import { Card, Row, Button, Form } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import MyFavorite from 'components/myFavorite';
-import Ratings from 'components/ratingStars';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import ProductQuantityCounter from 'components/ProductQuantityCounter';
+import  React  from 'react';
+import {  Form } from 'react-bootstrap';
+
 
 const PreferenceFormGroup = (props) => {
     const {preferenceObj,formGroupState,handleOnchange}=props

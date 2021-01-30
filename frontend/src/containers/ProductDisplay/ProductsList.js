@@ -1,42 +1,48 @@
-import  React, { useState }  from 'react';
+import  React  from 'react';
 import  Col  from 'react-bootstrap/Col';
 import  Row  from 'react-bootstrap/Row';
-import Product_Display from 'components/Product_Display';
-import useGetResource from 'utilis/customHooks/useGetResource';
+import ProductDisplay from 'components/ProductDisplay';
 import { useLocation } from 'react-router-dom';
-import queryString from 'query-string';
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductList } from 'actions/productActions';
-//import {getUserLocation} from 'services/useGeoLocation';
+import  Spinner  from 'react-bootstrap/Spinner';
+import {filterProductsList} from 'utilis/filterProductsList';
 
-function ProductsList(props) {
-    const query=queryString.parse(useLocation().search)
-    const [adrs,setAdrs]=useState("");
-    /*we put guangzhou as city query parameter for display purpose only, 
-    because the limit of data, you should replace it in real project.
-    */
-   const search_parmas=query.search?query.search:adrs;
-    //const search_parmas=query.search?query.search:adrs;
-    //we can get the user's location via ip as default value and may set items paginate in future;
-    //if the user didn't input anything in the search bar.
-    const endpoint=`/produtList?q=${search_parmas}`;
-    const {isLoading,hasError,data:productsList}=useGetResource(endpoint);
-    const dispatch=useDispatch()
-    const getCurrentPosistion=async()=>{
-            /*const city= await getUserLocation();
-         /*we put guangzhou as city query parameter for display purpose only, 
-        because the limit of data, you should replace it in real project.  */
-          const city="guangzhou";
-          setAdrs(city)
-      }
+function ProductsList() {
+    const query=useLocation().search;
+    const search=query.replace("?search=","");
+     const endpoint=`/produtList${search}`;
+    const dispatch=useDispatch();
+    const productsList=useSelector(state=>state.productsList);
+    const preferences=useSelector(state=>state.preferences);
+    const [filteredProductsList,setfilteredProductsList]=useState([]);
     useEffect(()=>{
-        getCurrentPosistion();
-        dispatch(fetchProductList(productsList));
-    },[productsList,adrs]);
+        dispatch(fetchProductList(endpoint));
+    },[query]);
+    useEffect(()=>{
+        if (productsList.products){
+            setfilteredProductsList(productsList.products);
+            if (preferences) {
+                const filteredProducts=filterProductsList(productsList.products,preferences);
+                setfilteredProductsList(filteredProducts);
+            }
+        }
+       
+       
+    },[preferences,productsList.status]);
 
     const renderProductlist=(productsList)=>{
-        return productsList.length===0?(<h4 className="text-center">Sorry, we currently aren't serving your city, but we will soon be operating.</h4>) :productsList.map(item=><Col key={item.id} lg={3}><Product_Display item={item}/></Col>)
+        if (productsList.status==="loading") {
+            return <div className="fetch-error"><Spinner /></div>
+        }
+        if (productsList.status==="error") {
+            return <div className="fetch-error">Sorry, something wrong. Please reload or contact us.</div>
+        }
+        if (productsList.status==="success") {
+            return filteredProductsList.length===0?(<h4 className="text-center">Sorry, Can not find what you want. Please try later.</h4>) :filteredProductsList.map(item=><Col key={item.id} lg={3}><ProductDisplay item={item}/></Col>)
+        }
+        
      }
     return (
         <Row>

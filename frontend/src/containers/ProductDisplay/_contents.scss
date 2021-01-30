@@ -24,10 +24,13 @@
     -webkit-flex-direction: column;
     flex-direction: column;
     padding: 1.5rem 2.5rem;
-    font-family: "Oswald", sans-serif;
-    text-transform: uppercase;
     margin-bottom: 2rem;
-    color: whitesmoke;
+    .nav-item{
+      font-family: "Oswald", sans-serif;
+      color: whitesmoke;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
     flex-wrap: wrap;
     background-color: #282b2e
   }
@@ -37,8 +40,8 @@
     color: whitesmoke;
     margin-top: 1rem;
     position: relative;
-    bottom: -1rem;
-    left: -3rem;
+    bottom: -0.5rem;
+    left: -2.5rem;
   }
 
   .contents{

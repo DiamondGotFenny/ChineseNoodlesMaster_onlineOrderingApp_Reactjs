@@ -4,8 +4,10 @@ import MyFavorite from './myFavorite';
 import AddCartBtn from './AddCartBtn';
 import { Link } from 'react-router-dom';
 
-function Product_Display(props) {
+function ProductDisplay(props) {
   const {productImg,productTitle,vendorInfo,price,rating,id}=props.item;
+  //use for distingush the id type when it is added to the favorite list
+  const type="product"; 
     return (
                <div className="product product-grid text-truncate">
                  <Link to={`/product/${id}`}> <img
@@ -17,7 +19,7 @@ function Product_Display(props) {
                     <Link className="vendor-name" to={`/vendors/${vendorInfo.vendor_id}`}>{vendorInfo.vendorName}</Link>
                     <div className="rating-favorites mx-auto text-center">
                         <Ratings rating={rating} interactive={false}/>
-                        <MyFavorite/>
+                        <MyFavorite id={id} type={type}/>
                     </div>
                   
                     <div
@@ -36,4 +38,4 @@ function Product_Display(props) {
     )
 }
 
-export default Product_Display;
+export default ProductDisplay;

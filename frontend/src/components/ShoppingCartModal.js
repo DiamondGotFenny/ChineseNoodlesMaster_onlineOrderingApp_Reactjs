@@ -12,7 +12,6 @@ import ShoppingCartIcon from './ShoppingCartIcon';
 
 const ShoppingCartModal = (props) => {
     const shoppingCart=useSelector(state=>state.shoppingCart.shoppingCart);
-    console.log(shoppingCart,'shoppingCart');
     //in real project, those extra order items should be imported from server
     const extraOrderItems={
         vat:0.05,

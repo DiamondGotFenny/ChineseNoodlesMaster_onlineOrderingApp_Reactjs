@@ -346,7 +346,7 @@
         "city": "Guangzhou",
         "district": "LeeWan",
         "street": "No.303, Changshou Road East",
-        "coordinate": "113.250635,23.118249"
+        "coordinate": {"lat":23.118249,"lng": 113.250635} 
       },
       "contact": "020-81888486",
       "businessHour": "08:00-22:00",
@@ -367,7 +367,7 @@
         "city": "Guangzhou",
         "district": "Yuexiu",
         "street": "No.24, Cangbian Road",
-        "coordinate": "113.272764,23.126712"
+        "coordinate":  {"lat":23.126712,"lng":113.272764} 
       },
       "contact": "18602088020",
       "businessHour": "08:00-22:00",
@@ -388,7 +388,7 @@
         "city": "Guangzhou",
         "district": "Haizhu",
         "street": "No.8, Kangle Street",
-        "coordinate": "113.298683,23.086882"
+        "coordinate": {"lat":23.086882,"lng":113.298683} 
       },
       "contact": "15813367889",
       "businessHour": "08:00-22:00",
@@ -413,7 +413,7 @@
         "city": "Guangzhou",
         "district": "Haizhu",
         "street": "No.102, Jiefangzhong Road",
-        "coordinate": "113.262241,23.118603"
+        "coordinate": {"lat":23.118603,"lng":113.262241} 
       },
       "contact": "18578602262",
       "businessHour": "08:00-22:00",
@@ -434,7 +434,7 @@
         "city": "Guangzhou",
         "district": "Tianhe",
         "street": "No.103, Shipai Road East",
-        "coordinate": "113.262241,23.118603"
+        "coordinate": {"lat":23.118603,"lng":113.262241} 
       },
       "contact": "18978452262",
       "businessHour": "08:00-22:00",
@@ -455,7 +455,7 @@
         "city": "Guangzhou",
         "district": "Leewan",
         "street": "No.43, Xiaomei Street",
-        "coordinate": "113.246035,23.131331"
+        "coordinate":  {"lat":23.131331,"lng":113.246035} 
       },
       "contact": "020-19242278",
       "businessHour": "08:00-22:00",
@@ -476,7 +476,7 @@
         "city": "Guangzhou",
         "district": "Leewan",
         "street": "No.20, Datong Road",
-        "coordinate": "113.246035,23.131331"
+        "coordinate":   {"lat":23.131331,"lng":113.246035} 
       },
       "contact": "020-81932007",
       "businessHour": "08:00-22:00",
@@ -499,7 +499,7 @@
         "city": "Guangzhou",
         "district": "Baiyun",
         "street": "No.82, Baiyun Street",
-        "coordinate": "113.277374,23.176146"
+        "coordinate": {"lat":23.176146,"lng":113.277374} 
       },
       "contact": "020-81933507",
       "businessHour": "08:00-22:00",
@@ -520,7 +520,7 @@
         "city": "Guangzhou",
         "district": "haizhu",
         "street": "No.19, Huancheng High Street",
-        "coordinate": "113.322691,23.064706"
+        "coordinate": {"lat":23.064706,"lng":113.322691} 
       },
       "contact": "020-81937788",
       "businessHour": "08:00-22:00",
@@ -541,7 +541,7 @@
         "city": "Guangzhou",
         "district": "Panyu",
         "street": "No.211, Zhongling North Street",
-        "coordinate": "113.39366,23.060715"
+        "coordinate":  {"lat":23.060715,"lng":113.39366} 
       },
       "contact": "020-36520782",
       "businessHour": "08:00-22:00",

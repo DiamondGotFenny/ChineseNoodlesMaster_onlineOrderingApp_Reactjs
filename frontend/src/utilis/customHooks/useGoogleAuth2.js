@@ -1,9 +1,11 @@
 import { signIn_OAuth, signOut_OAuth } from 'actions/GoogleOAuthAction';
 import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { REACT_APP_GOOGLE_OAUTH2_CLIENT_ID } from 'services/TemEnvService';
  
-const clientId="61253801337-hptjkm3bkkaiemagr5jb9uvur49ou8he.apps.googleusercontent.com";
+const clientId=REACT_APP_GOOGLE_OAUTH2_CLIENT_ID;
 function useGoogleAuth2() {
+  //const clientId=process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID; doesn't work, don't know why
   const [auth, setAuth] = useState(null);
   const dispatch = useDispatch();
  
@@ -21,20 +23,22 @@ function useGoogleAuth2() {
         dispatch(signOut_OAuth());
       }
     }
- 
-    window.gapi.load('client:auth2', () => {
-      window.gapi.client
-        .init({
-        clientId,
-          scope: 'email profile'
-        })
-        .then(() => {
-          auth = window.gapi.auth2.getAuthInstance();
-          setAuth(auth);
-          onAuthChange(auth.isSignedIn.get());
-          auth.isSignedIn.listen(onAuthChange);
-        });
-    });
+    if (window.gapi) {
+      window.gapi.load('client:auth2', () => {
+        window.gapi.client
+          .init({
+          clientId,
+            scope: 'email profile'
+          })
+          .then(() => {
+            auth = window.gapi.auth2.getAuthInstance();
+            setAuth(auth);
+            onAuthChange(auth.isSignedIn.get());
+            auth.isSignedIn.listen(onAuthChange);
+          }).catch(error=>console.error(error));
+      })
+    }
+  
   }, [dispatch]);
  
   return auth;

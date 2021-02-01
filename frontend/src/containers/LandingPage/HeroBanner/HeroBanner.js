@@ -7,28 +7,36 @@ import { useDispatch } from 'react-redux';
 import { handleSearch } from 'actions/searchInputAction';
 import { handleInputAdrs } from 'actions/inputAddressAction';
 import  history  from 'services/history';
-//import {getUserLocation} from 'services/useGeoLocation';
+import {getUserLocation} from 'services/useGeoLocation';
+import { getCityFromIP } from 'services/getCityFromIP';
 
 const HeroBanner=()=>{
     const [adrs,setAdrs]=useState("");
     const [search,setSearch]=useState("");
     const dispatch=useDispatch();
-    const handelSubmit=(e,adrs,search)=>{
+    const handelSubmit= async (e,adrs,search)=>{
       e.preventDefault();
-      /* we put the address based on user ip here, that city should come from the menu component*/
+     /*  we put "guangzhou" as the value of address here for test only, should replace it with adrs in real project
+      let endpoint=`/products?q=${search}&address=${adrs}` */
+      let endpoint=`/products?q=${search}&address=guangzhou`
+      /* we put the address based on user ip here, that city should come from ip address*/
+      if (!adrs) {
+        const city_current=await getCityFromIP();
+        endpoint=`/products?q=${search}&address=${city_current}`
+      }
+      console.log(endpoint,'endpoint');
       dispatch(handleInputAdrs(adrs));
       dispatch(handleSearch(search));
-      history.push(`/products?q=${search}&address=${adrs}`)
     }
     
-    /* we temporary put the address based on user ip here, should use google map service to get a more accurate address to the state.*/
+    /*
+      in the real project, we can get the vendors list which near the user based on current location coordinates, but now we put guangzhou as city query parameter for display purpose only, 
+        because the limit of data, you should dispatch the address in real project. 
+      */
     const getCurrentPosistion=async()=>{
-       /*const city= await getUserLocation();
-         /*we put guangzhou as city query parameter for display purpose only, 
-        because the limit of data, you should replace it in real project.  */
-        const city="guangzhou";
-        setAdrs(city)
-      dispatch(handleInputAdrs(city))
+       const address= await getUserLocation();
+        setAdrs(address)
+      dispatch(handleInputAdrs("guangzhou"))
     }
     
     return(

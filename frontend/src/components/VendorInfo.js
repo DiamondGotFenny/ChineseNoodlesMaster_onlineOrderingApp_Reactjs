@@ -1,13 +1,16 @@
-import  React  from 'react';
+import  React, { useState }  from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faMapMarkedAlt, faPhone, faTruck } from '@fortawesome/free-solid-svg-icons';
 import  Ratings  from 'components/ratingStars';
 import MyFavorite from './myFavorite';
+import VendorAdrsMap from './VendorAdrsMap';
 
 const VendorInfo = (props) => {
    const  {vendor_process}=props;
    //use for distingush the id type when it is added to the favorite list
    const type="vendor";
+   const [modalShow, setModalShow] = useState(false);
+  
     return ( 
         <div className="vendor-info mb-3">
             <div className="vendor-display">
@@ -39,13 +42,15 @@ const VendorInfo = (props) => {
                         </address>
 
                         <div className="vendor-map-modal-btn">
-                        <button
-                            className="addr-pin-btn ml-1 ml-sm-3"
-                            data-target="#vendorMap"
-                            data-toggle="modal"
-                        >
-                        <FontAwesomeIcon icon={faMapMarkedAlt}/>
-                        </button>
+                            <button
+                                className="addr-pin-btn ml-1 ml-sm-3"
+                                data-target="#vendorMap"
+                                data-toggle="modal"
+                                onClick={()=>setModalShow(true)}
+                            >
+                                <FontAwesomeIcon icon={faMapMarkedAlt}/>
+                            </button>
+                            <VendorAdrsMap show={modalShow} onHide={()=>setModalShow(false)} coordinate={vendor_process.address.coordinate} />
                         </div>
                     </div>
             <div

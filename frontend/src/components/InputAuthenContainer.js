@@ -11,7 +11,7 @@ import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { userRegisterAction,userLoginAction } from 'actions/userAction';
 import { validateInputs } from 'services/formValidation';
-import GoogleOAuth from 'services/GoogleOAuth';
+import GoogleOAuth from 'components/GoogleOAuth';
 
 
 const InputAuthenContainer=(props)=>{

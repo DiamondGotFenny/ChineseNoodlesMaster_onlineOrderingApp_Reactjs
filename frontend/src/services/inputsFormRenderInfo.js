@@ -9,10 +9,9 @@ const password_confirm={id:"regit-Password-confirm",name:"password_confirm",icon
 
 
 export const btnInfo=[
-    {btn_type:"btn-twitter",icon:faTwitter,text:"Login via Twitter"},
-    {btn_type:"btn-facebook",icon:faFacebookF,text:"Login via Facebook"},
-    {btn_type:"btn-google",icon:faGoogle,text:"Login via Google"},
-    {btn_type:"btn-instagram",icon:faInstagram,text:"Login via Instagram"},
+    {btn_type:"btn-twitter",icon:faTwitter,text:"Login via Twitter (undone)"},
+    {btn_type:"btn-facebook",icon:faFacebookF,text:"Login via Facebook (undone)"},
+    {btn_type:"btn-instagram",icon:faInstagram,text:"Login via Instagram (undone)"},
 ];
 
 export const registFormDetails=[name,email,phoneNum,password,password_confirm];

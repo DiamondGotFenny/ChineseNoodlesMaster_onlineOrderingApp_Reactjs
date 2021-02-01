@@ -14,6 +14,7 @@ import { fetchProductList } from 'actions/productActions';
 const Menu=()=>{
     const address=useSelector(state=>state.address_input)
     const productsList=useSelector(state=>state.productsList)
+    const query=`/products?q=&&address=${address}`;
     const dispatch=useDispatch();
     useEffect(()=>{
         if (address) {
@@ -55,7 +56,7 @@ const Menu=()=>{
                { renderProductlist(productsList)}
             </div>
             <div className="text-center my-3">
-            <Link to="/products" className="btn red-outline-viewMore mt-4"
+            <Link to={query} className="btn red-outline-viewMore mt-4"
               ><span>View More</span></Link
             >
           </div>

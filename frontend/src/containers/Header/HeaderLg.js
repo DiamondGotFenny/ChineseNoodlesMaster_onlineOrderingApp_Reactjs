@@ -14,6 +14,7 @@ import navBarLogo from 'asset/img/logos/logo_ver2.png';
 import navbarLogoM from 'asset/img/logos/logo-mobile-v2.png'
 import { signOut_OAuth } from 'actions/GoogleOAuthAction';
 import useGoogleAuth2 from 'utilis/customHooks/useGoogleAuth2';
+import TopMenuAdrsBar from 'components/TopMenuAdrsBar';
 
 const HeaderLg=(props)=>{
   const {currentPathname}=props;
@@ -59,6 +60,7 @@ const HeaderLg=(props)=>{
     }
     history.push("/")
   }
+  
   const renderUser=(isSignin,userInfo)=>{
     if (isSignin==="sucess"&&userInfo.status==="sucess") {
       return (
@@ -93,12 +95,7 @@ const HeaderLg=(props)=>{
                 
                 <Form.Group className={isLanding?"address-bar hide":"address-bar"}>
                   <Form.Label htmlFor="delivering_address" className="address-bar_label">Delivering to</Form.Label>
-                    <div className="address-bar-input">
-                      <input type="text" className="address-input-area" placeholder="22 Jln Wajek, Singapore 588475"/>
-                      <button className="address-input-btn">
-                        <span className="ti-location-pin"></span>
-                      </button>
-                    </div>
+                   <TopMenuAdrsBar/>
                 </Form.Group>
 
                 <Nav className="ml-auto">

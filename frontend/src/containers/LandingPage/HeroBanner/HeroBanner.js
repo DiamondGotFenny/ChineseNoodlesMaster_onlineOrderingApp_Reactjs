@@ -6,9 +6,9 @@ import  Button  from 'react-bootstrap/Button';
 import { useDispatch } from 'react-redux';
 import { handleSearch } from 'actions/searchInputAction';
 import { handleInputAdrs } from 'actions/inputAddressAction';
-import  history  from 'services/history';
 import {getUserLocation} from 'services/useGeoLocation';
 import { getCityFromIP } from 'services/getCityFromIP';
+import  history from 'services/history';
 
 const HeroBanner=()=>{
     const [adrs,setAdrs]=useState("");
@@ -24,9 +24,9 @@ const HeroBanner=()=>{
         const city_current=await getCityFromIP();
         endpoint=`/products?q=${search}&address=${city_current}`
       }
-      console.log(endpoint,'endpoint');
       dispatch(handleInputAdrs(adrs));
       dispatch(handleSearch(search));
+      history.push(endpoint);
     }
     
     /*

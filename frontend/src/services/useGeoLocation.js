@@ -1,22 +1,8 @@
 import axios from 'axios';
-import Geocode from "react-geocode";
+import { REACT_APP_GOOGLE_MAP_APIKEY } from './TemEnvService';
  export const getUserLocation= async ()=>{  
-  const MapApiKey="AIzaSyCAoYWLlH902m5l7BzMHHBI1lHLsZ_Fu4w";
-    /* try {
-      const {data}= await axios.get('https://ipinfo.io?token=c24295f868d2f9');
-      return data.city
-    } catch (error) {
-      console.error(error)
-    } */
-  /**** 
-   * we will get the detail address from google map by using the following method
-   *  if google key was provided
-   * import Geocode from "react-geocode";
- export const getUserLocation= async ()=>{  
-    
- 
-  }
-  */
+  const MapApiKey=REACT_APP_GOOGLE_MAP_APIKEY;
+   
   const pos = await new Promise((resolve, reject) => {
     navigator.geolocation.getCurrentPosition(resolve, reject);
   });

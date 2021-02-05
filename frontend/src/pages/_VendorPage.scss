@@ -8,11 +8,18 @@
         color: $primary-red;
       }
     .vendor-adrs-first-line {
+    
         h5 {
           margin-bottom: 0;
           font-weight: 500;
         }
       }
+    .vendor-adrs-second-line{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+    }
     .vendor-rating{
       .add-to-favorite-icon{
         margin: 0.5rem;
@@ -21,6 +28,7 @@
        }
       }
     }
+   
     .vendor-map-modal-btn button {
         color: #d15454;
         border: none;
@@ -79,4 +87,17 @@
         margin: 1rem;
     }
       
+}
+
+@media only screen and (max-width: 991px) {
+  .vendor-detail-container{
+    .vendor-nav-container{
+      display: none;
+    }
+    .vendor-rating{
+      flex-wrap: wrap;
+      padding-left: 2.5rem;
+    }
+  }
+ 
 }

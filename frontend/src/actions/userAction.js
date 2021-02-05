@@ -40,7 +40,6 @@ export const userLoginAction=(data,check)=>async dispatch=>{
         /* const {data}=httpService.getAuth(endpoint_profiles);
         console.log(data); */
         const respon= await httpService.postAuth(endpoit_login,data);
-        console.log(respon,"respon data");
         const jwtToken=respon.data.access_token;
         if (jwtToken) {
             if (check) {
@@ -58,11 +57,11 @@ export const userLoginAction=(data,check)=>async dispatch=>{
 }
 
 export const userLogoutAction = () => (dispatch) => {
-    localStorage.removeItem('userToken');
     dispatch({ type: SET_AUTH_LOTOUT });
   }
 
 export const getUserInfoAction=(authInfo)=>async dispatch=>{
+    
     const token=authInfo.data.token;
     dispatch({type:SET_USER_REQUEST,payload:authInfo});
     if (token) {
@@ -82,23 +81,17 @@ export const getUserInfoAction=(authInfo)=>async dispatch=>{
     }
 }
 
-export const updateUserInfoAction=(authInfo,data)=>async dispatch=>{
+export const updateUserInfoAction=(authInfo,data,id)=>async dispatch=>{
     const token=authInfo.data.token;
     dispatch({type:UPDATE_USER_REQUEST,payload:data});
     if (token) {
-        const email=jwt_decode(token).email;
-        const endpoint_getProfiles=`/userProfiles` ;
         const config={
             headers: {Authorization:`Bearer ${token}`}
         }
-       
         try {
             /* because the json server setting, we must get the user info via email then update it via id 
             you don't need to do this in real project as you can configurate it in server
             */
-         const respon= await httpService.getAuth(endpoint_getProfiles,config);
-         const user=respon.data.find(item=>item.email===email);
-         const {id}=user;
         const endpoint_getUser=`/userProfiles/${id}`
          const updatedrespon=await httpService.putAuth(endpoint_getUser,data,config);
             dispatch({type:UPDATE_USER_SUCCESS,payload:data})

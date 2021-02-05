@@ -25,6 +25,8 @@ const EditReviewModal = (props) => {
       e.preventDefault();
       const newReviewObj={...item,comment:newReview.comment,comment_title:newReview.reviewTitle,rating:newReview.rating};
       if (reviewsList.reviewsObj) {
+        /*we should not download the whole reviewlist in real project,but due to the limit of json server, we do it here temperporly
+        */
         const index=reviewsList.reviewsObj.reviews.findIndex(ele=>ele.id===item.id);
         const updatedReviewsObj= update(reviewsList.reviewsObj,{
           reviews:{[index]:{$set:newReviewObj}}
@@ -41,22 +43,22 @@ const EditReviewModal = (props) => {
     
     return ( 
         <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title></Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <ReviewFormGroup 
-             handleSubmit={handleSubmit} 
-             handleOnRate={handleOnRate} 
-             handleReviewTitle={handleReviewTitle}
-             handleCommentOnchange={handleCommentOnchange}
-             review={newReview}
-             /> 
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" className="mr-2" onClick={handleClose}>
-            Cancel
-          </Button>
+          <Modal.Header closeButton>
+            <Modal.Title></Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <ReviewFormGroup 
+              handleSubmit={handleSubmit} 
+              handleOnRate={handleOnRate} 
+              handleReviewTitle={handleReviewTitle}
+              handleCommentOnchange={handleCommentOnchange}
+              review={newReview}
+              /> 
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" className="mr-2" onClick={handleClose}>
+              Cancel
+            </Button>
         </Modal.Footer>
       </Modal>
      );

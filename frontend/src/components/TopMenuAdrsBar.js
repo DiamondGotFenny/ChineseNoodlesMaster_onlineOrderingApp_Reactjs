@@ -49,11 +49,11 @@ const TopMenuAdrsBar = () => {
     },[address_input])
     return ( 
         <div className="address-bar-input">
-             <button className="address-input-btn" onClick={handleInput}>
+             <button className="address-input-btn enter-btn" onClick={handleInput}>
                 <FontAwesomeIcon className="search-icon" icon={faSearch}/>
             </button>
             <input type="text" className="address-input-area" value={address} onChange={e=>setaddress(e.target.value)} onKeyPress={_handleKeyDown}/>
-            <button className="address-input-btn" onClick={handleClear}>
+            <button className="address-input-btn clear" onClick={handleClear}>
                <FontAwesomeIcon icon={faTimes} />
             </button>
             <button className="address-input-btn" onClick={getCurrentPosistion}>

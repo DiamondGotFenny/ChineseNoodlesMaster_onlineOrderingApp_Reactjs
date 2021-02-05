@@ -84,16 +84,16 @@
   }
 
 /************ For Small devices(landscape phones) and up***************/
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 769px) {
   
-  .link-nav-container{
-    display: none;
-  }
+  
 }
 
 /************ For Large devices(destops) and up***************/
 @media only screen and (min-width: 992px) {
-
+  .link-nav-container{
+    display: none;
+  }
 }
 
 /************ For Extra large devices(PC) and up***************/

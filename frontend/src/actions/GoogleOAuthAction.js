@@ -37,7 +37,6 @@ export const signIn_OAuth = data =>async dispatch=> {
   };
   
   export const signOut_OAuth = () =>dispatch=> {
-    localStorage.removeItem('userToken');
     dispatch( {
       type: SET_OAUTH_LOTOUT
     });

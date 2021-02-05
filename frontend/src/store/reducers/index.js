@@ -20,7 +20,7 @@ const reducers=combineReducers(
         filter:filterReducer,
         preferences:preferencesReducer,
         authInfo:setAuthReducer,
-        userInfo:setUserReducer,
+        userInfo:setUserReducer
     }
 )
 export default reducers;

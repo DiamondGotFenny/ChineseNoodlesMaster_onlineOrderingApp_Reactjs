@@ -8,7 +8,7 @@ import RequestLogin from './RequestLogin';
 
 const MyFavorite=(props)=>{
     const {id,type}=props
-    const user=useSelector(state=>state.userInfo);
+    const userInfo=useSelector(state=>state.userInfo);
     const authInfo=useSelector(state=>state.authInfo);
     const [isFav,setisFav]=useState(false);
     const [showModal, setShowModal] = useState(false);
@@ -20,26 +20,26 @@ const MyFavorite=(props)=>{
       }else if(type==="vendor"){
         userInfo_updated={...user.data,favorite_vendors_list:updatedList};
       }
-      dispatch(updateUserInfoAction(authInfo, userInfo_updated))
+      dispatch(updateUserInfoAction(authInfo, userInfo_updated,userInfo.data.id))
     }
     const handleFavritSelected=()=>{
-        if (authInfo.data.isSignin&&user.status==="sucess") {
+        if (authInfo.data.isSignin&&userInfo.status==="sucess") {
           /*another option is that we can send the product id to the server for checking if this product
            is liked or not, as the favorite list may be very long. but since we just store the food id to the list, the size of list would not be big, download the whole favorite list would not be a problem.
           */
          let list=[]
          if (type==="product") {
-           list=[...user.data.favorite_foods_list]
+           list=[...userInfo.data.favorite_foods_list]
          }else if (type==="vendor") {
-          list=[...user.data.favorite_vendors_list]
+          list=[...userInfo.data.favorite_vendors_list]
          }
             if (isFav) {
                 const list_updated=list.filter(ele=>ele!==id);
-                updateUserInfo(user,authInfo,list_updated,type);
+                updateUserInfo(userInfo,authInfo,list_updated,type);
             }else{
              const list_updated=[...list];
              list_updated.push(id);
-             updateUserInfo(user,authInfo,list_updated,type);
+             updateUserInfo(userInfo,authInfo,list_updated,type);
             }
            setisFav(isFav=>!isFav);
        }else{
@@ -65,8 +65,8 @@ const MyFavorite=(props)=>{
       return isFav? faHeart:farHeart;
     }
     useEffect(()=>{
-       setisFav(initSetFav(user,id,type))
-    },[authInfo.data.isSignin,user.status])
+       setisFav(initSetFav(userInfo,id,type))
+    },[authInfo.data.isSignin,userInfo.status])
     const handleClose = () => setShowModal(false);
     const handleShow = () => setShowModal(true);
     return (

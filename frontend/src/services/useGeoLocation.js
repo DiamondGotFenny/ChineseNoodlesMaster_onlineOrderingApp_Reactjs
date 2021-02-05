@@ -10,9 +10,7 @@ import { REACT_APP_GOOGLE_MAP_APIKEY } from './TemEnvService';
   if (pos.coords.latitude&&pos.coords.longitude) {
     try {
       const respon=await axios.get(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${pos.coords.latitude},${pos.coords.longitude}&key=${MapApiKey}`)
-       console.log(respon);
       const adres=respon.data.results[0].formatted_address;
-      console.log(adres,'adres');
       return adres;
     } catch (error) {
       console.error(error)

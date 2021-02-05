@@ -9,7 +9,7 @@ import { btnInfo, registFormDetails, loginFormDetails } from 'services/inputsFor
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
-import { userRegisterAction,userLoginAction } from 'actions/userAction';
+import { userRegisterAction,userLoginAction, getUserInfoAction } from 'actions/userAction';
 import { validateInputs } from 'services/formValidation';
 import GoogleOAuth from 'components/GoogleOAuth';
 
@@ -36,17 +36,7 @@ const InputAuthenContainer=(props)=>{
         setCheck(check=>!check)
     }
 
-    useEffect(()=>{
-       
-        if (authInfo.status==="sucess"&&userInfo.status!=="error") {
-            history.goBack()
-        }
-
-        return () => {
-            //
-          };
-      
-    },[authInfo.status])
+    
 
     const renderControl=(link,check,errors,handleCheckBox,inputVals)=>{
        const  registerForm={
@@ -83,7 +73,23 @@ const InputAuthenContainer=(props)=>{
         }
     }
     
-    
+    useEffect(()=>{
+        if (authInfo.status==="sucess") {
+            dispatch(getUserInfoAction(authInfo));
+        }
+
+    },[authInfo.status])
+    useEffect(()=>{
+       
+        if (authInfo.status==="sucess"&&userInfo.status==="sucess") {
+            history.goBack()
+        }
+
+        return () => {
+            //
+          };
+      
+    },[authInfo.status,userInfo.status])
     const renderInfo=renderControl(link,check,errors,handleCheckBox,inputVals);
     return (
         <Container className="user-form-container">

@@ -7,7 +7,6 @@ import BackToTop from 'components/backToTopBtn';
 import { Router,Switch,Route,Link, Redirect } from 'react-router-dom';
 import history from 'services/history';
 import ProductsDisplay from './pages/ProductsDisplay';
-import UserProfile from './containers/UserProfile/UserProfile';
 import Register from './pages/RegisterPage';
 import Login from './pages/LoginPage';
 import TermsandConditions from 'pages/TermsandCondition';
@@ -15,6 +14,7 @@ import ProductDetailPage from 'pages/ProductDetailPage';
 import SideShoppingCart from 'components/SideShoppingCart';
 import ScrollToTop from 'utilis/ScrollToTop';
 import VendorPage from './pages/VendorPage';
+import UserProfilePage from 'pages/UserProfilePage';
 
 function App() {
   //we don't want some of routes show header and footer. 
@@ -35,7 +35,7 @@ function App() {
               <Route path='/products'  component={ProductsDisplay} />
               <Route path='/register' component={Register}/>
               <Route path='/login' component={Login}/>
-              <Route path='/userProfile' component={UserProfile}/>
+              <Route path='/userProfile/:email' component={UserProfilePage}/>
               <Route path='/terms' component={TermsandConditions} />
           </Switch>
           </main>

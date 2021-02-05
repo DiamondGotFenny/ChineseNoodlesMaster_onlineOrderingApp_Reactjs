@@ -1,7 +1,7 @@
 import  React,{useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {  faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { Button } from 'react-bootstrap';
+import Button  from 'react-bootstrap/Button';
 import RequestDeleteReview from './RequestDeleteReviewModal';
 import EditReviewModal from './EditReviewModal';
 

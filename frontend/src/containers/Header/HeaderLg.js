@@ -51,8 +51,8 @@ const HeaderLg=(props)=>{
   },[authInfo.status,currentPathname]);
  
   const handleLogout=()=>{
+    localStorage.removeItem('userToken');
     if (authInfo.type==="OAuth") {
-      
       auth.signOut();
       dispatch(signOut_OAuth());
     }else{
@@ -65,7 +65,7 @@ const HeaderLg=(props)=>{
     if (isSignin==="sucess"&&userInfo.status==="sucess") {
       return (
         <li className="mr-3">
-            <Link to={'/userProfile'} className="mr-1 pr-2 border-right">
+            <Link to={`/userProfile/${userInfo.data.email}`} className="mr-1 pr-2 border-right">
                <FontAwesomeIcon icon={faUser} className="user-icon"/>{userInfo.data.name}
             </Link>
             <Link type="button" onClick={handleLogout} className="mr-3 ml-1" to={"/"}>Logout</Link>

@@ -31,7 +31,7 @@ const VendorInfo = (props) => {
                         </div>
                     </div>
                     <div
-                        className="vendor-adrs-second-line mt-2 mt-md-0 d-flex justify-content-left align-items-center"
+                        className="vendor-adrs-second-line mt-2 mt-md-0"
                     >
                         <strong>Address: </strong>
                         <address className="adrs-detail ml-2 mb-0">

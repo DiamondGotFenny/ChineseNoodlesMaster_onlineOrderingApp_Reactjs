@@ -135,6 +135,15 @@ a{
       margin: 0 15px 15px;
     }
   }
+  
+/************ For small devices only use for setting rule for row in bootstrap***************/
+@media only screen and (max-width: 991px) {
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+ 
+}
 
 /************ For Large devices(destops) and up***************/
 @media only screen and (min-width: 992px) {
@@ -220,5 +229,12 @@ a{
   opacity: 1;
   color: $primary-red;
 }
+@media only screen and (max-width: 991px) {
+  .side-shopping-cart-show{
+    visibility: hidden;
+  }
+ 
+}
+
 /*************side shopping cart end********/
 

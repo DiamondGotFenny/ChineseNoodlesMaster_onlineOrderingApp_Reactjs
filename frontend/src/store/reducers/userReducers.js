@@ -37,6 +37,8 @@ export const setUserReducer=(state=initUserState,action)=>{
         case SET_USER_SUCCESS:
         case UPDATE_USER_SUCCESS:
             return {status:"sucess",data:action.payload};
+         case SET_AUTH_LOTOUT:
+             return {status:"logout",data:null};
         case SET_USER_FAIL:
         case UPDATE_USER_FAIL:
             return state;

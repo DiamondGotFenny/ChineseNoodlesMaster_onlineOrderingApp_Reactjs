@@ -1,7 +1,7 @@
 import  React, {useEffect} from 'react';
 import  Nav  from 'react-bootstrap/Nav';
 import  Button  from 'react-bootstrap/Button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logoFooterMobile from 'asset/img/logos/logo_ver2_footer.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -17,6 +17,7 @@ const PanelMobie = (props) => {
     const {showPanel,onHide}=props;
     const userInfo=useSelector(state=>state.userInfo);
     const authInfo=useSelector(state=>state.authInfo);
+    const {pathname}=useLocation();
     const auth=useGoogleAuth2();
     const dispatch=useDispatch();
     const handleLogout=()=>{
@@ -30,6 +31,9 @@ const PanelMobie = (props) => {
       
         history.push("/")
       }
+      useEffect(()=>{
+        onHide(); //we close the mobile menu after we click the menu button
+      },[pathname])
     const renderUserInfo=()=>{
         if (userInfo.status==="sucess"&&userInfo.data) {
             return (
@@ -85,7 +89,7 @@ const PanelMobie = (props) => {
                 </ul>
             </Nav>
             <div className="module module-social">
-                <h5 class="text-sm mb-3">Follow Us!</h5>
+                <h5 className="text-sm mb-3">Follow Us!</h5>
                 <div className="social-container">
                 {socialMedia.map(item=>< SocialMedia key={item.iconContainer} item={item}/>)}
                 </div>

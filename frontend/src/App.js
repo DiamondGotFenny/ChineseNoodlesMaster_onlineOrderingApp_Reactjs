@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useEffect, useState} from 'react';
 import './App.scss';
 import LandingPage from 'pages/LandingPage';
 import Header from 'containers/Header/Header';
@@ -15,10 +15,19 @@ import SideShoppingCart from 'components/SideShoppingCart';
 import ScrollToTop from 'utilis/ScrollToTop';
 import VendorPage from './pages/VendorPage';
 import UserProfilePage from 'pages/UserProfilePage';
+import ProtectedRoute from 'components/ProtectedRoute';
+import { useSelector } from 'react-redux';
 
 function App() {
   //we don't want some of routes show header and footer. 
   const hideHeaderFooterpaths=['/userProfile','/login','/register']
+  const [isSignIn,setisSignIn]=useState(false);
+  const userInfo=useSelector(state=>state.userInfo);
+  useEffect(()=>{
+    if (userInfo.status==="sucess") {
+      setisSignIn(true)
+    }
+  },[userInfo.status])
   return (
     <div className="App">
       <SideShoppingCart/>
@@ -35,7 +44,7 @@ function App() {
               <Route path='/products'  component={ProductsDisplay} />
               <Route path='/register' component={Register}/>
               <Route path='/login' component={Login}/>
-              <Route path='/userProfile/:email' component={UserProfilePage}/>
+              <ProtectedRoute isSignIn={isSignIn}  path='/userProfile/:email' component={UserProfilePage}/>
               <Route path='/terms' component={TermsandConditions} />
           </Switch>
           </main>

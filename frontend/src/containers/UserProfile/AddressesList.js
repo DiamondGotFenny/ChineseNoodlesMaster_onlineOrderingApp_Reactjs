@@ -19,7 +19,7 @@ const AddressesList = () => {
 },[userInfo.status]);
     return ( 
         <>
-            {addressesList?.length>0&&addressesList.map(item=><AddressCard item={item} />) }
+            {addressesList?.length>0&&addressesList.map((item,index)=><AddressCard key={index} item={item} />) }
             <Card className="mt-3">
                 <Card.Body>
                     <Button variant="outline-light" onClick={()=>setShowEditModal(true)}><FontAwesomeIcon icon={faPlus}/><h2 className="mt-1 text-info">Add New Address</h2></Button>

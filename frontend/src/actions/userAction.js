@@ -36,9 +36,6 @@ export const userLoginAction=(data,check)=>async dispatch=>{
     const endpoit_login="/auth/login";
     dispatch({type:SET_AUTH_REQUEST,payload:data});
     try {
-       
-        /* const {data}=httpService.getAuth(endpoint_profiles);
-        console.log(data); */
         const respon= await httpService.postAuth(endpoit_login,data);
         const jwtToken=respon.data.access_token;
         if (jwtToken) {
@@ -47,7 +44,7 @@ export const userLoginAction=(data,check)=>async dispatch=>{
                 //use js-cookie lib here if you want to use cookies
                 //Cookie.set('userToken', JSON.stringify(jwtToken));
             }
-            
+           
             dispatch({type:SET_AUTH_SUCCESS,payload:{token:jwtToken,isSignin:true}});
         }
     } catch (error) {
@@ -55,7 +52,10 @@ export const userLoginAction=(data,check)=>async dispatch=>{
         dispatch({type:SET_AUTH_FAIL,payload:error.message})
     }
 }
-
+//this is the action when 
+export const setAuthInf0=(token)=>(dispatch)=>{
+    dispatch({type:SET_AUTH_SUCCESS,payload:{token:token,isSignin:true}});
+}
 export const userLogoutAction = () => (dispatch) => {
     dispatch({ type: SET_AUTH_LOTOUT });
   }
@@ -63,7 +63,7 @@ export const userLogoutAction = () => (dispatch) => {
 export const getUserInfoAction=(authInfo)=>async dispatch=>{
     
     const token=authInfo.data.token;
-    dispatch({type:SET_USER_REQUEST,payload:authInfo});
+    dispatch({type:SET_USER_REQUEST,payload:null});
     if (token) {
         const email=jwt_decode(token).email;
         const endpoint_getUser=`/userProfiles?email=${email}` ;

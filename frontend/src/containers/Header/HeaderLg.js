@@ -36,7 +36,7 @@ const HeaderLg=(props)=>{
         authInfo.status="sucess";
         dispatch(getUserInfoAction(authInfo));
       }
-        
+      
     }
     const checkLanding=(currentPathname)=>{
       if (currentPathname==='/') {
@@ -71,13 +71,15 @@ const HeaderLg=(props)=>{
             <Link type="button" onClick={handleLogout} className="mr-3 ml-1" to={"/"}>Logout</Link>
         </li>
       )
+    }else{
+      return (
+        <li className="mr-3">
+            <Link to={'/login'} className="mr-1 pr-2 border-right">Login</Link>
+            <Link to={'/register'} className="mr-3 ml-1">Register</Link>
+        </li>
+      )
     }
-    return (
-      <li className="mr-3">
-          <Link to={'/login'} className="mr-1 pr-2 border-right">Login</Link>
-          <Link to={'/register'} className="mr-3 ml-1">Register</Link>
-      </li>
-    )
+    
   }
     return (
         <header id="header" className={isLanding?'dark':'light'} >

@@ -8,7 +8,7 @@ import useGoogleAuth2 from "utilis/customHooks/useGoogleAuth2";
 const GoogleOAuth=()=>{
   const auth=useGoogleAuth2();
   const isSignedIn=useSelector(state=>state.authInfo.data.isSignin);
-  const type=useSelector(state=>state.authInfo.data.type);
+  const type=useSelector(state=>state.authInfo.type);
   const onSignInClick = () => auth.signIn()
   const onSignOutClick = () => auth.signOut()
  

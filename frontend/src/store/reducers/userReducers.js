@@ -4,7 +4,7 @@ import { SET_USER_FAIL,SET_USER_SUCCESS, SET_USER_REQUEST,
     SET_OAUTH_FAIL, SET_OAUTH_LOTOUT, SET_OAUTH_REQUEST,SET_OAUTH_SUCCESS
 } from 'constants/actionTypes';
 const initAuthState={
-    status:"loading",data:{token:null,isSignin:false,type:null}
+    status:"loading",data:{token:null,isSignin:false},type:null
 }
 const initUserState={
     status:"loading",data:null
@@ -24,7 +24,7 @@ export const setAuthReducer=(state=initAuthState,action)=>{
             return {status:"error",data:action.payload,type:"OAuth"};
         case SET_AUTH_LOTOUT:
         case SET_OAUTH_LOTOUT:
-            return {status:"logout",data:{token:null,isSignin:false,type:null}};
+            return {status:"logout",data:{token:null,isSignin:false},type:null};
         default:
             return state;
     }

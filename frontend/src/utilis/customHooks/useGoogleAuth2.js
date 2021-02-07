@@ -1,12 +1,13 @@
 import { signIn_OAuth, signOut_OAuth } from 'actions/GoogleOAuthAction';
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { REACT_APP_GOOGLE_OAUTH2_CLIENT_ID } from 'services/TemEnvService';
  
 const clientId=REACT_APP_GOOGLE_OAUTH2_CLIENT_ID;
 function useGoogleAuth2() {
   //const clientId=process.env.REACT_APP_GOOGLE_OAUTH2_CLIENT_ID; doesn't work, don't know why
   const [auth, setAuth] = useState(null);
+  const authInfo=useSelector(state=>state.authInfo);
   const dispatch = useDispatch();
  
   useEffect(() => {
@@ -23,7 +24,7 @@ function useGoogleAuth2() {
         dispatch(signOut_OAuth());
       }
     }
-    if (window.gapi) {
+    if (window.gapi&&authInfo.status==="logout") {
       window.gapi.load('client:auth2', () => {
         window.gapi.client
           .init({

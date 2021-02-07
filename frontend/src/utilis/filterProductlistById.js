@@ -1,9 +1,9 @@
 import searchObject from "search-object";
 import  httpService  from 'services/httpService';
 
- const GetFilterMenu=async (fullMenu=[],filter="")=>{
+ const GetFilteredProducts=async (idList=[],filter="")=>{
     const productlist=[];
-         for (const id of fullMenu) {
+         for (const id of idList) {
             const product_endpoint=`/produtList?id=${id}`;
             const product=await fetchProduct(product_endpoint,id);
             productlist.push(product);
@@ -11,6 +11,7 @@ import  httpService  from 'services/httpService';
        const filterProductlist= FilterProductList(productlist,filter)
     return filterProductlist;
  }
+ 
  function FilterProductList(Productlist=[],filter="") {
     if (filter==="all") {
         filter=""
@@ -32,4 +33,4 @@ async function fetchProduct(query,id) {
     }
     
 }
-export default GetFilterMenu;
+export default GetFilteredProducts;

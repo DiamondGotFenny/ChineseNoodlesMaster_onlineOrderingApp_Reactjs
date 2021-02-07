@@ -1,6 +1,6 @@
 import React ,{useState,useEffect} from 'react';
 import { Card, Container, Form } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import LoginBtn from 'components/LoginBtnOAthu';
 import InputAuthen from 'components/InputAuthen';
 import RegistFooter from './RegistFormFooter';
@@ -18,6 +18,7 @@ const InputAuthenContainer=(props)=>{
     const {link,inputItems}=props;
     const dispatch=useDispatch();
     const history=useHistory();
+    const location=useLocation();
     const authInfo=useSelector(state=>state.authInfo)
     const userInfo=useSelector(state=>state.userInfo);
     const [check,setCheck]=useState(false)
@@ -82,14 +83,18 @@ const InputAuthenContainer=(props)=>{
     useEffect(()=>{
        
         if (authInfo.status==="sucess"&&userInfo.status==="sucess") {
-            history.goBack()
+            if (location.state) {
+                history.replace(location.state.from.pathname)
+            }else{
+                history.goBack()
+            }
         }
 
         return () => {
             //
           };
       
-    },[authInfo.status,userInfo.status])
+    },[userInfo.status])
     const renderInfo=renderControl(link,check,errors,handleCheckBox,inputVals);
     return (
         <Container className="user-form-container">

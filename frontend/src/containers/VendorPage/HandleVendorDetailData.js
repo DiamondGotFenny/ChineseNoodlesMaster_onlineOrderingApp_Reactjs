@@ -2,7 +2,7 @@ import  React  from 'react';
 import  useGetResource  from 'utilis/customHooks/useGetResource';
 import {Spinner } from 'react-bootstrap';
 import { useEffect } from 'react';
-import GetFilteredProducts from 'utilis/filterProductlistById';
+import GetFilteredProductsById from 'utilis/filterProductlist';
 import VendorInfo from 'components/VendorInfo';
 
 
@@ -29,7 +29,7 @@ const HandleVendorDetailData = (props) => {
       }
       useEffect( ()=>{
         if(vendor_process){
-          GetFilteredProducts(vendor_process.menu,filter)
+          GetFilteredProductsById(vendor_process.menu,filter)
           .then(productList=> {
             setFilterProductList(productList)
           });

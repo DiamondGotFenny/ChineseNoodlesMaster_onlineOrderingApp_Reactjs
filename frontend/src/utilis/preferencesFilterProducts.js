@@ -24,7 +24,7 @@ import searchObject from "search-object";
     }
 } 
 
-export  const filterProductsList=(products=[],preferences={})=>{
+export  const preferencesFilterProducts=(products=[],preferences={})=>{
     const filteredProducts=products.filter(product=>{
         const checkFiltersArr=[];
         for (const [key,value] of Object.entries(preferences)){

@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { calculateOrderSubTotal, calculateOrderTotal, calDiscountVal, calVatVal, calDeliveryFee } from 'utilis/calculateOrderTotal';
 import { clearShoppingCart } from 'actions/orderAction';
 import ShoppingCartIcon from './ShoppingCartIcon';
+import OrderChargeInfo from './OrderChargeInfo';
 
 
 const ShoppingCartModal = (props) => {
@@ -61,49 +62,7 @@ const ShoppingCartModal = (props) => {
             <Modal.Body>
                {renderCartItem(shoppingCart)}
                {renderClearAll(shoppingCart)}
-                <ul className="list-group mt-2">
-                    <li
-                        id="subtotal"
-                        className="list-group-item d-flex justify-content-between"
-                    >
-                        <span>Subtotal</span>
-                        <strong className="subtotal-value">${subTotal}</strong>
-                    </li>
-                    <li
-                        id="Delivering-fee"
-                        className="list-group-item d-flex justify-content-between"
-                    >
-                        <span>Delivering Fee</span>
-                        <strong>${deliveringFeeVal}</strong>
-                    </li>
-                    <li
-                        id="discount"
-                        className="list-group-item d-flex justify-content-between bg-light"
-                    >
-                        <div className="text-success discount">
-                        <h6 className="my-0">Discount</h6>
-                        <small className="discount-percent">{discountPercentage}%</small>
-                        </div>
-                        <span className="text-success discount-value">-${discountVal}</span>
-                    </li>
-                    <li
-                        id="vat"
-                        className="list-group-item d-flex justify-content-between bg-light"
-                    >
-                        <div className="text-warning vat">
-                        <h6 className="my-0">VAT</h6>
-                        <small className="vat-percent">{vatPercentage}%</small>
-                        </div>
-                        <span className="text-warning vat-value">${vatVal}</span>
-                    </li>
-                    <li
-                        id="total"
-                        className="list-group-item d-flex justify-content-between"
-                    >
-                        <span>Total (USD)</span>
-                        <strong className="total-value">${total}</strong>
-                    </li>
-                </ul>
+                <OrderChargeInfo data={{subTotal,deliveringFeeVal,discountPercentage,discountVal,vatPercentage,vatVal,total}} />
             </Modal.Body>
             <Modal.Footer>
                 <button className="btn red-outline-btnmd btn-red-fill checkout-btn"><span>Proceed To Checkout</span></button>

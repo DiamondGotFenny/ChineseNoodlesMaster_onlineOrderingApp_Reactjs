@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductList } from 'actions/productActions';
 import  Spinner  from 'react-bootstrap/Spinner';
-import {filterProductsList} from 'utilis/filterProductsList';
+import {preferencesFilterProducts} from 'utilis/preferencesFilterProducts';
 
 function ProductsList() {
     const query=useLocation().search;
@@ -24,7 +24,7 @@ function ProductsList() {
         if (productsList.products){
             setfilteredProductsList(productsList.products);
             if (preferences) {
-                const filteredProducts=filterProductsList(productsList.products,preferences);
+                const filteredProducts=preferencesFilterProducts(productsList.products,preferences);
                 setfilteredProductsList(filteredProducts);
             }
         }

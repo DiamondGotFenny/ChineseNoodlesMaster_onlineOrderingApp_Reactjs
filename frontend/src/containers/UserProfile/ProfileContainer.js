@@ -4,6 +4,7 @@ import  Tab from 'react-bootstrap/Tab';
 import UserBasicInfo from 'components/UserBasicInfo';
 import AddressesList from 'containers/UserProfile/AddressesList';
 import ProfileFavorites from './ProfileFavoritesContainer';
+import MyOrders from './MyOrders';
 
 const ProfileContainer = () => {
     const tabData=[
@@ -32,6 +33,9 @@ const ProfileContainer = () => {
                 </Tab.Pane>
                 <Tab.Pane eventKey="my-favorite" className="my-favorite">
                     <ProfileFavorites />
+                </Tab.Pane>
+                <Tab.Pane eventKey="orders" className="orders">
+                    <MyOrders />
                 </Tab.Pane>
             </Tab.Content>
         </Tab.Container>     

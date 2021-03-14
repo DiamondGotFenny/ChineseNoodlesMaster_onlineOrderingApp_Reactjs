@@ -1,3 +1,129 @@
 @import 'global/_variables.scss';
 @import 'global/_mixin.scss';
 
+#userProfile.userProfile-container {
+  @include page_container;
+  background-color: ghostwhite;
+  padding: 0 1rem;
+  margin-bottom: 6rem;
+  .tab-content {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .basic-info-container label {
+    color: #17a2b8;
+  }
+  .nav-item,
+  .nav-link.active {
+    background-color: ghostwhite;
+    color: #32363a;
+  }
+  .address-list .card {
+    margin-top: 1rem;
+  }
+  .card-title h5 {
+    font-weight: 500;
+  }
+  .receiver-name {
+    color: $primary-gold;
+  }
+  .addNewAdrsBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .text-info {
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .fa-plus {
+      color: $primary-red;
+      font-size: 1.8rem;
+      margin-right: 1rem;
+    }
+  }
+  .search-favorites-bar {
+    width: 80%;
+    margin: 0.5rem auto;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    border: 1px solid gray;
+    border-radius: 0.43rem;
+    .fa-search {
+      color: $primary-red;
+    }
+    input,
+    button {
+      outline: none;
+      border: none;
+      background: none;
+    }
+    input {
+      width: 90%;
+    }
+  }
+  .orders {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    h4 {
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+    #sortByTime {
+      margin: 0.5rem auto;
+    }
+    .card-header span,
+    .order-item {
+      color: $primary-gold;
+    }
+    .product-header {
+      width: 100%;
+      span {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      margin-left: 0;
+      margin-right: 0;
+
+      h6 {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+  .activity-product-review {
+    .order-name {
+      color: goldenrod;
+      font-weight: 400;
+    }
+    margin-bottom: 1rem;
+    border-bottom: 1px solid gainsboro;
+    padding: 1rem;
+    .review {
+      h5 {
+        margin-bottom: 0.5rem;
+      }
+      .write-review {
+        color: $primary-gold;
+        font-size: 1.2rem;
+        font-weight: 200;
+      }
+    }
+  }
+  .editProfileForm {
+    margin-bottom: 1rem;
+    .changePasswordLink {
+      display: block;
+      color: $primary-red;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+    button {
+      margin-right: 1rem;
+    }
+  }
+}

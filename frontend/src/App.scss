@@ -9,140 +9,150 @@
 @import 'pages/ShoppingCartModal';
 @import 'pages/AddCartBtn';
 @import 'pages/OrderConfirmModal';
+@import 'pages/OrderDetailModal';
 @import 'pages/VendorPage';
+@import 'pages/UserProfilePage';
+@import 'pages/CheckOutPage';
 @import 'global/shoppingCartIcon';
 @import 'global/reviewBtn';
 @import 'global/backTohomeBtn';
 @import 'asset/icons/themify-icons/themify-icons';
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Raleway:100,200,400,500");
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Raleway:100,200,400,500');
 @import 'global/buttons';
-html,body {
+html,
+body {
   font-size: 15px;
 }
 
-ul{
+ul {
   list-style-type: none;
 }
-a{
-    color: inherit;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-  }
-  a:hover,
-  a:focus {
-    text-decoration: none;
-    color: $primary-red;
-  }
-  textarea:focus,
-  input:focus,
-  a:focus,
-  a:visited,
-  *:focus {
-    outline: none;
-  }
+a {
+  color: inherit;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: $primary-red;
+}
+textarea:focus,
+input:focus,
+a:focus,
+a:visited,
+*:focus {
+  outline: none;
+}
 
-  h1,
-  .h1,
-  h2,
-  .h2,
-  h3,
-  .h3,
-  h4,
-  .h4,
-  h5,
-  .h5,
-  h6,
-  .h6 {
-    margin-top: 0;
-    margin-bottom: 2rem;
-    font-weight: 200;
-  }
-  h1 {
-    font-size: 3.5rem;
-    font-weight: 100;
-  }
-  .display-2 {
-    font-size: 3.5rem;
-    line-height: 1.2;
-  }
-  .display-1,
-  .display-2,
-  .display-3,
-  .display-4 {
-    font-weight: 100;
-  }
-  img {
-    max-width: 100%;
-    height: auto;
-    -webkit-backface-visibility: hidden;
-  }
-  .dark{
-    color: $white-text;
-  }
-  .light{
-    color: $body-color-black;
-  }
-  .hide{
-    display: none !important; 
-  }
-  body {
-    position: relative;
-    color: $body-color-black;
-    font-family: $font-family;
-    font-weight: $font-weight;
-    line-height: $line-height;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    margin: 0;
-  }
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: 200;
+}
+h1 {
+  font-size: 3.5rem;
+  font-weight: 100;
+}
+.display-2 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+.display-1,
+.display-2,
+.display-3,
+.display-4 {
+  font-weight: 100;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  -webkit-backface-visibility: hidden;
+}
+.dark {
+  color: $white-text;
+}
+.light {
+  color: $body-color-black;
+}
+.hide {
+  display: none !important;
+}
+body {
+  position: relative;
+  color: $body-color-black;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  line-height: $line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
 
-  #body-wrapper {
-    position: relative;
-  }
-  
-  #body-wrapper::before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(40, 40, 40, 0.5);
-    content: " ";
-    z-index: 899;
-    -webkit-transition: all 0.25s ease-out;
-    -moz-transition: all 0.25s ease-out;
-    -o-transition: all 0.25s ease-out;
-    transition: all 0.25s ease-out;
-    visibility: hidden;
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-    opacity: 0;
-  }
+#body-wrapper {
+  position: relative;
+}
 
-.fetch-error{
+#body-wrapper::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(40, 40, 40, 0.5);
+  content: ' ';
+  z-index: 899;
+  -webkit-transition: all 0.25s ease-out;
+  -moz-transition: all 0.25s ease-out;
+  -o-transition: all 0.25s ease-out;
+  transition: all 0.25s ease-out;
+  visibility: hidden;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+.fetch-error {
   font-size: 2rem;
   text-align: center;
   color: orangered;
   margin: 1rem auto;
 }
-  /************ For Small devices(landscape phones) and up***************/
-  @media only screen and (min-width: 576px) {
-    html {
-      font-size: 16px;
-    }
-    body {
-      margin: 0 15px 15px;
-    }
+#editAdrsMod .modal-header,
+#editAdrsMod .modal-footer {
+  background-color: #f8f9fa;
+}
+.editAdrs.h4 {
+  margin-bottom: 0.5rem;
+}
+/************ For Small devices(landscape phones) and up***************/
+@media only screen and (min-width: 576px) {
+  html {
+    font-size: 16px;
   }
-  
+  body {
+    margin: 0 15px 15px;
+  }
+}
+
 /************ For small devices only use for setting rule for row in bootstrap***************/
 @media only screen and (max-width: 991px) {
   .row {
     margin-left: 0;
     margin-right: 0;
   }
- 
 }
 
 /************ For Large devices(destops) and up***************/
@@ -153,8 +163,8 @@ a{
 }
 
 /************ For Extra large devices(PC) and up***************/
-@media only screen and (min-width: 1200px) { 
-	body {
+@media only screen and (min-width: 1200px) {
+  body {
     margin: 0 30px 30px;
   }
   .container {
@@ -162,9 +172,9 @@ a{
   }
 }
 
-  /*************back to top start********/
+/*************back to top start********/
 .return-to-top {
-  visibility:hidden;
+  visibility: hidden;
   transition: all 0.25s ease-in-out;
   position: fixed;
   bottom: 0;
@@ -186,7 +196,7 @@ a{
 }
 .return-to-top-show {
   visibility: visible;
-  opacity:0.5;
+  opacity: 0.5;
 }
 
 .return-to-top-show:hover {
@@ -197,7 +207,7 @@ a{
 
 /*************side shopping cart start********/
 .side-shopping-cart {
-  visibility:hidden;
+  visibility: hidden;
   transition: all 0.25s ease-in-out;
   position: fixed;
   top: 3rem;
@@ -213,16 +223,15 @@ a{
   width: 5em;
   height: 5em;
   background-color: $returnToTop-bg-color;
-    .shopping-cart-icon{
-      transform: translateX(0.5rem);
-      font-size: 1.4rem;
-    }
-  
+  .shopping-cart-icon {
+    transform: translateX(0.5rem);
+    font-size: 1.4rem;
+  }
 }
 
 .side-shopping-cart-show {
   visibility: visible;
-  opacity:0.5;
+  opacity: 0.5;
 }
 
 .side-shopping-cart:hover {
@@ -230,11 +239,9 @@ a{
   color: $primary-red;
 }
 @media only screen and (max-width: 991px) {
-  .side-shopping-cart-show{
+  .side-shopping-cart-show {
     visibility: hidden;
   }
- 
 }
 
 /*************side shopping cart end********/
-

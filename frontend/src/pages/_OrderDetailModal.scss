@@ -1,0 +1,107 @@
+.order-detail-header-first {
+  background-color: gainsboro;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .modal-title.h4,
+  h6 {
+    margin-bottom: 0.5rem;
+    h4 {
+      margin-bottom: 0rem;
+    }
+  }
+  h6 {
+    margin-left: 2rem;
+  }
+}
+.order-detail-header-second {
+  flex-direction: column;
+  .order-info,
+  .track {
+    width: 100%;
+  }
+}
+.svg-inline--fa {
+  vertical-align: -0.6em;
+}
+.track {
+  position: relative;
+  background-color: #ddd;
+  height: 7px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 60px;
+  margin-top: 50px;
+  .icon {
+    font-size: 1rem;
+  }
+}
+
+.track .step {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  width: 20%;
+  margin-top: -18px;
+  text-align: center;
+  position: relative;
+}
+
+.track .step.active:before {
+  background: #ff5722;
+}
+
+.track .step::before {
+  height: 7px;
+  position: absolute;
+  content: '';
+  width: 100%;
+  left: 0;
+  top: 18px;
+}
+
+.track .step.active .icon {
+  background: #ee5435;
+  color: #fff;
+}
+
+.track .icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  border-radius: 100%;
+  background: #ddd;
+}
+
+.track .step.active .text {
+  font-weight: 400;
+  color: #ee5435;
+}
+
+.track .text {
+  display: block;
+  margin-top: 7px;
+}
+
+.item-pic img {
+  width: 15rem;
+  height: 10rem;
+}
+
+.item-list li {
+  align-items: center;
+}
+#shipNPayment {
+  .shipping-address-value,
+  .billing-address-value,
+  .payment-value {
+    margin-top: 0.8rem;
+  }
+  h5 {
+    margin-bottom: 0.5rem;
+  }
+}

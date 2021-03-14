@@ -1,27 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import AddressCard from 'components/AddressCard';
-import { useSelector } from 'react-redux';
 import EditAddressModal from 'components/EditAddressModal';
+import AddressSelectableLayer from './AddressSelectableLayer';
 
-const AddressesList = () => {
-  const userInfo = useSelector((state) => state.userInfo);
-  const [addressesList, setaddressesList] = useState(null);
+const CheckoutAdrsList = (props) => {
+  const { handleSelectedAdrs, addressesList } = props;
   const [showEditModal, setShowEditModal] = useState(false);
-  useEffect(() => {
-    if (userInfo.status === 'sucess') {
-      setaddressesList(userInfo.data.address);
-    }
-  }, [userInfo.status]);
+  const [selectedAdrs, setselectedAdrs] = useState('Default Address');
+  const handleOnchange = (e) => {
+    setselectedAdrs(e.target.value);
+    const selectedAdrsObj = addressesList.find(
+      (ele) => ele.addressTitle === e.target.value
+    );
+    handleSelectedAdrs(selectedAdrsObj);
+  };
   return (
     <>
-      {addressesList?.length > 0 &&
-        addressesList.map((item, index) => (
-          <AddressCard key={index} item={item} />
-        ))}
+      <Form.Group onChange={handleOnchange}>
+        {addressesList?.length > 0 &&
+          addressesList.map((item, index) => (
+            <AddressSelectableLayer
+              key={index}
+              item={item}
+              selectedAdrs={selectedAdrs}>
+              <AddressCard item={item} />
+            </AddressSelectableLayer>
+          ))}
+      </Form.Group>
+
       <Card>
         <Card.Body>
           <Button
@@ -41,4 +52,4 @@ const AddressesList = () => {
   );
 };
 
-export default AddressesList;
+export default CheckoutAdrsList;

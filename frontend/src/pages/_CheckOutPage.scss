@@ -1,0 +1,15 @@
+@import 'global/_variables.scss';
+@import 'global/_mixin.scss';
+.checkout-container {
+  @include page_container;
+  .StripeElement {
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 5px;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+  }
+  .CardField {
+    padding: 1rem;
+  }
+}

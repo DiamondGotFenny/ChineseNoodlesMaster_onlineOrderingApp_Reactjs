@@ -13,7 +13,7 @@ const CartItemsCheckOut = (props) => {
       <h4 className='d-flex justify-content-between align-items-center mb-3'>
         <span>Your cart</span>
         <Badge pill variant='info'>
-          {shoppingItemsInfo.shoppingCart.length}
+          {shoppingItemsInfo.orderInfo.orderItems.length}
         </Badge>
       </h4>
       <ul className='list-group'>
@@ -22,8 +22,8 @@ const CartItemsCheckOut = (props) => {
           <Col md={2}>Qty</Col>
           <Col md={3}>Total</Col>
         </li>
-        {shoppingItemsInfo.shoppingCart.length > 0 &&
-          shoppingItemsInfo.shoppingCart.map((item) => {
+        {shoppingItemsInfo.orderInfo.orderItems.length > 0 &&
+          shoppingItemsInfo.orderInfo.orderItems.map((item) => {
             return (
               <li
                 key={item.uuid}

@@ -12,20 +12,13 @@ const MyOrders = () => {
   const [list, setlist] = useState([]);
   const userInfo = useSelector((state) => state.userInfo);
   const defaultBetweenVal = '7'; //the default between filter value is a week, that is 7 days;
-  const transOrderDateToObj = (currentDate, orderDate) => {
-    //we don't need this in real project
-    const targetDateObj = new Date(orderDate);
-    //the order date doesn't include order time, so we add it here; we may not need this in real project
-    targetDateObj.setHours(currentDate.getHours());
-    targetDateObj.setMinutes(currentDate.getMinutes());
-    targetDateObj.setSeconds(currentDate.getSeconds());
-    return targetDateObj;
-  };
+
   const getFilteredList = (list, targetVal) => {
     if (list.length > 0) {
       const currentDate = new Date();
       const ordersBetweenArr = list.filter((item) => {
-        const orderDate = transOrderDateToObj(currentDate, item.date);
+        const orderDate = new Date(item.orderInfo.date);
+        console.log(orderDate, 'orderDate');
         const dateBetween = CalculateDateBetween(currentDate, orderDate);
         if (dateBetween <= targetVal) {
           return item;

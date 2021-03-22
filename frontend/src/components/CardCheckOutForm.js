@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
-import { useSelector } from 'react-redux';
-import { getSeperatedOrders } from 'utilis/SeperateOrder';
+import { useSelector, useDispatch } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import { PostOrderSubmit } from 'utilis/customHooks/useHandleOrderSubmit';
+import history from 'services/history';
+import { clearShoppingCart } from 'actions/orderAction';
 
 const CardCheckOutForm = () => {
   const orderInfo = useSelector((state) => state.orderInfo);
   const authInfo = useSelector((state) => state.authInfo);
   const [isProcessing, setProcessingTo] = useState(false);
   const [checkoutError, setCheckoutError] = useState();
+  const dispatch = useDispatch();
   console.log(orderInfo, 'orderInfo');
 
   const stripe = useStripe();
@@ -18,20 +20,17 @@ const CardCheckOutForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const seperatedOrdersArr = getSeperatedOrders(orderInfo);
-
     const billingDetails = {
-      name: orderInfo.selectedAdrs.receiver,
-      email: orderInfo.email,
-      phone: orderInfo.selectedAdrs.phoneNumber,
+      name: orderInfo.orderInfo.selectedAdrs.receiver,
+      email: orderInfo.orderInfo.email,
+      phone: orderInfo.orderInfo.selectedAdrs.phoneNumber,
       address: {
-        city: orderInfo.selectedAdrs.addressDetail.city,
-        line1: orderInfo.selectedAdrs.addressDetail.addressLine1,
-        line2: orderInfo.selectedAdrs.addressDetail.addressLine2,
-        postal_code: orderInfo.selectedAdrs.zipcode,
+        city: orderInfo.orderInfo.selectedAdrs.addressDetail.city,
+        line1: orderInfo.orderInfo.selectedAdrs.addressDetail.addressLine1,
+        line2: orderInfo.orderInfo.selectedAdrs.addressDetail.addressLine2,
+        postal_code: orderInfo.orderInfo.selectedAdrs.zipcode,
       },
     };
-    console.log(orderInfo.selectedAdrs, billingDetails, 'billingDetails');
     setProcessingTo(true);
 
     const cardElement = elements.getElement(CardElement);
@@ -47,25 +46,42 @@ const CardCheckOutForm = () => {
         setProcessingTo(false);
         console.log('[error]', paymentMethodReq.error.message);
         return;
-      } else {
-        console.log('[PaymentMethod]', paymentMethodReq.paymentMethod);
       }
 
       const orderData = {
         orderCharge: orderInfo.orderCharge,
-        ordersList: seperatedOrdersArr,
+        orderInfo: orderInfo.orderInfo,
         paymentMethod: paymentMethodReq.paymentMethod,
       };
       const post_endpoint = '/auth/payment';
-      const clientSecret = await PostOrderSubmit(
+      const { error: submitError, data: orderDataBack } = await PostOrderSubmit(
         post_endpoint,
         authInfo,
         orderData
       );
-      if (clientSecret) {
-        console.log(clientSecret);
+      if (submitError) {
+        setCheckoutError(submitError);
+        setProcessingTo(false);
+        return;
       }
-    } catch (error) {}
+      console.log(orderDataBack, 'orderDataBack');
+
+      const {
+        error: comfirmError,
+        paymentIntent,
+      } = await stripe.confirmCardPayment(orderDataBack.payment.client_secret);
+
+      if (comfirmError) {
+        setCheckoutError(comfirmError.message);
+        setProcessingTo(false);
+        return;
+      }
+      console.log(paymentIntent, 'payment Success');
+      dispatch(clearShoppingCart()); //clear shopping cart after the user makea successful payment
+      history.push(`/paySuccess/${orderInfo.orderInfo.id}`);
+    } catch (error) {
+      setCheckoutError(error.message);
+    }
   };
 
   const iframeStyles = {

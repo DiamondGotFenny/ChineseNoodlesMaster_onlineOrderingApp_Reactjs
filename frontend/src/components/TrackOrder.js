@@ -17,7 +17,7 @@ const TrackOrder = (props) => {
         return 0;
       case 'Preparing by vendor':
         return 1;
-      case 'Picked by Courier':
+      case 'Waiting for Courier':
         return 2;
       case 'On the way':
         return 3;
@@ -51,7 +51,7 @@ const TrackOrder = (props) => {
   return (
     <div className='track'>
       {stepsNewArr.map((step) => (
-        <div className={step.className}>
+        <div key={step.text} className={step.className}>
           <span className='icon'>
             <FontAwesomeIcon icon={step.icon} />
           </span>

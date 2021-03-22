@@ -6,17 +6,13 @@ import Button from 'react-bootstrap/Button';
 import OrderDetailModal from './OrderDetailModal';
 
 const OrderCard = (props) => {
-  const {
-    date,
-    id,
-    vendorInfo,
-    orderChargeInfo,
-    payMethod,
-    status,
-    items,
-    shipInfo,
-  } = props.item;
-  //const dateStr=date.toLocaleDateString();
+  const { orderInfo, payMethod, orderCharge } = props.item;
+  const { date, id, orderItems, status, shipInfo } = orderInfo;
+  const calTotal = (price, qty) => {
+    return (price * qty).toFixed(2);
+  };
+  const dateStr = new Date(date).toLocaleDateString();
+  const vendorInfo = orderItems[0]['product']['vendorInfo'];
   const [showDetailModal, setshowDetailModal] = useState(false);
   const handleCloseDetailModal = () => setshowDetailModal(false);
   const handleShowDetailModal = () => setshowDetailModal(true);
@@ -26,7 +22,7 @@ const OrderCard = (props) => {
         <Row>
           <Col className='order-date mb-2'>
             Order Date:
-            <br /> <span className='order-date-value'>{date}</span>
+            <br /> <span className='order-date-value'>{dateStr}</span>
           </Col>
           <Col className='order-num mb-2'>
             Order Number:
@@ -40,8 +36,7 @@ const OrderCard = (props) => {
         <Row>
           <Col className='order-sum mb-2'>
             Order Total:
-            <br />{' '}
-            <span className='order-sum-value'>${orderChargeInfo.total}</span>
+            <br /> <span className='order-sum-value'>${orderCharge.total}</span>
           </Col>
           <Col className='order-pay mb-2'>
             Payment Method:
@@ -60,16 +55,18 @@ const OrderCard = (props) => {
             <span className='col-md-2 col-4 text-center'>Qty</span>
             <span className='col-md-3 col-4 text-center'>Total</span>
           </li>
-          {items.map((ele) => (
+          {orderItems.map((ele, idx) => (
             <li
-              key={ele.name}
+              key={ele.product.id + idx}
               className='order-item d-flex justify-content-between lh-condensed mb-2'>
               <div className='item-detail col-md-7 col-5 px-0'>
-                <p className='my-0 item-name'>{ele.name}</p>
+                <p className='my-0 item-name'>{ele.product.productTitle}</p>
               </div>
-              <span className='item-qty col-md-2 text-center'>{ele.qty}</span>
+              <span className='item-qty col-md-2 text-center'>
+                {ele.quantity}
+              </span>
               <span className='item-cost col-md-3 col-5 text-center'>
-                ${ele.total.toFixed(2)}
+                ${calTotal(ele.product.price, ele.quantity)}
               </span>
             </li>
           ))}

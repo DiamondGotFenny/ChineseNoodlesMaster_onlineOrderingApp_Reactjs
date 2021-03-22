@@ -9,6 +9,8 @@ import CardContainer from 'containers/CheckOutPage/CardContainer';
 import { setOrderInfo } from 'actions/orderAction';
 import DeliveryTime from 'components/DeliveryTime';
 import CartItemsCheckOut from 'components/CartItemsCheckOut';
+import { v4 as uuidv4 } from 'uuid';
+import makeid from 'utilis/createId';
 
 const CheckOutPage = () => {
   const shoppingCart = useSelector((state) => state.shoppingCart);
@@ -38,12 +40,17 @@ const CheckOutPage = () => {
   */
   const [selectedDeliveryTime, setselectedDelieveryTime] = useState('');
   const initialShoppingVal = {
-    shoppingCart: [],
     orderCharge: initiChargeVal,
-    selectedAdrs: initAdrs(),
-    deliveryTime: selectedDeliveryTime,
-    email: '',
-    name: '',
+    orderInfo: {
+      orderItems: [],
+      selectedAdrs: initAdrs(),
+      deliveryTime: selectedDeliveryTime,
+      email: '',
+      name: '',
+      id: '',
+      status: '',
+      date: null,
+    },
   };
   const getDefaultVal = (val) => {
     setselectedDelieveryTime(val);
@@ -69,16 +76,28 @@ const CheckOutPage = () => {
       })
     );
   };
+  //the order id should generated in the server
+  const getOrderId = () => {
+    const id_preStr = makeid(4);
+    const id = `${id_preStr}-${uuidv4().split('-')[4]}`;
+    return id;
+  };
   useEffect(() => {
     if (shoppingCart.shoppingCart.length > 0 && userInfo.data) {
-      setshoppingItemsInfo({
-        shoppingCart: shoppingCart.shoppingCart,
+      const orderData = {
         orderCharge: shoppingCart.orderCharge,
-        selectedAdrs: initAdrs(),
-        deliveryTime: selectedDeliveryTime,
-        email: userInfo.data.email,
-        name: userInfo.data.name,
-      });
+        orderInfo: {
+          orderItems: shoppingCart.shoppingCart,
+          selectedAdrs: initAdrs(),
+          id: getOrderId(),
+          date: new Date(),
+          email: userInfo.data.email,
+          name: userInfo.data.name,
+          deliveryTime: selectedDeliveryTime,
+          status: 'Order Completed',
+        },
+      };
+      setshoppingItemsInfo(orderData);
       dispatch(setOrderInfo(shoppingItemsInfo));
     } else {
       setshoppingItemsInfo(initialShoppingVal);

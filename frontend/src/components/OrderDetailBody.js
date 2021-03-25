@@ -14,8 +14,8 @@ const OrderDetailBody = (props) => {
         <Col md={2}>Qty</Col>
         <Col md={2}>Total</Col>
       </li>
-      {items.map((item, idx) => (
-        <OrderDetailItem key={item.id + idx} item={item} />
+      {items.map((item) => (
+        <OrderDetailItem key={item.uuid} item={item} />
       ))}
       <OrderChargeInfo data={orderChargeInfo} />
       <ShippingPayInfo shipInfo={shipInfo} payMethod={payMethod} />

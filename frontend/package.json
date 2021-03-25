@@ -2,6 +2,12 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
+  "description": "A FoodPanda-like noodle online Ordering web appication example created with react and react-redux",
+  "author": {
+    "name": "Ben Huang",
+    "email": "diamondcn923@gmail.com",
+    "url": "https://diamondgotfenny.github.io/"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",

@@ -96,7 +96,7 @@ const MyOrders = () => {
         </Form.Row>
       </Form>
       {list.length > 0 &&
-        list.map((item) => <OrderCard key={item.id} item={item} />)}
+        list.map((item) => <OrderCard key={item.orderInfo.id} item={item} />)}
     </>
   );
 };

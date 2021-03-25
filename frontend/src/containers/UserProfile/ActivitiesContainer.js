@@ -12,14 +12,11 @@ we read the orders data from userInfo, then diplay each product to a card, then 
   const sortOrders = (orders) => {
     if (orders.length > 0) {
       //do the deep copy hereor the orders array will be alter in other components too;
-      //even use map() here
+      //even the array.map() won't here
       const newOrders = cloneDeep(orders);
-      const updatedOrders = newOrders
-        .map((order) => {
-          order.date = new Date(order.date); //translate the date string to date object first
-          return order; //then we can use array.sort() to compare it
-        })
-        .sort((a, b) => b.date - a.date);
+      const updatedOrders = newOrders.sort(
+        (a, b) => b.orderInfo.date - a.orderInfo.date
+      );
       setsortedOrders(updatedOrders);
     }
   };
@@ -35,7 +32,7 @@ we read the orders data from userInfo, then diplay each product to a card, then 
     <>
       {sortedOrders.length > 0 &&
         sortedOrders.map((order) => (
-          <ActivityCard key={order.id} order={order} />
+          <ActivityCard key={order.orderInfo.id} order={order} />
         ))}
     </>
   );

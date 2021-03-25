@@ -6,7 +6,7 @@ const AddressSelectableLayer = (props) => {
   const { selectedAdrs } = props;
   return (
     <Form.Label>
-      <Form.Check
+      <input
         key={id}
         type='radio'
         id={id}
@@ -14,8 +14,7 @@ const AddressSelectableLayer = (props) => {
         value={addressTitle}
         readOnly
         className='card-input-element d-none'
-        checked={selectedAdrs === addressTitle}
-      />
+        checked={selectedAdrs === addressTitle}></input>
       {props.children}
     </Form.Label>
   );

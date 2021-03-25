@@ -117,10 +117,12 @@ const CheckOutPage = () => {
               addressesList={userInfo.data.address}
             />
           )}
+          <h4 className='element-title'>Delivery Time</h4>
           <DeliveryTime
             getDefaultVal={getDefaultVal}
             handleTimeValueChanges={handleTimeValueChanges}
           />
+          <h4 className='element-title'>Enter Your Card Number</h4>
           <CardContainer />
         </Col>
       </Row>

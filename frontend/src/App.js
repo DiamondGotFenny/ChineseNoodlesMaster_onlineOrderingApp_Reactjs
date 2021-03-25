@@ -18,7 +18,7 @@ import CheckOutPage from './pages/CheckOutPage';
 import ProtectedRoute from 'components/ProtectedRoute';
 import { useSelector } from 'react-redux';
 import ScrollToTop from 'utilis/ScrollToTop';
-import PaySuccess from 'pages/PaySuccess';
+import PaySuccessPage from 'pages/PaySuccessPage';
 
 function App() {
   //we don't want some of routes show header and footer.
@@ -56,7 +56,11 @@ function App() {
                 path='/checkout'
                 component={CheckOutPage}
               />
-              <Route path='/paySuccess/:id' component={PaySuccess} />
+              <ProtectedRoute
+                isSignIn={isSignIn}
+                path='/paySuccess/:id'
+                component={PaySuccessPage}
+              />
               <Route path='/terms' component={TermsandConditions} />
             </Switch>
           </main>

@@ -6,8 +6,8 @@ import OrderDetailBody from './OrderDetailBody';
 
 const OrderDetailModal = (props) => {
   const { show, handleClose, item } = props;
-  const { orderInfo, payMethod, orderCharge } = item;
-  const { id, deliveryTime, shipInfo, orderItems, status } = orderInfo;
+  const { orderInfo, paymentMethod, orderCharge } = item;
+  const { id, deliveryTime, selectedAdrs, orderItems, status } = orderInfo;
   return (
     <Modal
       show={show}
@@ -27,8 +27,8 @@ const OrderDetailModal = (props) => {
       </Modal.Header>
       <Modal.Body>
         <OrderDetailBody
-          shipInfo={shipInfo}
-          payMethod={payMethod}
+          shipInfo={selectedAdrs}
+          payMethod={paymentMethod}
           items={orderItems}
           orderChargeInfo={orderCharge}
         />

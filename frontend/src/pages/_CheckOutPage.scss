@@ -2,14 +2,122 @@
 @import 'global/_mixin.scss';
 .checkout-container {
   @include page_container;
+
+  .product-header-qty,
+  .product-header-total {
+    transform: translateX(1.5rem);
+  }
+  /***address option start***/
+  .form-label {
+    width: 100%;
+    height: auto;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .card-input-element + .card {
+    color: var(--primary);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: 2px solid transparent;
+    border-radius: 4px;
+  }
+
+  .card-input-element:checked + .card {
+    border: 2px solid goldenrod;
+    -webkit-transition: border 0.3s;
+    -o-transition: border 0.3s;
+    transition: border 0.3s;
+    position: relative;
+  }
+
+  .card-input-element + .card:hover {
+    cursor: pointer;
+  }
+
+  .card-input-element:checked + .card .card-header::after {
+    content: '✓';
+    color: goldenrod;
+    font-size: 24px;
+    -webkit-animation-name: fadeInCheckbox;
+    animation-name: fadeInCheckbox;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+    -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    position: absolute;
+    right: 20px;
+    top: 5px;
+  }
+
+  @-webkit-keyframes fadeInCheckbox {
+    from {
+      opacity: 0;
+      -webkit-transform: rotateZ(-20deg);
+    }
+    to {
+      opacity: 1;
+      -webkit-transform: rotateZ(0deg);
+    }
+  }
+
+  @keyframes fadeInCheckbox {
+    from {
+      opacity: 0;
+      transform: rotateZ(-20deg);
+    }
+    to {
+      opacity: 1;
+      transform: rotateZ(0deg);
+    }
+  }
+
+  .add-addrs-icon {
+    color: rgb(228, 110, 129);
+    font-size: 3rem;
+    margin: 0.5rem 1rem;
+  }
+  a:link,
+  a:visited {
+    text-decoration: none;
+  }
+  /***address option end***/
+  .addNewAdrs {
+    padding: 0;
+  }
+  .addNewAdrsBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem;
+    width: 100%;
+    .fa-plus {
+      color: #d15454;
+      font-size: 1.8rem;
+      margin-right: 1rem;
+    }
+    .text-info {
+      margin-bottom: 0;
+    }
+  }
+  #deliveryTime {
+    margin-bottom: 1.6rem;
+  }
+  .element-title {
+    margin-bottom: 0.6rem;
+  }
   .StripeElement {
     border: 1px solid rgb(201, 201, 201);
     border-radius: 5px;
-    margin-top: 2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.6rem;
     padding: 0.5rem;
   }
   .CardField {
     padding: 1rem;
+  }
+  .continiue-checkout-btn {
+    display: flex;
+    margin: auto;
+    padding: 0.8rem 1.28rem;
   }
 }

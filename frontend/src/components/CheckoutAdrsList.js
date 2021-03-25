@@ -33,8 +33,8 @@ const CheckoutAdrsList = (props) => {
           ))}
       </Form.Group>
 
-      <Card>
-        <Card.Body>
+      <Card className='mb-4'>
+        <Card.Body className='addNewAdrs'>
           <Button
             variant='outline-light'
             onClick={() => setShowEditModal(true)}

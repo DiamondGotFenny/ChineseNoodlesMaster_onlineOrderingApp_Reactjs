@@ -50,7 +50,9 @@ const AddressCard = (props) => {
   };
   return (
     <Card>
-      <Card.Header>{addressTitle}</Card.Header>
+      <Card.Header className='bg-primary text-white'>
+        {addressTitle}
+      </Card.Header>
       <Card.Body>
         <Card.Title>
           <h5>

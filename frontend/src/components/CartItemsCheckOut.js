@@ -19,8 +19,12 @@ const CartItemsCheckOut = (props) => {
       <ul className='list-group'>
         <li className='product-header list-group-item d-flex justify-content-between lh-condensed'>
           <Col md={7}>Items</Col>
-          <Col md={2}>Qty</Col>
-          <Col md={3}>Total</Col>
+          <Col md={2} className='product-header-qty'>
+            Qty
+          </Col>
+          <Col md={3} className='product-header-total'>
+            Total
+          </Col>
         </li>
         {shoppingItemsInfo.orderInfo.orderItems.length > 0 &&
           shoppingItemsInfo.orderInfo.orderItems.map((item) => {

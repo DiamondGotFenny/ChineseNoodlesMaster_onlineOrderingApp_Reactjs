@@ -1,0 +1,25 @@
+@import 'global/_variables.scss';
+@import 'global/_mixin.scss';
+.paySuccess-container {
+  @include page_container;
+  .accept-text {
+    color: #4aa36b;
+    font-weight: 400;
+  }
+  .order-btn-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .btn {
+      margin: 1rem;
+    }
+  }
+  .back-to-home {
+    display: flex;
+    margin: 1rem auto;
+    width: 20rem;
+  }
+}
+.shipNPayment-item-title {
+  color: $primary-blue;
+}

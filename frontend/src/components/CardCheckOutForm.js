@@ -12,7 +12,6 @@ const CardCheckOutForm = () => {
   const [isProcessing, setProcessingTo] = useState(false);
   const [checkoutError, setCheckoutError] = useState();
   const dispatch = useDispatch();
-  console.log(orderInfo, 'orderInfo');
 
   const stripe = useStripe();
   const elements = useElements();
@@ -64,7 +63,6 @@ const CardCheckOutForm = () => {
         setProcessingTo(false);
         return;
       }
-      console.log(orderDataBack, 'orderDataBack');
 
       const {
         error: comfirmError,
@@ -112,10 +110,10 @@ const CardCheckOutForm = () => {
       <CardElement options={cardElementOpts} />
       {checkoutError && <div className='cardErrorMsg'>{checkoutError}</div>}
       <Button
-        variant='outline-primary'
+        variant='outline-primary continiue-checkout-btn'
         type='submit'
         disabled={!stripe || !elements}>
-        {isProcessing ? 'Processing...' : 'Continue to checkout'}
+        {isProcessing ? 'Processing...' : 'Continue to Checkout'}
       </Button>
     </form>
   );

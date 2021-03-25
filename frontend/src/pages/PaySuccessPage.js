@@ -5,6 +5,9 @@ import httpService from 'services/httpService';
 import { useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHome } from '@fortawesome/free-solid-svg-icons';
 const PaySuccess = () => {
   const authInfo = useSelector((state) => state.authInfo);
   const userInfo = useSelector((state) => state.userInfo);
@@ -30,11 +33,13 @@ const PaySuccess = () => {
   }, [authInfo, userInfo]);
   console.log(order, 'orderInfo paid');
   return (
-    <>
+    <Container className='paySuccess-container'>
       {order && (
         <>
           <header>
-            <h4>Payment Success and Your Order Has been Accepted.</h4>
+            <h4 className='accept-text'>
+              Payment Success and Your Order Has been Accepted.
+            </h4>
             <h6>
               Order ID:{' '}
               <span className='orderId-value'>{order.orderInfo.id}</span>
@@ -68,14 +73,16 @@ const PaySuccess = () => {
             />
             <Link
               to={'/'}
-              className='btn red-outline-btnlg btn-red-fill'
+              className='btn red-outline-btnlg btn-red-fill back-to-home'
               role='button'>
-              <span>Back To Home</span>
+              <span>
+                <FontAwesomeIcon icon={faHome} size='lg' /> Back To Home
+              </span>
             </Link>
           </div>
         </>
       )}
-    </>
+    </Container>
   );
 };
 

@@ -4,8 +4,8 @@ import Button from 'react-bootstrap/Button';
 import ActivityProductReview from './ActivityProductReview';
 
 const ActivityCard = (props) => {
-  const { orderInfo, id } = props.order;
-  const { date, orderItems } = orderInfo;
+  const { orderInfo } = props.order;
+  const { date, orderItems, id } = orderInfo;
   const vendorInfo = orderItems[0]['product']['vendorInfo'];
   const dateStr = new Date(date).toLocaleDateString();
   return (
@@ -20,7 +20,7 @@ const ActivityCard = (props) => {
       <Card.Body>
         {orderItems.map((item) => (
           <ActivityProductReview
-            key={item.id}
+            key={item.uuid}
             item={item}
             vendorInfo={vendorInfo}
           />

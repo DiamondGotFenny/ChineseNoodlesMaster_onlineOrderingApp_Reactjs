@@ -1,20 +1,14 @@
-const fs = require('fs');
-const { v4: uuidv4 } = require('uuid');
-const productReviews = JSON.parse(
-  fs.readFileSync(`${__dirname}/../data/productReviewsData.json`)
-);
+const ProductReiviewsModel = require('../models/productReviewModel');
+const createProductReviewsList = async (reqBody) => {
+  const reviewsList = { ...reqBody };
+  const rlObj = new ProductReiviewsModel(reviewsList);
+  const rlDoc = await rlObj.save();
+  return rlDoc;
+};
 
-const getProductReviewsList = (id) => {
-  const hasProduct = productReviews.find((product) => product.id === id);
-  return hasProduct;
-};
-const getProductReview = (reviewsList, id) => {
-  const review = reviewsList.reviews.find((review) => review.id === id);
-  return review;
-};
 //check if the product id exist is in the database before retrieve the reviews list
-exports.checkProductId = (req, res, next, val) => {
-  const hasProduct = getProductReviewsList(val);
+exports.checkProductId = async (req, res, next, val) => {
+  const hasProduct = await ProductReiviewsModel.exists({ _id: val });
   if (!hasProduct) {
     return res.status(404).json({
       status: 'Fail',
@@ -25,22 +19,28 @@ exports.checkProductId = (req, res, next, val) => {
 };
 
 //check if the review id exist is in the database before retrieve a specific review
-exports.checkReviewId = (req, res, next, val) => {
-  const productId = req.params.productId;
-  const reviewsList = getProductReviewsList(productId);
-  const review = getProductReview(reviewsList, val);
-  if (!review) {
-    return res.status(404).json({
-      status: 'Fail',
-      message: 'Invalid Id',
-    });
+exports.checkReviewId = async (req, res, next, val) => {
+  try {
+    const reviewsList = await ProductReiviewsModel.findOne({
+      _id: req.params.productId,
+    }).lean();
+    const hasReview = reviewsList.reviews.some(
+      (ele) => ele._id.toString() === val
+    );
+    if (!hasReview) {
+      return res.status(404).json({
+        status: 'Fail',
+        message: 'Invalid review Id',
+      });
+    }
+  } catch (error) {
+    console.log(error.message);
   }
   next();
 };
 
 exports.checkBody = (req, res, next) => {
   const validReview = Object.values(req.body).every((ele) => ele);
-  console.log(validReview);
   if (!validReview) {
     return res.status(400).json({
       status: 'fail',
@@ -49,71 +49,129 @@ exports.checkBody = (req, res, next) => {
   }
   next();
 };
-exports.getProductReviewsList = (req, res) => {
+exports.getProductReviewsList = async (req, res) => {
   const id = req.params.productId;
-  const reviewsList = getProductReviewsList(id);
-  res.status(200).json({
-    status: 'success',
-    data: {
-      reviewsList,
-    },
-  });
+
+  try {
+    const reviewsDoc = await ProductReiviewsModel.findOne({
+      _id: id,
+    }).lean();
+    const reviewsList = reviewsDoc.reviews;
+    res.status(200).json({
+      status: 'success',
+      data: {
+        reviewsList,
+      },
+    });
+  } catch (error) {
+    return res.status(404).json({
+      status: 'Fail',
+      message: error.message,
+    });
+  }
 };
 
-exports.getProductReview = (req, res) => {
+exports.getProductReview = async (req, res) => {
   const reviewId = req.params.reviewId;
   const productId = req.params.productId;
-  const reviewsList = getProductReviewsList(productId);
-  const review = getProductReview(reviewsList, reviewId);
-  res.status(200).json({
-    status: 'success',
-    data: {
-      review,
-    },
-  });
+  try {
+    const reviewsList = await ProductReiviewsModel.findOne({
+      _id: productId,
+    }).lean();
+    const review = reviewsList.reviews.find(
+      (ele) => ele._id.toString() === reviewId
+    );
+
+    res.status(200).json({
+      status: 'success',
+      data: {
+        review,
+      },
+    });
+  } catch (error) {
+    return res.status(404).json({
+      status: 'Fail',
+      message: error.message,
+    });
+  }
 };
 
-exports.createReview = (req, res) => {
-  const newId = uuidv4();
-  const newReview = { ...req.body, id: newId };
-  const productId = req.params.productId;
-  const reviewsList = getProductReviewsList(productId);
-  reviewsList['reviews'].push(newReview);
-
-  //in real project, we should not use this, use database instead
-  const newProductReviews = productReviews.map((product) => {
-    if (product.id === productId) {
-      product.reviews = [...reviewsList['reviews']];
-    }
-    return product;
-  });
-
-  fs.writeFile(
-    `${__dirname}/../data/productReviewsData.json`,
-    JSON.stringify(newProductReviews),
-    (err) => {
-      res.status(201).json({
-        status: 'success',
-        data: {
-          review: newReview,
-        },
+exports.createReview = async (req, res) => {
+  try {
+    const reviewsList = await ProductReiviewsModel.findOne({
+      _id: req.params.productId,
+    });
+    const review = { ...req.body };
+    const repeatedReview = reviewsList.reviews.find(
+      (ele) =>
+        ele.comment === review.comment && ele.authorId === review.authorId
+    );
+    if (repeatedReview) {
+      return res.status(400).json({
+        status: 'fail',
+        message: 'repeated review',
       });
     }
-  );
+    reviewsList.reviews.push(review);
+    const updatedReviewsList = await reviewsList.save();
+    res.status(200).json({
+      status: 'success',
+      data: {
+        updatedReviewsList,
+      },
+    });
+  } catch (error) {
+    return res.status(400).json({
+      status: 'fail',
+      message: error.message,
+    });
+  }
 };
 
-exports.updateProductReview = (req, res) => {
-  res.status(200).json({
-    status: 'success',
-    data: {
-      tour: '<Updated tour here...>',
-    },
-  });
+exports.updateProductReview = async (req, res) => {
+  try {
+    const reviewsList = await ProductReiviewsModel.findOne({
+      _id: req.params.productId,
+    });
+    updateItem = { ...req.body };
+    const targetIndex = reviewsList.reviews.findIndex(
+      (ele) => ele._id.toString() === updateItem._id
+    );
+    reviewsList.reviews[targetIndex] = updateItem;
+    const updatedReviewsList = await reviewsList.save();
+    res.status(200).json({
+      status: 'success',
+      data: {
+        updatedReviewsList: updatedReviewsList,
+      },
+    });
+  } catch (error) {
+    return res.status(400).json({
+      status: 'fail',
+      message: error.message,
+    });
+  }
 };
 
-exports.deleteProductReview = (req, res) => {
-  res.status(204).json({
-    status: 'success',
-    data: null,
-  });
+exports.deleteProductReview = async (req, res) => {
+  try {
+    const reviewsList = await ProductReiviewsModel.findOne({
+      _id: req.params.productId,
+    });
+    id = req.params.reviewId;
+    const updatedReviews = reviewsList.reviews.filter(
+      (ele) => ele._id.toString() !== id
+    );
+    reviewsList.reviews = updatedReviews;
+    const updatedReviewsList = await reviewsList.save();
+    res.status(204).json({
+      status: 'success',
+      data: null,
+    });
+  } catch (error) {
+    return res.status(400).json({
+      status: 'fail',
+      message: error.message,
+    });
+  }
 };

@@ -1,24 +1,24 @@
 const express = require('express');
-const productController = require('../controllers/productController');
+const vendorController = require('../controllers/vendorController');
 //const authController = require('../controllers/authController');
-const productReviewRoute = require('./productReviewsRouter');
+const vendorReviewRoute = require('./vendorReviewsRouter');
 const router = express.Router();
 
-router.use('/:productId/reviews', productReviewRoute);
-//may need to use to display products at the front page based on geographic
+router.use('/:vendorId/reviews', vendorReviewRoute);
+//may need to use to display vendors at the front page based on geographic
 router
   .route('/defaultDisplay')
-  .get(productController.topProducts, productController.getAllProducts);
+  .get(vendorController.defaultDisplay, vendorController.getAllVendors);
 
 // create/update/delete product should be done from another app
-router.route('/').get(productController.getAllProducts);
+router.route('/').get(vendorController.getAllVendors);
 /* .post(
     authController.protect,
     authController.restrictTo('admin'),
     productController.createProduct
   ); */
 
-router.route('/:id').get(productController.getProduct);
+router.route('/:id').get(vendorController.getVendor);
 /* .patch(
     authController.protect,
     authController.restrictTo('admin'),

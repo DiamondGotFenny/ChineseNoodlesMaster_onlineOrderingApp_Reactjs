@@ -15,6 +15,7 @@ const productSchema = new mongoose.Schema(
         3,
         'A product name must have more or equal than 3 characters',
       ],
+      unique: true,
     },
     productDescr: {
       type: String,

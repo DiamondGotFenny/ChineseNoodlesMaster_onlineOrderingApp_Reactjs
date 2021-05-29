@@ -3,6 +3,7 @@ const AppError = require('../utils/AppError');
 const { promisify } = require('util');
 const sendEmail = require('../utils/email');
 const crypto = require('crypto');
+const jwt = require('jsonwebtoken');
 
 const signToken = ({ _id, email, name }) => {
   return jwt.sign(
@@ -123,7 +124,7 @@ exports.protect = async (req, res, next) => {
 
 exports.restrictTo = (...roles) => {
   return (req, res, next) => {
-    // roles ['admin', 'lead-guide']. role='user'
+    // roles ['admin', 'vendor']. role='user'
     if (!roles.includes(req.user.role)) {
       return next(
         new AppError('You do not have permission to perform this action', 403)
@@ -151,7 +152,7 @@ exports.forgotPassword = async (req, res, next) => {
       'host'
     )}/api/v1/users/resetPassword/${resetToken}`;
 
-    const message = `Forgot your password? Submit a PATCH request with your new password and passwordConfirm to: ${resetURL}.\nIf you didn't forget your password, please ignore this email!`;
+    const message = `Forgot your password? To set your new password, please visit: ${resetURL}.\nIf you didn't forget your password, please ignore this email!`;
 
     try {
       await sendEmail({

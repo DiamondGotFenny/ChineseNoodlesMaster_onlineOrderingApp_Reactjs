@@ -90,7 +90,7 @@ const addressSchema = new mongoose.Schema({
 
 const userSchema = new mongoose.Schema(
   {
-    username: {
+    name: {
       type: String,
       trim: true,
       require: [true, 'Please enter your username'],
